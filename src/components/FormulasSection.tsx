@@ -104,7 +104,7 @@ export const FormulasSection = () => {
                   className="w-full"
                   asChild
                 >
-                  <a href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2Fx3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2FXSKzEFlt4kW7cTR5pYmDI0hnqxewPUAiua8V" target="_blank" rel="noopener noreferrer">
                     Réserver
                   </a>
                 </Button>
