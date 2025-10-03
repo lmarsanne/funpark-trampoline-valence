@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Phone, Mail } from "lucide-react";
-
 export const CTASection = () => {
-  return (
-    <section className="py-20 bg-gradient-to-br from-primary via-accent to-secondary relative overflow-hidden">
+  return <section className="py-20 bg-gradient-to-br from-primary via-accent to-secondary relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl animate-float" />
@@ -21,24 +19,14 @@ export const CTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button 
-              variant="hero" 
-              size="xl"
-              className="group bg-white text-primary hover:bg-white/90 shadow-2xl"
-              asChild
-            >
+            <Button variant="hero" size="xl" className="group bg-white text-primary hover:bg-white/90 shadow-2xl" asChild>
               <a href="https://www.valence-bowling.com/trampoline/" target="_blank" rel="noopener noreferrer">
                 Réserver maintenant
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
             
-            <Button 
-              variant="outline" 
-              size="xl"
-              className="bg-white/10 text-white border-white/50 hover:bg-white/20 backdrop-blur-sm"
-              asChild
-            >
+            <Button variant="outline" size="xl" className="bg-white/10 text-white border-white/50 hover:bg-white/20 backdrop-blur-sm" asChild>
               <a href="https://www.valence-bowling.com/groupe/" target="_blank" rel="noopener noreferrer">
                 Demander un devis groupe
               </a>
@@ -71,13 +59,10 @@ export const CTASection = () => {
                 <Mail className="w-6 h-6" />
               </div>
               <p className="font-semibold">Email</p>
-              <a href="mailto:contact@valence-bowling.com" className="text-sm text-white/80 hover:text-white transition-colors">
-                contact@valence-bowling.com
-              </a>
+              <a href="mailto:contact@valence-bowling.com" className="text-sm text-white/80 hover:text-white transition-colors">valencebowling@gmail.com</a>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
