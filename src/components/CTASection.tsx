@@ -61,8 +61,8 @@ export const CTASection = () => {
                 <Phone className="w-6 h-6" />
               </div>
               <p className="font-semibold">Téléphone</p>
-              <a href="tel:0475428585" className="text-sm text-white/80 hover:text-white transition-colors">
-                04 75 42 85 85
+              <a href="tel:0769482714" className="text-sm text-white/80 hover:text-white transition-colors">
+                07.69.48.27.14 (WhatsApp dispo ✅)
               </a>
             </div>
 
