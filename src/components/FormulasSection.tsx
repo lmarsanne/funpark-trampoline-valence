@@ -6,7 +6,7 @@ const formulas = [
   {
     icon: Baby,
     title: "Baby Jumper",
-    age: "2-6 ans",
+    age: "2-6 ans - 9€ la session de 1h",
     description: "Un espace adapté aux tout-petits pour découvrir le plaisir du trampoline en toute sécurité.",
     features: [
       "Zone sécurisée et adaptée",
