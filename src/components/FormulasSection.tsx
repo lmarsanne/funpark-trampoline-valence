@@ -19,7 +19,7 @@ const formulas = [
   {
     icon: Users,
     title: "Kid Jumper",
-    age: "7-18 ans",
+    age: "Session de 1h 12,00 €",
     description: "Toutes les zones du parc accessibles pour vivre des sensations fortes et repousser ses limites !",
     features: [
       "Accès à toutes les zones",
