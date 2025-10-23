@@ -31,7 +31,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send email to Fun Park Valence
     const emailResponse = await resend.emails.send({
       from: "Fun Park Valence <onboarding@resend.dev>",
-      to: ["valencebowling@gmail.com"],
+      to: ["contact@funpark-valence.fr"],
       replyTo: email,
       subject: `Nouvelle demande de contact - ${fullName}`,
       html: `
