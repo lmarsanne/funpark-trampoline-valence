@@ -33,7 +33,7 @@ const formulas = [
   {
     icon: Sparkles,
     title: "Jumper",
-    age: "+18 ans",
+    age: "+18 ans - 12€ la session de 1h",
     description: "Pour les adultes qui veulent se défouler et retrouver leur âme d'enfant dans une ambiance festive.",
     features: [
       "Accès complet au parc",
