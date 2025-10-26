@@ -173,7 +173,7 @@ const Karaoke = () => {
             <div>
               <p className="text-sm uppercase tracking-wider mb-2 opacity-80">Adresse</p>
               <p className="font-semibold">
-                Face au Bowling 30 Rue de la Roche – 26320 Saint-Marcel-lès-Valence (Drôme)
+                Face au Bowling: 30 Rue de la Roche – 26320 Saint-Marcel-lès-Valence (Drôme)
               </p>
             </div>
             <div>
