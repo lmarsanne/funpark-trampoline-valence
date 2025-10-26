@@ -6,18 +6,15 @@ import karaoke2 from "@/assets/karaoke-2.jpg";
 import karaoke3 from "@/assets/karaoke-3.jpg";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-
 const Karaoke = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navigation />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: `url(${heroImage})`
+      }}>
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-accent/90" />
         </div>
 
@@ -35,12 +32,7 @@ const Karaoke = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                variant="hero" 
-                size="xl"
-                className="group"
-                asChild
-              >
+              <Button variant="hero" size="xl" className="group" asChild>
                 <a href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2Fx3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV" target="_blank" rel="noopener noreferrer">
                   Réserver maintenant
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
@@ -70,39 +62,29 @@ const Karaoke = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: Mic2,
-                title: "Équipement Pro",
-                description: "Micros sans fil, enceintes haute qualité et écrans géants"
-              },
-              {
-                icon: Music,
-                title: "Milliers de chansons",
-                description: "Catalogue immense en français, anglais et plus encore"
-              },
-              {
-                icon: Users,
-                title: "Salles privées",
-                description: "Espaces privatifs pour 6 à 20 personnes"
-              },
-              {
-                icon: Star,
-                title: "Ambiance festive",
-                description: "Éclairages LED, effets lumineux et décoration moderne"
-              }
-            ].map((feature, index) => (
-              <div
-                key={index}
-                className="bg-background rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all hover:scale-105"
-              >
+            {[{
+            icon: Mic2,
+            title: "Équipement Pro",
+            description: "Micros sans fil, enceintes haute qualité et écrans géants"
+          }, {
+            icon: Music,
+            title: "Milliers de chansons",
+            description: "Catalogue immense en français, anglais et plus encore"
+          }, {
+            icon: Users,
+            title: "Salles privées",
+            description: "Espaces privatifs pour 6 à 20 personnes"
+          }, {
+            icon: Star,
+            title: "Ambiance festive",
+            description: "Éclairages LED, effets lumineux et décoration moderne"
+          }].map((feature, index) => <div key={index} className="bg-background rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all hover:scale-105">
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4 mx-auto">
                   <feature.icon className="text-white" size={32} />
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-center">{feature.title}</h3>
                 <p className="text-muted-foreground text-center">{feature.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -120,23 +102,19 @@ const Karaoke = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { src: karaoke1, alt: "Amis chantant au karaoké" },
-              { src: karaoke2, alt: "Scène karaoké avec éclairages LED" },
-              { src: karaoke3, alt: "Famille au karaoké" }
-            ].map((image, index) => (
-              <div
-                key={index}
-                className="relative overflow-hidden rounded-2xl shadow-xl group"
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+            {[{
+            src: karaoke1,
+            alt: "Amis chantant au karaoké"
+          }, {
+            src: karaoke2,
+            alt: "Scène karaoké avec éclairages LED"
+          }, {
+            src: karaoke3,
+            alt: "Famille au karaoké"
+          }].map((image, index) => <div key={index} className="relative overflow-hidden rounded-2xl shadow-xl group">
+                <img src={image.src} alt={image.alt} className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -153,12 +131,7 @@ const Karaoke = () => {
             Réservez votre salle karaoké dès maintenant et vivez une expérience musicale unique !
           </p>
           
-          <Button 
-            variant="hero" 
-            size="xl"
-            className="group"
-            asChild
-          >
+          <Button variant="hero" size="xl" className="group" asChild>
             <a href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2Fx3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV" target="_blank" rel="noopener noreferrer">
               Réserver ma session
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
@@ -172,7 +145,7 @@ const Karaoke = () => {
             </div>
             <div>
               <p className="text-sm uppercase tracking-wider mb-2 opacity-80">Téléphone</p>
-              <p className="font-semibold">04 75 55 60 00</p>
+              <p className="font-semibold">07.69.48.27.14 (WhatsApp dispo ✅)</p>
             </div>
             <div>
               <p className="text-sm uppercase tracking-wider mb-2 opacity-80">Email</p>
@@ -183,8 +156,6 @@ const Karaoke = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Karaoke;
