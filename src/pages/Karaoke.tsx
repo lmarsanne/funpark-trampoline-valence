@@ -141,7 +141,7 @@ const Karaoke = () => {
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div>
               <p className="text-sm uppercase tracking-wider mb-2 opacity-80">Adresse</p>
-              <p className="font-semibold">45 avenue Victor Hugo, 26000 Valence</p>
+              <p className="font-semibold">Rue de la Roche / Avenue de Provence – 26320 Saint-Marcel-lès-Valence (Drôme)</p>
             </div>
             <div>
               <p className="text-sm uppercase tracking-wider mb-2 opacity-80">Téléphone</p>
