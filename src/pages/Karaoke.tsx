@@ -88,6 +88,19 @@ const Karaoke = () => {
                 <p className="text-muted-foreground text-center">{feature.description}</p>
               </div>)}
           </div>
+
+          <div className="text-center mt-12">
+            <Button variant="default" size="lg" className="group" asChild>
+              <a
+                href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2FWiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Réserver ma session
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -186,7 +199,18 @@ const Karaoke = () => {
                 </ul>
               </div>
 
-              
+              <div className="text-center mt-8">
+                <Button variant="default" size="lg" className="group" asChild>
+                  <a
+                    href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2FWiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Réserver ma session
+                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -218,6 +242,19 @@ const Karaoke = () => {
                 <img src={image.src} alt={image.alt} className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>)}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button variant="default" size="lg" className="group" asChild>
+              <a
+                href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2FWiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Réserver maintenant
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
           </div>
         </div>
       </section>
