@@ -34,8 +34,7 @@ const QuizBoxing = () => {
             </h1>
 
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Abusez des jokers et devenez le roi du <strong className="font-bold">QUIZ BOXING</strong> !
-              Une expérience interactive unique avec des rounds délirants pour 4 à 12 joueurs.
+              Invitez-vous sous le feu des projecteurs de la Quiz Boxing TV et affrontez vos amis, votre famille ou vos collègues dans une série de questions survoltées !
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
@@ -69,6 +68,48 @@ const QuizBoxing = () => {
         </div>
       </section>
 
+      {/* About Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                QUIZ BOXING, <span className="text-primary">QU'EST-CE QUE C'EST ?</span>
+              </h2>
+            </div>
+
+            <div className="space-y-6 text-lg leading-relaxed">
+              <p>
+                Le Quiz Boxing est une nouvelle discipline très à la mode ! Contrairement à un escape game où l'on vous demande de collaborer avec vos amis, cette fois-ci on vous propose de vous affronter !
+              </p>
+
+              <p>
+                Chacun dispose de sa borne de combat, et vous devez gagner des points à travers différents rounds (quiz, blind test…) dans une arène survoltée.
+              </p>
+
+              <p className="font-semibold text-primary">
+                Et pas de panique si vous ne connaissez pas les réponses, vous avez même des jokers pour tricher !
+              </p>
+
+              <p>
+                De 4 à 12 joueurs, invitez-vous sous le feu des projecteurs de la Quiz Boxing TV et affrontez vos amis, votre famille ou vos collègues dans une série de questions survoltées.
+              </p>
+
+              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8 mt-8">
+                <h3 className="text-2xl font-bold mb-4 text-center">Au programme</h3>
+                <div className="flex flex-wrap justify-center gap-3">
+                  {["Cinéma", "Séries TV", "Dessins Animés", "Culture & Société", "Jeux-vidéos", "Sport", "Blind Test Musique"].map((theme) => (
+                    <span key={theme} className="bg-background px-4 py-2 rounded-full text-sm font-semibold">
+                      {theme}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Game Types Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
@@ -94,7 +135,7 @@ const QuizBoxing = () => {
                 icon: Music,
                 title: "BLIND TEST",
                 description:
-                  "Chantez, dansez, criez… Mais surtout n'oubliez pas d'être le plus rapide à trouver le titre d'une musique, le nom d'un film ou encore d'un dessin animé !",
+                  "Testez vos connaissances en musique ! Chantez, dansez, criez… Mais surtout n'oubliez pas d'être le plus rapide à trouver le titre d'une musique, le nom d'un film ou encore d'un dessin animé !",
                 color: "from-purple-500 to-pink-500",
               },
               {
@@ -137,7 +178,7 @@ const QuizBoxing = () => {
               Des <span className="text-primary">Jokers</span> Délirants
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Utilisez des jokers stratégiques pour maximiser vos points et perturber vos adversaires !
+              Pas de panique si vous ne connaissez pas les réponses ! Utilisez des jokers pour tricher et maximiser vos points !
             </p>
           </div>
 
