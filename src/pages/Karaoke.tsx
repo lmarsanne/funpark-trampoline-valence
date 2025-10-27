@@ -115,30 +115,99 @@ const Karaoke = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Nos <span className="text-primary">TARIFS</span>
             </h2>
-            <div className="bg-background rounded-3xl shadow-2xl p-8 md:p-12 max-w-4xl mx-auto">
-              <div className="text-center mb-8">
-                <div className="text-6xl md:text-7xl font-extrabold text-primary mb-2">9€</div>
-                <div className="text-2xl text-muted-foreground">par personne</div>
-                <div className="mt-4 text-lg font-semibold text-foreground">
-                  1 session de 1h minimum • 4 joueurs minimum
+            
+            <div className="bg-background rounded-3xl shadow-2xl p-8 md:p-12 max-w-5xl mx-auto">
+              <div className="mb-8">
+                <div className="inline-block bg-primary/10 rounded-full px-6 py-2 mb-4">
+                  <span className="text-lg font-semibold text-primary">De 4 à 12 personnes</span>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">Karaoké à Saint-Marcel-lès-Valence</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                  Envie de chanter à tue-tête entre amis, en famille ou entre collègues ? Notre salle de karaoké privative vous attend pour une expérience fun et décomplexée ! Micro à la main, vous choisissez vos morceaux parmi des centaines de titres (français, internationaux, classiques ou décalés), et c'est parti pour une session où tout le monde peut briller. Que vous chantiez juste ou pas, ce qui compte, c'est de passer un moment inoubliable.
+                </p>
+              </div>
+
+              {/* Tarifs Grid */}
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-6 border-2 border-primary/20">
+                  <h4 className="text-2xl font-bold mb-4 text-center">Karaoké 1h</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-lg">Adulte</span>
+                      <span className="text-3xl font-bold text-primary">9€</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-lg">Étudiant</span>
+                      <span className="text-3xl font-bold text-primary">8€</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground italic">
+                      Sur présentation d'une carte étudiante en cours de validité
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-2xl p-6 border-2 border-accent/20">
+                  <h4 className="text-2xl font-bold mb-4 text-center">Karaoké 2h</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-lg">Adulte</span>
+                      <span className="text-3xl font-bold text-accent">15€</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-lg">Étudiant</span>
+                      <span className="text-3xl font-bold text-accent">14€</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground italic">
+                      Sur présentation d'une carte étudiante en cours de validité
+                    </p>
+                  </div>
                 </div>
               </div>
-              
+
+              {/* Déroulement */}
+              <div className="border-t border-border pt-8 mb-8">
+                <h4 className="text-2xl font-bold mb-4">📝 Déroulement</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  À votre arrivée, notre équipe vous guide jusqu'à la salle de karaoké. Après une rapide explication du fonctionnement de l'écran de sélection, vous avez la salle pour vous pendant toute la durée réservée. Chaque participant peut choisir ses chansons, créer une playlist, ou improviser en direct. La salle est insonorisée pour que vous puissiez chanter à fond sans gêner ni être gêné. Vous pouvez commander des boissons ou snacks directement pendant votre session grâce à notre service sur place. Une fois le créneau terminé, notre équipe revient vous prévenir quelques minutes avant la fin.
+                </p>
+              </div>
+
+              {/* Bon à savoir */}
               <div className="border-t border-border pt-8">
-                <h3 className="text-2xl font-bold mb-4 text-center">Un espace Karaoké moderne à Valence</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Situé à quelques minutes de Valence, notre espace karaoké privatif est l'activité idéale pour sortir entre amis, organiser un anniversaire original ou fêter un EVJF/EVG dans une ambiance festive. Choisissez vos chansons préférées parmi un large catalogue de hits : variété française, pop internationale, rock, rap, tubes des années 80 ou génériques cultes… il y en a pour tous les goûts !
+                <h4 className="text-2xl font-bold mb-4">💡 Bon à savoir</h4>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>La salle karaoké est privative</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Vous pouvez venir en petit groupe ou jusqu'à 12 personnes</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>La réservation est indispensable</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Pensez à arriver 5 à 10 minutes avant l'horaire prévu</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Il est possible de consommer des boissons et snacks dans la salle</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>Pour les événements spéciaux (anniversaires, EVJF/EVG, team building), n'hésitez pas à nous prévenir</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-border text-center">
+                <p className="text-xl font-semibold text-foreground">
+                  📱 <a href="tel:0769482714" className="hover:text-primary transition-colors">07.69.48.27.14</a>
                 </p>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Le karaoké chez Fun Park Valence Bowling, c'est l'assurance d'un moment unique, que vous soyez chanteur débutant ou star confirmée.
-                </p>
-                
-                <div className="mt-8 pt-6 border-t border-border text-center">
-                  <p className="text-xl font-semibold text-foreground">
-                    📱 <a href="tel:0769482714" className="hover:text-primary transition-colors">07.69.48.27.14</a>
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-1">(WhatsApp dispo ✅)</p>
-                </div>
+                <p className="text-sm text-muted-foreground mt-1">(WhatsApp dispo ✅)</p>
               </div>
             </div>
           </div>
