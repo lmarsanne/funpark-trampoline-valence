@@ -106,6 +106,19 @@ const QuizBoxing = () => {
                 </div>
               </div>
             </div>
+
+            <div className="text-center mt-8">
+              <Button variant="default" size="lg" className="group" asChild>
+                <a
+                  href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2F80FQWEsnGZ7BJSAqKXohcDCYlgRb2IyjM1Hu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Réserver maintenant
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -167,6 +180,19 @@ const QuizBoxing = () => {
               </div>
             ))}
           </div>
+
+          <div className="text-center mt-12">
+            <Button variant="default" size="lg" className="group" asChild>
+              <a
+                href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2F80FQWEsnGZ7BJSAqKXohcDCYlgRb2IyjM1Hu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Réserver ma partie
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -220,6 +246,19 @@ const QuizBoxing = () => {
               </div>
             ))}
           </div>
+
+          <div className="text-center mt-12">
+            <Button variant="default" size="lg" className="group" asChild>
+              <a
+                href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2F80FQWEsnGZ7BJSAqKXohcDCYlgRb2IyjM1Hu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Réserver maintenant
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -269,6 +308,19 @@ const QuizBoxing = () => {
                   enfants âgés de 12 ans maximum. Le tarif étudiant est réservé aux joueurs de plus de 12 ans,
                   encore scolarisés ou en études supérieures. Un justificatif en cours de validité sera demandé.
                 </p>
+              </div>
+
+              <div className="text-center mt-8">
+                <Button variant="default" size="lg" className="group" asChild>
+                  <a
+                    href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2F80FQWEsnGZ7BJSAqKXohcDCYlgRb2IyjM1Hu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Réserver ma partie
+                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
