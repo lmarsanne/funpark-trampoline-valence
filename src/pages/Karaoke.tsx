@@ -33,7 +33,7 @@ const Karaoke = () => {
             </h1>
 
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Chantez vos chansons préférées dans nos <strong className="font-bold">salles privées</strong> équipées du
+              Chantez vos chansons préférées dans notre <strong className="font-bold">salle privée</strong> équipée du
               dernier système karaoké. Parfait pour les anniversaires, soirées entre amis ou événements d'entreprise.
             </p>
 
@@ -85,8 +85,8 @@ const Karaoke = () => {
               },
               {
                 icon: Users,
-                title: "Salles privées",
-                description: "Espaces privatifs pour 6 à 20 personnes",
+                title: "Salle privée",
+                description: "Espace privatif pour 4 à 12 personnes",
               },
               {
                 icon: Star,
@@ -220,10 +220,10 @@ const Karaoke = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Découvrez nos <span className="text-primary">espaces karaoké</span>
+              Découvrez notre <span className="text-primary">espace karaoké</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              Des salles modernes et conviviales pour des moments inoubliables
+              Une salle moderne et conviviale pour des moments inoubliables
             </p>
           </div>
 
