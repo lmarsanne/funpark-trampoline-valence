@@ -6,6 +6,7 @@ import karaoke2 from "@/assets/karaoke-2.jpg";
 import karaoke3 from "@/assets/karaoke-3.jpg";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { KaraokeFAQ } from "@/components/KaraokeFAQ";
 const Karaoke = () => {
   return (
     <div className="min-h-screen">
@@ -293,6 +294,8 @@ const Karaoke = () => {
           </div>
         </div>
       </section>
+
+      <KaraokeFAQ />
 
       <Footer />
     </div>
