@@ -1,4 +1,5 @@
-import { Zap, Heart, Shield, Users } from "lucide-react";
+import { Zap, Heart, Shield, Users, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import gallery1 from "@/assets/gallery-1.jpg";
 
 const features = [
@@ -81,6 +82,20 @@ export const AboutSection = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* CTA Button */}
+        <div className="text-center mt-12">
+          <Button variant="default" size="lg" className="group" asChild>
+            <a
+              href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2FFpsK4WIXZdbufxO69hcqr2UTy8MPoRDv3V7A"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Réserver maintenant
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </Button>
         </div>
       </div>
     </section>

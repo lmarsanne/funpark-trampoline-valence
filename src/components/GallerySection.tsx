@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
@@ -53,6 +55,20 @@ export const GallerySection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           ))}
+        </div>
+
+        {/* CTA Button */}
+        <div className="text-center mt-12">
+          <Button variant="default" size="lg" className="group" asChild>
+            <a
+              href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2FFpsK4WIXZdbufxO69hcqr2UTy8MPoRDv3V7A"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Réserver maintenant
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </Button>
         </div>
       </div>
     </section>
