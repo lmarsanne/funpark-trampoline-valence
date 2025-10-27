@@ -108,6 +108,43 @@ const Karaoke = () => {
         </div>
       </section>
 
+      {/* Tarifs Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Nos <span className="text-primary">TARIFS</span>
+            </h2>
+            <div className="bg-background rounded-3xl shadow-2xl p-8 md:p-12 max-w-4xl mx-auto">
+              <div className="text-center mb-8">
+                <div className="text-6xl md:text-7xl font-extrabold text-primary mb-2">9€</div>
+                <div className="text-2xl text-muted-foreground">par personne</div>
+                <div className="mt-4 text-lg font-semibold text-foreground">
+                  1 session de 1h minimum • 4 joueurs minimum
+                </div>
+              </div>
+              
+              <div className="border-t border-border pt-8">
+                <h3 className="text-2xl font-bold mb-4 text-center">Un espace Karaoké moderne à Valence</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                  Situé à quelques minutes de Valence, notre espace karaoké privatif est l'activité idéale pour sortir entre amis, organiser un anniversaire original ou fêter un EVJF/EVG dans une ambiance festive. Choisissez vos chansons préférées parmi un large catalogue de hits : variété française, pop internationale, rock, rap, tubes des années 80 ou génériques cultes… il y en a pour tous les goûts !
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                  Le karaoké chez Fun Park Valence Bowling, c'est l'assurance d'un moment unique, que vous soyez chanteur débutant ou star confirmée.
+                </p>
+                
+                <div className="mt-8 pt-6 border-t border-border text-center">
+                  <p className="text-xl font-semibold text-foreground">
+                    📱 <a href="tel:0769482714" className="hover:text-primary transition-colors">07.69.48.27.14</a>
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-1">(WhatsApp dispo ✅)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Gallery Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
