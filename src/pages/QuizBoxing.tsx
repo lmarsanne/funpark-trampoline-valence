@@ -41,7 +41,7 @@ const QuizBoxing = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <Button variant="hero" size="xl" className="group" asChild>
                 <a
-                  href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2FWiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz"
+                  href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2F80FQWEsnGZ7BJSAqKXohcDCYlgRb2IyjM1Hu"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -275,7 +275,7 @@ const QuizBoxing = () => {
 
           <Button variant="hero" size="xl" className="group" asChild>
             <a
-              href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2FWiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz"
+              href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2F80FQWEsnGZ7BJSAqKXohcDCYlgRb2IyjM1Hu"
               target="_blank"
               rel="noopener noreferrer"
             >
