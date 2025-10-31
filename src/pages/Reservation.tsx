@@ -29,6 +29,14 @@ const Reservation = () => {
                   <guidap-reserve-button></guidap-reserve-button>
                 </TableCell>
               </TableRow>
+              <TableRow>
+                <TableCell className="font-medium text-lg">
+                  Kid Jumper 7 à 18 ans
+                </TableCell>
+                <TableCell className="text-right">
+                  <guidap-activity-details-button activity-uuid="x3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV"></guidap-activity-details-button>
+                </TableCell>
+              </TableRow>
             </TableBody>
           </Table>
         </div>
