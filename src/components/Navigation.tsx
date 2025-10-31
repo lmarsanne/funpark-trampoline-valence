@@ -27,7 +27,7 @@ export const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {links.map((link) => 
               link.external ? (
                 <a
@@ -53,6 +53,9 @@ export const Navigation = () => {
                 </Link>
               )
             )}
+            <guidap-reserve-button></guidap-reserve-button>
+            <guidap-use-giftcard-button></guidap-use-giftcard-button>
+            <guidap-cart-button></guidap-cart-button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -95,6 +98,11 @@ export const Navigation = () => {
                 </Link>
               )
             )}
+            <div className="flex flex-col gap-2 pt-2 px-4">
+              <guidap-reserve-button></guidap-reserve-button>
+              <guidap-use-giftcard-button></guidap-use-giftcard-button>
+              <guidap-cart-button></guidap-cart-button>
+            </div>
           </div>
         )}
       </div>
