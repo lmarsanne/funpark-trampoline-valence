@@ -31,7 +31,7 @@ export const HeroSection = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* @ts-ignore */}
-            <guidap-reserve-button></guidap-reserve-button>
+            <guidap-reserve-button data-text="Je réserve" className="guidap-hero-button"></guidap-reserve-button>
             
             <Button 
               variant="outline" 
