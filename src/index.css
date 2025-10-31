@@ -132,6 +132,26 @@ All colors MUST be HSL.
   transform: translateY(-3px) scale(1.05) !important;
 }
 
+.guidap-formula-button {
+  background: hsl(24, 100%, 50%) !important;
+  color: white !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 0.5rem !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: none !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+.guidap-formula-button:hover {
+  background: hsl(24, 100%, 45%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px hsl(24, 100%, 50%, 0.4) !important;
+}
+
 @layer base {
   * {
     @apply border-border;
