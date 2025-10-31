@@ -1,5 +1,4 @@
 import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
 
 const Reservation = () => {
   return (
@@ -13,7 +12,6 @@ const Reservation = () => {
           </p>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };
