@@ -10,7 +10,8 @@ const Reservation = () => {
           <p className="text-lg text-muted-foreground mb-8">
             Choisissez votre créneau et réservez votre activité
           </p>
-          {createElement('guidap-reserve-button')}
+          {/* @ts-ignore */}
+          <guidap-activity-reserve-button activity-uuid="ehCGz9QSMXlTRbYnKptcdoJ8fk10x6VLAUI5"></guidap-activity-reserve-button>
         </div>
       </main>
     </div>
