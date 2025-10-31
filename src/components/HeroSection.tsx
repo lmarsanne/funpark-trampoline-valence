@@ -31,22 +31,11 @@ export const HeroSection = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* @ts-ignore */}
-            <guidap-activity-reserve-button
-              id="guidap-hero-reserve"
+            <guidap-activity-reserve-button 
               activity-uuid="x3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV"
               data-text="Je réserve"
-              className="sr-only"
+              className="guidap-hero-button"
             ></guidap-activity-reserve-button>
-
-            <Button
-              size="xl"
-              className="bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-md hover:shadow-lg hover-scale"
-              onClick={() => {
-                document.getElementById('guidap-hero-reserve')?.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-              }}
-            >
-              Je réserve
-            </Button>
             
             <Button 
               variant="outline" 
