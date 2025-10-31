@@ -18,7 +18,7 @@ const Reservation = () => {
   return <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-1 flex items-center justify-center bg-background p-8">
-        <div className="w-full max-w-4xl">
+        <div className="w-full max-w-2xl">
           <Table>
             <TableBody>
               <TableRow>
