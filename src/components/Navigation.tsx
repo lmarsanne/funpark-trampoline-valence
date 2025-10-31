@@ -53,9 +53,7 @@ export const Navigation = () => {
                 </Link>
               )
             )}
-            {createElement('guidap-reserve-button')}
             {createElement('guidap-use-giftcard-button')}
-            {createElement('guidap-cart-button')}
           </div>
 
           {/* Mobile Menu Button */}
@@ -99,9 +97,7 @@ export const Navigation = () => {
               )
             )}
             <div className="flex flex-col gap-2 pt-2 px-4">
-              {createElement('guidap-reserve-button')}
               {createElement('guidap-use-giftcard-button')}
-              {createElement('guidap-cart-button')}
             </div>
           </div>
         )}
