@@ -99,12 +99,12 @@ export const FormulasSection = () => {
                   ))}
                 </ul>
 
-                {/* @ts-ignore */}
-                <guidap-activity-reserve-button 
-                  activity-uuid="FpsK4WIXZdbufxO69hcqr2UTy8MPoRDv3V7A"
-                  data-text="Je réserve"
-                  className="guidap-formula-button w-full"
-                ></guidap-activity-reserve-button>
+                <a 
+                  href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2FFpsK4WIXZdbufxO69hcqr2UTy8MPoRDv3V7A"
+                  className="inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full transition-colors"
+                >
+                  Je réserve
+                </a>
               </Card>
             );
           })}
