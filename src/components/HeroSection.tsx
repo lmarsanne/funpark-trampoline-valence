@@ -31,16 +31,12 @@ export const HeroSection = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* @ts-ignore */}
-            <guidap-activity-reserve-button 
-              activity-uuid="x3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV"
-              data-text="Je réserve"
-              className="guidap-hero-button"
-            ></guidap-activity-reserve-button>
+            <guidap-reserve-button data-text="Je réserve" className="guidap-hero-button"></guidap-reserve-button>
             
             <Button 
-              variant="secondary" 
+              variant="outline" 
               size="xl"
-              className="bg-gradient-to-r from-blue-500 to-blue-600 text-white border-0 hover:from-blue-600 hover:to-blue-700 shadow-lg shadow-blue-500/40 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full"
+              className="bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm"
               asChild
             >
               <a href="#formules">

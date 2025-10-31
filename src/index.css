@@ -112,58 +112,6 @@ All colors MUST be HSL.
   }
 }
 
-.guidap-hero-button {
-  background: linear-gradient(135deg, hsl(24, 100%, 50%), hsl(16, 100%, 45%)) !important;
-  color: white !important;
-  padding: 0.875rem 2.5rem !important;
-  border-radius: 9999px !important;
-  font-weight: 700 !important;
-  font-size: 1.125rem !important;
-  letter-spacing: 0.025em !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  border: none !important;
-  cursor: pointer !important;
-  box-shadow: 0 4px 20px -2px hsl(24, 100%, 50%, 0.4) !important;
-}
-
-.guidap-hero-button:hover {
-  background: linear-gradient(135deg, hsl(24, 100%, 55%), hsl(16, 100%, 50%)) !important;
-  box-shadow: 0 10px 30px -5px hsl(24, 100%, 50%, 0.6) !important;
-  transform: translateY(-3px) scale(1.05) !important;
-}
-
-.guidap-formula-button {
-  background: hsl(24, 100%, 50%) !important;
-  color: white !important;
-  padding: 0.75rem 2rem !important;
-  border-radius: 0.5rem !important;
-  font-weight: 700 !important;
-  font-size: 1rem !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  border: none !important;
-  cursor: pointer !important;
-  width: 100% !important;
-  display: block !important;
-}
-
-.guidap-formula-button:hover {
-  background: hsl(24, 100%, 45%) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 12px hsl(24, 100%, 50%, 0.4) !important;
-}
-
-/* Guidap iframe overlay background */
-#guidap-overlay,
-.guidap-overlay,
-[id*="guidap"][id*="overlay"],
-[class*="guidap"][class*="overlay"],
-iframe[src*="guidap"] + div,
-body > div[style*="position: fixed"],
-body > div[style*="z-index"] {
-  background: rgba(0, 0, 0, 0.5) !important;
-  backdrop-filter: blur(4px) !important;
-}
-
 @layer base {
   * {
     @apply border-border;
@@ -171,5 +119,32 @@ body > div[style*="z-index"] {
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Guidap Button Styling */
+  guidap-reserve-button,
+  guidap-reserve-button button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    white-space: nowrap !important;
+    border-radius: 0.75rem !important;
+    font-size: 1.125rem !important;
+    font-weight: 700 !important;
+    height: 3.5rem !important;
+    padding: 0 2.5rem !important;
+    background: linear-gradient(135deg, hsl(24 100% 50%) 0%, hsl(48 100% 60%) 100%) !important;
+    color: white !important;
+    box-shadow: 0 0 40px hsl(24 100% 50% / 0.3) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border: none !important;
+    cursor: pointer !important;
+  }
+
+  guidap-reserve-button:hover button,
+  guidap-reserve-button button:hover {
+    box-shadow: 0 0 60px hsl(24 100% 50% / 0.5) !important;
+    transform: scale(1.05) !important;
   }
 }
