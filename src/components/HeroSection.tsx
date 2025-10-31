@@ -31,7 +31,11 @@ export const HeroSection = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* @ts-ignore */}
-            <guidap-activity-reserve-button activity-uuid="x3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV"></guidap-activity-reserve-button>
+            <guidap-activity-reserve-button 
+              activity-uuid="x3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV"
+              data-text="Je réserve"
+              className="guidap-hero-button"
+            ></guidap-activity-reserve-button>
             
             <Button 
               variant="outline" 
