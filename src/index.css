@@ -153,12 +153,15 @@ All colors MUST be HSL.
 }
 
 /* Guidap iframe overlay background */
-#guidap-overlay {
+#guidap-overlay,
+.guidap-overlay,
+[id*="guidap"][id*="overlay"],
+[class*="guidap"][class*="overlay"],
+iframe[src*="guidap"] + div,
+body > div[style*="position: fixed"],
+body > div[style*="z-index"] {
   background: rgba(0, 0, 0, 0.5) !important;
-}
-
-.guidap-overlay {
-  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(4px) !important;
 }
 
 @layer base {
