@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { useEffect } from "react";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 const Reservation = () => {
   useEffect(() => {
     const script = document.createElement('script');
@@ -16,8 +17,21 @@ const Reservation = () => {
   }, []);
   return <div className="min-h-screen flex flex-col">
       <Navigation />
-      <main className="flex-1 flex items-center justify-center bg-background">
-        
+      <main className="flex-1 flex items-center justify-center bg-background p-8">
+        <div className="w-full max-w-4xl">
+          <Table>
+            <TableBody>
+              <TableRow>
+                <TableCell className="font-medium text-lg">
+                  Je réserve mon activité
+                </TableCell>
+                <TableCell className="text-right">
+                  <guidap-reserve-button></guidap-reserve-button>
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
       </main>
     </div>;
 };
