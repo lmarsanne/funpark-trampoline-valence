@@ -34,7 +34,7 @@ const Reservation = () => {
                   Kid Jumper 7 à 18 ans
                 </TableCell>
                 <TableCell className="text-right">
-                  <guidap-activity-details-button activity-uuid="x3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV"></guidap-activity-details-button>
+                  <div dangerouslySetInnerHTML={{ __html: '<guidap-activity-details-button activity-uuid="x3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV"></guidap-activity-details-button>' }} />
                 </TableCell>
               </TableRow>
             </TableBody>
