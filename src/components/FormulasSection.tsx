@@ -99,15 +99,12 @@ export const FormulasSection = () => {
                   ))}
                 </ul>
 
-                <Button 
-                  variant={formula.featured ? "hero" : "cta"} 
-                  className="w-full"
-                  asChild
-                >
-                  <a href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2FFpsK4WIXZdbufxO69hcqr2UTy8MPoRDv3V7A" target="_blank" rel="noopener noreferrer">
-                    Réserver
-                  </a>
-                </Button>
+                {/* @ts-ignore */}
+                <guidap-activity-reserve-button 
+                  activity-uuid="FpsK4WIXZdbufxO69hcqr2UTy8MPoRDv3V7A"
+                  data-text="Je réserve"
+                  className="guidap-formula-button w-full"
+                ></guidap-activity-reserve-button>
               </Card>
             );
           })}

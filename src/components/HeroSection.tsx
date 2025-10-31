@@ -30,22 +30,17 @@ export const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              variant="hero" 
-              size="xl"
-              className="group"
-              asChild
-            >
-              <a href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2Fx3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV" target="_blank" rel="noopener noreferrer">
-                Réserver maintenant
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
+            {/* @ts-ignore */}
+            <guidap-activity-reserve-button 
+              activity-uuid="x3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV"
+              data-text="Je réserve"
+              className="guidap-hero-button"
+            ></guidap-activity-reserve-button>
             
             <Button 
-              variant="outline" 
+              variant="secondary" 
               size="xl"
-              className="bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm"
+              className="bg-gradient-to-r from-blue-500 to-blue-600 text-white border-0 hover:from-blue-600 hover:to-blue-700 shadow-lg shadow-blue-500/40 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full"
               asChild
             >
               <a href="#formules">

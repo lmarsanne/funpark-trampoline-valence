@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Karaoke from "./pages/Karaoke";
 import QuizBoxing from "./pages/QuizBoxing";
 import NotFound from "./pages/NotFound";
+import GuidapOverlay from "@/components/GuidapOverlay";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <GuidapOverlay />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
