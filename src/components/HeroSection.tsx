@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-trampoline.jpg";
 
 export const HeroSection = () => {
@@ -30,12 +31,15 @@ export const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            {/* @ts-ignore */}
-            <guidap-activity-reserve-button 
-              activity-uuid="x3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV"
-              data-text="Je réserve"
-              className="guidap-hero-button"
-            ></guidap-activity-reserve-button>
+            <Button 
+              size="xl"
+              className="bg-gradient-to-r from-primary to-accent text-white border-0 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full shadow-lg hover:shadow-xl"
+              asChild
+            >
+              <Link to="/reservation">
+                Je réserve
+              </Link>
+            </Button>
             
             <Button 
               variant="secondary" 
