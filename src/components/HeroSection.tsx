@@ -30,8 +30,17 @@ export const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            {/* @ts-ignore */}
-            <guidap-reserve-button></guidap-reserve-button>
+            <Button 
+              variant="hero" 
+              size="xl"
+              className="group"
+              asChild
+            >
+              <a href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2Fx3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV" target="_blank" rel="noopener noreferrer">
+                Réserver maintenant
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
             
             <Button 
               variant="outline" 
