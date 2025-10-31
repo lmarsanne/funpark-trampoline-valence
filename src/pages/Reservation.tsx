@@ -26,7 +26,12 @@ const Reservation = () => {
                   Je réserve mon activité
                 </TableCell>
                 <TableCell className="text-right">
-                  <guidap-reserve-button></guidap-reserve-button>
+                  <a 
+                    href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2FFpsK4WIXZdbufxO69hcqr2UTy8MPoRDv3V7A"
+                    className="inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+                  >
+                    Réserver
+                  </a>
                 </TableCell>
               </TableRow>
               <TableRow>

@@ -36,9 +36,9 @@ export const HeroSection = () => {
               className="bg-gradient-to-r from-primary to-accent text-white border-0 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full shadow-lg hover:shadow-xl"
               asChild
             >
-              <Link to="/reservation">
+              <a href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2FFpsK4WIXZdbufxO69hcqr2UTy8MPoRDv3V7A">
                 Je réserve
-              </Link>
+              </a>
             </Button>
             
             <Button 
