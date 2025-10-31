@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, createElement } from "react";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,9 +53,9 @@ export const Navigation = () => {
                 </Link>
               )
             )}
-            <guidap-reserve-button></guidap-reserve-button>
-            <guidap-use-giftcard-button></guidap-use-giftcard-button>
-            <guidap-cart-button></guidap-cart-button>
+            {createElement('guidap-reserve-button')}
+            {createElement('guidap-use-giftcard-button')}
+            {createElement('guidap-cart-button')}
           </div>
 
           {/* Mobile Menu Button */}
@@ -99,9 +99,9 @@ export const Navigation = () => {
               )
             )}
             <div className="flex flex-col gap-2 pt-2 px-4">
-              <guidap-reserve-button></guidap-reserve-button>
-              <guidap-use-giftcard-button></guidap-use-giftcard-button>
-              <guidap-cart-button></guidap-cart-button>
+              {createElement('guidap-reserve-button')}
+              {createElement('guidap-use-giftcard-button')}
+              {createElement('guidap-cart-button')}
             </div>
           </div>
         )}
