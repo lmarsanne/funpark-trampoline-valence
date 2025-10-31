@@ -152,6 +152,15 @@ All colors MUST be HSL.
   box-shadow: 0 4px 12px hsl(24, 100%, 50%, 0.4) !important;
 }
 
+/* Guidap iframe overlay background */
+#guidap-overlay {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.guidap-overlay {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
 @layer base {
   * {
     @apply border-border;
