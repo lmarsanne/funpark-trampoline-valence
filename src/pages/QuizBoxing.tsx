@@ -36,7 +36,7 @@ const QuizBoxing = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 overflow-hidden">
+      <section className="relative pt-24 pb-16 overflow-hidden">
         {/* Background Image with overlay */}
         <div className="absolute inset-0 bg-cover bg-center" style={{
         backgroundImage: `url(${heroQuizBoxing})`
@@ -80,7 +80,7 @@ const QuizBoxing = () => {
       </section>
 
       {/* Vidéo Section */}
-      <section className="py-20 bg-background">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
@@ -103,7 +103,7 @@ const QuizBoxing = () => {
       </section>
 
       {/* Section Affrontez vos émotions */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
             Affrontez vos <span className="text-primary">émotions</span>
@@ -147,7 +147,7 @@ const QuizBoxing = () => {
       </section>
 
       {/* Section Un jeu immersif sur mesure */}
-      <section className="py-20 bg-background">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
@@ -246,7 +246,7 @@ const QuizBoxing = () => {
       </section>
 
       {/* Avantages Section */}
-      <section className="py-20 bg-background">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Salle privative */}
@@ -283,7 +283,7 @@ const QuizBoxing = () => {
       </section>
 
       {/* Tarifs Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
+      <section className="py-12 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
@@ -360,7 +360,7 @@ const QuizBoxing = () => {
       </section>
 
       {/* Réservation Section */}
-      <section id="reservation-quiz-boxing" className="py-20 bg-background">
+      <section id="reservation-quiz-boxing" className="py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
@@ -406,7 +406,7 @@ const QuizBoxing = () => {
       </section>
 
       {/* Informations pratiques */}
-      <section id="info-pratiques" className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
+      <section id="info-pratiques" className="py-12 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
@@ -474,7 +474,7 @@ const QuizBoxing = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="py-20 bg-gradient-to-r from-primary via-accent to-primary text-white relative overflow-hidden">
+      <section className="py-12 bg-gradient-to-r from-primary via-accent to-primary text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20" />
         
         <div className="container mx-auto px-4 text-center relative z-10">
