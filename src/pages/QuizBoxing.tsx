@@ -202,7 +202,7 @@ const QuizBoxing = () => {
       </section>
 
       {/* Pour quelles occasions Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
             Pour quelles <span className="text-primary">occasions ?</span>
