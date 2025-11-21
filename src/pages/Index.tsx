@@ -19,12 +19,6 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
       <HeroSection />
-      <AboutSection />
-      <FormulasSection />
-      <BirthdaySection />
-      <GallerySection />
-      <FAQSection />
-      <ContactSection />
       
       {/* Réservation Section */}
       <section id="reservation" className="py-12 bg-background">
@@ -72,6 +66,13 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
+      <AboutSection />
+      <FormulasSection />
+      <BirthdaySection />
+      <GallerySection />
+      <FAQSection />
+      <ContactSection />
 
       <InfoSection />
       <CTASection />
