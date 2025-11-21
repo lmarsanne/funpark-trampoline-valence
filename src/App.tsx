@@ -9,6 +9,7 @@ import QuizBoxing from "./pages/QuizBoxing";
 import Reservation from "./pages/Reservation";
 import NotFound from "./pages/NotFound";
 import GuidapOverlay from "@/components/GuidapOverlay";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
       <Sonner />
       <GuidapOverlay />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/karaoke" element={<Karaoke />} />
