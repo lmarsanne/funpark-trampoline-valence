@@ -12,7 +12,7 @@ export const HeroSection = () => {
   return (
     <section className="pt-16">
       {/* Video Section */}
-      <div className="w-full bg-black">
+      <div className="w-full bg-gradient-to-r from-primary via-primary to-accent">
         <div className="container mx-auto px-4 py-8">
           <div className="aspect-video max-w-6xl mx-auto">
             <iframe
