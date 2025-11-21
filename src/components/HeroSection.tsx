@@ -12,9 +12,9 @@ export const HeroSection = () => {
   return (
     <section className="pt-16">
       {/* Title Section */}
-      <div className="bg-gradient-to-r from-primary via-primary to-accent py-6">
+      <div className="bg-gradient-to-r from-primary via-primary to-accent py-4 md:py-6">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-4 leading-tight animate-fade-in-up">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-white mb-3 md:mb-4 leading-tight animate-fade-in-up">
             Découvrez notre <br />
             <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
               Trampoline Park
@@ -27,7 +27,7 @@ export const HeroSection = () => {
 
       {/* Video Section */}
       <div className="w-full bg-gradient-to-r from-primary via-primary to-accent">
-        <div className="w-full md:container md:mx-auto px-0 md:px-4 py-4">
+        <div className="w-full md:container md:mx-auto px-0 md:px-4 py-2 md:py-4">
           <div className="aspect-video w-full md:max-w-6xl md:mx-auto">
             <iframe
               src="https://player.vimeo.com/video/1139328631?autoplay=1&loop=1&byline=0&title=0&muted=1"
@@ -41,36 +41,34 @@ export const HeroSection = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="relative min-h-[40vh] flex items-center justify-center overflow-hidden bg-gradient-to-r from-primary via-primary to-accent">
-        <div className="relative z-10 container mx-auto px-4 py-8 text-center">
-        <div className="animate-fade-in-up">
-          
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-            <strong className="font-bold">400 m²</strong> d'activités pour petits et grands dans un espace sécurisé, fun et <strong className="font-bold">100 % sensations.</strong>
-          </p>
+      <div className="relative min-h-[30vh] md:min-h-[40vh] flex items-center justify-center overflow-hidden bg-gradient-to-r from-primary via-primary to-accent">
+        <div className="relative z-10 container mx-auto px-4 py-6 md:py-8 text-center">
+          <div className="animate-fade-in-up">
+            <p className="text-base sm:text-lg md:text-2xl text-white/90 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
+              <strong className="font-bold">400 m²</strong> d'activités pour petits et grands dans un espace sécurisé, fun et <strong className="font-bold">100 % sensations.</strong>
+            </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="xl"
-              className="bg-gradient-to-r from-primary to-accent text-white border-0 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full shadow-lg hover:shadow-xl"
-              onClick={scrollToReservation}
-            >
-              Je réserve
-            </Button>
-            
-            <Button 
-              variant="secondary" 
-              size="xl"
-              className="bg-gradient-to-r from-blue-500 to-blue-600 text-white border-0 hover:from-blue-600 hover:to-blue-700 shadow-lg shadow-blue-500/40 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full"
-              asChild
-            >
-              <a href="#formules">
-                Voir les tarifs
-              </a>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
+              <Button 
+                size="lg"
+                className="w-full sm:w-auto bg-gradient-to-r from-primary to-accent text-white border-0 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full shadow-lg hover:shadow-xl"
+                onClick={scrollToReservation}
+              >
+                Je réserve
+              </Button>
+              
+              <Button 
+                variant="secondary" 
+                size="lg"
+                className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 text-white border-0 hover:from-blue-600 hover:to-blue-700 shadow-lg shadow-blue-500/40 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full"
+                asChild
+              >
+                <a href="#formules">
+                  Voir les tarifs
+                </a>
+              </Button>
+            </div>
           </div>
-        </div>
-
         </div>
       </div>
     </section>
