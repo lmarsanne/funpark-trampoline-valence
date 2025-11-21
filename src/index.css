@@ -160,8 +160,7 @@ All colors MUST be HSL.
 iframe[src*="guidap"] + div,
 body > div[style*="position: fixed"],
 body > div[style*="z-index"] {
-  background: rgba(0, 0, 0, 0.5) !important;
-  backdrop-filter: blur(4px) !important;
+  background: rgba(0, 0, 0, 0.6) !important;
 }
 
 @layer base {
