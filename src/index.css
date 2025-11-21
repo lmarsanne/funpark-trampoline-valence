@@ -152,17 +152,6 @@ All colors MUST be HSL.
   box-shadow: 0 4px 12px hsl(24, 100%, 50%, 0.4) !important;
 }
 
-/* Guidap iframe overlay background */
-#guidap-overlay,
-.guidap-overlay,
-[id*="guidap"][id*="overlay"],
-[class*="guidap"][class*="overlay"],
-iframe[src*="guidap"] + div,
-body > div[style*="position: fixed"],
-body > div[style*="z-index"] {
-  background: rgba(0, 0, 0, 0.6) !important;
-}
-
 /* Remove all blur effects globally */
 * {
   backdrop-filter: none !important;
