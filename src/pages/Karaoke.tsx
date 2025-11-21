@@ -137,17 +137,16 @@ const Karaoke = () => {
 
       {/* Popup Réservation */}
       <Dialog open={isReservationOpen} onOpenChange={setIsReservationOpen}>
-        <DialogContent className="max-w-6xl w-[95vw] max-h-[95vh] p-0 overflow-hidden">
-          <DialogHeader className="px-6 pt-6 pb-2">
+        <DialogContent className="max-w-7xl w-[98vw] h-[95vh] p-0 overflow-hidden">
+          <DialogHeader className="px-6 pt-6 pb-4 border-b bg-background">
             <DialogTitle className="text-2xl font-bold">
               Réservation Karaoké
             </DialogTitle>
           </DialogHeader>
-          <div className="w-full h-[calc(95vh-80px)] overflow-auto">
+          <div className="w-full h-[calc(95vh-100px)] bg-background">
             <iframe
               src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close&g-fn[0]=openActivityDetails&g-params[0]=[%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22]"
-              className="w-full border-0"
-              style={{ minHeight: '900px' }}
+              className="w-full h-full border-0"
               loading="lazy"
               title="Réservation Karaoké"
             />
