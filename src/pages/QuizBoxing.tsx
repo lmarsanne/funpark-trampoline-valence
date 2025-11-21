@@ -202,85 +202,10 @@ const QuizBoxing = () => {
       </section>
 
       {/* Pour quelles occasions Section */}
-      <section className="py-12 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-            Pour quelles <span className="text-primary">occasions ?</span>
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Entre amis */}
-            <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105">
-              
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3 text-foreground">Entre amis</h3>
-                <p className="text-muted-foreground">
-                  Compétition acharnée, trahisons mémorables, victoires éclatantes.
-                </p>
-              </div>
-            </div>
-
-            {/* En famille */}
-            <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105">
-              
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3 text-foreground">En famille</h3>
-                <p className="text-muted-foreground">
-                  Générations réunies autour de questions pour tous, du plus petit au plus grand.
-                </p>
-              </div>
-            </div>
-
-            {/* Entre collègues */}
-            <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105">
-              
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3 text-foreground">Entre collègues</h3>
-                <p className="text-muted-foreground">
-                  Team building ludique, afterwork décalé, séminaire qui sort de l'ordinaire.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Avantages Section */}
-      <section className="py-12 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Salle privative */}
-            <div className="bg-gradient-to-br from-card to-muted/10 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all hover:scale-105 text-center border-t-4 border-primary">
-              <div className="text-6xl mb-4">🎯</div>
-              <h3 className="text-2xl font-bold mb-2 text-foreground">Salle privative</h3>
-              <p className="text-sm text-primary font-semibold mb-3">Votre arène, vos règles.</p>
-              <p className="text-muted-foreground">
-                Affrontez-vous dans une salle dédiée, sans jugement extérieur.
-              </p>
-            </div>
-
-            {/* 4 Rounds variés */}
-            <div className="bg-gradient-to-br from-card to-muted/10 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all hover:scale-105 text-center border-t-4 border-secondary">
-              <div className="text-6xl mb-4">🧠</div>
-              <h3 className="text-2xl font-bold mb-2 text-foreground">4 Rounds variés</h3>
-              <p className="text-sm text-secondary font-semibold mb-3">Quiz, Blind Test, Juste Prix, Vrai ou Faux.</p>
-              <p className="text-muted-foreground">
-                Des challenges ultra-différents pour ne jamais s'ennuyer.
-              </p>
-            </div>
-
-            {/* Jokers délirants */}
-            <div className="bg-gradient-to-br from-card to-muted/10 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all hover:scale-105 text-center border-t-4 border-accent">
-              <div className="text-6xl mb-4">🃏</div>
-              <h3 className="text-2xl font-bold mb-2 text-foreground">Jokers délirants</h3>
-              <p className="text-sm text-accent font-semibold mb-3">Assommer, parier, voler : tous les coups sont permis.</p>
-              <p className="text-muted-foreground">
-                Trichez, bluffez, sabotez... bienvenue dans l'arène !
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Tarifs Section */}
       <section className="py-12 bg-gradient-to-br from-primary/5 to-accent/5">
@@ -474,28 +399,7 @@ const QuizBoxing = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="py-12 bg-gradient-to-r from-primary via-accent to-primary text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20" />
-        
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
-            Toujours hésitant ? Venez défier vos amis au Quiz Boxing et créez vos meilleurs souvenirs de compétition 🏆
-          </h2>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-            <Button variant="hero" size="xl" className="group bg-white text-primary hover:bg-white/90" onClick={scrollToReservation}>
-              Réserver en ligne
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="outline" size="xl" className="group border-white text-white hover:bg-white/10" asChild>
-              <a href="mailto:valencebowling@gmail.com">
-                Nous contacter
-                <Mail className="ml-2" />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      
 
       <QuizBoxingFAQ />
 
