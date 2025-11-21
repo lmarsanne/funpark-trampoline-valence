@@ -66,7 +66,7 @@ const Karaoke = () => {
       </section>
 
       {/* Réservation Section */}
-      <section id="reservation-karaoke" className="py-20 bg-background">
+      <section id="reservation-karaoke" className="py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
