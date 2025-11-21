@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, X } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { KaraokeFAQ } from "@/components/KaraokeFAQ";
@@ -12,16 +11,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 
 const Karaoke = () => {
-  const [isReservationOpen, setIsReservationOpen] = useState(false);
-
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -125,34 +116,41 @@ const Karaoke = () => {
                 variant="default" 
                 size="lg" 
                 className="group"
-                onClick={() => setIsReservationOpen(true)}
+                asChild
               >
-                Réserver ma session karaoké
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                <a href="#reservation-karaoke">
+                  Réserver ma session karaoké
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Popup Réservation */}
-      <Dialog open={isReservationOpen} onOpenChange={setIsReservationOpen}>
-        <DialogContent className="max-w-7xl w-[98vw] h-[95vh] p-0 overflow-hidden">
-          <DialogHeader className="px-6 pt-6 pb-4 border-b bg-background">
-            <DialogTitle className="text-2xl font-bold">
-              Réservation Karaoké
-            </DialogTitle>
-          </DialogHeader>
-          <div className="w-full h-[calc(95vh-100px)] bg-background">
+      {/* Section Réservation avec iFrame */}
+      <section id="reservation-karaoke" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Réserver <span className="text-primary">votre session</span>
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Choisissez votre créneau et réservez directement en ligne
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto bg-card rounded-2xl shadow-xl overflow-hidden">
             <iframe
               src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close&g-fn[0]=openActivityDetails&g-params[0]=[%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22]"
-              className="w-full h-full border-0"
+              className="w-full border-0"
+              style={{ minHeight: '900px' }}
               loading="lazy"
               title="Réservation Karaoké"
             />
           </div>
-        </DialogContent>
-      </Dialog>
+        </div>
+      </section>
 
       <KaraokeFAQ />
 
