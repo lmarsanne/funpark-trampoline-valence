@@ -1,6 +1,8 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { KaraokeFAQ } from "@/components/KaraokeFAQ";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -107,6 +109,45 @@ const Karaoke = () => {
             <p className="text-sm text-muted-foreground text-center mt-4 italic">
               *Sur présentation d'une carte étudiante en cours de validité.
             </p>
+
+            {/* Bouton Réservation */}
+            <div className="text-center mt-12">
+              <Button 
+                variant="default" 
+                size="lg" 
+                className="group"
+                asChild
+              >
+                <a href="#reservation-karaoke">
+                  Réserver ma session karaoké
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Réservation avec iFrame */}
+      <section id="reservation-karaoke" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Réserver <span className="text-primary">votre session</span>
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Choisissez votre créneau et réservez directement en ligne
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto bg-card rounded-2xl shadow-xl overflow-hidden">
+            <iframe
+              src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close&g-fn[0]=openActivityDetails&g-params[0]=[%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22]"
+              className="w-full border-0"
+              style={{ minHeight: '900px' }}
+              loading="lazy"
+              title="Réservation Karaoké"
+            />
           </div>
         </div>
       </section>
