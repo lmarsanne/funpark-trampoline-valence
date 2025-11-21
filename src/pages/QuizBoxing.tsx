@@ -14,10 +14,8 @@ import emotionSurprise from "@/assets/quiz-emotion-surprise.png";
 import quizThemes from "@/assets/quiz-themes.png";
 import quizRounds from "@/assets/quiz-rounds.png";
 import quizJokers from "@/assets/quiz-jokers.png";
-
 const QuizBoxing = () => {
   const reservationUrl = "https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2F80FQWEsnGZ7BJSAqKXohcDCYlgRb2IyjM1Hu%2Fundefined%2FDEPARTURE";
-
   const scrollToReservation = () => {
     const element = document.getElementById('reservation-quiz-boxing');
     if (element) {
@@ -26,7 +24,6 @@ const QuizBoxing = () => {
       });
     }
   };
-
   const scrollToInfo = () => {
     const element = document.getElementById('info-pratiques');
     if (element) {
@@ -35,18 +32,15 @@ const QuizBoxing = () => {
       });
     }
   };
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navigation />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 overflow-hidden">
         {/* Background Image with overlay */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center" 
-          style={{ backgroundImage: `url(${heroQuizBoxing})` }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: `url(${heroQuizBoxing})`
+      }}>
           <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background"></div>
         </div>
 
@@ -93,15 +87,12 @@ const QuizBoxing = () => {
               Découvrez le concept <span className="text-primary">en vidéo</span>
             </h2>
             
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://player.vimeo.com/video/895781107?h=0&title=0&byline=0&portrait=0"
-                title="Quiz Boxing - Concept en vidéo"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                style={{ border: 'none' }}
-              />
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{
+            paddingBottom: '56.25%'
+          }}>
+              <iframe className="absolute top-0 left-0 w-full h-full" src="https://player.vimeo.com/video/895781107?h=0&title=0&byline=0&portrait=0" title="Quiz Boxing - Concept en vidéo" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{
+              border: 'none'
+            }} />
             </div>
             
             <p className="text-center text-muted-foreground mt-6">
@@ -170,11 +161,7 @@ const QuizBoxing = () => {
               {/* Thèmes personnalisables */}
               <div className="text-center">
                 <div className="mb-6 flex justify-center">
-                  <img 
-                    src={quizThemes} 
-                    alt="Thèmes personnalisables Quiz Boxing" 
-                    className="w-full max-w-sm"
-                  />
+                  <img src={quizThemes} alt="Thèmes personnalisables Quiz Boxing" className="w-full max-w-sm" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">
                   Thèmes personnalisables
@@ -187,11 +174,7 @@ const QuizBoxing = () => {
               {/* Rounds variés et intenses */}
               <div className="text-center">
                 <div className="mb-6 flex justify-center">
-                  <img 
-                    src={quizRounds} 
-                    alt="Rounds variés et intenses Quiz Boxing" 
-                    className="w-full max-w-sm"
-                  />
+                  <img src={quizRounds} alt="Rounds variés et intenses Quiz Boxing" className="w-full max-w-sm" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">
                   Des rounds<br />variés et intenses
@@ -204,11 +187,7 @@ const QuizBoxing = () => {
               {/* Jokers délirants */}
               <div className="text-center">
                 <div className="mb-6 flex justify-center">
-                  <img 
-                    src={quizJokers} 
-                    alt="Jokers délirants Quiz Boxing" 
-                    className="w-full max-w-sm"
-                  />
+                  <img src={quizJokers} alt="Jokers délirants Quiz Boxing" className="w-full max-w-sm" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">
                   Des jokers<br />délirants
@@ -232,13 +211,7 @@ const QuizBoxing = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Entre amis */}
             <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105">
-              <div className="h-56 overflow-hidden">
-                <img 
-                  src={quizFriends} 
-                  alt="Entre amis au Quiz Boxing" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-3 text-foreground">Entre amis</h3>
                 <p className="text-muted-foreground">
@@ -249,13 +222,7 @@ const QuizBoxing = () => {
 
             {/* En famille */}
             <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105">
-              <div className="h-56 overflow-hidden">
-                <img 
-                  src={quizFamily} 
-                  alt="En famille au Quiz Boxing" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-3 text-foreground">En famille</h3>
                 <p className="text-muted-foreground">
@@ -266,13 +233,7 @@ const QuizBoxing = () => {
 
             {/* Entre collègues */}
             <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105">
-              <div className="h-56 overflow-hidden">
-                <img 
-                  src={quizColleagues} 
-                  alt="Entre collègues au Quiz Boxing" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-3 text-foreground">Entre collègues</h3>
                 <p className="text-muted-foreground">
@@ -522,21 +483,11 @@ const QuizBoxing = () => {
           </h2>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-            <Button 
-              variant="hero" 
-              size="xl" 
-              className="group bg-white text-primary hover:bg-white/90"
-              onClick={scrollToReservation}
-            >
+            <Button variant="hero" size="xl" className="group bg-white text-primary hover:bg-white/90" onClick={scrollToReservation}>
               Réserver en ligne
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button 
-              variant="outline" 
-              size="xl" 
-              className="group border-white text-white hover:bg-white/10"
-              asChild
-            >
+            <Button variant="outline" size="xl" className="group border-white text-white hover:bg-white/10" asChild>
               <a href="mailto:valencebowling@gmail.com">
                 Nous contacter
                 <Mail className="ml-2" />
@@ -549,8 +500,6 @@ const QuizBoxing = () => {
       <QuizBoxingFAQ />
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default QuizBoxing;
