@@ -1,7 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-trampoline.jpg";
 
 export const HeroSection = () => {
   const scrollToReservation = () => {
@@ -13,11 +11,20 @@ export const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
+      {/* Background Video */}
+      <div className="absolute inset-0">
+        <iframe
+          src="https://player.vimeo.com/video/1139328631?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ 
+            border: 'none',
+            width: '100vw',
+            height: '100vh',
+            pointerEvents: 'none'
+          }}
+          allow="autoplay; fullscreen"
+          title="Hero Video"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-accent/90" />
       </div>
 
