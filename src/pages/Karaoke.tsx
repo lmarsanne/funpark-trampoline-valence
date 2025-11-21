@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { KaraokeFAQ } from "@/components/KaraokeFAQ";
@@ -11,8 +12,16 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const Karaoke = () => {
+  const [isReservationOpen, setIsReservationOpen] = useState(false);
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -109,42 +118,42 @@ const Karaoke = () => {
             <p className="text-sm text-muted-foreground text-center mt-4 italic">
               *Sur présentation d'une carte étudiante en cours de validité.
             </p>
+
+            {/* Bouton Réservation */}
+            <div className="text-center mt-12">
+              <Button 
+                variant="default" 
+                size="lg" 
+                className="group"
+                onClick={() => setIsReservationOpen(true)}
+              >
+                Réserver ma session karaoké
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Bouton Panier */}
-      <section className="py-12 bg-gradient-to-br from-primary/10 to-accent/10">
-        <div className="container mx-auto px-4 text-center">
-          <Button variant="default" size="lg" className="group" asChild>
-            <a href="/panier">
-              Voir mon panier
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </Button>
-        </div>
-      </section>
-
-      {/* Réservation iFrame Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Réserver <span className="text-primary">votre session</span>
-            </h2>
-          </div>
-
-          <div className="max-w-6xl mx-auto">
+      {/* Popup Réservation */}
+      <Dialog open={isReservationOpen} onOpenChange={setIsReservationOpen}>
+        <DialogContent className="max-w-6xl w-[95vw] max-h-[95vh] p-0 overflow-hidden">
+          <DialogHeader className="px-6 pt-6 pb-2">
+            <DialogTitle className="text-2xl font-bold">
+              Réservation Karaoké
+            </DialogTitle>
+          </DialogHeader>
+          <div className="w-full h-[calc(95vh-80px)] overflow-auto">
             <iframe
               src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close&g-fn[0]=openActivityDetails&g-params[0]=[%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22]"
-              className="w-full border-0 rounded-xl shadow-lg"
+              className="w-full border-0"
               style={{ minHeight: '900px' }}
               loading="lazy"
               title="Réservation Karaoké"
             />
           </div>
-        </div>
-      </section>
+        </DialogContent>
+      </Dialog>
 
       <KaraokeFAQ />
 
