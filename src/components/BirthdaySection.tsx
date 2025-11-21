@@ -3,6 +3,13 @@ import { Cake, PartyPopper, Gift, ArrowRight } from "lucide-react";
 import birthdayImage from "@/assets/birthday-party.jpg";
 
 export const BirthdaySection = () => {
+  const scrollToReservation = () => {
+    const element = document.getElementById('reservation');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-20 bg-gradient-to-br from-secondary/10 via-accent/10 to-primary/10 relative overflow-hidden">
       {/* Decorative elements */}
@@ -70,11 +77,14 @@ export const BirthdaySection = () => {
               </div>
             </div>
 
-            <Button variant="hero" size="xl" className="group" asChild>
-              <a href="https://www.valence-bowling.com/groupe/" target="_blank" rel="noopener noreferrer">
-                Demander un devis
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </a>
+            <Button 
+              variant="hero" 
+              size="xl" 
+              className="group"
+              onClick={scrollToReservation}
+            >
+              Demander un devis
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
 

@@ -1,6 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Phone, Mail } from "lucide-react";
 export const CTASection = () => {
+  const scrollToReservation = () => {
+    const element = document.getElementById('reservation');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return <section className="py-20 bg-gradient-to-br from-primary via-accent to-secondary relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-20">
@@ -19,17 +26,23 @@ export const CTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button variant="hero" size="xl" className="group bg-white text-primary hover:bg-white/90 shadow-2xl" asChild>
-              <a href="https://www.valence-bowling.com/trampoline/" target="_blank" rel="noopener noreferrer">
-                Réserver maintenant
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </a>
+            <Button 
+              variant="hero" 
+              size="xl" 
+              className="group bg-white text-primary hover:bg-white/90 shadow-2xl"
+              onClick={scrollToReservation}
+            >
+              Réserver maintenant
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             
-            <Button variant="outline" size="xl" className="bg-white/10 text-white border-white/50 hover:bg-white/20 backdrop-blur-sm" asChild>
-              <a href="https://www.valence-bowling.com/groupe/" target="_blank" rel="noopener noreferrer">
-                Demander un devis groupe
-              </a>
+            <Button 
+              variant="outline" 
+              size="xl" 
+              className="bg-white/10 text-white border-white/50 hover:bg-white/20 backdrop-blur-sm"
+              onClick={scrollToReservation}
+            >
+              Demander un devis groupe
             </Button>
           </div>
 
