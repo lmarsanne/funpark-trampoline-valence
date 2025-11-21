@@ -8,7 +8,7 @@ export const CTASection = () => {
     }
   };
 
-  return <section className="py-20 bg-gradient-to-br from-primary via-accent to-secondary relative overflow-hidden">
+  return <section className="py-12 bg-gradient-to-br from-primary via-accent to-secondary relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl animate-float" />
