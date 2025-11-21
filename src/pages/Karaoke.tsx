@@ -60,15 +60,7 @@ const Karaoke = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="group text-lg px-8 py-6" onClick={scrollToReservation}>
-                Réserver ma session karaoké
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6" onClick={scrollToInfo}>
-                Privatiser pour un événement
-              </Button>
-            </div>
+            
           </div>
         </div>
       </section>
