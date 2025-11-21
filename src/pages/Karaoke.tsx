@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { KaraokeFAQ } from "@/components/KaraokeFAQ";
 import {
   Table,
   TableBody,
@@ -144,6 +145,8 @@ const Karaoke = () => {
           </div>
         </div>
       </section>
+
+      <KaraokeFAQ />
 
       <Footer />
     </div>
