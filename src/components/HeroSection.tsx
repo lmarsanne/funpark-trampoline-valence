@@ -41,8 +41,8 @@ export const HeroSection = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-r from-primary via-primary to-accent">
-        <div className="relative z-10 container mx-auto px-4 py-12 text-center">
+      <div className="relative min-h-[40vh] flex items-center justify-center overflow-hidden bg-gradient-to-r from-primary via-primary to-accent">
+        <div className="relative z-10 container mx-auto px-4 py-8 text-center">
         <div className="animate-fade-in-up">
           
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
