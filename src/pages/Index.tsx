@@ -21,7 +21,6 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <FormulasSection />
-      <InfoSection />
       <BirthdaySection />
       <GallerySection />
       <FAQSection />
@@ -74,6 +73,7 @@ const Index = () => {
         </div>
       </section>
 
+      <InfoSection />
       <CTASection />
       <Footer />
     </div>
