@@ -10,7 +10,7 @@ import quizFamily from "@/assets/quiz-boxing-family.jpg";
 import quizColleagues from "@/assets/quiz-boxing-colleagues.jpg";
 
 const QuizBoxing = () => {
-  const reservationUrl = "https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2F80FQWEsnGZ7BJSAqKXohcDCYlgRb2IyjM1Hu";
+  const reservationUrl = "https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2F80FQWEsnGZ7BJSAqKXohcDCYlgRb2IyjM1Hu%2Fundefined%2FDEPARTURE";
 
   const scrollToReservation = () => {
     const element = document.getElementById('reservation-quiz-boxing');
@@ -28,10 +28,6 @@ const QuizBoxing = () => {
         behavior: 'smooth'
       });
     }
-  };
-
-  const handleReservation = () => {
-    window.open(reservationUrl, '_blank');
   };
 
   return (
@@ -293,16 +289,13 @@ const QuizBoxing = () => {
               </div>
             </div>
 
-            {/* Bouton vers réservation externe */}
-            <div className="text-center">
-              <Button 
-                size="lg" 
-                className="group text-lg px-8 py-6"
-                onClick={handleReservation}
-              >
-                Ouvrir le système de réservation
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
+            {/* Iframe */}
+            <div className="bg-card rounded-2xl shadow-xl overflow-hidden" style={{
+            height: '800px'
+          }}>
+              <iframe src={reservationUrl} className="w-full h-full" title="Réservation Quiz Boxing" style={{
+              border: 'none'
+            }} />
             </div>
           </div>
         </div>
