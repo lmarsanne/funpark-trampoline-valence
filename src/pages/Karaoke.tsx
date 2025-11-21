@@ -295,6 +295,26 @@ const Karaoke = () => {
         </div>
       </section>
 
+      {/* Reservation iFrame Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Réserver <span className="text-primary">maintenant</span>
+            </h2>
+          </div>
+          
+          <div className="max-w-6xl mx-auto">
+            <iframe
+              src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close&g-fn[0]=openActivityDetails&g-params[0]=[%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22]"
+              className="w-full border-0"
+              style={{ minHeight: '900px' }}
+              title="Réservation Karaoké"
+            />
+          </div>
+        </div>
+      </section>
+
       <KaraokeFAQ />
 
       <Footer />
