@@ -30,7 +30,7 @@ const Karaoke = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 overflow-hidden">
+      <section className="relative pt-24 pb-16 overflow-hidden">
         {/* Background Image with overlay */}
         <div className="absolute inset-0 bg-cover bg-center" style={{
         backgroundImage: `url(${heroKaraoke})`
