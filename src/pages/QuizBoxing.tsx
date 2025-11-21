@@ -8,6 +8,7 @@ import heroQuizBoxing from "@/assets/hero-quiz-boxing.jpg";
 import quizFriends from "@/assets/quiz-boxing-friends.jpg";
 import quizFamily from "@/assets/quiz-boxing-family.jpg";
 import quizColleagues from "@/assets/quiz-boxing-colleagues.jpg";
+import emotionJoie from "@/assets/quiz-emotion-joie.png";
 
 const QuizBoxing = () => {
   const reservationUrl = "https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2F80FQWEsnGZ7BJSAqKXohcDCYlgRb2IyjM1Hu%2Fundefined%2FDEPARTURE";
@@ -115,7 +116,9 @@ const QuizBoxing = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* La Joie */}
             <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105 text-center p-8">
-              <div className="text-7xl mb-6">😄</div>
+              <div className="mb-6 flex justify-center">
+                <img src={emotionJoie} alt="La joie - Quiz Boxing" className="w-48 h-48 object-cover rounded-xl" />
+              </div>
               <h3 className="text-3xl font-bold mb-4 text-foreground">LA JOIE</h3>
               <p className="text-muted-foreground leading-relaxed">
                 De se retrouver en famille, entre amis ou collègues de travail pendant 60 minutes dans une incroyable arène immersive, digne d'un jeu TV Grandeur Nature.
