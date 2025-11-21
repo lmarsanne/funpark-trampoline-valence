@@ -46,32 +46,84 @@ export const InfoSection = () => {
         })}
         </div>
 
-        <div className="mt-16 max-w-6xl mx-auto bg-card rounded-3xl p-8 border border-border shadow-lg">
-          <h3 className="text-2xl font-bold text-foreground mb-6 text-center">Horaires d'ouverture</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="space-y-2">
-              <p className="font-bold text-foreground text-lg mb-3">Horaires classiques   </p>
-              <p className="text-muted-foreground text-sm">Fermé lundi et mardi</p>
-              <p className="text-muted-foreground">Mercredi : 14h00 – 00h00</p>
-              <p className="text-muted-foreground">Jeudi : 18h00 – 00h00</p>
-              <p className="text-muted-foreground">Vendredi : 18h00 – 02h00</p>
-              <p className="text-muted-foreground">Samedi : 14h00 – 02h00</p>
-              <p className="text-muted-foreground">Dimanche : 14h00 – 20h00</p>
+        <div className="mt-16 max-w-4xl mx-auto">
+          <h3 className="text-3xl font-bold text-foreground mb-8 text-center">Horaires d'ouverture</h3>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-card rounded-2xl p-6 border border-border shadow-lg hover:shadow-xl transition-shadow">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                  <Calendar className="w-6 h-6 text-white" />
+                </div>
+                <h4 className="text-xl font-bold text-foreground">Horaires classiques</h4>
+              </div>
+              <p className="text-sm text-muted-foreground mb-4 font-medium">Fermé lundi et mardi</p>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center py-2 border-b border-border/50">
+                  <span className="text-foreground font-medium">Mercredi</span>
+                  <span className="text-muted-foreground">14h00 – 00h00</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-border/50">
+                  <span className="text-foreground font-medium">Jeudi</span>
+                  <span className="text-muted-foreground">18h00 – 00h00</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-border/50">
+                  <span className="text-foreground font-medium">Vendredi</span>
+                  <span className="text-muted-foreground">18h00 – 02h00</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-border/50">
+                  <span className="text-foreground font-medium">Samedi</span>
+                  <span className="text-muted-foreground">14h00 – 02h00</span>
+                </div>
+                <div className="flex justify-between items-center py-2">
+                  <span className="text-foreground font-medium">Dimanche</span>
+                  <span className="text-muted-foreground">14h00 – 20h00</span>
+                </div>
+              </div>
             </div>
-            <div className="space-y-2">
-              <p className="font-bold text-foreground text-lg mb-3">Période de vacances scolaires</p>
-              <p className="text-muted-foreground text-sm mb-2">Ouvert tous les jours</p>
-              <p className="text-muted-foreground">Lundi : 10h00 – 22h00</p>
-              <p className="text-muted-foreground">Mardi : 10h00 – 22h00</p>
-              <p className="text-muted-foreground">Mercredi : 10h00 – 00h00</p>
-              <p className="text-muted-foreground">Jeudi : 10h00 – 00h00</p>
-              <p className="text-muted-foreground">Vendredi : 10h00 – 02h00</p>
-              <p className="text-muted-foreground">Samedi : 10h00 – 02h00</p>
-              <p className="text-muted-foreground">Dimanche : 10h00 – 22h00</p>
+
+            <div className="bg-card rounded-2xl p-6 border border-border shadow-lg hover:shadow-xl transition-shadow">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center">
+                  <Calendar className="w-6 h-6 text-white" />
+                </div>
+                <h4 className="text-xl font-bold text-foreground">Vacances scolaires</h4>
+              </div>
+              <p className="text-sm text-accent font-medium mb-4">Ouvert tous les jours</p>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center py-2 border-b border-border/50">
+                  <span className="text-foreground font-medium">Lundi</span>
+                  <span className="text-muted-foreground">10h00 – 22h00</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-border/50">
+                  <span className="text-foreground font-medium">Mardi</span>
+                  <span className="text-muted-foreground">10h00 – 22h00</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-border/50">
+                  <span className="text-foreground font-medium">Mercredi</span>
+                  <span className="text-muted-foreground">10h00 – 00h00</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-border/50">
+                  <span className="text-foreground font-medium">Jeudi</span>
+                  <span className="text-muted-foreground">10h00 – 00h00</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-border/50">
+                  <span className="text-foreground font-medium">Vendredi</span>
+                  <span className="text-muted-foreground">10h00 – 02h00</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-border/50">
+                  <span className="text-foreground font-medium">Samedi</span>
+                  <span className="text-muted-foreground">10h00 – 02h00</span>
+                </div>
+                <div className="flex justify-between items-center py-2">
+                  <span className="text-foreground font-medium">Dimanche</span>
+                  <span className="text-muted-foreground">10h00 – 22h00</span>
+                </div>
+              </div>
             </div>
-            
           </div>
-          <p className="text-sm text-muted-foreground text-center mt-6">
+
+          <p className="text-sm text-muted-foreground text-center mt-8">
             * Réservation en ligne recommandée
           </p>
         </div>
