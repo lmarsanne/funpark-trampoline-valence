@@ -69,12 +69,11 @@ const Index = () => {
       
       <AboutSection />
       <FormulasSection />
+      <InfoSection />
       <BirthdaySection />
       <GallerySection />
       <FAQSection />
       <ContactSection />
-
-      <InfoSection />
       <CTASection />
       <Footer />
     </div>
