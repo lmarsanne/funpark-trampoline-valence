@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Karaoke from "./pages/Karaoke";
 import QuizBoxing from "./pages/QuizBoxing";
+import Bowling from "./pages/Bowling";
 import Reservation from "./pages/Reservation";
 import NotFound from "./pages/NotFound";
 import GuidapOverlay from "@/components/GuidapOverlay";
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/karaoke" element={<Karaoke />} />
           <Route path="/quiz-boxing" element={<QuizBoxing />} />
+          <Route path="/bowling" element={<Bowling />} />
           <Route path="/reservation" element={<Reservation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
