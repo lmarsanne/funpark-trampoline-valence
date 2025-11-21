@@ -15,9 +15,9 @@ const images = [{
   alt: "Parcours acrobatique avec foam pit"
 }];
 export const GallerySection = () => {
-  return <section className="py-4 bg-background">
+  return <section className="py-12 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-6 animate-fade-in-up">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Ambiance{" "}
             <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">

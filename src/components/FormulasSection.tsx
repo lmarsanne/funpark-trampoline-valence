@@ -54,9 +54,9 @@ export const FormulasSection = () => {
   };
 
   return (
-    <section id="formules" className="py-4 bg-muted/30">
+    <section id="formules" className="py-12 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-6 animate-fade-in-up">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Nos{" "}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -68,7 +68,7 @@ export const FormulasSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {formulas.map((formula, index) => {
             const Icon = formula.icon;
             return (
@@ -117,7 +117,7 @@ export const FormulasSection = () => {
           })}
         </div>
 
-        <div className="mt-6 text-center">
+        <div className="mt-12 text-center">
           <p className="text-sm text-muted-foreground">
             * Chaussettes antidérapantes obligatoires (2 € en vente sur place)
           </p>

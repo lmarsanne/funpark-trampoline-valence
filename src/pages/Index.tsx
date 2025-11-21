@@ -21,7 +21,7 @@ const Index = () => {
       <HeroSection />
       
       {/* Réservation Section */}
-      <section id="reservation" className="py-4 bg-background">
+      <section id="reservation" className="py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
