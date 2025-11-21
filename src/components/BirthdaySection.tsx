@@ -1,17 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Cake, PartyPopper, Gift, ArrowRight } from "lucide-react";
 import birthdayImage from "@/assets/birthday-party.jpg";
-
 export const BirthdaySection = () => {
   const scrollToReservation = () => {
     const element = document.getElementById('reservation');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section className="py-12 bg-gradient-to-br from-secondary/10 via-accent/10 to-primary/10 relative overflow-hidden">
+  return <section className="py-12 bg-gradient-to-br from-secondary/10 via-accent/10 to-primary/10 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-secondary/20 to-accent/20 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-full blur-3xl" />
@@ -77,31 +76,18 @@ export const BirthdaySection = () => {
               </div>
             </div>
 
-            <Button 
-              variant="hero" 
-              size="xl" 
-              className="group"
-              onClick={scrollToReservation}
-            >
-              Demander un devis
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            
           </div>
 
           {/* Image */}
           <div className="relative animate-scale-in">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src={birthdayImage}
-                alt="Fête d'anniversaire au trampoline park"
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-              />
+              <img src={birthdayImage} alt="Fête d'anniversaire au trampoline park" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
             <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-secondary to-accent rounded-full animate-float" />
             <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-full animate-bounce-slow" />
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
