@@ -27,7 +27,7 @@ const features = [
 
 export const AboutSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/30">
+    <section className="py-12 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           {/* Image */}
