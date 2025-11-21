@@ -8,37 +8,33 @@ import heroKaraoke from "@/assets/hero-karaoke-main.jpg";
 import karaokeFriends from "@/assets/karaoke-friends.jpg";
 import karaokeFamily from "@/assets/karaoke-family.jpg";
 import karaokeColleagues from "@/assets/karaoke-colleagues.jpg";
-
 const Karaoke = () => {
   const reservationUrl = "https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2FWiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%2Fundefined%2FDEPARTURE";
-  
   const scrollToReservation = () => {
     const element = document.getElementById('reservation-karaoke');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
   const scrollToInfo = () => {
     const element = document.getElementById('info-pratiques');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-  
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navigation />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 overflow-hidden">
         {/* Background Image with overlay */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ 
-            backgroundImage: `url(${heroKaraoke})`,
-          }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: `url(${heroKaraoke})`
+      }}>
           <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background"></div>
         </div>
 
@@ -65,20 +61,11 @@ const Karaoke = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="group text-lg px-8 py-6"
-                onClick={scrollToReservation}
-              >
+              <Button size="lg" className="group text-lg px-8 py-6" onClick={scrollToReservation}>
                 Réserver ma session karaoké
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="text-lg px-8 py-6"
-                onClick={scrollToInfo}
-              >
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6" onClick={scrollToInfo}>
                 Privatiser pour un événement
               </Button>
             </div>
@@ -97,11 +84,7 @@ const Karaoke = () => {
             {/* Entre amis */}
             <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105">
               <div className="h-56 overflow-hidden">
-                <img 
-                  src={karaokeFriends} 
-                  alt="Entre amis au karaoké" 
-                  className="w-full h-full object-cover"
-                />
+                <img src={karaokeFriends} alt="Entre amis au karaoké" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-3 text-foreground">Entre amis</h3>
@@ -114,11 +97,7 @@ const Karaoke = () => {
             {/* En famille */}
             <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105">
               <div className="h-56 overflow-hidden">
-                <img 
-                  src={karaokeFamily} 
-                  alt="En famille au karaoké" 
-                  className="w-full h-full object-cover"
-                />
+                <img src={karaokeFamily} alt="En famille au karaoké" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-3 text-foreground">En famille</h3>
@@ -131,11 +110,7 @@ const Karaoke = () => {
             {/* Entre collègues */}
             <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105">
               <div className="h-56 overflow-hidden">
-                <img 
-                  src={karaokeColleagues} 
-                  alt="Entre collègues au karaoké" 
-                  className="w-full h-full object-cover"
-                />
+                <img src={karaokeColleagues} alt="Entre collègues au karaoké" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-3 text-foreground">Entre collègues</h3>
@@ -247,11 +222,7 @@ const Karaoke = () => {
 
             {/* CTA */}
             <div className="text-center">
-              <Button 
-                size="lg" 
-                className="group text-lg px-8 py-6"
-                onClick={scrollToReservation}
-              >
+              <Button size="lg" className="group text-lg px-8 py-6" onClick={scrollToReservation}>
                 Choisir ma formule et réserver
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -295,13 +266,12 @@ const Karaoke = () => {
             </div>
 
             {/* Iframe */}
-            <div className="bg-card rounded-2xl shadow-xl overflow-hidden" style={{ height: '800px' }}>
-              <iframe
-                src={reservationUrl}
-                className="w-full h-full"
-                title="Réservation Karaoké"
-                style={{ border: 'none' }}
-              />
+            <div className="bg-card rounded-2xl shadow-xl overflow-hidden" style={{
+            height: '800px'
+          }}>
+              <iframe src={reservationUrl} className="w-full h-full" title="Réservation Karaoké" style={{
+              border: 'none'
+            }} />
             </div>
           </div>
         </div>
@@ -376,41 +346,11 @@ const Karaoke = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="py-20 bg-gradient-to-r from-primary via-accent to-secondary">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-              Toujours hésitant ? Venez tester le karaoké à Valence Trampoline et créez vos meilleurs souvenirs en musique 🎤
-            </h2>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                variant="secondary"
-                size="lg" 
-                className="group text-lg px-8 py-6 bg-white text-primary hover:bg-white/90"
-                onClick={scrollToReservation}
-              >
-                Réserver en ligne
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="text-lg px-8 py-6 border-white text-white hover:bg-white/10"
-                onClick={() => window.location.href = 'mailto:valencebowling@gmail.com'}
-              >
-                Nous contacter
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       <KaraokeFAQ />
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Karaoke;
