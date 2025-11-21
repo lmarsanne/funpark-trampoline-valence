@@ -118,36 +118,16 @@ const Karaoke = () => {
                 className="group"
                 asChild
               >
-                <a href="#reservation-karaoke">
+                <a 
+                  href="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2FWiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%2Fundefined%2FDEPARTURE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Je réserve
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section Réservation avec iFrame */}
-      <section id="reservation-karaoke" className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Réserver <span className="text-primary">votre session</span>
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Choisissez votre créneau et réservez directement en ligne
-            </p>
-          </div>
-
-          <div className="max-w-6xl mx-auto bg-card rounded-2xl shadow-xl overflow-hidden">
-            <iframe
-              src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2FWiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%2Fundefined%2FDEPARTURE"
-              className="w-full border-0"
-              style={{ minHeight: '900px' }}
-              loading="lazy"
-              title="Réservation Karaoké"
-            />
           </div>
         </div>
       </section>
