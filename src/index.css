@@ -170,3 +170,16 @@ body, #root {
     @apply bg-background text-foreground;
   }
 }
+
+/* Neutraliser tous les overlays plein écran (modales, fonds noirs, etc.) */
+div[class*="fixed"][class*="inset-0"][class*="bg-black"],
+div[class*="fixed"][class*="inset-0"][class*="bg-slate"],
+div[class*="fixed"][class*="inset-0"][class*="bg-neutral"],
+div[class*="fixed"][class*="inset-0"][class*="/60"],
+div[class*="fixed"][class*="inset-0"][class*="/70"],
+div[class*="fixed"][class*="inset-0"][class*="overlay"] {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  filter: none !important;
+  pointer-events: none !important;
+}
