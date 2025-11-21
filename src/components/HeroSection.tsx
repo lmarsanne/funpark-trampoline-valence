@@ -10,26 +10,25 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background Video */}
-      <div className="absolute inset-0">
-        <iframe
-          src="https://player.vimeo.com/video/1139328631?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ 
-            border: 'none',
-            width: '100vw',
-            height: '100vh',
-            pointerEvents: 'none'
-          }}
-          allow="autoplay; fullscreen"
-          title="Hero Video"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-accent/90" />
+    <section className="pt-16">
+      {/* Video Section */}
+      <div className="w-full bg-black">
+        <div className="container mx-auto px-4 py-8">
+          <div className="aspect-video max-w-6xl mx-auto">
+            <iframe
+              src="https://player.vimeo.com/video/1139328631?autoplay=1&loop=1&byline=0&title=0"
+              className="w-full h-full"
+              style={{ border: 'none' }}
+              allow="autoplay; fullscreen; picture-in-picture"
+              title="Vidéo Trampoline Park"
+            />
+          </div>
+        </div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20 text-center">
+      {/* Hero Content */}
+      <div className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-r from-primary via-primary to-accent">
+        <div className="relative z-10 container mx-auto px-4 py-20 text-center">
         <div className="animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
             Découvrez notre <br />
@@ -66,11 +65,6 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        {/* Floating icons */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce-slow">
-          <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-            <ArrowRight className="text-white rotate-90" />
-          </div>
         </div>
       </div>
     </section>
