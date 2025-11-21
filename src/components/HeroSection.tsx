@@ -4,6 +4,13 @@ import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-trampoline.jpg";
 
 export const HeroSection = () => {
+  const scrollToReservation = () => {
+    const element = document.getElementById('reservation');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background Image */}
@@ -34,11 +41,9 @@ export const HeroSection = () => {
             <Button 
               size="xl"
               className="bg-gradient-to-r from-primary to-accent text-white border-0 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full shadow-lg hover:shadow-xl"
-              asChild
+              onClick={scrollToReservation}
             >
-              <a href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2FFpsK4WIXZdbufxO69hcqr2UTy8MPoRDv3V7A">
-                Je réserve
-              </a>
+              Je réserve
             </Button>
             
             <Button 

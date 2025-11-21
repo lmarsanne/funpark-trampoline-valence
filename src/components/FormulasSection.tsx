@@ -46,6 +46,13 @@ const formulas = [
 ];
 
 export const FormulasSection = () => {
+  const scrollToReservation = () => {
+    const element = document.getElementById('reservation');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="formules" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -99,12 +106,12 @@ export const FormulasSection = () => {
                   ))}
                 </ul>
 
-                <a 
-                  href="https://www.valence-bowling.com/trampoline/?g-path=%2Fcart%2Factivities%2FFpsK4WIXZdbufxO69hcqr2UTy8MPoRDv3V7A"
+                <button 
+                  onClick={scrollToReservation}
                   className="inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full transition-colors"
                 >
                   Je réserve
-                </a>
+                </button>
               </Card>
             );
           })}
