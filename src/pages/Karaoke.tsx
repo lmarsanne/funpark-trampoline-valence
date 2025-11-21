@@ -137,7 +137,7 @@ const Karaoke = () => {
 
       {/* Modal de réservation */}
       <Dialog open={isReservationOpen} onOpenChange={setIsReservationOpen}>
-        <DialogContent className="max-w-[80vw] w-full h-[80vh] max-h-[80vh] p-0">
+        <DialogContent className="max-w-[100vw] w-full h-[100vh] max-h-[100vh] p-0">
           <DialogHeader className="p-6 pb-0">
             <DialogTitle>Réservation Karaoké</DialogTitle>
           </DialogHeader>
