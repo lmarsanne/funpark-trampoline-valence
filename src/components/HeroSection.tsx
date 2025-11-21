@@ -12,7 +12,7 @@ export const HeroSection = () => {
   return (
     <section className="pt-16">
       {/* Title Section */}
-      <div className="bg-gradient-to-r from-primary via-primary to-accent py-4 md:py-6">
+      <div className="bg-gradient-to-r from-primary via-primary to-accent py-2 md:py-3">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-white mb-3 md:mb-4 leading-tight animate-fade-in-up">
             Découvrez notre <br />
@@ -44,7 +44,7 @@ export const HeroSection = () => {
 
       {/* Hero Content */}
       <div className="relative min-h-[30vh] md:min-h-[40vh] flex items-center justify-center overflow-hidden bg-gradient-to-r from-primary via-primary to-accent">
-        <div className="relative z-10 container mx-auto px-4 py-6 md:py-8 text-center">
+        <div className="relative z-10 container mx-auto px-4 py-4 md:py-6 text-center">
           <div className="animate-fade-in-up">
             <p className="text-base sm:text-lg md:text-2xl text-white/90 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
               <strong className="font-bold">400 m²</strong> d'activités pour petits et grands dans un espace sécurisé, fun et <strong className="font-bold">100 % sensations.</strong>

@@ -19,9 +19,9 @@ const features = [{
   description: "Activités adaptées de 2 à 99 ans, en famille ou entre amis."
 }];
 export const AboutSection = () => {
-  return <section className="py-12 bg-gradient-to-b from-background to-muted/30">
+  return <section className="py-6 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+        <div className="grid md:grid-cols-2 gap-8 items-center mb-10">
           {/* Image */}
           <div className="relative animate-scale-in">
             <div className="rounded-3xl overflow-hidden shadow-[var(--shadow-card)]">

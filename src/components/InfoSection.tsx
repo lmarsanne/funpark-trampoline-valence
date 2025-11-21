@@ -17,9 +17,9 @@ const infos = [{
   description: "Zone de restauration et détente pour les accompagnateurs."
 }];
 export const InfoSection = () => {
-  return <section className="py-12 bg-gradient-to-b from-background to-primary/5">
+  return <section className="py-6 bg-gradient-to-b from-background to-primary/5">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-8 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Infos{" "}
             <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">
@@ -46,7 +46,7 @@ export const InfoSection = () => {
         })}
         </div>
 
-        <div className="mt-16 max-w-4xl mx-auto">
+        <div className="mt-8 max-w-4xl mx-auto">
           <h3 className="text-3xl font-bold text-foreground mb-8 text-center">Horaires d'ouverture</h3>
           
           <div className="grid md:grid-cols-2 gap-6">

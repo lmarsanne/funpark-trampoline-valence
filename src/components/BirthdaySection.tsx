@@ -10,7 +10,7 @@ export const BirthdaySection = () => {
       });
     }
   };
-  return <section className="py-12 bg-gradient-to-br from-secondary/10 via-accent/10 to-primary/10 relative overflow-hidden">
+  return <section className="py-6 bg-gradient-to-br from-secondary/10 via-accent/10 to-primary/10 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-secondary/20 to-accent/20 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-full blur-3xl" />
