@@ -10,7 +10,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const KaraokeV2 = () => {
+const Karaoke = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -186,4 +186,4 @@ const KaraokeV2 = () => {
   );
 };
 
-export default KaraokeV2;
+export default Karaoke;
