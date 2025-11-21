@@ -24,18 +24,7 @@ const GuidapOverlay: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  return (
-    <div
-      aria-hidden="true"
-      className={`fixed inset-0 transition-opacity pointer-events-none`}
-      style={{
-        opacity: open ? 1 : 0,
-        background: "hsl(220 15% 15% / 0.55)",
-        backdropFilter: "blur(2px)",
-        zIndex: 9998,
-      }}
-    />
-  );
+  return null;
 };
 
 export default GuidapOverlay;
