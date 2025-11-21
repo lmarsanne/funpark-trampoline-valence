@@ -19,9 +19,9 @@ const features = [{
   description: "Activités adaptées de 2 à 99 ans, en famille ou entre amis."
 }];
 export const AboutSection = () => {
-  return <section className="py-6 bg-gradient-to-b from-background to-muted/30">
+  return <section className="py-4 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-8 items-center mb-10">
+        <div className="grid md:grid-cols-2 gap-6 items-center mb-6">
           {/* Image */}
           <div className="relative animate-scale-in">
             <div className="rounded-3xl overflow-hidden shadow-[var(--shadow-card)]">
@@ -31,7 +31,7 @@ export const AboutSection = () => {
           </div>
 
           {/* Content */}
-          <div className="space-y-6 animate-fade-in-up">
+          <div className="space-y-4 animate-fade-in-up">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground">
               Un parc pensé pour{" "}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -53,7 +53,7 @@ export const AboutSection = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {features.map((feature, index) => {
           const Icon = feature.icon;
           return <div key={index} className="group p-6 rounded-2xl bg-card border border-border hover:shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 animate-fade-in-up" style={{

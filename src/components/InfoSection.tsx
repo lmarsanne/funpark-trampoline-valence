@@ -17,9 +17,9 @@ const infos = [{
   description: "Zone de restauration et détente pour les accompagnateurs."
 }];
 export const InfoSection = () => {
-  return <section className="py-6 bg-gradient-to-b from-background to-primary/5">
+  return <section className="py-4 bg-gradient-to-b from-background to-primary/5">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8 animate-fade-in-up">
+        <div className="text-center mb-6 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Infos{" "}
             <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">
@@ -31,7 +31,7 @@ export const InfoSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
           {infos.map((info, index) => {
           const Icon = info.icon;
           return <div key={index} className="text-center p-6 rounded-2xl bg-card border border-border hover:shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 animate-fade-in-up" style={{
@@ -46,10 +46,10 @@ export const InfoSection = () => {
         })}
         </div>
 
-        <div className="mt-8 max-w-4xl mx-auto">
-          <h3 className="text-3xl font-bold text-foreground mb-8 text-center">Horaires d'ouverture</h3>
+        <div className="mt-6 max-w-4xl mx-auto">
+          <h3 className="text-3xl font-bold text-foreground mb-6 text-center">Horaires d'ouverture</h3>
           
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-card rounded-2xl p-6 border border-border shadow-lg hover:shadow-xl transition-shadow">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
@@ -123,7 +123,7 @@ export const InfoSection = () => {
             </div>
           </div>
 
-          <p className="text-sm text-muted-foreground text-center mt-8">
+          <p className="text-sm text-muted-foreground text-center mt-4">
             * Réservation en ligne recommandée
           </p>
         </div>

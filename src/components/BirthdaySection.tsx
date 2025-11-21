@@ -10,15 +10,15 @@ export const BirthdaySection = () => {
       });
     }
   };
-  return <section className="py-6 bg-gradient-to-br from-secondary/10 via-accent/10 to-primary/10 relative overflow-hidden">
+  return <section className="py-4 bg-gradient-to-br from-secondary/10 via-accent/10 to-primary/10 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-secondary/20 to-accent/20 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 items-center">
           {/* Content */}
-          <div className="space-y-6 animate-fade-in-up">
+          <div className="space-y-4 animate-fade-in-up">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-secondary to-accent text-white px-4 py-2 rounded-full font-semibold text-sm">
               <PartyPopper className="w-4 h-4" />
               <span>Événements spéciaux</span>
