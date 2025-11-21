@@ -2,21 +2,28 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { KaraokeFAQ } from "@/components/KaraokeFAQ";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { ArrowRight, Calendar, Shield, Clock, Mail, Phone, MapPin } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import heroKaraoke from "@/assets/hero-karaoke-main.jpg";
+import karaokeFriends from "@/assets/karaoke-friends.jpg";
+import karaokeFamily from "@/assets/karaoke-family.jpg";
+import karaokeColleagues from "@/assets/karaoke-colleagues.jpg";
 
 const Karaoke = () => {
   const reservationUrl = "https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2FWiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%2Fundefined%2FDEPARTURE";
   
-  const handleReservation = () => {
-    window.open(reservationUrl, '_blank', 'noopener,noreferrer');
+  const scrollToReservation = () => {
+    const element = document.getElementById('reservation-karaoke');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToInfo = () => {
+    const element = document.getElementById('info-pratiques');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
   
   return (
@@ -24,50 +31,152 @@ const Karaoke = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-primary/5 to-background">
-        <div className="container mx-auto px-4">
+      <section className="relative pt-32 pb-24 overflow-hidden">
+        {/* Background Image with overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ 
+            backgroundImage: `url(${heroKaraoke})`,
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background"></div>
+        </div>
+
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
+            {/* Badge */}
+            <Badge variant="secondary" className="mb-6 px-4 py-2 text-sm font-semibold">
+              NOUVEAUTÉ • Saint-Marcel-lès-Valence
+            </Badge>
+
+            {/* Title */}
             <h1 className="text-4xl md:text-6xl font-extrabold text-foreground mb-6 leading-tight">
-              Karaoké privatif à{" "}
+              Karaoké privatif à Valence –{" "}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Saint-Marcel-lès-Valence
+                chantez, criez, rigolez !
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-              Envie de chanter à tue-tête entre amis, en famille ou entre collègues ? Notre salle de karaoké privative vous attend pour une expérience fun et décomplexée ! Micro à la main, vous choisissez vos morceaux parmi des centaines de titres (français, internationaux, classiques ou décalés), et c'est parti pour une session où tout le monde peut briller. Que vous chantiez juste ou pas, ce qui compte, c'est de passer un moment inoubliable.
+            {/* Intro Text */}
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-3xl mx-auto">
+              Transformez votre soirée en show privé : entre amis, en famille ou entre collègues, notre salle de karaoké privative est le spot parfait pour lâcher prise. Hits français, internationaux, classiques, kitsch ou totalement décalés… ici, on ne juge pas, on chante fort 😄
             </p>
 
-            <p className="text-xl md:text-2xl font-bold text-foreground">
-              De 4 à 12 personnes – Karaoké à Valence Trampoline
-            </p>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="group text-lg px-8 py-6"
+                onClick={scrollToReservation}
+              >
+                Réserver ma session karaoké
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="text-lg px-8 py-6"
+                onClick={scrollToInfo}
+              >
+                Privatiser pour un événement
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pour quelles occasions Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
+            Pour quelles <span className="text-primary">occasions ?</span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Entre amis */}
+            <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105">
+              <div className="h-56 overflow-hidden">
+                <img 
+                  src={karaokeFriends} 
+                  alt="Entre amis au karaoké" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-3 text-foreground">Entre amis</h3>
+                <p className="text-muted-foreground">
+                  Soirées délire, challenges de chant, battle de refrains inoubliables.
+                </p>
+              </div>
+            </div>
+
+            {/* En famille */}
+            <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105">
+              <div className="h-56 overflow-hidden">
+                <img 
+                  src={karaokeFamily} 
+                  alt="En famille au karaoké" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-3 text-foreground">En famille</h3>
+                <p className="text-muted-foreground">
+                  Petits et grands partagent le micro pour un moment vraiment ensemble.
+                </p>
+              </div>
+            </div>
+
+            {/* Entre collègues */}
+            <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105">
+              <div className="h-56 overflow-hidden">
+                <img 
+                  src={karaokeColleagues} 
+                  alt="Entre collègues au karaoké" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-3 text-foreground">Entre collègues</h3>
+                <p className="text-muted-foreground">
+                  Afterwork, team building, pot de départ : brisez la glace autrement.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Avantages Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all hover:scale-105 text-center">
+            {/* Salle privative */}
+            <div className="bg-gradient-to-br from-card to-muted/10 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all hover:scale-105 text-center border-t-4 border-primary">
               <div className="text-6xl mb-4">🎵</div>
-              <h3 className="text-2xl font-bold mb-3 text-foreground">Salle privative</h3>
+              <h3 className="text-2xl font-bold mb-2 text-foreground">Salle privative</h3>
+              <p className="text-sm text-primary font-semibold mb-3">Votre bulle, vos règles.</p>
               <p className="text-muted-foreground">
                 Chantez sans jugement, entre vous, dans une ambiance conviviale.
               </p>
             </div>
 
-            <div className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all hover:scale-105 text-center">
+            {/* Catalogue XXL */}
+            <div className="bg-gradient-to-br from-card to-muted/10 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all hover:scale-105 text-center border-t-4 border-secondary">
               <div className="text-6xl mb-4">🎤</div>
-              <h3 className="text-2xl font-bold mb-3 text-foreground">Catalogue XXL</h3>
+              <h3 className="text-2xl font-bold mb-2 text-foreground">Catalogue XXL</h3>
+              <p className="text-sm text-secondary font-semibold mb-3">Des centaines de titres à portée de voix.</p>
               <p className="text-muted-foreground">
-                Des centaines de titres français et internationaux, classiques ou décalés.
+                Hits français et internationaux, classiques ou décalés.
               </p>
             </div>
 
-            <div className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all hover:scale-105 text-center">
+            {/* Boissons & snacks */}
+            <div className="bg-gradient-to-br from-card to-muted/10 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all hover:scale-105 text-center border-t-4 border-accent">
               <div className="text-6xl mb-4">🍹</div>
-              <h3 className="text-2xl font-bold mb-3 text-foreground">Boissons & snacks</h3>
+              <h3 className="text-2xl font-bold mb-2 text-foreground">Boissons & snacks</h3>
+              <p className="text-sm text-accent font-semibold mb-3">Le combo parfait : micro + gourmandise.</p>
               <p className="text-muted-foreground">
                 Profitez de nos boissons et gourmandises sur place.
               </p>
@@ -77,54 +186,73 @@ const Karaoke = () => {
       </section>
 
       {/* Tarifs Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
-              Nos <span className="text-primary">tarifs</span>
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
+              Nos formules <span className="text-primary">Karaoké</span>
             </h2>
 
-            <p className="text-center text-lg text-muted-foreground mb-8">
+            <p className="text-center text-lg text-muted-foreground mb-12">
               Tarifs valables pour des groupes de 4 à 12 personnes.
             </p>
 
-            <div className="bg-card rounded-2xl shadow-xl overflow-hidden">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="text-lg font-bold">Durée</TableHead>
-                    <TableHead className="text-lg font-bold text-center">Adulte</TableHead>
-                    <TableHead className="text-lg font-bold text-center">Étudiant</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell className="font-semibold text-base">Karaoké 1h</TableCell>
-                    <TableCell className="text-center text-2xl font-bold text-primary">9€</TableCell>
-                    <TableCell className="text-center text-2xl font-bold text-accent">8€</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-semibold text-base">Karaoké 2h</TableCell>
-                    <TableCell className="text-center text-2xl font-bold text-primary">15€</TableCell>
-                    <TableCell className="text-center text-2xl font-bold text-accent">14€</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              {/* Formule 1h */}
+              <div className="bg-card rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all hover:scale-105 border-2 border-primary/20">
+                <h3 className="text-3xl font-bold mb-2 text-foreground">Formule 1h</h3>
+                <p className="text-muted-foreground mb-6">Idéale pour une première session</p>
+                
+                <div className="mb-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-lg text-muted-foreground">Adulte</span>
+                    <span className="text-4xl font-bold text-primary">9€</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-lg text-muted-foreground">Étudiant*</span>
+                    <span className="text-4xl font-bold text-accent">8€</span>
+                  </div>
+                </div>
+
+                <p className="text-sm text-muted-foreground">
+                  Parfait pour tester l'expérience ou enchaîner avec une autre activité du parc.
+                </p>
+              </div>
+
+              {/* Formule 2h */}
+              <div className="bg-card rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all hover:scale-105 border-2 border-secondary/20">
+                <h3 className="text-3xl font-bold mb-2 text-foreground">Formule 2h</h3>
+                <p className="text-muted-foreground mb-6">Pour chanter sans regarder l'heure</p>
+                
+                <div className="mb-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-lg text-muted-foreground">Adulte</span>
+                    <span className="text-4xl font-bold text-primary">15€</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-lg text-muted-foreground">Étudiant*</span>
+                    <span className="text-4xl font-bold text-accent">14€</span>
+                  </div>
+                </div>
+
+                <p className="text-sm text-muted-foreground">
+                  Le format idéal pour un anniversaire, un afterwork ou une soirée entre amis.
+                </p>
+              </div>
             </div>
 
-            <p className="text-sm text-muted-foreground text-center mt-4 italic">
+            <p className="text-sm text-muted-foreground text-center mb-8 italic">
               *Sur présentation d'une carte étudiante en cours de validité.
             </p>
 
-            {/* Bouton Réservation */}
-            <div className="text-center mt-12">
+            {/* CTA */}
+            <div className="text-center">
               <Button 
-                variant="default" 
                 size="lg" 
-                className="group"
-                onClick={handleReservation}
+                className="group text-lg px-8 py-6"
+                onClick={scrollToReservation}
               >
-                Je réserve
+                Choisir ma formule et réserver
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
@@ -132,8 +260,55 @@ const Karaoke = () => {
         </div>
       </section>
 
+      {/* Réservation Section */}
+      <section id="reservation-karaoke" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
+              Réservez votre <span className="text-primary">session</span>
+            </h2>
+
+            {/* Bandeau rassurant */}
+            <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 mb-8">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <Shield className="text-primary" size={24} />
+                <p className="text-center text-foreground font-semibold">
+                  Réservation sécurisée via notre partenaire GuiDap. Paiement en ligne et confirmation immédiate.
+                </p>
+              </div>
+
+              {/* Points clés */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                  <Clock className="text-primary" size={20} />
+                  <span>Réservation en moins de 2 minutes</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                  <Calendar className="text-primary" size={20} />
+                  <span>Annulation possible selon conditions</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                  <Shield className="text-primary" size={20} />
+                  <span>Paiement sécurisé</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Iframe */}
+            <div className="bg-card rounded-2xl shadow-xl overflow-hidden" style={{ height: '800px' }}>
+              <iframe
+                src={reservationUrl}
+                className="w-full h-full"
+                title="Réservation Karaoké"
+                style={{ border: 'none' }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Informations pratiques */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
+      <section id="info-pratiques" className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
@@ -182,19 +357,50 @@ const Karaoke = () => {
                 <h3 className="text-2xl font-bold mb-4">📍 Contact & Réservation</h3>
                 <div className="space-y-3 text-muted-foreground">
                   <p className="flex items-start">
-                    <span className="text-primary mr-2">📍</span>
+                    <MapPin className="text-primary mr-3 mt-1 flex-shrink-0" size={20} />
                     <span>Face au Bowling: 30 Rue de la Roche – 26320 Saint-Marcel-lès-Valence (Drôme)</span>
                   </p>
                   <p className="flex items-start">
-                    <span className="text-primary mr-2">📞</span>
+                    <Phone className="text-primary mr-3 mt-1 flex-shrink-0" size={20} />
                     <span>07.69.48.27.14 (WhatsApp disponible ✅)</span>
                   </p>
                   <p className="flex items-start">
-                    <span className="text-primary mr-2">✉️</span>
+                    <Mail className="text-primary mr-3 mt-1 flex-shrink-0" size={20} />
                     <span>valencebowling@gmail.com</span>
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Final */}
+      <section className="py-20 bg-gradient-to-r from-primary via-accent to-secondary">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+              Toujours hésitant ? Venez tester le karaoké à Valence Trampoline et créez vos meilleurs souvenirs en musique 🎤
+            </h2>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                variant="secondary"
+                size="lg" 
+                className="group text-lg px-8 py-6 bg-white text-primary hover:bg-white/90"
+                onClick={scrollToReservation}
+              >
+                Réserver en ligne
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="text-lg px-8 py-6 border-white text-white hover:bg-white/10"
+                onClick={() => window.location.href = 'mailto:valencebowling@gmail.com'}
+              >
+                Nous contacter
+              </Button>
             </div>
           </div>
         </div>
