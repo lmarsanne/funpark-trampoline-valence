@@ -68,7 +68,7 @@ export const ContactSection = () => {
       setIsSubmitting(false);
     }
   };
-  return <section className="py-12 px-4 bg-gradient-to-b from-background to-muted/20">
+  return <section className="py-6 px-4 bg-gradient-to-b from-background to-muted/20">
       
     </section>;
 };
