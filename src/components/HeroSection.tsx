@@ -11,6 +11,20 @@ export const HeroSection = () => {
 
   return (
     <section className="pt-16">
+      {/* Title Section */}
+      <div className="bg-gradient-to-r from-primary via-primary to-accent py-12">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight animate-fade-in-up">
+            Découvrez notre <br />
+            <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
+              Trampoline Park
+            </span>
+            <br />
+            à Valence
+          </h1>
+        </div>
+      </div>
+
       {/* Video Section */}
       <div className="w-full bg-gradient-to-r from-primary via-primary to-accent">
         <div className="container mx-auto px-4 py-8">
@@ -30,14 +44,6 @@ export const HeroSection = () => {
       <div className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-r from-primary via-primary to-accent">
         <div className="relative z-10 container mx-auto px-4 py-20 text-center">
         <div className="animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
-            Découvrez notre <br />
-            <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
-              Trampoline Park
-            </span>
-            <br />
-            à Valence
-          </h1>
           
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
             <strong className="font-bold">400 m²</strong> d'activités pour petits et grands dans un espace sécurisé, fun et <strong className="font-bold">100 % sensations.</strong>
