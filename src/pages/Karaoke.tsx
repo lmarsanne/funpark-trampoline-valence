@@ -42,12 +42,12 @@ const Karaoke = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             {/* Badge */}
-            <Badge variant="secondary" className="mb-6 px-4 py-2 text-sm font-semibold">
+            <Badge variant="secondary" className="mb-3 px-4 py-2 text-sm font-semibold">
               NOUVEAUTÉ • Saint-Marcel-lès-Valence
             </Badge>
 
             {/* Title */}
-            <h1 className="text-4xl md:text-6xl font-extrabold text-foreground mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-extrabold text-foreground mb-4 leading-tight">
               Karaoké privatif à Valence –{" "}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 chantez, criez, rigolez !
@@ -55,7 +55,7 @@ const Karaoke = () => {
             </h1>
 
             {/* Intro Text */}
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-5 max-w-3xl mx-auto">
               Transformez votre soirée en show privé : entre amis, en famille ou entre collègues, notre salle de karaoké privative est le spot parfait pour lâcher prise. Hits français, internationaux, classiques, kitsch ou totalement décalés… ici, on ne juge pas, on chante fort 😄
             </p>
 
