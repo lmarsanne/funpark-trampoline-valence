@@ -16,7 +16,7 @@ export const HeroSection = () => {
         <div className="container mx-auto px-4 py-8">
           <div className="aspect-video max-w-6xl mx-auto">
             <iframe
-              src="https://player.vimeo.com/video/1139328631?autoplay=1&loop=1&byline=0&title=0"
+              src="https://player.vimeo.com/video/1139328631?autoplay=1&loop=1&byline=0&title=0&muted=1"
               className="w-full h-full"
               style={{ border: 'none' }}
               allow="autoplay; fullscreen; picture-in-picture"
