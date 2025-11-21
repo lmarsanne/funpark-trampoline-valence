@@ -27,8 +27,8 @@ export const HeroSection = () => {
 
       {/* Video Section */}
       <div className="w-full bg-gradient-to-r from-primary via-primary to-accent">
-        <div className="container mx-auto px-0 md:px-4 py-4">
-          <div className="aspect-video max-w-6xl mx-auto">
+        <div className="w-full md:container md:mx-auto px-0 md:px-4 py-4">
+          <div className="aspect-video w-full md:max-w-6xl md:mx-auto">
             <iframe
               src="https://player.vimeo.com/video/1139328631?autoplay=1&loop=1&byline=0&title=0&muted=1"
               className="w-full h-full"
