@@ -54,15 +54,15 @@ const QuizBoxing = () => {
 
             {/* Title */}
             <h1 className="text-4xl md:text-6xl font-extrabold text-foreground mb-6 leading-tight">
-              Quiz Boxing à Valence –{" "}
+              Le combat le plus fun de votre vie –{" "}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                affrontez vos amis dans l'arène !
+                Jeu TV Grandeur Nature
               </span>
             </h1>
 
             {/* Intro Text */}
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-3xl mx-auto">
-              Invitez-vous sous le feu des projecteurs et affrontez vos amis, famille ou collègues dans l'arène la plus survoltée de Valence ! Quiz, blind test, juste prix... et même des jokers pour tricher. Ici, on ne joue pas fair-play, on joue pour gagner 🏆
+              La foule est en délire, la tension monte avant de rentrer dans l'arène ! Aux côtés de vos adversaires, venez vivre une incroyable expérience comme à la TV. Les portes s'ouvrent dans un grand show de lumières, les combattants se mettent en place pour plusieurs rounds, riches en tensions et en rires. Au programme : quiz game, blind test, jokers délirants, mini-jeux… Un jeu TV Grandeur nature à la fois fun et stratégique ! 🎯
             </p>
 
             {/* CTA Buttons */}
@@ -74,6 +74,70 @@ const QuizBoxing = () => {
               <Button variant="outline" size="lg" className="text-lg px-8 py-6" onClick={scrollToInfo}>
                 Privatiser pour un événement
               </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Vidéo Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
+              Découvrez le concept <span className="text-primary">en vidéo</span>
+            </h2>
+            
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="Quiz Boxing - Concept en vidéo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ border: 'none' }}
+              />
+            </div>
+            
+            <p className="text-center text-muted-foreground mt-6">
+              Une expérience unique de jeu TV grandeur nature à vivre entre amis, en famille ou entre collègues !
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Affrontez vos émotions */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
+            Affrontez vos <span className="text-primary">émotions</span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* La Joie */}
+            <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105 text-center p-8">
+              <div className="text-7xl mb-6">😄</div>
+              <h3 className="text-3xl font-bold mb-4 text-foreground">LA JOIE</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                De se retrouver en famille, entre amis ou collègues de travail pendant 60 minutes dans une incroyable arène immersive, digne d'un jeu TV Grandeur Nature.
+              </p>
+            </div>
+
+            {/* La Peur */}
+            <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105 text-center p-8">
+              <div className="text-7xl mb-6">😨</div>
+              <h3 className="text-3xl font-bold mb-4 text-foreground">LA PEUR</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                De se faire voler des points par des petits malins, de se laisser déborder par ses émotions, de devenir accro au Quiz Boxing !
+              </p>
+            </div>
+
+            {/* La Surprise */}
+            <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105 text-center p-8">
+              <div className="text-7xl mb-6">😲</div>
+              <h3 className="text-3xl font-bold mb-4 text-foreground">LA SURPRISE</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                De s'amuser sur des rounds fun et immersifs, de pouvoir attaquer ses adversaires avec de terribles jokers, de ne pas voir le temps passer…
+              </p>
             </div>
           </div>
         </div>
