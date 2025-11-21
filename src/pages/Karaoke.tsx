@@ -3,6 +3,13 @@ import { Footer } from "@/components/Footer";
 import { KaraokeFAQ } from "@/components/KaraokeFAQ";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import {
   Table,
   TableBody,
@@ -13,6 +20,8 @@ import {
 } from "@/components/ui/table";
 
 const Karaoke = () => {
+  const [isReservationOpen, setIsReservationOpen] = useState(false);
+  const reservationUrl = "https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2FWiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%2Fundefined%2FDEPARTURE";
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -116,21 +125,30 @@ const Karaoke = () => {
                 variant="default" 
                 size="lg" 
                 className="group"
-                asChild
+                onClick={() => setIsReservationOpen(true)}
               >
-                <a 
-                  href="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2FWiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%2Fundefined%2FDEPARTURE"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Je réserve
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </a>
+                Je réserve
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Modal de réservation */}
+      <Dialog open={isReservationOpen} onOpenChange={setIsReservationOpen}>
+        <DialogContent className="max-w-[80vw] w-full h-[80vh] max-h-[80vh] p-0">
+          <DialogHeader className="p-6 pb-0">
+            <DialogTitle>Réservation Karaoké</DialogTitle>
+          </DialogHeader>
+          <iframe
+            src={reservationUrl}
+            className="w-full h-[calc(100%-4rem)] rounded-b-lg"
+            title="Réservation"
+            style={{ border: 'none' }}
+          />
+        </DialogContent>
+      </Dialog>
 
       {/* Informations pratiques */}
       <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
