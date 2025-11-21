@@ -109,6 +109,25 @@ const Karaoke = () => {
             <p className="text-sm text-muted-foreground text-center mt-4 italic">
               *Sur présentation d'une carte étudiante en cours de validité.
             </p>
+
+            {/* Bouton Réservation */}
+            <div className="text-center mt-12">
+              <Button 
+                variant="default" 
+                size="lg" 
+                className="group"
+                asChild
+              >
+                <a 
+                  href="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2FWiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%2Fundefined%2FDEPARTURE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Je réserve
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
