@@ -11,6 +11,9 @@ import quizColleagues from "@/assets/quiz-boxing-colleagues.jpg";
 import emotionJoie from "@/assets/quiz-emotion-joie.png";
 import emotionPeur from "@/assets/quiz-emotion-peur.png";
 import emotionSurprise from "@/assets/quiz-emotion-surprise.png";
+import quizThemes from "@/assets/quiz-themes.png";
+import quizRounds from "@/assets/quiz-rounds.png";
+import quizJokers from "@/assets/quiz-jokers.png";
 
 const QuizBoxing = () => {
   const reservationUrl = "https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2F80FQWEsnGZ7BJSAqKXohcDCYlgRb2IyjM1Hu%2Fundefined%2FDEPARTURE";
@@ -147,6 +150,73 @@ const QuizBoxing = () => {
               <p className="text-muted-foreground leading-relaxed">
                 De s'amuser sur des rounds fun et immersifs, de pouvoir attaquer ses adversaires avec de terribles jokers, de ne pas voir le temps passer…
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Un jeu immersif sur mesure */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
+              Un jeu immersif <span className="text-primary">sur mesure</span>
+            </h2>
+            <p className="text-center text-xl text-muted-foreground mb-12">
+              60 minutes - Jusqu'à 12 joueurs par Quiz Box
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              {/* Thèmes personnalisables */}
+              <div className="text-center">
+                <div className="mb-6 flex justify-center">
+                  <img 
+                    src={quizThemes} 
+                    alt="Thèmes personnalisables Quiz Boxing" 
+                    className="w-full max-w-sm"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-foreground">
+                  Thèmes personnalisables
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Cinéma, séries, dessins animés, musique, sport, nature… Chaque session est unique en fonction des goûts de chacun.
+                </p>
+              </div>
+
+              {/* Rounds variés et intenses */}
+              <div className="text-center">
+                <div className="mb-6 flex justify-center">
+                  <img 
+                    src={quizRounds} 
+                    alt="Rounds variés et intenses Quiz Boxing" 
+                    className="w-full max-w-sm"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-foreground">
+                  Des rounds<br />variés et intenses
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  QCM, Jeux de rapidité, Blind Test, Jeux de Hasard… Un enchainement de rounds tous plus fun les uns que les autres pendant 60 minutes.
+                </p>
+              </div>
+
+              {/* Jokers délirants */}
+              <div className="text-center">
+                <div className="mb-6 flex justify-center">
+                  <img 
+                    src={quizJokers} 
+                    alt="Jokers délirants Quiz Boxing" 
+                    className="w-full max-w-sm"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-foreground">
+                  Des jokers<br />délirants
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Bloquez vos adversaires, pariez sur eux ou encore volez leurs points ! Ruse et stratégie sont au programme…
+                </p>
+              </div>
             </div>
           </div>
         </div>
