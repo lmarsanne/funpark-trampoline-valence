@@ -111,25 +111,7 @@ const QuizBoxing = () => {
             </h2>
 
             {/* Bandeau rassurant */}
-            <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 mb-8">
-              
-
-              {/* Points clés */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <Clock className="text-primary" size={20} />
-                  <span>Réservation en moins de 2 minutes</span>
-                </div>
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <Calendar className="text-primary" size={20} />
-                  <span>Annulation possible selon conditions</span>
-                </div>
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <Shield className="text-primary" size={20} />
-                  <span>Paiement sécurisé</span>
-                </div>
-              </div>
-            </div>
+            
 
             {/* Iframe */}
             <div className="bg-card rounded-2xl shadow-xl overflow-hidden" style={{
