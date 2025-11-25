@@ -75,12 +75,7 @@ const Karaoke = () => {
 
             {/* Bandeau rassurant */}
             <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 mb-8">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <Shield className="text-primary" size={24} />
-                <p className="text-center text-foreground font-semibold">
-                  Réservation sécurisée via notre partenaire GuiDap. Paiement en ligne et confirmation immédiate.
-                </p>
-              </div>
+              
 
               {/* Points clés */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
