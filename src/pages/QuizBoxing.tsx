@@ -102,8 +102,54 @@ const QuizBoxing = () => {
         </div>
       </section>
 
+      {/* Réservation Section */}
+      <section id="reservation-quiz-boxing" className="py-12 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
+              Réservez votre <span className="text-primary">partie</span>
+            </h2>
+
+            {/* Bandeau rassurant */}
+            <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 mb-8">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <Shield className="text-primary" size={24} />
+                <p className="text-center text-foreground font-semibold">
+                  Réservation sécurisée via notre partenaire GuiDap. Paiement en ligne et confirmation immédiate.
+                </p>
+              </div>
+
+              {/* Points clés */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                  <Clock className="text-primary" size={20} />
+                  <span>Réservation en moins de 2 minutes</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                  <Calendar className="text-primary" size={20} />
+                  <span>Annulation possible selon conditions</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                  <Shield className="text-primary" size={20} />
+                  <span>Paiement sécurisé</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Iframe */}
+            <div className="bg-card rounded-2xl shadow-xl overflow-hidden" style={{
+            height: '800px'
+          }}>
+              <iframe src={reservationUrl} className="w-full h-full" title="Réservation Quiz Boxing" style={{
+              border: 'none'
+            }} />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Section Affrontez vos émotions */}
-      <section className="py-12 bg-muted/30">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
             Affrontez vos <span className="text-primary">émotions</span>
@@ -279,52 +325,6 @@ const QuizBoxing = () => {
                 Choisir ma formule et réserver
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Réservation Section */}
-      <section id="reservation-quiz-boxing" className="py-12 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
-              Réservez votre <span className="text-primary">partie</span>
-            </h2>
-
-            {/* Bandeau rassurant */}
-            <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 mb-8">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <Shield className="text-primary" size={24} />
-                <p className="text-center text-foreground font-semibold">
-                  Réservation sécurisée via notre partenaire GuiDap. Paiement en ligne et confirmation immédiate.
-                </p>
-              </div>
-
-              {/* Points clés */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <Clock className="text-primary" size={20} />
-                  <span>Réservation en moins de 2 minutes</span>
-                </div>
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <Calendar className="text-primary" size={20} />
-                  <span>Annulation possible selon conditions</span>
-                </div>
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <Shield className="text-primary" size={20} />
-                  <span>Paiement sécurisé</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Iframe */}
-            <div className="bg-card rounded-2xl shadow-xl overflow-hidden" style={{
-            height: '800px'
-          }}>
-              <iframe src={reservationUrl} className="w-full h-full" title="Réservation Quiz Boxing" style={{
-              border: 'none'
-            }} />
             </div>
           </div>
         </div>
