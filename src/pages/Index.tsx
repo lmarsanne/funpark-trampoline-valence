@@ -26,7 +26,7 @@ const Index = () => {
             </h2>
 
             {/* Bandeau rassurant */}
-            <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 mb-8">
+            <div className="bg-primary/10 border border-primary/20 rounded-xl p-4 mb-6">
               
 
               {/* Points clés */}
