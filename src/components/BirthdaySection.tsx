@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Cake, PartyPopper, Gift, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import birthdayImage from "@/assets/birthday-party.jpg";
 export const BirthdaySection = () => {
   const scrollToReservation = () => {
@@ -76,6 +77,12 @@ export const BirthdaySection = () => {
               </div>
             </div>
 
+            <Link to="/anniversaire-enfant">
+              <Button variant="cta" size="xl" className="group">
+                Découvrir nos formules anniversaire
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
             
           </div>
 
