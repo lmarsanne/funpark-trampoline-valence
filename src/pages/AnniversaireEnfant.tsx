@@ -52,7 +52,7 @@ const formulas = [
   },
   {
     title: "Premium (La Totale)",
-    price: "23€",
+    price: "25€",
     perChild: "/ enfant",
     features: [
       { icon: Check, text: "1h Trampoline + 30 min Bowling" },
