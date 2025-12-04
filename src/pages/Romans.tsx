@@ -2,38 +2,21 @@ import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { 
-  Rocket, 
-  ParkingCircle, 
-  Users, 
-  Footprints,
-  Clock,
-  Baby,
-  Zap
-} from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-
+import { Rocket, ParkingCircle, Users, Footprints, Clock, Baby, Zap } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 const Romans = () => {
   const scrollToReservation = () => {
     const element = document.getElementById('reservation-romans');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Helmet>
         <title>Trampoline Park Romans-sur-Isère & Bourg-de-Péage - Valence Trampoline</title>
-        <meta 
-          name="description" 
-          content="Vous cherchez une activité enfant à Romans ou Bourg-de-Péage ? Valence Trampoline est à 15 min ! Anniversaires, Baby Gym et Sauts. Chaussettes incluses." 
-        />
+        <meta name="description" content="Vous cherchez une activité enfant à Romans ou Bourg-de-Péage ? Valence Trampoline est à 15 min ! Anniversaires, Baby Gym et Sauts. Chaussettes incluses." />
       </Helmet>
 
       <Navigation />
@@ -52,11 +35,7 @@ const Romans = () => {
               Habitants du Pays Romanais, venez découvrir le parc le plus fun et convivial de la Drôme. 
               Basé à Saint-Marcel-lès-Valence (Zone Fun Park).
             </p>
-            <Button 
-              size="lg"
-              className="bg-gradient-to-r from-secondary to-accent text-foreground border-0 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full shadow-lg hover:shadow-xl"
-              onClick={scrollToReservation}
-            >
+            <Button size="lg" className="bg-gradient-to-r from-secondary to-accent text-foreground border-0 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full shadow-lg hover:shadow-xl" onClick={scrollToReservation}>
               <Footprints className="mr-2" size={20} />
               Réserver ma session (Chaussettes incluses)
             </Button>
@@ -166,28 +145,7 @@ const Romans = () => {
 
       {/* Itinéraire & Accès */}
       <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            Comment venir <span className="text-primary">depuis Romans ?</span>
-          </h2>
-          <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto text-lg">
-            C'est tout droit ! Prenez la N532 direction Valence, Sortie 4 (Saint-Marcel-lès-Valence). 
-            Au rond-point du Leclerc, suivez "Zone de Loisirs / Fun Park".
-          </p>
-
-          <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-xl">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d45631.25!2d4.9!3d44.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x12b518ed6c28b9a7%3A0x7f6c4e8e0b9a9a9a!2sRomans-sur-Is%C3%A8re!3m2!1d45.0433!2d5.0519!4m5!1s0x12b515c8e5e5e5e5%3A0x5a5a5a5a5a5a5a5a!2sFun%20Park%20Valence%2C%20Saint-Marcel-l%C3%A8s-Valence!3m2!1d44.9567!2d4.9333!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
-              width="100%" 
-              height="400" 
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Itinéraire Romans - Fun Park Valence"
-            />
-          </div>
-        </div>
+        
       </section>
 
       {/* Section Réservation */}
@@ -198,13 +156,10 @@ const Romans = () => {
           </h2>
 
           <div className="max-w-5xl mx-auto bg-card rounded-2xl shadow-xl overflow-hidden">
-            <iframe 
-              src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Factivities%2Fx3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV"
-              width="100%" 
-              height="700" 
-              style={{ border: 0, overflow: 'hidden' }}
-              title="Réservation"
-            />
+            <iframe src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Factivities%2Fx3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV" width="100%" height="700" style={{
+            border: 0,
+            overflow: 'hidden'
+          }} title="Réservation" />
           </div>
         </div>
       </section>
@@ -295,8 +250,6 @@ const Romans = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Romans;
