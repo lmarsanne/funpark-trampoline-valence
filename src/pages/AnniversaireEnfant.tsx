@@ -67,24 +67,40 @@ const formulas = [
 
 const faqItems = [
   {
-    question: "Quel est le minimum d'enfants ?",
-    answer: "Le minimum est de 5 enfants pour valider une formule anniversaire.",
+    question: "À partir de quel âge peut-on fêter un anniversaire au Fun Park ?",
+    answer: "Nous avons des formules pour tous ! Pour les 2 à 5 ans (Baby Anniversaire), nous vous recommandons vivement de privilégier le <strong>mercredi ou samedi matin</strong> pour plus de calme, mais la formule reste possible sur tous nos créneaux d'ouverture. Dès 6 ans, toutes les autres activités sont accessibles.",
   },
   {
-    question: "Les chaussettes sont-elles fournies ?",
-    answer: "Oui ! Pour les formules incluant du trampoline, les chaussettes antidérapantes sont incluses pour tous les invités.",
+    question: "Quel est le nombre minimum d'enfants requis ?",
+    answer: "Pour valider une formule anniversaire, un minimum de <strong>5 enfants</strong> est requis.",
   },
   {
-    question: "Peut-on apporter notre propre gâteau ?",
-    answer: "Le gâteau est déjà inclus dans la formule (avec bonbons et boissons), mais vous pouvez apporter un complément si vous le souhaitez (sauf contraintes allergies spécifiques, nous contacter).",
+    question: "Le gâteau et les boissons sont-ils fournis ?",
+    answer: "OUI, tout est inclus ! Gâteau (chocolat ou fruits), bonbons, boissons et vaisselle. Vous n'avez rien à préparer. (Aucune nourriture extérieure acceptée sauf allergie médicale).",
+  },
+  {
+    question: "Que se passe-t-il si un invité est absent le jour J ?",
+    answer: "La réservation est ferme et définitive. <strong>Nous ne procédons à aucun remboursement en cas d'invité manquant.</strong> Le forfait est dû pour le nombre d'enfants réservé initialement.",
+  },
+  {
+    question: "Comment se fait le paiement ?",
+    answer: "Le paiement s'effectue <strong>en totalité en ligne</strong> au moment de la réservation. Cela valide définitivement votre créneau et vous permet de profiter de la fête sans passer par la caisse à l'arrivée.",
+  },
+  {
+    question: "Faut-il des chaussures ou équipements spéciaux ?",
+    answer: "Bowling = Vos propres baskets propres (pas de location). Trampoline = Chaussettes antidérapantes (incluses dans les formules !).",
   },
   {
     question: "Les parents doivent-ils rester ?",
-    answer: "La présence d'au moins un adulte responsable est obligatoire durant toute la durée de l'anniversaire.",
+    answer: "Oui, la présence d'au moins un adulte responsable est obligatoire pour surveiller le groupe.",
   },
   {
-    question: "Comment réserver ?",
-    answer: "La réservation se fait directement en ligne via le module ci-dessus. Un acompte peut être demandé pour bloquer le créneau.",
+    question: "Combien de temps faut-il réserver à l'avance ?",
+    answer: "Les créneaux partent vite ! Réservez idéalement 2 à 3 semaines à l'avance.",
+  },
+  {
+    question: "Combien de temps dure l'anniversaire ?",
+    answer: "<strong>La durée dépend de la formule choisie.</strong> Comptez le temps des activités (1h ou plus) auquel s'ajoutent 30 minutes de goûter réservé. Prévoyez donc entre 1h30 et 3h00 de présence sur place.",
   },
 ];
 
@@ -227,7 +243,7 @@ const AnniversaireEnfant = () => {
                     {item.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
-                    {item.answer}
+                    <span dangerouslySetInnerHTML={{ __html: item.answer }} />
                   </AccordionContent>
                 </AccordionItem>
               ))}
