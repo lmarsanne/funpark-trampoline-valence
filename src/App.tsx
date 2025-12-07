@@ -9,6 +9,7 @@ import Karaoke from "./pages/Karaoke";
 import QuizBoxing from "./pages/QuizBoxing";
 import AnniversaireEnfant from "./pages/AnniversaireEnfant";
 import Romans from "./pages/Romans";
+import EvgEvjf from "./pages/EvgEvjf";
 import NotFound from "./pages/NotFound";
 import GuidapOverlay from "@/components/GuidapOverlay";
 import { ScrollToTop } from "@/components/ScrollToTop";
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/karaoke" element={<Karaoke />} />
             <Route path="/quiz-boxing" element={<QuizBoxing />} />
             <Route path="/trampoline-romans-bourg-de-peage" element={<Romans />} />
+            <Route path="/evg-evjf-valence" element={<EvgEvjf />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
