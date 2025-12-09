@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://funpark-valence.fr/sitemap.xml
+Sitemap: https://www.valence-trampoline.com/sitemap.xml
