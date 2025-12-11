@@ -10,6 +10,7 @@ import QuizBoxing from "./pages/QuizBoxing";
 import AnniversaireEnfant from "./pages/AnniversaireEnfant";
 import Romans from "./pages/Romans";
 import TainTournon from "./pages/TainTournon";
+import GuilherandStPeray from "./pages/GuilherandStPeray";
 import EvgEvjf from "./pages/EvgEvjf";
 import NotFound from "./pages/NotFound";
 import GuidapOverlay from "@/components/GuidapOverlay";
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/quiz-boxing" element={<QuizBoxing />} />
             <Route path="/trampoline-romans-bourg-de-peage" element={<Romans />} />
             <Route path="/trampoline-tain-tournon" element={<TainTournon />} />
+            <Route path="/trampoline-guilherand-st-peray" element={<GuilherandStPeray />} />
             <Route path="/evg-evjf-valence" element={<EvgEvjf />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
