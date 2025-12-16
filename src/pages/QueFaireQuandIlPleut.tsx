@@ -5,6 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CloudRain, Car, Thermometer, Lock, UtensilsCrossed, Dumbbell, Target, Mic, Gamepad2, MapPin, Phone, Mail } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { Link } from "react-router-dom";
 
 const QueFaireQuandIlPleut = () => {
   const scrollToActivites = () => {
@@ -20,32 +21,37 @@ const QueFaireQuandIlPleut = () => {
       icon: "🤸",
       title: "Trampoline Park",
       description: "Brûlez de l'énergie, pas de l'essence. Un parc géant pour se défouler au sec.",
-      color: "from-orange-500 to-amber-500"
+      color: "from-orange-500 to-amber-500",
+      link: "/"
     },
     {
       icon: "🎳",
       title: "Bowling 12 Pistes",
       description: "L'activité conviviale par excellence. Chaussures sèches et ambiance garantie.",
-      color: "from-cyan-500 to-blue-500"
+      color: "from-cyan-500 to-blue-500",
+      link: "/"
     },
     {
       icon: "🥊",
       title: "Quiz Boxing",
       badge: "Nouveau !",
       description: "Comme à la télé ! Enfermez-vous dans l'arène pour un combat de culture générale hilarant.",
-      color: "from-red-500 to-orange-500"
+      color: "from-red-500 to-orange-500",
+      link: "/quiz-boxing"
     },
     {
       icon: "🎤",
       title: "Karaoké Box",
       description: "Il pleut ? Chantez ! (De toute façon, on est insonorisés). Box privés pour votre groupe.",
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
+      link: "/karaoke"
     },
     {
       icon: "🎱",
       title: "Arcade & Billard",
       description: "Défiez vos amis sur nos bornes d'arcade, flippers et tables de billard.",
-      color: "from-emerald-500 to-teal-500"
+      color: "from-emerald-500 to-teal-500",
+      link: "/"
     }
   ];
 
@@ -202,33 +208,34 @@ const QueFaireQuandIlPleut = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {activities.map((activity, index) => (
-                <Card
-                  key={index}
-                  className="bg-slate-800/50 border-slate-700/50 hover:border-orange-500/50 transition-all duration-300 group hover:shadow-lg hover:shadow-orange-500/10 overflow-hidden"
-                >
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className={`text-4xl p-3 rounded-xl bg-gradient-to-br ${activity.color} bg-opacity-20`}>
-                        {activity.icon}
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <h3 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">
-                            {activity.title}
-                          </h3>
-                          {activity.badge && (
-                            <span className="bg-orange-500 text-white text-xs px-2 py-0.5 rounded-full font-medium">
-                              {activity.badge}
-                            </span>
-                          )}
+                <Link key={index} to={activity.link}>
+                  <Card
+                    className="bg-slate-800/50 border-slate-700/50 hover:border-orange-500/50 transition-all duration-300 group hover:shadow-lg hover:shadow-orange-500/10 overflow-hidden h-full"
+                  >
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-4">
+                        <div className={`text-4xl p-3 rounded-xl bg-gradient-to-br ${activity.color} bg-opacity-20`}>
+                          {activity.icon}
                         </div>
-                        <p className="text-slate-400 text-sm leading-relaxed">
-                          {activity.description}
-                        </p>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-2">
+                            <h3 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">
+                              {activity.title}
+                            </h3>
+                            {activity.badge && (
+                              <span className="bg-orange-500 text-white text-xs px-2 py-0.5 rounded-full font-medium">
+                                {activity.badge}
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-slate-400 text-sm leading-relaxed">
+                            {activity.description}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
 
