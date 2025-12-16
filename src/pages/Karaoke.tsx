@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { KaraokeFAQ } from "@/components/KaraokeFAQ";
@@ -11,21 +12,35 @@ import karaokeFamily from "@/assets/karaoke-family.jpg";
 import karaokeColleagues from "@/assets/karaoke-colleagues.jpg";
 
 const Karaoke = () => {
-  // Empêche le navigateur de restaurer la position du scroll précédente
+  // Désactiver la restauration automatique du scroll et forcer le haut de page
   useEffect(() => {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
-    
-    // Force le retour en haut au chargement
-    window.scrollTo(0, 0);
-    
-    // Petit délai pour contrer le script Guidap
-    const timer = setTimeout(() => {
+
+    // Fonction qui force le scroll en haut
+    const forceTop = () => {
       window.scrollTo(0, 0);
-    }, 10);
-    
-    return () => clearTimeout(timer);
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    };
+
+    // Exécuter immédiatement
+    forceTop();
+
+    // Forcer la position en haut toutes les 20ms pendant 2 secondes
+    // pour contrer le moment où Guidap tente de scroller
+    const intervalId = setInterval(forceTop, 20);
+
+    // Au bout de 2 secondes, arrêter de forcer pour laisser l'utilisateur scroller
+    const timeoutId = setTimeout(() => {
+      clearInterval(intervalId);
+    }, 2000);
+
+    return () => {
+      clearInterval(intervalId);
+      clearTimeout(timeoutId);
+    };
   }, []);
   const reservationUrl = "https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2FWiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%2Fundefined%2FDEPARTURE";
   const scrollToReservation = () => {
@@ -45,6 +60,9 @@ const Karaoke = () => {
     }
   };
   return <div className="min-h-screen">
+      <Helmet>
+        <script defer src="https://valence-trampoline.com/~flock.js" data-proxy-url="https://valence-trampoline.com/~api/analytics"></script>
+      </Helmet>
       <Navigation />
 
       {/* Hero Section */}
