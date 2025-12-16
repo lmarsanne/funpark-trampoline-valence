@@ -242,15 +242,6 @@ const AnniversaireEnfant = () => {
               ))}
             </div>
 
-            {/* CTA after formulas - mobile */}
-            <Button 
-              onClick={scrollToReservation}
-              size="lg"
-              className="w-full md:hidden mt-6 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-bold text-base py-5 shadow-lg"
-            >
-              <Cake className="w-5 h-5 mr-2" />
-              Réserver cette formule
-            </Button>
           </div>
         </section>
 
