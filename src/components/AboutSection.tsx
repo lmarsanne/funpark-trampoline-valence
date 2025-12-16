@@ -1,5 +1,7 @@
-import { Zap, Heart, Shield, Users } from "lucide-react";
+import { useState } from "react";
+import { Zap, Heart, Shield, Users, X } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import aboutGallery1 from "@/assets/about-gallery-1.png";
 import aboutGallery2 from "@/assets/about-gallery-2.png";
 import aboutGallery3 from "@/assets/about-gallery-3.png";
@@ -11,6 +13,7 @@ const galleryImages = [
   { src: aboutGallery3, alt: "Groupe de jeunes au trampoline park" },
   { src: aboutGallery4, alt: "Enfants jouant au basket sur trampolines" },
 ];
+
 const features = [{
   icon: Zap,
   title: "Zones Multiples",
@@ -28,13 +31,33 @@ const features = [{
   title: "Pour Tous",
   description: "Activités adaptées de 2 à 99 ans, en famille ou entre amis."
 }];
+
 export const AboutSection = () => {
-  return <section className="py-12 bg-gradient-to-b from-background to-muted/30">
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const autoplayPlugin = Autoplay({ 
+    delay: 4000, 
+    stopOnInteraction: true,
+    stopOnMouseEnter: true 
+  });
+
+  const handleImageClick = (imageSrc: string) => {
+    if (window.innerWidth < 768) {
+      setSelectedImage(imageSrc);
+    }
+  };
+
+  return (
+    <section className="py-12 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           {/* Image Gallery */}
           <div className="relative animate-scale-in">
-            <Carousel className="w-full" opts={{ loop: true }}>
+            <Carousel 
+              className="w-full" 
+              opts={{ loop: true }}
+              plugins={[autoplayPlugin]}
+            >
               <CarouselContent>
                 {galleryImages.map((image, index) => (
                   <CarouselItem key={index}>
@@ -42,9 +65,9 @@ export const AboutSection = () => {
                       <img 
                         src={image.src} 
                         alt={image.alt} 
-                        className="w-full h-64 sm:h-80 md:h-96 object-cover hover:scale-105 transition-transform duration-500" 
+                        className="w-full aspect-[4/5] md:aspect-[3/4] object-cover hover:scale-105 transition-transform duration-500 cursor-pointer md:cursor-default" 
+                        onClick={() => handleImageClick(image.src)}
                       />
-                      {/* Gradient overlay for depth */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
                     </div>
                   </CarouselItem>
@@ -81,18 +104,44 @@ export const AboutSection = () => {
         {/* Features Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => {
-          const Icon = feature.icon;
-          return <div key={index} className="group p-6 rounded-2xl bg-card border border-border hover:shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 animate-fade-in-up" style={{
-            animationDelay: `${index * 100}ms`
-          }}>
+            const Icon = feature.icon;
+            return (
+              <div 
+                key={index} 
+                className="group p-6 rounded-2xl bg-card border border-border hover:shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 animate-fade-in-up" 
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <Icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2">{feature.title}</h3>
                 <p className="text-muted-foreground">{feature.description}</p>
-              </div>;
-        })}
+              </div>
+            );
+          })}
         </div>
       </div>
-    </section>;
+
+      {/* Zoom Modal (Mobile only) */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 animate-fade-in"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button 
+            className="absolute top-4 right-4 text-white/80 hover:text-white z-10 p-2"
+            onClick={() => setSelectedImage(null)}
+          >
+            <X className="w-8 h-8" />
+          </button>
+          <img 
+            src={selectedImage} 
+            alt="Image agrandie"
+            className="max-w-full max-h-[90vh] object-contain rounded-lg animate-scale-in"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
+    </section>
+  );
 };
