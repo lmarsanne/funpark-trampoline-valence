@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Zap, Heart, Shield, Users, X } from "lucide-react";
+import { Zap, Heart, Shield, Users } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import aboutGallery1 from "@/assets/about-gallery-1.png";
@@ -33,19 +32,11 @@ const features = [{
 }];
 
 export const AboutSection = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
   const autoplayPlugin = Autoplay({ 
     delay: 4000, 
     stopOnInteraction: true,
     stopOnMouseEnter: true 
   });
-
-  const handleImageClick = (imageSrc: string) => {
-    if (window.innerWidth < 768) {
-      setSelectedImage(imageSrc);
-    }
-  };
 
   return (
     <section className="py-12 bg-gradient-to-b from-background to-muted/30">
@@ -65,8 +56,7 @@ export const AboutSection = () => {
                       <img 
                         src={image.src} 
                         alt={image.alt} 
-                        className="w-full aspect-[4/5] md:aspect-[3/4] object-cover hover:scale-105 transition-transform duration-500 cursor-pointer md:cursor-default" 
-                        onClick={() => handleImageClick(image.src)}
+                        className="w-full aspect-[4/5] md:aspect-[3/4] object-cover hover:scale-105 transition-transform duration-500" 
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
                     </div>
@@ -121,27 +111,6 @@ export const AboutSection = () => {
           })}
         </div>
       </div>
-
-      {/* Zoom Modal (Mobile only) */}
-      {selectedImage && (
-        <div 
-          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 animate-fade-in"
-          onClick={() => setSelectedImage(null)}
-        >
-          <button 
-            className="absolute top-4 right-4 text-white/80 hover:text-white z-10 p-2"
-            onClick={() => setSelectedImage(null)}
-          >
-            <X className="w-8 h-8" />
-          </button>
-          <img 
-            src={selectedImage} 
-            alt="Image agrandie"
-            className="max-w-full max-h-[90vh] object-contain rounded-lg animate-scale-in"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
     </section>
   );
 };
