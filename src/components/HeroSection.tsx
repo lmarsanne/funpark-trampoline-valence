@@ -1,21 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
 export const HeroSection = () => {
   const scrollToReservation = () => {
     const element = document.getElementById('reservation');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section className="pt-16">
+  return <section className="pt-16">
       {/* Title Section */}
       <div className="bg-gradient-to-r from-primary via-primary to-accent py-4 md:py-6">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-white mb-3 md:mb-4 leading-tight animate-fade-in-up">
-            Découvrez notre <br />
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-white mb-3 md:mb-4 leading-tight animate-fade-in-up">Saint-Marcel-lès-Valence<br />
             <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
               Trampoline Park
             </span>
@@ -30,15 +28,7 @@ export const HeroSection = () => {
         <div className="w-full md:container md:mx-auto px-0 md:px-4 py-2 md:py-4">
           <div className="w-full md:max-w-6xl md:mx-auto">
             <div className="aspect-[9/16] md:aspect-video overflow-hidden rounded-none md:rounded-2xl">
-              <video
-                src="https://qxnnyyksfohothijwlas.supabase.co/storage/v1/object/public/video/Video%20Project%201%20(1).mp4"
-                className="w-full h-full object-cover"
-                autoPlay
-                loop
-                muted
-                playsInline
-                title="Vidéo Trampoline Park"
-              />
+              <video src="https://qxnnyyksfohothijwlas.supabase.co/storage/v1/object/public/video/Video%20Project%201%20(1).mp4" className="w-full h-full object-cover" autoPlay loop muted playsInline title="Vidéo Trampoline Park" />
             </div>
           </div>
         </div>
@@ -53,20 +43,11 @@ export const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
-              <Button 
-                size="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-primary to-accent text-white border-0 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full shadow-lg hover:shadow-xl"
-                onClick={scrollToReservation}
-              >
+              <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary to-accent text-white border-0 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full shadow-lg hover:shadow-xl" onClick={scrollToReservation}>
                 Je réserve
               </Button>
               
-              <Button 
-                variant="secondary" 
-                size="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 text-white border-0 hover:from-blue-600 hover:to-blue-700 shadow-lg shadow-blue-500/40 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full"
-                asChild
-              >
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 text-white border-0 hover:from-blue-600 hover:to-blue-700 shadow-lg shadow-blue-500/40 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full" asChild>
                 <a href="#formules">
                   Voir les tarifs
                 </a>
@@ -75,6 +56,5 @@ export const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
