@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Cake, PartyPopper, Gift, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import birthdayImage from "@/assets/birthday-party.jpg";
@@ -74,12 +73,6 @@ export const BirthdaySection = () => {
               </Link>
             </div>
 
-            <Link to="/anniversaire-enfant">
-              <Button variant="cta" size="lg" className="group w-full sm:w-auto mt-2">
-                Découvrir nos formules
-                <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
           </div>
 
           {/* Image */}
