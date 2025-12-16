@@ -138,7 +138,7 @@ const AnniversaireEnfant = () => {
                 playsInline
                 poster="/placeholder.svg"
               >
-                <source src="https://qxnnyyksfohothijwlas.supabase.co/storage/v1/object/public/video/video%20anniv%20(2).mp4" type="video/mp4" />
+                <source src="https://qxnnyyksfohothijwlas.supabase.co/storage/v1/object/public/video/anniv%20(2).mp4" type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>
