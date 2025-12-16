@@ -129,14 +129,13 @@ const AnniversaireEnfant = () => {
             </div>
 
             {/* Hero Video */}
-            <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl mb-8 aspect-video">
+            <div className="relative -mx-4 md:mx-0 md:rounded-3xl overflow-hidden shadow-2xl mb-8 aspect-video">
               <video
                 className="w-full h-full object-cover"
                 autoPlay
                 muted
                 loop
                 playsInline
-                poster="/placeholder.svg"
               >
                 <source src="/videos/anniv.mp4" type="video/mp4" />
               </video>
