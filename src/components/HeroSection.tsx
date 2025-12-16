@@ -29,12 +29,14 @@ export const HeroSection = () => {
       <div className="w-full bg-gradient-to-r from-primary via-primary to-accent">
         <div className="w-full md:container md:mx-auto px-0 md:px-4 py-2 md:py-4">
           <div className="w-full md:max-w-6xl md:mx-auto">
-            <div className="aspect-[16/18] md:aspect-video">
-              <iframe
-                src="https://player.vimeo.com/video/1139328631?autoplay=1&loop=1&byline=0&title=0&muted=1"
-                className="w-full h-full"
-                style={{ border: 'none' }}
-                allow="autoplay; fullscreen; picture-in-picture"
+            <div className="aspect-[9/16] md:aspect-video overflow-hidden rounded-none md:rounded-2xl">
+              <video
+                src="https://qxnnyyksfohothijwlas.supabase.co/storage/v1/object/public/video/Video%20Project%201%20(1).mp4"
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
                 title="Vidéo Trampoline Park"
               />
             </div>
