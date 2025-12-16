@@ -110,8 +110,9 @@ const AnniversaireEnfant = () => {
       <Navigation />
       <main className="min-h-screen bg-gradient-to-b from-pink-50 via-yellow-50 to-blue-50">
         {/* Hero Section */}
-        <section className="pt-24 pb-12 px-4">
-          <div className="container mx-auto max-w-5xl">
+        <section className="pt-24 pb-12">
+          {/* Text content with padding */}
+          <div className="container mx-auto max-w-5xl px-4">
             <div className="text-center mb-8">
               <div className="flex justify-center gap-4 mb-6">
                 <PartyPopper className="w-10 h-10 md:w-12 md:h-12 text-pink-500 animate-bounce" />
@@ -127,11 +128,13 @@ const AnniversaireEnfant = () => {
                 Gâteau, Boissons, Chaussettes & Activités... On s'occupe de <span className="text-primary">TOUT</span> !
               </p>
             </div>
+          </div>
 
-            {/* Hero Video */}
-            <div className="relative -mx-4 md:mx-0 md:rounded-3xl overflow-hidden shadow-2xl mb-8 aspect-video">
+          {/* Hero Video - Full width on mobile */}
+          <div className="w-full md:container md:mx-auto md:max-w-5xl md:px-4 mb-8">
+            <div className="relative md:rounded-3xl overflow-hidden shadow-2xl md:aspect-video">
               <video
-                className="w-full h-full object-cover"
+                className="w-full h-auto md:h-full md:object-cover"
                 autoPlay
                 muted
                 loop
@@ -141,18 +144,18 @@ const AnniversaireEnfant = () => {
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>
+          </div>
 
-            {/* Intro text */}
-            <div className="text-center space-y-6">
-              <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-                Ne cherchez plus, nous organisons l'anniversaire de rêve de votre enfant. 
-                <strong> Vous n'avez rien à apporter, rien à préparer</strong>, juste à profiter du sourire de votre enfant.
-              </p>
-              
-              <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-base md:text-lg px-6 py-3 gap-2 shadow-lg">
-                ✅ Chaussettes antidérapantes INCLUSES pour tous les invités !
-              </Badge>
-            </div>
+          {/* Intro text */}
+          <div className="container mx-auto max-w-5xl px-4 text-center space-y-6">
+            <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+              Ne cherchez plus, nous organisons l'anniversaire de rêve de votre enfant. 
+              <strong> Vous n'avez rien à apporter, rien à préparer</strong>, juste à profiter du sourire de votre enfant.
+            </p>
+            
+            <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-base md:text-lg px-6 py-3 gap-2 shadow-lg">
+              ✅ Chaussettes antidérapantes INCLUSES pour tous les invités !
+            </Badge>
           </div>
         </section>
 
