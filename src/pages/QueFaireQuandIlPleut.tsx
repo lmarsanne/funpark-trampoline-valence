@@ -12,11 +12,6 @@ const QueFaireQuandIlPleut = () => {
       behavior: 'smooth'
     });
   };
-  const scrollToReservation = () => {
-    document.getElementById('reservation')?.scrollIntoView({
-      behavior: 'smooth'
-    });
-  };
   const activities = [{
     icon: "🤸",
     title: "Trampoline Park",
@@ -197,11 +192,6 @@ const QueFaireQuandIlPleut = () => {
                 </Link>)}
             </div>
 
-            <div className="text-center mt-10">
-              <Button onClick={scrollToReservation} size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold shadow-lg shadow-cyan-500/30">
-                Réserver maintenant
-              </Button>
-            </div>
           </div>
         </section>
 
@@ -229,16 +219,6 @@ const QueFaireQuandIlPleut = () => {
           </div>
         </section>
 
-        {/* Reservation Section */}
-        <section id="reservation" className="py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            
-
-            <div className="max-w-4xl mx-auto -mx-4 md:mx-auto">
-              <iframe id="widget-guidap" src="https://live.guidap.co/qv08g7VX6u1bCIgJAzfB?locale=fr" width="100%" height="700" className="border-0 md:rounded-2xl bg-slate-800" allow="payment" title="Réservation Fun Park" />
-            </div>
-          </div>
-        </section>
 
         {/* FAQ Section */}
         <section className="py-16 md:py-24 bg-slate-900/50">
@@ -279,17 +259,12 @@ const QueFaireQuandIlPleut = () => {
               <p className="text-slate-300 mb-8">
                 Rejoignez-nous au chaud et découvrez pourquoi la pluie est notre meilleure amie !
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button onClick={scrollToReservation} size="xl" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold shadow-lg shadow-orange-500/30">
-                  Je réserve maintenant
+              <a href="tel:0475558974">
+                <Button size="xl" variant="outline" className="border-slate-600 text-white hover:bg-slate-800">
+                  <Phone className="w-5 h-5 mr-2" />
+                  04 75 55 89 74
                 </Button>
-                <a href="tel:0475558974">
-                  <Button size="xl" variant="outline" className="border-slate-600 text-white hover:bg-slate-800 w-full sm:w-auto">
-                    <Phone className="w-5 h-5 mr-2" />
-                    04 75 55 89 74
-                  </Button>
-                </a>
-              </div>
+              </a>
 
               <div className="mt-10 flex items-center justify-center gap-2 text-slate-400">
                 <MapPin className="w-5 h-5" />
