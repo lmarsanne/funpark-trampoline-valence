@@ -2,11 +2,11 @@ import { Clock, Calendar, Coffee, Shield } from "lucide-react";
 const infos = [{
   icon: Clock,
   title: "Réservation à l'heure",
-  description: "Sessions d'une heure pour profiter pleinement des installations."
+  description: "Sessions d'une heure ou deux heures pour profiter pleinement des installations."
 }, {
   icon: Shield,
   title: "Sécurité maximale",
-  description: "Chaussettes antidérapantes obligatoires (2 € sur place) pour votre protection."
+  description: "Chaussettes antidérapantes OBLIGATOIRES et INCLUSES dans votre tarif. Zéro coût caché !"
 }, {
   icon: Calendar,
   title: "Ouvert toute l'année",

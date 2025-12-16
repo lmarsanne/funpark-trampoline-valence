@@ -1,47 +1,34 @@
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Baby, Users, Sparkles, Check } from "lucide-react";
+import { Baby, Zap, Check } from "lucide-react";
 
 const formulas = [
   {
     icon: Baby,
-    title: "Baby Jumper",
-    age: "2-6 ans - 9€ la session de 1h",
-    description: "Un espace adapté aux tout-petits pour découvrir le plaisir du trampoline en toute sécurité.",
+    title: "BABY JUMPER",
+    age: "3 à 5 ans",
+    prices: ["9€ / 1h", "15€ / 2h"],
+    description: "Un espace sécurisé pour les tout-petits. Découverte du trampoline en douceur.",
     features: [
       "Zone sécurisée et adaptée",
       "Surveillance constante",
-      "Activités ludiques et éducatives",
-      "Environnement coloré et fun",
+      "Activités ludiques",
     ],
     color: "from-[hsl(var(--funpark-pink))] to-[hsl(var(--funpark-yellow))]",
   },
   {
-    icon: Users,
-    title: "Kid Jumper",
-    age: "7 à 18 ans - 12€ la session de 1h",
-    description: "Toutes les zones du parc accessibles pour vivre des sensations fortes et repousser ses limites !",
+    icon: Zap,
+    title: "OPEN JUMP",
+    age: "6 ans et +",
+    prices: ["13€ / 1h", "21€ / 2h"],
+    description: "Accès illimité à toutes les zones ! Sensations fortes pour enfants, ados et adultes.",
     features: [
       "Accès à toutes les zones",
       "Parcours acrobatique",
       "Zone dunk et freestyle",
-      "Défis entre amis",
+      "Airbag géant",
     ],
     color: "from-primary to-accent",
     featured: true,
-  },
-  {
-    icon: Sparkles,
-    title: "Jumper",
-    age: "+18 ans - 12€ la session de 1h",
-    description: "Pour les adultes qui veulent se défouler et retrouver leur âme d'enfant dans une ambiance festive.",
-    features: [
-      "Accès complet au parc",
-      "Sessions entre amis",
-      "EVJF / EVG bienvenues",
-      "Ambiance musicale fun",
-    ],
-    color: "from-secondary to-[hsl(var(--funpark-yellow))]",
   },
 ];
 
@@ -64,11 +51,11 @@ export const FormulasSection = () => {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Réservation à l'heure - Trouvez la formule parfaite selon votre âge
+            Tarifs TOUT COMPRIS - Chaussettes incluses !
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {formulas.map((formula, index) => {
             const Icon = formula.icon;
             return (
@@ -81,8 +68,8 @@ export const FormulasSection = () => {
               >
                 {formula.featured && (
                   <div className="absolute top-4 right-4">
-                    <div className="bg-gradient-to-r from-primary to-accent text-white text-xs font-bold px-3 py-1 rounded-full">
-                      POPULAIRE
+                    <div className="bg-gradient-to-r from-primary to-accent text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                      ⭐ POPULAIRE
                     </div>
                   </div>
                 )}
@@ -93,9 +80,26 @@ export const FormulasSection = () => {
                   <Icon className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-2xl font-bold text-foreground mb-2">{formula.title}</h3>
-                <p className="text-lg font-semibold text-primary mb-4">{formula.age}</p>
-                <p className="text-muted-foreground mb-6 leading-relaxed">{formula.description}</p>
+                <h3 className="text-2xl font-bold text-foreground mb-1">{formula.title}</h3>
+                <p className="text-lg font-medium text-muted-foreground mb-4">({formula.age})</p>
+                
+                {/* Prix */}
+                <div className="flex gap-4 mb-4">
+                  {formula.prices.map((price, idx) => (
+                    <div key={idx} className="bg-primary/10 text-primary font-bold px-4 py-2 rounded-lg text-lg">
+                      {price}
+                    </div>
+                  ))}
+                </div>
+
+                <p className="text-muted-foreground mb-4 leading-relaxed">{formula.description}</p>
+
+                {/* Badge Chaussettes Incluses */}
+                <div className="bg-accent/20 border border-accent/30 rounded-lg p-3 mb-6">
+                  <p className="text-accent font-semibold text-sm flex items-center gap-2">
+                    🧦 Chaussettes antidérapantes INCLUSES !
+                  </p>
+                </div>
 
                 <ul className="space-y-3 mb-8">
                   {formula.features.map((feature, idx) => (
@@ -115,12 +119,6 @@ export const FormulasSection = () => {
               </Card>
             );
           })}
-        </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-sm text-muted-foreground">
-            * Chaussettes antidérapantes obligatoires (2 € en vente sur place)
-          </p>
         </div>
       </div>
     </section>

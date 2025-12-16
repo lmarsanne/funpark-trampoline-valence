@@ -8,35 +8,36 @@ import {
 const faqs = [
   {
     question: "À partir de quel âge peut-on accéder au trampoline park ?",
-    answer: "Notre parc accueille les enfants dès 2 ans ! Nous avons une zone spéciale Baby Jumper (2-6 ans) adaptée aux tout-petits, avec des trampolines sécurisés et une surveillance constante.",
+    answer: "Notre parc accueille les enfants dès 3 ans ! Nous avons une zone spéciale Baby Jumper (3-5 ans) adaptée aux tout-petits, avec des trampolines sécurisés et une surveillance constante.",
+  },
+  {
+    question: "Combien de temps dure une session ?",
+    answer: "Chaque session dure 1 heure ou 2 heures.",
+  },
+  {
+    question: "Les accompagnateurs doivent-ils payer ?",
+    answer: "Non, l'accès est GRATUIT pour les accompagnateurs qui ne sautent pas. Pour l'hygiène, nous vous PRÊTONS une paire de sur-chaussettes 'Visiteurs' à l'entrée (à déposer dans le bac prévu à la sortie). Interdiction formelle de monter sur les toiles.",
+  },
+  {
+    question: "Que dois-je apporter pour ma visite ?",
+    answer: "Venez en tenue confortable (jogging, t-shirt). Les chaussettes antidérapantes sont obligatoires pour des raisons de sécurité et sont INCLUSES dans le tarif !",
+  },
+  {
+    question: "Peut-on organiser un anniversaire ?",
+    answer: "Absolument ! Nous proposons des formules anniversaire complètes avec espace privatisé et animations. Découvrez nos offres sur notre page dédiée.",
+    link: "https://valence-trampoline.com/anniversaire-enfant",
   },
   {
     question: "Comment réserver ma session ?",
     answer: "La réservation se fait directement en ligne sur notre site. Sélectionnez votre formule, choisissez votre créneau horaire et le nombre de participants. Nous vous recommandons de réserver à l'avance, surtout pour les week-ends.",
   },
   {
-    question: "Que dois-je apporter pour ma visite ?",
-    answer: "Venez en tenue confortable (jogging, t-shirt). Les chaussettes antidérapantes sont obligatoires pour des raisons de sécurité. Si vous n'en avez pas, vous pouvez en acheter sur place pour 2 €.",
-  },
-  {
-    question: "Les accompagnateurs doivent-ils payer ?",
-    answer: "Non ! Les accompagnateurs qui ne sautent pas peuvent accéder gratuitement à notre espace détente équipé d'un coin restauration. Ils peuvent ainsi surveiller leurs enfants tout en se relaxant.",
-  },
-  {
     question: "Quelles sont les mesures de sécurité ?",
     answer: "La sécurité est notre priorité absolue. Notre parc est équipé de matériel dernière génération, nos trampolines sont régulièrement contrôlés, et notre personnel est formé aux premiers secours. Des règles de sécurité sont affichées et expliquées avant chaque session.",
   },
   {
-    question: "Peut-on organiser un anniversaire ?",
-    answer: "Absolument ! Nous proposons des formules anniversaire complètes avec espace privatisé, animations, et possibilité d'apporter votre gâteau. Contactez-nous via notre formulaire de demande de devis pour plus d'informations.",
-  },
-  {
     question: "Y a-t-il un parking ?",
     answer: "Oui, un parking gratuit est disponible sur place pour tous nos visiteurs.",
-  },
-  {
-    question: "Combien de temps dure une session ?",
-    answer: "Chaque session dure 1 heure, ce qui est idéal pour profiter pleinement de toutes les zones sans trop se fatiguer. Vous pouvez réserver plusieurs sessions consécutives si vous le souhaitez.",
   },
 ];
 
@@ -69,6 +70,14 @@ export const FAQSection = () => {
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed">
                   {faq.answer}
+                  {faq.link && (
+                    <a 
+                      href={faq.link} 
+                      className="block mt-2 text-primary hover:underline font-medium"
+                    >
+                      → Voir nos formules anniversaire
+                    </a>
+                  )}
                 </AccordionContent>
               </AccordionItem>
             ))}
