@@ -7,11 +7,6 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
 const QueFaireQuandIlPleut = () => {
-  const scrollToActivites = () => {
-    document.getElementById('activites')?.scrollIntoView({
-      behavior: 'smooth'
-    });
-  };
   const activities = [{
     icon: "🤸",
     title: "Trampoline Park",
@@ -143,9 +138,11 @@ const QueFaireQuandIlPleut = () => {
                 chauffés et ultra-fun.
               </p>
 
-              <Button onClick={scrollToActivites} size="xl" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition-all duration-300">
-                Voir les disponibilités aujourd'hui
-              </Button>
+              <Link to="/">
+                <Button size="xl" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition-all duration-300">
+                  Voir les disponibilités aujourd'hui
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
