@@ -18,7 +18,7 @@ export const HeroSection = () => {
               Trampoline Park
             </span>
             <br />
-            à Valence
+            ​
           </h1>
         </div>
       </div>
