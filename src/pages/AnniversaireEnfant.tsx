@@ -94,6 +94,18 @@ const faqItems = [
     question: "Combien de temps faut-il réserver à l'avance ?",
     answer: "Les créneaux du week-end partent très vite ! Nous vous conseillons de réserver <strong>3 à 4 semaines à l'avance</strong> pour avoir l'horaire de votre choix.",
   },
+  {
+    question: "Que se passe-t-il si un invité est absent le jour J ?",
+    answer: "La réservation est ferme et définitive. <strong>Nous ne procédons à aucun remboursement</strong> en cas d'invité manquant. Le forfait est dû pour le nombre d'enfants réservé initialement.",
+  },
+  {
+    question: "Comment se fait le paiement ?",
+    answer: "Le paiement s'effectue <strong>en totalité en ligne</strong> au moment de la réservation. Cela valide définitivement votre créneau et vous permet de profiter de la fête sans passer par la caisse à l'arrivée.",
+  },
+  {
+    question: "Faut-il des chaussures ou équipements spéciaux ?",
+    answer: "Bowling = Vos propres baskets propres (pas de location). Trampoline = Chaussettes antidérapantes (incluses dans les formules !).",
+  },
 ];
 
 const AnniversaireEnfant = () => {
