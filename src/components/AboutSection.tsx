@@ -34,24 +34,26 @@ export const AboutSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           {/* Image Gallery */}
           <div className="relative animate-scale-in">
-            <Carousel className="w-full">
+            <Carousel className="w-full" opts={{ loop: true }}>
               <CarouselContent>
                 {galleryImages.map((image, index) => (
                   <CarouselItem key={index}>
-                    <div className="rounded-3xl overflow-hidden shadow-[var(--shadow-card)]">
+                    <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-xl">
                       <img 
                         src={image.src} 
                         alt={image.alt} 
-                        className="w-full h-auto object-cover aspect-[4/3] hover:scale-105 transition-transform duration-500" 
+                        className="w-full h-64 sm:h-80 md:h-96 object-cover hover:scale-105 transition-transform duration-500" 
                       />
+                      {/* Gradient overlay for depth */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
                     </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-2" />
-              <CarouselNext className="right-2" />
+              <CarouselPrevious className="left-2 md:left-4 h-10 w-10 bg-white/90 hover:bg-white shadow-lg" />
+              <CarouselNext className="right-2 md:right-4 h-10 w-10 bg-white/90 hover:bg-white shadow-lg" />
             </Carousel>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-secondary to-accent rounded-full blur-3xl opacity-50" />
+            <div className="hidden md:block absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-secondary to-accent rounded-full blur-3xl opacity-50" />
           </div>
 
           {/* Content */}
