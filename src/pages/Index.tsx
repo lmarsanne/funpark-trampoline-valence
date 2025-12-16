@@ -48,7 +48,7 @@ const Index = () => {
             </div>
 
             {/* Iframe */}
-            <div className="bg-card rounded-2xl shadow-xl overflow-hidden" style={{
+            <div className="-mx-4 md:mx-0 bg-card md:rounded-2xl shadow-xl overflow-hidden" style={{
             height: '800px'
           }}>
               <iframe src={reservationUrl} className="w-full h-full" title="Réservation" style={{
