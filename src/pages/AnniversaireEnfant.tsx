@@ -198,7 +198,7 @@ const AnniversaireEnfant = () => {
               Choisissez la formule parfaite pour votre enfant
             </p>
             
-            <div className="grid grid-cols-1 gap-3 md:gap-6 w-[90%] mx-auto">
+            <div className="grid grid-cols-1 gap-3 md:gap-6 w-full md:w-[90%] mx-auto">
               {formulasOverview.map((formula, index) => (
                 <Card 
                   key={index}
