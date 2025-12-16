@@ -202,7 +202,7 @@ const AnniversaireEnfant = () => {
               Minimum 6 enfants • Zéro stress !
             </p>
             
-            <div className="grid grid-cols-1 gap-3 md:gap-6 w-[90%] mx-auto">
+            <div className="grid grid-cols-1 gap-4 md:gap-6 w-[90%] mx-auto">
               {formulas.map((formula, index) => (
                 <Card 
                   key={index}
@@ -213,32 +213,32 @@ const AnniversaireEnfant = () => {
                   }`}
                 >
                   {formula.badge && (
-                    <div className={`absolute top-0 left-0 right-0 bg-gradient-to-r ${formula.badgeColor} text-white px-4 py-2 text-sm md:text-sm font-bold text-center`}>
+                    <div className={`absolute top-0 left-0 right-0 bg-gradient-to-r ${formula.badgeColor} text-white px-4 py-2.5 text-base md:text-sm font-bold text-center`}>
                       {formula.badge}
                     </div>
                   )}
                   
-                  <CardHeader className={`p-4 md:p-6 pb-2 md:pb-2 ${formula.badge ? "pt-12 md:pt-12" : ""}`}>
-                    <CardTitle className="text-lg md:text-lg font-bold text-center leading-tight">
+                  <CardHeader className={`p-5 md:p-6 pb-2 md:pb-2 ${formula.badge ? "pt-14 md:pt-12" : ""}`}>
+                    <CardTitle className="text-xl md:text-lg font-bold text-center leading-tight">
                       {formula.title}
                     </CardTitle>
                     <div className="text-center">
-                      <span className="text-3xl md:text-4xl font-bold text-primary">{formula.price}</span>
-                      <span className="text-sm md:text-base text-muted-foreground">{formula.perChild}</span>
+                      <span className="text-4xl md:text-4xl font-bold text-primary">{formula.price}</span>
+                      <span className="text-base md:text-base text-muted-foreground">{formula.perChild}</span>
                     </div>
                     <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                      <Clock className="w-4 h-4 md:w-4 md:h-4" />
-                      <span className="text-sm md:text-sm font-medium">{formula.duration}</span>
+                      <Clock className="w-5 h-5 md:w-4 md:h-4" />
+                      <span className="text-base md:text-sm font-medium">{formula.duration}</span>
                     </div>
                   </CardHeader>
                   
-                  <CardContent className="p-4 md:p-6 pt-0 md:pt-0 space-y-2 md:space-y-3">
-                    <div className="border-t border-border pt-3 md:pt-4">
-                      <p className="text-xs md:text-xs font-semibold text-muted-foreground uppercase mb-2 md:mb-3">Inclus :</p>
+                  <CardContent className="p-5 md:p-6 pt-0 md:pt-0 space-y-3 md:space-y-3">
+                    <div className="border-t border-border pt-4 md:pt-4">
+                      <p className="text-sm md:text-xs font-semibold text-muted-foreground uppercase mb-3 md:mb-3">Inclus :</p>
                       {formula.features.map((feature, fIndex) => (
-                        <div key={fIndex} className="flex items-start gap-2 md:gap-2 mb-2 md:mb-2">
-                          <Check className="w-5 h-5 md:w-5 md:h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm md:text-sm text-foreground/80 leading-tight">{feature}</span>
+                        <div key={fIndex} className="flex items-start gap-3 md:gap-2 mb-3 md:mb-2">
+                          <Check className="w-6 h-6 md:w-5 md:h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-base md:text-sm text-foreground/80 leading-tight">{feature}</span>
                         </div>
                       ))}
                     </div>
