@@ -12,11 +12,10 @@ import {
 import { Cake, Clock, Check, PartyPopper, ArrowDown } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 
-const formulas = [
+const formulasOverview = [
   {
     title: "Formule Trampoline",
     price: "15€",
-    perChild: "/ enfant",
     duration: "1h30 Total",
     badge: null,
     badgeColor: "",
@@ -24,52 +23,49 @@ const formulas = [
       "1h d'Activité Trampoline",
       "30 min de Goûter (Espace réservé)",
       "Gâteau, bonbons & boissons inclus",
-      "🧦 Chaussettes offertes",
+      "Chaussettes antidérapantes offertes",
     ],
   },
   {
     title: "Trampoline + Bowling",
     price: "19€",
-    perChild: "/ enfant",
     duration: "2h00 Total",
     badge: "⭐ Le plus populaire",
-    badgeColor: "from-pink-500 to-purple-500",
+    badgeColor: "from-yellow-500 to-orange-500",
     features: [
       "1h de Trampoline",
       "30 min de Bowling",
       "30 min de Goûter (Espace réservé)",
       "Gâteau, bonbons & boissons inclus",
-      "🧦 Chaussettes offertes",
+      "Chaussettes antidérapantes offertes",
     ],
   },
   {
     title: "Trampoline + Karaoké",
     price: "20€",
-    perChild: "/ enfant",
     duration: "2h30 Total",
-    badge: "🎤 Les filles adorent !",
+    badge: "⭐ Les filles adorent",
     badgeColor: "from-pink-400 to-fuchsia-500",
     features: [
       "1h de Trampoline",
-      "1h de Karaoké (Box Privée)",
+      "1h de Karaoké",
       "30 min de Goûter (Espace réservé)",
       "Gâteau, bonbons & boissons inclus",
-      "🧦 Chaussettes offertes",
+      "Chaussettes antidérapantes offertes",
     ],
   },
   {
-    title: "Trampo + Bowling + Arcade",
+    title: "Trampoline + Bowling + Arcade",
     price: "22€",
-    perChild: "/ enfant",
     duration: "2h15 Total",
     badge: null,
     badgeColor: "",
     features: [
       "1h de Trampoline",
       "30 min de Bowling",
-      "+ 2 Jetons Arcade offerts",
+      "+ 2 Jetons Arcade offerts par enfant",
       "Gâteau, bonbons & boissons inclus",
-      "🧦 Chaussettes offertes",
+      "Chaussettes antidérapantes offertes",
     ],
   },
 ];
@@ -196,14 +192,14 @@ const AnniversaireEnfant = () => {
         <section className="py-6 md:py-12 px-4">
           <div className="container mx-auto max-w-7xl">
             <h2 className="text-xl md:text-4xl font-bold text-center mb-2 md:mb-4 text-foreground">
-              Nos Formules Tout Inclus
+              Nos formules
             </h2>
             <p className="text-center text-muted-foreground mb-6 md:mb-10 text-sm md:text-lg">
-              Minimum 6 enfants • Zéro stress !
+              Choisissez la formule parfaite pour votre enfant
             </p>
             
             <div className="grid grid-cols-1 gap-3 md:gap-6 w-[90%] mx-auto">
-              {formulas.map((formula, index) => (
+              {formulasOverview.map((formula, index) => (
                 <Card 
                   key={index}
                   className={`relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl ${
@@ -224,7 +220,7 @@ const AnniversaireEnfant = () => {
                     </CardTitle>
                     <div className="text-center">
                       <span className="text-3xl md:text-4xl font-bold text-primary">{formula.price}</span>
-                      <span className="text-sm md:text-base text-muted-foreground">{formula.perChild}</span>
+                      <span className="text-sm md:text-base text-muted-foreground">/enfant</span>
                     </div>
                     <div className="flex items-center justify-center gap-2 text-muted-foreground">
                       <Clock className="w-4 h-4 md:w-4 md:h-4" />
@@ -234,7 +230,6 @@ const AnniversaireEnfant = () => {
                   
                   <CardContent className="p-4 md:p-6 pt-0 md:pt-0 space-y-2 md:space-y-3">
                     <div className="border-t border-border pt-3 md:pt-4">
-                      <p className="text-xs md:text-xs font-semibold text-muted-foreground uppercase mb-2 md:mb-3">Inclus :</p>
                       {formula.features.map((feature, fIndex) => (
                         <div key={fIndex} className="flex items-start gap-2 md:gap-2 mb-2 md:mb-2">
                           <Check className="w-5 h-5 md:w-5 md:h-5 text-green-500 flex-shrink-0 mt-0.5" />
