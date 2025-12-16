@@ -61,19 +61,19 @@ export const InfoSection = () => {
               <div className="space-y-2">
                 <div className="flex justify-between items-center py-2 border-b border-border/50">
                   <span className="text-foreground font-medium">Mercredi</span>
-                  <span className="text-muted-foreground">14h00 – 00h00</span>
+                  <span className="text-muted-foreground">14h00 – 22h00</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-border/50">
                   <span className="text-foreground font-medium">Jeudi</span>
-                  <span className="text-muted-foreground">18h00 – 00h00</span>
+                  <span className="text-muted-foreground">18h00 – 22h00</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-border/50">
                   <span className="text-foreground font-medium">Vendredi</span>
-                  <span className="text-muted-foreground">18h00 – 02h00</span>
+                  <span className="text-muted-foreground">18h00 – 22h00</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-border/50">
                   <span className="text-foreground font-medium">Samedi</span>
-                  <span className="text-muted-foreground">14h00 – 02h00</span>
+                  <span className="text-muted-foreground">14h00 – 22h00</span>
                 </div>
                 <div className="flex justify-between items-center py-2">
                   <span className="text-foreground font-medium">Dimanche</span>
@@ -90,34 +90,10 @@ export const InfoSection = () => {
                 <h4 className="text-xl font-bold text-foreground">Vacances scolaires</h4>
               </div>
               <p className="text-sm text-accent font-medium mb-4">Ouvert tous les jours</p>
-              <div className="space-y-2">
-                <div className="flex justify-between items-center py-2 border-b border-border/50">
-                  <span className="text-foreground font-medium">Lundi</span>
-                  <span className="text-muted-foreground">10h00 – 22h00</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-border/50">
-                  <span className="text-foreground font-medium">Mardi</span>
-                  <span className="text-muted-foreground">10h00 – 22h00</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-border/50">
-                  <span className="text-foreground font-medium">Mercredi</span>
-                  <span className="text-muted-foreground">10h00 – 00h00</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-border/50">
-                  <span className="text-foreground font-medium">Jeudi</span>
-                  <span className="text-muted-foreground">10h00 – 00h00</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-border/50">
-                  <span className="text-foreground font-medium">Vendredi</span>
-                  <span className="text-muted-foreground">10h00 – 02h00</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-border/50">
-                  <span className="text-foreground font-medium">Samedi</span>
-                  <span className="text-muted-foreground">10h00 – 02h00</span>
-                </div>
-                <div className="flex justify-between items-center py-2">
-                  <span className="text-foreground font-medium">Dimanche</span>
-                  <span className="text-muted-foreground">10h00 – 22h00</span>
+              <div className="flex items-center justify-center py-8">
+                <div className="text-center">
+                  <p className="text-2xl font-bold text-foreground">14h00 – 22h00</p>
+                  <p className="text-muted-foreground mt-2">Du lundi au dimanche</p>
                 </div>
               </div>
             </div>
