@@ -5,7 +5,7 @@ export const Footer = () => {
         
 
         <div className="border-t border-white/10 pt-8 text-center text-sm text-white/50">
-          <p>© {new Date().getFullYear()} Fun Park Valence - Trampoline Park. Tous droits réservés.</p>
+          <p>© {new Date().getFullYear()} Valence Fun Park - Trampoline Park. Tous droits réservés.</p>
         </div>
       </div>
     </footer>;
