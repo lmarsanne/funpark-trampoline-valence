@@ -13,6 +13,7 @@ import TainTournon from "./pages/TainTournon";
 import GuilherandStPeray from "./pages/GuilherandStPeray";
 import LivronLoriol from "./pages/LivronLoriol";
 import EvgEvjf from "./pages/EvgEvjf";
+import Entreprises from "./pages/Entreprises";
 import NotFound from "./pages/NotFound";
 import GuidapOverlay from "@/components/GuidapOverlay";
 import { ScrollToTop } from "@/components/ScrollToTop";
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/trampoline-guilherand-st-peray" element={<GuilherandStPeray />} />
             <Route path="/trampoline-livron-loriol" element={<LivronLoriol />} />
             <Route path="/evg-evjf-valence" element={<EvgEvjf />} />
+            <Route path="/entreprises" element={<Entreprises />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

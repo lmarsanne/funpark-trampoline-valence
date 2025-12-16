@@ -9,6 +9,7 @@ export const Navigation = () => {
   const links = [
     { to: "/", label: "Trampoline" },
     { to: "/anniversaire-enfant", label: "Anniversaire Enfant" },
+    { to: "/entreprises", label: "Entreprises" },
     { to: "/karaoke", label: "Karaoké" },
     { to: "/quiz-boxing", label: "Quiz Boxing" },
     { to: "https://www.valence-bowling.com", label: "Bowling", external: true },
