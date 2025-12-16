@@ -6,127 +6,101 @@ import { CloudRain, Car, Thermometer, Lock, UtensilsCrossed, Dumbbell, Target, M
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
-
 const QueFaireQuandIlPleut = () => {
   const scrollToActivites = () => {
-    document.getElementById('activites')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('activites')?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
   const scrollToReservation = () => {
-    document.getElementById('reservation')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('reservation')?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  const activities = [
-    {
-      icon: "🤸",
-      title: "Trampoline Park",
-      description: "Brûlez de l'énergie, pas de l'essence. Un parc géant pour se défouler au sec.",
-      color: "from-orange-500 to-amber-500",
-      link: "/"
-    },
-    {
-      icon: "🎳",
-      title: "Bowling 12 Pistes",
-      description: "L'activité conviviale par excellence. Chaussures sèches et ambiance garantie.",
-      color: "from-cyan-500 to-blue-500",
-      link: "/"
-    },
-    {
-      icon: "🥊",
-      title: "Quiz Boxing",
-      badge: "Nouveau !",
-      description: "Comme à la télé ! Enfermez-vous dans l'arène pour un combat de culture générale hilarant.",
-      color: "from-red-500 to-orange-500",
-      link: "/quiz-boxing"
-    },
-    {
-      icon: "🎤",
-      title: "Karaoké Box",
-      description: "Il pleut ? Chantez ! (De toute façon, on est insonorisés). Box privés pour votre groupe.",
-      color: "from-purple-500 to-pink-500",
-      link: "/karaoke"
-    },
-    {
-      icon: "🎱",
-      title: "Arcade & Billard",
-      description: "Défiez vos amis sur nos bornes d'arcade, flippers et tables de billard.",
-      color: "from-emerald-500 to-teal-500",
-      link: "/"
-    }
-  ];
-
-  const benefits = [
-    {
-      icon: Car,
-      title: "Parking Gratuit & Proche",
-      description: "Garez-vous juste devant l'entrée. Pas besoin de traverser la ville sous l'averse."
-    },
-    {
-      icon: Thermometer,
-      title: "Température Idéale",
-      description: "Chauffé en hiver, climatisé en été. Il fait toujours 20°C chez nous."
-    },
-    {
-      icon: Lock,
-      title: "Confort Total",
-      description: "Casiers sécurisés pour laisser vos manteaux mouillés et parapluies."
-    },
-    {
-      icon: UtensilsCrossed,
-      title: "Restauration sur Place",
-      description: "Une petite faim ? Pizzas, gaufres et boissons chaudes sans remettre le nez dehors."
-    }
-  ];
-
-  const faqItems = [
-    {
-      question: "Faut-il réserver quand il pleut ?",
-      answer: "OUI ! Les jours de pluie sont nos journées les plus chargées. La réservation en ligne est fortement recommandée pour garantir votre place, surtout pour le Trampoline et le Bowling."
-    },
-    {
-      question: "Peut-on faire plusieurs activités le même jour ?",
-      answer: "Absolument ! C'est l'avantage du Fun Park. Vous pouvez enchaîner une session de Trampoline, une partie de Bowling et finir par un Karaoké. Tout est au même endroit."
-    },
-    {
-      question: "Y a-t-il des casiers pour nos affaires mouillées ?",
-      answer: "Oui, nous disposons de casiers sécurisés (à code ou pièce) pour déposer vos manteaux, parapluies et chaussures afin d'être à l'aise pour jouer."
-    },
-    {
-      question: "Quelle est la température à l'intérieur ?",
-      answer: "Le complexe est entièrement chauffé et ventilé. Une tenue légère ou sportive (T-shirt) est idéale pour les activités, même s'il fait froid dehors."
-    },
-    {
-      question: "Peut-on manger sur place ?",
-      answer: "Oui, notre espace Bar/Snacking propose des pizzas, planches à partager, paninis, gaufres, crêpes et boissons chaudes/froides. Le pique-nique extérieur est interdit."
-    },
-    {
-      question: "À partir de quel âge est-ce accessible ?",
-      answer: "Le Trampoline est accessible dès 5 ans (les parents peuvent accompagner). Le Bowling est accessible dès que l'enfant peut porter une boule (dispositifs \"toboggans\" disponibles pour les petits)."
-    },
-    {
-      question: "Le parking est-il couvert ?",
-      answer: "Notre parking est extérieur mais situé à proximité immédiate de l'entrée. Il est gratuit et accessible aux voitures comme aux bus."
-    },
-    {
-      question: "Y a-t-il beaucoup de monde quand il pleut ?",
-      answer: "L'ambiance est très festive les jours de pluie ! Pour éviter l'attente à l'accueil, réservez votre créneau en ligne. Une fois dans l'activité (piste ou toile), votre espace est garanti."
-    },
-    {
-      question: "Je ne veux pas sauter, dois-je payer l'entrée ?",
-      answer: "Non ! L'entrée au complexe est gratuite pour les accompagnateurs. Vous pouvez vous installer confortablement dans nos canapés ou à l'espace bar pendant que les enfants s'amusent."
-    },
-    {
-      question: "Combien de temps dure une session ?",
-      answer: "Les sessions de Trampoline durent 1h (renouvelable). Une partie de Bowling dure environ 45min à 1h selon le nombre de joueurs. Le Karaoké et le Quiz Boxing se réservent à l'heure."
-    },
-    {
-      question: "Où êtes-vous situés exactement ?",
-      answer: "Nous sommes à Saint-Marcel-lès-Valence, à 10 min du centre de Valence et 15 min de Romans. Accès direct via la rocade."
-    }
-  ];
-
-  return (
-    <>
+  const activities = [{
+    icon: "🤸",
+    title: "Trampoline Park",
+    description: "Brûlez de l'énergie, pas de l'essence. Un parc géant pour se défouler au sec.",
+    color: "from-orange-500 to-amber-500",
+    link: "/"
+  }, {
+    icon: "🎳",
+    title: "Bowling 12 Pistes",
+    description: "L'activité conviviale par excellence. Chaussures sèches et ambiance garantie.",
+    color: "from-cyan-500 to-blue-500",
+    link: "/"
+  }, {
+    icon: "🥊",
+    title: "Quiz Boxing",
+    badge: "Nouveau !",
+    description: "Comme à la télé ! Enfermez-vous dans l'arène pour un combat de culture générale hilarant.",
+    color: "from-red-500 to-orange-500",
+    link: "/quiz-boxing"
+  }, {
+    icon: "🎤",
+    title: "Karaoké Box",
+    description: "Il pleut ? Chantez ! (De toute façon, on est insonorisés). Box privés pour votre groupe.",
+    color: "from-purple-500 to-pink-500",
+    link: "/karaoke"
+  }, {
+    icon: "🎱",
+    title: "Arcade & Billard",
+    description: "Défiez vos amis sur nos bornes d'arcade, flippers et tables de billard.",
+    color: "from-emerald-500 to-teal-500",
+    link: "/"
+  }];
+  const benefits = [{
+    icon: Car,
+    title: "Parking Gratuit & Proche",
+    description: "Garez-vous juste devant l'entrée. Pas besoin de traverser la ville sous l'averse."
+  }, {
+    icon: Thermometer,
+    title: "Température Idéale",
+    description: "Chauffé en hiver, climatisé en été. Il fait toujours 20°C chez nous."
+  }, {
+    icon: Lock,
+    title: "Confort Total",
+    description: "Casiers sécurisés pour laisser vos manteaux mouillés et parapluies."
+  }, {
+    icon: UtensilsCrossed,
+    title: "Restauration sur Place",
+    description: "Une petite faim ? Pizzas, gaufres et boissons chaudes sans remettre le nez dehors."
+  }];
+  const faqItems = [{
+    question: "Faut-il réserver quand il pleut ?",
+    answer: "OUI ! Les jours de pluie sont nos journées les plus chargées. La réservation en ligne est fortement recommandée pour garantir votre place, surtout pour le Trampoline et le Bowling."
+  }, {
+    question: "Peut-on faire plusieurs activités le même jour ?",
+    answer: "Absolument ! C'est l'avantage du Fun Park. Vous pouvez enchaîner une session de Trampoline, une partie de Bowling et finir par un Karaoké. Tout est au même endroit."
+  }, {
+    question: "Y a-t-il des casiers pour nos affaires mouillées ?",
+    answer: "Oui, nous disposons de casiers sécurisés (à code ou pièce) pour déposer vos manteaux, parapluies et chaussures afin d'être à l'aise pour jouer."
+  }, {
+    question: "Quelle est la température à l'intérieur ?",
+    answer: "Le complexe est entièrement chauffé et ventilé. Une tenue légère ou sportive (T-shirt) est idéale pour les activités, même s'il fait froid dehors."
+  }, {
+    question: "Peut-on manger sur place ?",
+    answer: "Oui, notre espace Bar/Snacking propose des pizzas, planches à partager, paninis, gaufres, crêpes et boissons chaudes/froides. Le pique-nique extérieur est interdit."
+  }, {
+    question: "À partir de quel âge est-ce accessible ?",
+    answer: "Le Trampoline est accessible dès 5 ans (les parents peuvent accompagner). Le Bowling est accessible dès que l'enfant peut porter une boule (dispositifs \"toboggans\" disponibles pour les petits)."
+  }, {
+    question: "Le parking est-il couvert ?",
+    answer: "Notre parking est extérieur mais situé à proximité immédiate de l'entrée. Il est gratuit et accessible aux voitures comme aux bus."
+  }, {
+    question: "Y a-t-il beaucoup de monde quand il pleut ?",
+    answer: "L'ambiance est très festive les jours de pluie ! Pour éviter l'attente à l'accueil, réservez votre créneau en ligne. Une fois dans l'activité (piste ou toile), votre espace est garanti."
+  }, {
+    question: "Je ne veux pas sauter, dois-je payer l'entrée ?",
+    answer: "Non ! L'entrée au complexe est gratuite pour les accompagnateurs. Vous pouvez vous installer confortablement dans nos canapés ou à l'espace bar pendant que les enfants s'amusent."
+  }, {
+    question: "Combien de temps dure une session ?",
+    answer: "Les sessions de Trampoline durent 1h (renouvelable). Une partie de Bowling dure environ 45min à 1h selon le nombre de joueurs. Le Karaoké et le Quiz Boxing se réservent à l'heure."
+  }, {
+    question: "Où êtes-vous situés exactement ?",
+    answer: "Nous sommes à Saint-Marcel-lès-Valence, à 10 min du centre de Valence et 15 min de Romans. Accès direct via la rocade."
+  }];
+  return <>
       <Helmet>
         <title>Que faire quand il pleut à Valence ? | Fun Park - Activités Indoor</title>
         <meta name="description" content="Il pleut sur Valence ? Découvrez 2500m² de loisirs indoor : trampoline, bowling, karaoké, quiz boxing. L'activité idéale quand il pleut en Drôme !" />
@@ -141,18 +115,12 @@ const QueFaireQuandIlPleut = () => {
         <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
           {/* Animated rain effect */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            {[...Array(20)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute w-0.5 h-8 bg-gradient-to-b from-cyan-400/30 to-transparent rounded-full animate-pulse"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 2}s`,
-                  animationDuration: `${1 + Math.random()}s`
-                }}
-              />
-            ))}
+            {[...Array(20)].map((_, i) => <div key={i} className="absolute w-0.5 h-8 bg-gradient-to-b from-cyan-400/30 to-transparent rounded-full animate-pulse" style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 2}s`,
+            animationDuration: `${1 + Math.random()}s`
+          }} />)}
           </div>
 
           {/* Gradient orbs */}
@@ -180,11 +148,7 @@ const QueFaireQuandIlPleut = () => {
                 chauffés et ultra-fun.
               </p>
 
-              <Button
-                onClick={scrollToActivites}
-                size="xl"
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition-all duration-300"
-              >
+              <Button onClick={scrollToActivites} size="xl" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition-all duration-300">
                 Voir les disponibilités aujourd'hui
               </Button>
             </div>
@@ -207,11 +171,8 @@ const QueFaireQuandIlPleut = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {activities.map((activity, index) => (
-                <Link key={index} to={activity.link}>
-                  <Card
-                    className="bg-slate-800/50 border-slate-700/50 hover:border-orange-500/50 transition-all duration-300 group hover:shadow-lg hover:shadow-orange-500/10 overflow-hidden h-full"
-                  >
+              {activities.map((activity, index) => <Link key={index} to={activity.link}>
+                  <Card className="bg-slate-800/50 border-slate-700/50 hover:border-orange-500/50 transition-all duration-300 group hover:shadow-lg hover:shadow-orange-500/10 overflow-hidden h-full">
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
                         <div className={`text-4xl p-3 rounded-xl bg-gradient-to-br ${activity.color} bg-opacity-20`}>
@@ -222,11 +183,9 @@ const QueFaireQuandIlPleut = () => {
                             <h3 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">
                               {activity.title}
                             </h3>
-                            {activity.badge && (
-                              <span className="bg-orange-500 text-white text-xs px-2 py-0.5 rounded-full font-medium">
+                            {activity.badge && <span className="bg-orange-500 text-white text-xs px-2 py-0.5 rounded-full font-medium">
                                 {activity.badge}
-                              </span>
-                            )}
+                              </span>}
                           </div>
                           <p className="text-slate-400 text-sm leading-relaxed">
                             {activity.description}
@@ -235,16 +194,11 @@ const QueFaireQuandIlPleut = () => {
                       </div>
                     </CardContent>
                   </Card>
-                </Link>
-              ))}
+                </Link>)}
             </div>
 
             <div className="text-center mt-10">
-              <Button
-                onClick={scrollToReservation}
-                size="lg"
-                className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold shadow-lg shadow-cyan-500/30"
-              >
+              <Button onClick={scrollToReservation} size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold shadow-lg shadow-cyan-500/30">
                 Réserver maintenant
               </Button>
             </div>
@@ -264,18 +218,13 @@ const QueFaireQuandIlPleut = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-              {benefits.map((benefit, index) => (
-                <div
-                  key={index}
-                  className="text-center p-6 rounded-2xl bg-slate-800/30 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300"
-                >
+              {benefits.map((benefit, index) => <div key={index} className="text-center p-6 rounded-2xl bg-slate-800/30 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300">
                   <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center border border-cyan-500/30">
                     <benefit.icon className="w-7 h-7 text-cyan-400" />
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">{benefit.title}</h3>
                   <p className="text-slate-400 text-sm">{benefit.description}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
@@ -283,26 +232,10 @@ const QueFaireQuandIlPleut = () => {
         {/* Reservation Section */}
         <section id="reservation" className="py-16 md:py-24">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-10">
-              <span className="inline-block bg-orange-500/20 text-orange-400 px-4 py-1 rounded-full text-sm font-medium mb-4 border border-orange-500/30">
-                🎯 RÉSERVATION
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Réservez votre activité en 2 clics
-              </h2>
-              <p className="text-slate-400">Choisissez votre créneau et profitez sans attendre</p>
-            </div>
+            
 
             <div className="max-w-4xl mx-auto -mx-4 md:mx-auto">
-              <iframe
-                id="widget-guidap"
-                src="https://live.guidap.co/qv08g7VX6u1bCIgJAzfB?locale=fr"
-                width="100%"
-                height="700"
-                className="border-0 md:rounded-2xl bg-slate-800"
-                allow="payment"
-                title="Réservation Fun Park"
-              />
+              <iframe id="widget-guidap" src="https://live.guidap.co/qv08g7VX6u1bCIgJAzfB?locale=fr" width="100%" height="700" className="border-0 md:rounded-2xl bg-slate-800" allow="payment" title="Réservation Fun Park" />
             </div>
           </div>
         </section>
@@ -321,20 +254,14 @@ const QueFaireQuandIlPleut = () => {
 
             <div className="max-w-3xl mx-auto">
               <Accordion type="single" collapsible className="space-y-3">
-                {faqItems.map((faq, index) => (
-                  <AccordionItem
-                    key={index}
-                    value={`item-${index}`}
-                    className="bg-slate-800/50 border border-slate-700/50 rounded-xl px-6 data-[state=open]:border-cyan-500/50"
-                  >
+                {faqItems.map((faq, index) => <AccordionItem key={index} value={`item-${index}`} className="bg-slate-800/50 border border-slate-700/50 rounded-xl px-6 data-[state=open]:border-cyan-500/50">
                     <AccordionTrigger className="text-white hover:text-cyan-400 text-left py-5 hover:no-underline">
                       {faq.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-slate-400 pb-5">
                       {faq.answer}
                     </AccordionContent>
-                  </AccordionItem>
-                ))}
+                  </AccordionItem>)}
               </Accordion>
             </div>
           </div>
@@ -353,19 +280,11 @@ const QueFaireQuandIlPleut = () => {
                 Rejoignez-nous au chaud et découvrez pourquoi la pluie est notre meilleure amie !
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  onClick={scrollToReservation}
-                  size="xl"
-                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold shadow-lg shadow-orange-500/30"
-                >
+                <Button onClick={scrollToReservation} size="xl" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold shadow-lg shadow-orange-500/30">
                   Je réserve maintenant
                 </Button>
                 <a href="tel:0475558974">
-                  <Button
-                    size="xl"
-                    variant="outline"
-                    className="border-slate-600 text-white hover:bg-slate-800 w-full sm:w-auto"
-                  >
+                  <Button size="xl" variant="outline" className="border-slate-600 text-white hover:bg-slate-800 w-full sm:w-auto">
                     <Phone className="w-5 h-5 mr-2" />
                     04 75 55 89 74
                   </Button>
@@ -382,8 +301,6 @@ const QueFaireQuandIlPleut = () => {
 
         <Footer />
       </div>
-    </>
-  );
+    </>;
 };
-
 export default QueFaireQuandIlPleut;
