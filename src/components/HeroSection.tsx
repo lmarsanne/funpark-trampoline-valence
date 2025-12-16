@@ -11,14 +11,21 @@ export const HeroSection = () => {
   };
   return <section className="pt-16">
       {/* Title Section */}
-      <div className="bg-gradient-to-r from-primary via-primary to-accent py-4 md:py-6">
+      <div className="bg-gradient-to-r from-primary via-primary to-accent py-6 md:py-10">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-white mb-3 md:mb-4 leading-tight animate-fade-in-up">Saint-Marcel-lès-Valence<br />
-            <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
-              Trampoline Park
+          <div className="inline-flex items-center gap-2 bg-secondary/20 backdrop-blur-sm border border-secondary/30 rounded-full px-4 py-1.5 mb-4 animate-fade-in-up">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
             </span>
+            <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Nouveau</span>
+          </div>
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-white mb-3 md:mb-4 leading-tight animate-fade-in-up">
+            Trampoline Park
             <br />
-            ​
+            <span className="text-2xl sm:text-3xl md:text-5xl font-bold text-white/90">
+              à Saint-Marcel-lès-Valence
+            </span>
           </h1>
         </div>
       </div>
