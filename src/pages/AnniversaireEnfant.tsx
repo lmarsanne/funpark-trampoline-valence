@@ -202,7 +202,7 @@ const AnniversaireEnfant = () => {
               Minimum 6 enfants • Zéro stress !
             </p>
             
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+            <div className="grid grid-cols-1 gap-3 md:gap-6 w-[90%] mx-auto">
               {formulas.map((formula, index) => (
                 <Card 
                   key={index}
