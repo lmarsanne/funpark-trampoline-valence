@@ -1,6 +1,16 @@
-import { Zap, Heart, Shield, Users, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import gallery1 from "@/assets/gallery-1.jpg";
+import { Zap, Heart, Shield, Users } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import aboutGallery1 from "@/assets/about-gallery-1.png";
+import aboutGallery2 from "@/assets/about-gallery-2.png";
+import aboutGallery3 from "@/assets/about-gallery-3.png";
+import aboutGallery4 from "@/assets/about-gallery-4.png";
+
+const galleryImages = [
+  { src: aboutGallery1, alt: "Familles sautant sur les trampolines" },
+  { src: aboutGallery2, alt: "Enfants s'amusant dans le Fun Park" },
+  { src: aboutGallery3, alt: "Groupe de jeunes au trampoline park" },
+  { src: aboutGallery4, alt: "Enfants jouant au basket sur trampolines" },
+];
 const features = [{
   icon: Zap,
   title: "Zones Multiples",
@@ -22,11 +32,25 @@ export const AboutSection = () => {
   return <section className="py-12 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-          {/* Image */}
+          {/* Image Gallery */}
           <div className="relative animate-scale-in">
-            <div className="rounded-3xl overflow-hidden shadow-[var(--shadow-card)]">
-              <img src={gallery1} alt="Familles s'amusant au trampoline park" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
-            </div>
+            <Carousel className="w-full">
+              <CarouselContent>
+                {galleryImages.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="rounded-3xl overflow-hidden shadow-[var(--shadow-card)]">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt} 
+                        className="w-full h-auto object-cover aspect-[4/3] hover:scale-105 transition-transform duration-500" 
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
+            </Carousel>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-secondary to-accent rounded-full blur-3xl opacity-50" />
           </div>
 
@@ -66,13 +90,6 @@ export const AboutSection = () => {
                 <p className="text-muted-foreground">{feature.description}</p>
               </div>;
         })}
-        </div>
-
-        {/* CTA Button */}
-        <div className="text-center mt-12">
-          <Button variant="default" size="lg" className="group" asChild>
-            
-          </Button>
         </div>
       </div>
     </section>;
