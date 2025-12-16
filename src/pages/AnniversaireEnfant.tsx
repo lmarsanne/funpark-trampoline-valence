@@ -8,99 +8,91 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Cake, CandlestickChart, Footprints, Clock, Check, Star, Gift, PartyPopper } from "lucide-react";
+import { Cake, Clock, Check, Star, PartyPopper, Mic, Gamepad2 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 
 const formulas = [
   {
-    title: "Formule Bowling",
-    price: "15€",
-    perChild: "/ enfant",
-    features: [
-      { icon: Check, text: "1h de Bowling" },
-      { icon: Check, text: "Espace goûter réservé (30 min)" },
-      { icon: Check, text: "Gâteau, bonbons et boissons (eau + sirop)" },
-    ],
-    duration: "1h30 à 2h",
-    popular: false,
-  },
-  {
     title: "Formule Trampoline",
     price: "15€",
     perChild: "/ enfant",
+    duration: "1h30 Total",
+    badge: null,
+    badgeColor: "",
     features: [
-      { icon: Check, text: "1h de Trampoline" },
-      { icon: Check, text: "Chaussettes antidérapantes offertes" },
-      { icon: Check, text: "Espace goûter réservé (30 min)" },
-      { icon: Check, text: "Gâteau, bonbons et boissons" },
+      "1h d'Activité Trampoline",
+      "30 min de Goûter (Espace réservé)",
+      "Gâteau, bonbons & boissons inclus",
+      "🧦 Chaussettes antidérapantes offertes",
     ],
-    duration: "1h30 à 2h",
-    popular: false,
   },
   {
     title: "Trampoline + Bowling",
     price: "19€",
     perChild: "/ enfant",
+    duration: "2h00 Total",
+    badge: "⭐ Le plus populaire",
+    badgeColor: "from-pink-500 to-purple-500",
     features: [
-      { icon: Check, text: "1h de Trampoline (+ Chaussettes)" },
-      { icon: Check, text: "30 min de Bowling" },
-      { icon: Check, text: "Espace goûter réservé (30 min)" },
-      { icon: Check, text: "Gâteau, bonbons et boissons" },
+      "1h de Trampoline",
+      "30 min de Bowling",
+      "30 min de Goûter (Espace réservé)",
+      "Gâteau, bonbons & boissons inclus",
+      "🧦 Chaussettes antidérapantes offertes",
     ],
-    duration: "2h à 2h30",
-    popular: true,
   },
   {
-    title: "Premium (La Totale)",
-    price: "25€",
+    title: "Trampoline + Karaoké",
+    price: "20€",
     perChild: "/ enfant",
+    duration: "2h30 Total",
+    badge: "🎤 Les filles adorent !",
+    badgeColor: "from-pink-400 to-fuchsia-500",
     features: [
-      { icon: Check, text: "1h Trampoline + 30 min Bowling" },
-      { icon: Check, text: "30 min Karaoké" },
-      { icon: Check, text: "2 Jetons d'Arcade par enfant" },
-      { icon: Check, text: "Goûter complet (30 min)" },
+      "1h de Trampoline",
+      "1h de Karaoké (Box Privée)",
+      "30 min de Goûter (Espace réservé)",
+      "Gâteau, bonbons & boissons inclus",
+      "🧦 Chaussettes antidérapantes offertes",
     ],
-    duration: "3h",
-    popular: false,
+  },
+  {
+    title: "Trampoline + Bowling + Arcade",
+    price: "22€",
+    perChild: "/ enfant",
+    duration: "2h15 Total",
+    badge: null,
+    badgeColor: "",
+    features: [
+      "1h de Trampoline",
+      "30 min de Bowling",
+      "+ 2 Jetons Arcade offerts par enfant",
+      "Gâteau, bonbons & boissons inclus",
+      "🧦 Chaussettes antidérapantes offertes",
+    ],
   },
 ];
 
 const faqItems = [
   {
-    question: "À partir de quel âge peut-on fêter un anniversaire au Fun Park ?",
-    answer: "Nous avons des formules pour tous ! Pour les 2 à 5 ans (Baby Anniversaire), nous vous recommandons vivement de privilégier le <strong>mercredi ou samedi matin</strong> pour plus de calme, mais la formule reste possible sur tous nos créneaux d'ouverture. Dès 6 ans, toutes les autres activités sont accessibles.",
-  },
-  {
     question: "Quel est le nombre minimum d'enfants requis ?",
-    answer: "Pour valider une formule anniversaire, un minimum de <strong>5 enfants</strong> est requis.",
+    answer: "Pour valider une formule anniversaire, un minimum de <strong>6 enfants</strong> est requis (l'enfant fêté inclus).",
   },
   {
     question: "Le gâteau et les boissons sont-ils fournis ?",
-    answer: "OUI, tout est inclus ! Gâteau (chocolat ou fruits), bonbons, boissons et vaisselle. Vous n'avez rien à préparer. (Aucune nourriture extérieure acceptée sauf allergie médicale).",
+    answer: "OUI, c'est du 100% clé en main ! Nous fournissons le gâteau (Chocolat ou Fruits), les bonbons, les boissons (sirops à volonté) et toute la vaisselle. Aucune nourriture extérieure n'est acceptée (sauf allergie médicale justifiée).",
   },
   {
-    question: "Que se passe-t-il si un invité est absent le jour J ?",
-    answer: "La réservation est ferme et définitive. <strong>Nous ne procédons à aucun remboursement en cas d'invité manquant.</strong> Le forfait est dû pour le nombre d'enfants réservé initialement.",
+    question: "Les chaussettes sont-elles vraiment incluses ?",
+    answer: "Absolument ! Fini les suppléments à l'accueil. Nous fournissons une paire de chaussettes antidérapantes à chaque enfant invité.",
   },
   {
-    question: "Comment se fait le paiement ?",
-    answer: "Le paiement s'effectue <strong>en totalité en ligne</strong> au moment de la réservation. Cela valide définitivement votre créneau et vous permet de profiter de la fête sans passer par la caisse à l'arrivée.",
-  },
-  {
-    question: "Faut-il des chaussures ou équipements spéciaux ?",
-    answer: "Bowling = Vos propres baskets propres (pas de location). Trampoline = Chaussettes antidérapantes (incluses dans les formules !).",
-  },
-  {
-    question: "Les parents doivent-ils rester ?",
-    answer: "Oui, la présence d'au moins un adulte responsable est obligatoire pour surveiller le groupe.",
+    question: "À partir de quel âge conseillez-vous l'anniversaire ?",
+    answer: "Nos formules sont idéales à partir de <strong>5 ans</strong>. Les enfants restent sous la surveillance des parents ou accompagnateurs présents (qui ne paient pas l'entrée s'ils ne sautent pas !).",
   },
   {
     question: "Combien de temps faut-il réserver à l'avance ?",
-    answer: "Les créneaux partent vite ! Réservez idéalement 2 à 3 semaines à l'avance.",
-  },
-  {
-    question: "Combien de temps dure l'anniversaire ?",
-    answer: "<strong>La durée dépend de la formule choisie.</strong> Comptez le temps des activités (1h ou plus) auquel s'ajoutent 30 minutes de goûter réservé. Prévoyez donc entre 1h30 et 3h00 de présence sur place.",
+    answer: "Les créneaux du week-end partent très vite ! Nous vous conseillons de réserver <strong>3 à 4 semaines à l'avance</strong> pour avoir l'horaire de votre choix.",
   },
 ];
 
@@ -108,10 +100,10 @@ const AnniversaireEnfant = () => {
   return (
     <>
       <Helmet>
-        <title>Anniversaire Enfant Valence - Trampoline, Bowling & Fun (Tout Inclus)</title>
+        <title>Anniversaire Enfant Valence - 100% Fun & 0% Stress | Tout Inclus</title>
         <meta
           name="description"
-          content="Organisez le meilleur anniversaire enfant de la Drôme au Fun Park ! Formules dès 15€. Trampoline, Bowling, Gâteau et Chaussettes incluses."
+          content="L'anniversaire enfant tout inclus à Valence ! Gâteau, boissons, chaussettes & activités. Formules dès 15€. Trampoline, Bowling, Karaoké. On s'occupe de tout !"
         />
       </Helmet>
 
@@ -119,62 +111,79 @@ const AnniversaireEnfant = () => {
       <main className="min-h-screen bg-gradient-to-b from-pink-50 via-yellow-50 to-blue-50">
         {/* Hero Section */}
         <section className="pt-24 pb-12 px-4">
-          <div className="container mx-auto max-w-4xl text-center">
-            <div className="flex justify-center gap-4 mb-6">
-              <PartyPopper className="w-12 h-12 text-pink-500 animate-bounce" />
-              <Cake className="w-12 h-12 text-yellow-500 animate-bounce delay-100" />
-              <Gift className="w-12 h-12 text-blue-500 animate-bounce delay-200" />
+          <div className="container mx-auto max-w-5xl">
+            <div className="text-center mb-8">
+              <div className="flex justify-center gap-4 mb-6">
+                <PartyPopper className="w-10 h-10 md:w-12 md:h-12 text-pink-500 animate-bounce" />
+                <Cake className="w-10 h-10 md:w-12 md:h-12 text-yellow-500 animate-bounce delay-100" />
+                <PartyPopper className="w-10 h-10 md:w-12 md:h-12 text-blue-500 animate-bounce delay-200" />
+              </div>
+              
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+                L'Anniversaire 100% Fun & 0% Stress 🎉
+              </h1>
+              
+              <p className="text-xl md:text-2xl lg:text-3xl text-foreground font-semibold mb-6">
+                Gâteau, Boissons, Chaussettes & Activités... On s'occupe de <span className="text-primary">TOUT</span> !
+              </p>
             </div>
-            
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
-              Organisez un anniversaire enfant inoubliable à Valence !
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-muted-foreground mb-6">
-              Bowling, Trampoline, Arcade... Tout est réuni au Fun Park pour un moment magique.
-            </p>
-            
-            <p className="text-lg text-foreground/80 mb-8 max-w-3xl mx-auto">
-              Vous cherchez une idée originale ? Ne cherchez plus. Nos formules tout inclus 
-              <span className="inline-flex items-center gap-1 mx-1">
-                (<Cake className="w-4 h-4 inline text-pink-500" /> Gâteau + Boissons + Activités)
-              </span> 
-              garantissent une fête réussie sans stress pour les parents.
-            </p>
-            
-            <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-sm md:text-base px-4 py-2 gap-2">
-              <Footprints className="w-4 h-4" />
-              Minimum 5 enfants - Chaussettes antidérapantes INCLUSES pour le trampoline
-            </Badge>
+
+            {/* Hero Video */}
+            <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl mb-8 aspect-video">
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster="/placeholder.svg"
+              >
+                <source src="https://qxnnyyksfohothijwlas.supabase.co/storage/v1/object/public/video/video%20anniv%20(2).mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            </div>
+
+            {/* Intro text */}
+            <div className="text-center space-y-6">
+              <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+                Ne cherchez plus, nous organisons l'anniversaire de rêve de votre enfant. 
+                <strong> Vous n'avez rien à apporter, rien à préparer</strong>, juste à profiter du sourire de votre enfant.
+              </p>
+              
+              <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-base md:text-lg px-6 py-3 gap-2 shadow-lg">
+                ✅ Chaussettes antidérapantes INCLUSES pour tous les invités !
+              </Badge>
+            </div>
           </div>
         </section>
 
         {/* Formulas Section */}
         <section className="py-12 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-2xl md:text-4xl font-bold text-center mb-10 text-foreground">
-              <CandlestickChart className="w-8 h-8 inline mr-2 text-yellow-500" />
-              Nos Formules Anniversaire
+          <div className="container mx-auto max-w-7xl">
+            <h2 className="text-2xl md:text-4xl font-bold text-center mb-4 text-foreground">
+              Nos Formules Tout Inclus
             </h2>
+            <p className="text-center text-muted-foreground mb-10 text-lg">
+              Minimum 6 enfants • Gâteau & Boissons inclus • Zéro stress !
+            </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {formulas.map((formula, index) => (
                 <Card 
                   key={index}
                   className={`relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl ${
-                    formula.popular 
+                    formula.badge 
                       ? "border-4 border-pink-500 shadow-lg shadow-pink-200" 
                       : "border-2 border-border"
                   }`}
                 >
-                  {formula.popular && (
-                    <div className="absolute top-0 right-0 bg-gradient-to-l from-pink-500 to-purple-500 text-white px-4 py-1 text-sm font-bold rounded-bl-lg">
-                      <Star className="w-4 h-4 inline mr-1" />
-                      Best-Seller
+                  {formula.badge && (
+                    <div className={`absolute top-0 left-0 right-0 bg-gradient-to-r ${formula.badgeColor} text-white px-4 py-2 text-sm font-bold text-center`}>
+                      {formula.badge}
                     </div>
                   )}
                   
-                  <CardHeader className={`pb-2 ${formula.popular ? "bg-gradient-to-b from-pink-50 to-transparent" : ""}`}>
+                  <CardHeader className={`pb-2 ${formula.badge ? "pt-12" : ""}`}>
                     <CardTitle className="text-lg font-bold text-center">
                       {formula.title}
                     </CardTitle>
@@ -182,19 +191,21 @@ const AnniversaireEnfant = () => {
                       <span className="text-4xl font-bold text-primary">{formula.price}</span>
                       <span className="text-muted-foreground">{formula.perChild}</span>
                     </div>
+                    <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                      <Clock className="w-4 h-4" />
+                      <span className="text-sm font-medium">{formula.duration}</span>
+                    </div>
                   </CardHeader>
                   
                   <CardContent className="space-y-3">
-                    {formula.features.map((feature, fIndex) => (
-                      <div key={fIndex} className="flex items-start gap-2">
-                        <feature.icon className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-foreground/80">{feature.text}</span>
-                      </div>
-                    ))}
-                    
-                    <div className="flex items-center gap-2 pt-4 border-t border-border">
-                      <Clock className="w-5 h-5 text-blue-500" />
-                      <span className="text-sm font-medium">Durée totale : {formula.duration}</span>
+                    <div className="border-t border-border pt-4">
+                      <p className="text-xs font-semibold text-muted-foreground uppercase mb-3">Inclus :</p>
+                      {formula.features.map((feature, fIndex) => (
+                        <div key={fIndex} className="flex items-start gap-2 mb-2">
+                          <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-foreground/80">{feature}</span>
+                        </div>
+                      ))}
                     </div>
                   </CardContent>
                 </Card>
