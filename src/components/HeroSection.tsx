@@ -20,8 +20,8 @@ export const HeroSection = () => {
             </span>
             <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Nouveau</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-white mb-3 md:mb-4 leading-tight animate-fade-in-up">
-            Trampoline Park
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold mb-3 md:mb-4 leading-tight animate-fade-in-up font-title">
+            <span className="text-gradient-title drop-shadow-lg">Trampoline Park</span>
             <br />
             <span className="text-2xl sm:text-3xl md:text-5xl font-bold text-white/90">
               à Saint-Marcel-lès-Valence
