@@ -87,7 +87,7 @@ const Romans = () => {
                 </div>
                 <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
                   <ShieldCheck className="text-primary" size={20} />
-                  <span>Paiement sécurisé</span>
+                  <span>Chaussettes incluses</span>
                 </div>
               </div>
             </div>
