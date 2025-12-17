@@ -14,27 +14,22 @@ import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Shield, Clock, Calendar } from "lucide-react";
-
 const Index = () => {
   // Désactiver la restauration automatique du scroll et forcer le haut de page
   useEffect(() => {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
-
     const forceTop = () => {
       window.scrollTo(0, 0);
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     };
-
     forceTop();
-
     const intervalId = setInterval(forceTop, 20);
     const timeoutId = setTimeout(() => {
       clearInterval(intervalId);
     }, 2000);
-
     return () => {
       clearInterval(intervalId);
       clearTimeout(timeoutId);
@@ -73,18 +68,18 @@ const Index = () => {
                 </div>
                 <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
                   <Shield className="text-primary" size={20} />
-                  <span>Paiement sécurisé</span>
+                  <span>Chaussettes incluses </span>
                 </div>
               </div>
             </div>
 
             {/* Iframe */}
             <div className="-mx-4 md:mx-0 bg-card md:rounded-2xl shadow-xl overflow-hidden" style={{
-            height: '800px'
-          }}>
+              height: '800px'
+            }}>
               <iframe src={reservationUrl} className="w-full h-full" title="Réservation" style={{
-              border: 'none'
-            }} />
+                border: 'none'
+              }} />
             </div>
           </div>
         </div>
