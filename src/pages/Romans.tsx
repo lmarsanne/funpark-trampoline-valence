@@ -39,7 +39,7 @@ const Romans = () => {
         <script defer src="https://valence-trampoline.com/~flock.js" data-proxy-url="https://valence-trampoline.com/~api/analytics"></script>
         <title>Trampoline Park Romans-sur-Isère & Bourg-de-Péage | Valence Trampoline</title>
         <meta name="description" content="Le Trampoline Park préféré des habitants de Romans et Bourg-de-Péage. Sport, Anniversaires, Sorties Scolaires... 400m² de zones connectées à 15 min de chez vous." />
-        <meta name="keywords" content="trampoline romans, trampoline bourg de péage, parc trampoline drôme, anniversaire enfant romans, sortie scolaire romans, centre aéré romans" />
+        
       </Helmet>
 
       <Navigation />
