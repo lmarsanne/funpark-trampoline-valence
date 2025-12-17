@@ -3,56 +3,29 @@ import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { 
-  MapPin, 
-  ParkingCircle, 
-  Users, 
-  Footprints, 
-  Clock, 
-  Baby, 
-  Zap, 
-  Cake, 
-  Gift, 
-  GraduationCap,
-  Bus,
-  CreditCard,
-  Utensils,
-  Shirt,
-  ShieldCheck,
-  Calendar,
-  Target,
-  Wind,
-  Trophy,
-  PartyPopper
-} from "lucide-react";
+import { MapPin, ParkingCircle, Users, Footprints, Clock, Baby, Zap, Cake, Gift, GraduationCap, Bus, CreditCard, Utensils, Shirt, ShieldCheck, Calendar, Target, Wind, Trophy, PartyPopper } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
 const Romans = () => {
   // Désactiver la restauration automatique du scroll et forcer le haut de page
   useEffect(() => {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
-
     const forceTop = () => {
       window.scrollTo(0, 0);
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     };
-
     forceTop();
-
     const intervalId = setInterval(forceTop, 20);
     const timeoutId = setTimeout(() => {
       clearInterval(intervalId);
     }, 2000);
-
     return () => {
       clearInterval(intervalId);
       clearTimeout(timeoutId);
     };
   }, []);
-
   const scrollToReservation = () => {
     const element = document.getElementById('reservation-romans');
     if (element) {
@@ -61,9 +34,7 @@ const Romans = () => {
       });
     }
   };
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Helmet>
         <script defer src="https://valence-trampoline.com/~flock.js" data-proxy-url="https://valence-trampoline.com/~api/analytics"></script>
         <title>Trampoline Park Romans-sur-Isère & Bourg-de-Péage | Valence Trampoline</title>
@@ -86,11 +57,7 @@ const Romans = () => {
             <p className="text-lg md:text-xl text-white/90 mb-8 max-w-4xl mx-auto">
               Sport, Anniversaires, Sorties Scolaires... Profitez de 400m² de zones connectées à moins de 15 min de chez vous.
             </p>
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-secondary to-accent text-foreground border-0 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full shadow-lg hover:shadow-xl text-lg px-8 py-6" 
-              onClick={scrollToReservation}
-            >
+            <Button size="lg" className="bg-gradient-to-r from-secondary to-accent text-foreground border-0 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full shadow-lg hover:shadow-xl text-lg px-8 py-6" onClick={scrollToReservation}>
               <Calendar className="mr-2" size={22} />
               Voir les disponibilités
             </Button>
@@ -103,17 +70,14 @@ const Romans = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
             📅 Réservez votre session ou votre{" "}
-            <span className="text-primary">anniversaire en ligne</span>
+            <span className="text-primary">​</span>
           </h2>
 
           <div className="-mx-4 md:mx-auto md:max-w-5xl bg-card md:rounded-2xl shadow-xl overflow-hidden">
-            <iframe 
-              src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2FXSKzEFlt4kW7cTR5pYmDI0hnqxewPUAiua8V%2Fundefined%2FDEPARTURE" 
-              width="100%" 
-              height="700" 
-              style={{ border: 0, overflow: 'hidden' }} 
-              title="Réservation Valence Trampoline" 
-            />
+            <iframe src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Factivities%2Fx3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV" width="100%" height="700" style={{
+            border: 0,
+            overflow: 'hidden'
+          }} title="Réservation Valence Trampoline" />
           </div>
         </div>
       </section>
@@ -254,11 +218,7 @@ const Romans = () => {
                   </span>
                 </div>
 
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-secondary to-accent text-foreground border-0 hover:scale-105 transition-all duration-300 font-bold rounded-full"
-                  onClick={scrollToReservation}
-                >
+                <Button size="lg" className="bg-gradient-to-r from-secondary to-accent text-foreground border-0 hover:scale-105 transition-all duration-300 font-bold rounded-full" onClick={scrollToReservation}>
                   Réserver un anniversaire
                 </Button>
               </div>
@@ -302,12 +262,7 @@ const Romans = () => {
                   </div>
                 </div>
 
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-bold rounded-full"
-                  onClick={scrollToReservation}
-                >
+                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-bold rounded-full" onClick={scrollToReservation}>
                   Demander un devis groupe
                 </Button>
               </div>
@@ -511,8 +466,6 @@ const Romans = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Romans;
