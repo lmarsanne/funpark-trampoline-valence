@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { trackReservationClick } from "@/lib/analytics";
-
 export const HeroSection = () => {
   const scrollToReservation = () => {
     trackReservationClick('hero_section');
@@ -53,14 +52,10 @@ export const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
-              <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary to-accent text-white border-0 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full shadow-lg hover:shadow-xl" onClick={scrollToReservation}>
-                Je réserve
-              </Button>
+              
               
               <Button variant="secondary" size="lg" className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 text-white border-0 hover:from-blue-600 hover:to-blue-700 shadow-lg shadow-blue-500/40 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full" asChild>
-                <a href="#formules">
-                  Voir les tarifs
-                </a>
+                
               </Button>
             </div>
           </div>
