@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Helmet } from "react-helmet-async";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { MapPin, Clock, Car, Users, Cake, Gift, Medal, Target, Rocket, Trophy } from "lucide-react";
+import { MapPin, Clock, Car, Users, Cake, Gift, Target, Rocket, Trophy, CheckCircle, CalendarCheck, ShieldCheck } from "lucide-react";
 import heroTrampoline from "@/assets/hero-trampoline.jpg";
 import birthdayParty from "@/assets/birthday-party.jpg";
 const GuilherandStPeray = () => {
@@ -43,10 +43,6 @@ const GuilherandStPeray = () => {
     icon: Target,
     title: "Airbag Réception",
     description: "Envie de tenter un salto ? Lancez-vous sans peur et atterrissez en toute sécurité dans notre coussin géant."
-  }, {
-    icon: Medal,
-    title: "Parcours Ninja",
-    description: "Testez votre force et votre agilité. Un défi chronométré pour voir qui de vos amis est le vrai guerrier."
   }, {
     icon: Trophy,
     title: "Basket Dunk",
@@ -117,7 +113,7 @@ const GuilherandStPeray = () => {
       <Helmet>
         <script defer src="https://valence-trampoline.com/~flock.js" data-proxy-url="https://valence-trampoline.com/~api/analytics"></script>
         <title>Trampoline Park proche Guilherand-Granges & St-Péray - Fun Park</title>
-        <meta name="description" content="Le complexe de trampoline de référence à 10 min de Guilherand-Granges et Saint-Péray (07). Ninja, Dunk, Airbag. Anniversaires tout inclus. Parking gratuit." />
+        <meta name="description" content="Le complexe de trampoline de référence à 10 min de Guilherand-Granges et Saint-Péray (07). Dunk, Airbag, Main Court. Anniversaires tout inclus. Parking gratuit." />
         <link rel="canonical" href="https://www.valence-trampoline.com/trampoline-guilherand-st-peray" />
       </Helmet>
 
@@ -145,9 +141,39 @@ const GuilherandStPeray = () => {
         </div>
       </section>
 
-      {/* Module de Réservation */}
+      {/* Module de Réservation Guidap */}
       <section id="reservation" className="py-16 bg-muted">
-        
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+            Réservez maintenant
+          </h2>
+          
+          {/* Bandeau rassurant */}
+          <div className="flex flex-wrap justify-center gap-6 mb-8">
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <CheckCircle className="w-5 h-5 text-primary" />
+              <span>Confirmation immédiate</span>
+            </div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <CalendarCheck className="w-5 h-5 text-primary" />
+              <span>Annulation flexible</span>
+            </div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <ShieldCheck className="w-5 h-5 text-primary" />
+              <span>Chaussettes incluses</span>
+            </div>
+          </div>
+          
+          {/* Guidap Iframe */}
+          <div className="max-w-4xl mx-auto bg-background rounded-2xl shadow-lg overflow-hidden">
+            <iframe 
+              src="https://app.guidap.co/valence-trampoline-park/add-to-cart?token=9WHSF0LGVLBXVMQQPJ&locale=fr" 
+              className="w-full min-h-[600px] border-0"
+              title="Réservation Fun Park Valence"
+              allow="payment"
+            />
+          </div>
+        </div>
       </section>
 
       {/* Édito SEO Localisation */}
@@ -186,7 +212,7 @@ const GuilherandStPeray = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Nos Univers de Saut
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {zones.map((zone, index) => <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6 text-center">
                   <zone.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
