@@ -45,7 +45,7 @@ export const HeroSection = () => {
 
       {/* Hero Content */}
       <div className="relative min-h-[20vh] md:min-h-[25vh] flex items-center justify-center overflow-hidden bg-gradient-to-r from-primary via-primary to-accent">
-        <div className="relative z-10 container mx-auto px-4 py-4 md:py-5 text-center">
+        <div className="relative z-10 container mx-auto md:py-5 text-center px-[10px] py-[10px]">
           <div className="animate-fade-in-up">
             <p className="text-base sm:text-lg md:text-2xl text-white/90 mb-4 md:mb-5 max-w-3xl mx-auto leading-relaxed">
               <strong className="font-bold">400 m²</strong> d'activités pour petits et grands dans un espace sécurisé, fun et <strong className="font-bold">100 % sensations.</strong>
