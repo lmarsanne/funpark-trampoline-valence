@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/Navigation";
@@ -28,6 +29,31 @@ import {
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const TainTournon = () => {
+  // Désactiver la restauration automatique du scroll et forcer le haut de page
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    const forceTop = () => {
+      window.scrollTo(0, 0);
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    };
+
+    forceTop();
+
+    const intervalId = setInterval(forceTop, 20);
+    const timeoutId = setTimeout(() => {
+      clearInterval(intervalId);
+    }, 2000);
+
+    return () => {
+      clearInterval(intervalId);
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
   const scrollToReservation = () => {
     const element = document.getElementById('reservation-tain');
     if (element) {
@@ -40,6 +66,7 @@ const TainTournon = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
+        <script defer src="https://valence-trampoline.com/~flock.js" data-proxy-url="https://valence-trampoline.com/~api/analytics"></script>
         <title>Trampoline Park proche Tain-l'Hermitage & Tournon - Fun Park</title>
         <meta name="description" content="Le plus grand Trampoline Park à 20 min de Tain et Tournon. Zones Ninja, Airbag, Dunk. Anniversaires enfants et sorties scolaires. Parking gratuit." />
         <meta name="keywords" content="trampoline tain, trampoline tournon, parc trampoline ardèche, anniversaire enfant tain, sortie scolaire tournon, centre aéré hermitage" />

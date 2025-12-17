@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -14,6 +15,31 @@ import heroTrampoline from "@/assets/hero-trampoline.jpg";
 import birthdayParty from "@/assets/birthday-party.jpg";
 
 const LivronLoriol = () => {
+  // Désactiver la restauration automatique du scroll et forcer le haut de page
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    const forceTop = () => {
+      window.scrollTo(0, 0);
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    };
+
+    forceTop();
+
+    const intervalId = setInterval(forceTop, 20);
+    const timeoutId = setTimeout(() => {
+      clearInterval(intervalId);
+    }, 2000);
+
+    return () => {
+      clearInterval(intervalId);
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
   const scrollToReservation = () => {
     const element = document.getElementById('reservation');
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -133,6 +159,7 @@ const LivronLoriol = () => {
   return (
     <>
       <Helmet>
+        <script defer src="https://valence-trampoline.com/~flock.js" data-proxy-url="https://valence-trampoline.com/~api/analytics"></script>
         <title>Trampoline Park proche Livron & Loriol - Fun Park</title>
         <meta 
           name="description" 
