@@ -165,12 +165,11 @@ const GuilherandStPeray = () => {
           </div>
           
           {/* Guidap Iframe */}
-          <div className="max-w-4xl mx-auto bg-background rounded-2xl shadow-lg overflow-hidden">
+          <div className="max-w-4xl mx-auto bg-background rounded-2xl shadow-lg overflow-hidden" style={{ height: '800px' }}>
             <iframe 
-              src="https://app.guidap.co/valence-trampoline-park/add-to-cart?token=9WHSF0LGVLBXVMQQPJ&locale=fr" 
-              className="w-full min-h-[600px] border-0"
+              src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-autoscroll=false&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2FXSKzEFlt4kW7cTR5pYmDI0hnqxewPUAiua8V%2Fundefined%2FDEPARTURE" 
+              className="w-full h-full border-0"
               title="Réservation Fun Park Valence"
-              allow="payment"
             />
           </div>
         </div>
