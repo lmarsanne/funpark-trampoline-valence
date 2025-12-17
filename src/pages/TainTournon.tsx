@@ -55,7 +55,7 @@ const TainTournon = () => {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-white/90 mb-8 max-w-4xl mx-auto">
-              Le plus grand complexe de saut de la région. Ninja Warrior, Dunk, Airbag... Le sport fun accessible via la N7 ou l'A7.
+              Le plus grand complexe de loisirs de la région (2500m²). Dunk, Airbag, Main Court... Le sport fun accessible via la N7 ou l'A7.
             </p>
             <Button size="lg" className="bg-gradient-to-r from-secondary to-accent text-foreground border-0 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full shadow-lg hover:shadow-xl text-lg px-8 py-6" onClick={scrollToReservation}>
               <Calendar className="mr-2" size={22} />
@@ -144,7 +144,7 @@ const TainTournon = () => {
             400m² de zones connectées pour tous les niveaux et tous les âges
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Main Court */}
             <div className="bg-card rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
               <div className="bg-gradient-to-r from-primary to-accent p-4 text-center">
@@ -167,19 +167,6 @@ const TainTournon = () => {
               <div className="p-5">
                 <p className="text-muted-foreground text-sm">
                   Sautez et atterrissez en toute sécurité dans notre coussin d'air géant. Sensations garanties !
-                </p>
-              </div>
-            </div>
-
-            {/* Ninja */}
-            <div className="bg-card rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
-              <div className="bg-gradient-to-r from-pink-400 to-pink-500 p-4 text-center">
-                <ShieldCheck className="text-white mx-auto mb-2" size={36} />
-                <h3 className="text-xl font-bold text-white">Parcours Ninja</h3>
-              </div>
-              <div className="p-5">
-                <p className="text-muted-foreground text-sm">
-                  Testez votre agilité sur notre parcours d'obstacles inspiré de Ninja Warrior !
                 </p>
               </div>
             </div>
@@ -232,8 +219,8 @@ const TainTournon = () => {
                   </span>
                 </div>
 
-                <Button size="lg" className="bg-gradient-to-r from-secondary to-accent text-foreground border-0 hover:scale-105 transition-all duration-300 font-bold rounded-full" onClick={scrollToReservation}>
-                  Réserver un anniversaire
+                <Button size="lg" className="bg-gradient-to-r from-secondary to-accent text-foreground border-0 hover:scale-105 transition-all duration-300 font-bold rounded-full" asChild>
+                  <a href="/anniversaire-enfant">Réserver un anniversaire</a>
                 </Button>
               </div>
             </div>
@@ -274,8 +261,8 @@ const TainTournon = () => {
                   </div>
                 </div>
 
-                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-bold rounded-full" onClick={scrollToReservation}>
-                  Demander un devis groupe
+                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-bold rounded-full" asChild>
+                  <a href="/entreprises">Demander un devis groupe</a>
                 </Button>
               </div>
               
@@ -387,6 +374,15 @@ const TainTournon = () => {
                     Oui, casiers et vestiaires disponibles.
                   </AccordionContent>
                 </AccordionItem>
+
+                <AccordionItem value="q8b" className="bg-card rounded-xl px-6 border-none shadow-md mt-3">
+                  <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                    Combien de personnes maximum sur les trampolines ?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Pour garantir la sécurité et l'espace de jeu de chacun, nous limitons l'accès à <strong>32 personnes maximum par session</strong>. Pensez à réserver !
+                  </AccordionContent>
+                </AccordionItem>
               </div>
 
               {/* ANNIVERSAIRES */}
@@ -443,7 +439,7 @@ const TainTournon = () => {
                     Capacité maximale ?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
-                    Jusqu'à 80 personnes en simultané sur les toiles.
+                    Nous pouvons accueillir jusqu'à <strong>32 sauteurs en simultané</strong> sur l'espace trampoline.
                   </AccordionContent>
                 </AccordionItem>
               </div>
