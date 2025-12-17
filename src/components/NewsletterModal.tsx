@@ -47,29 +47,34 @@ export const NewsletterModal = ({ open, onOpenChange }: NewsletterModalProps) =>
   const onSubmit = async (data: NewsletterFormValues) => {
     setIsSubmitting(true);
     try {
-      const { error } = await supabase
+      // Save to Supabase
+      const { error: dbError } = await supabase
         .from("newsletter_subscribers")
         .insert({ email: data.email });
 
-      if (error) {
-        if (error.code === "23505") {
-          toast({
-            title: "Déjà inscrit !",
-            description: "Cette adresse email est déjà inscrite à notre newsletter.",
-          });
-        } else {
-          throw error;
-        }
-      } else {
-        toast({
-          title: "Inscription réussie !",
-          description: "Bienvenue dans le Club Fun Park !",
-        });
-        form.reset();
-        onOpenChange(false);
-        localStorage.setItem("newsletter_subscribed", "true");
+      if (dbError && dbError.code !== "23505") {
+        throw dbError;
       }
+
+      // Send to Brevo
+      const { error: brevoError } = await supabase.functions.invoke("subscribe-brevo", {
+        body: { email: data.email },
+      });
+
+      if (brevoError) {
+        console.error("Brevo error:", brevoError);
+        // Continue anyway - at least we saved to DB
+      }
+
+      toast({
+        title: "Inscription réussie !",
+        description: "Bienvenue dans le Club Fun Park !",
+      });
+      form.reset();
+      onOpenChange(false);
+      localStorage.setItem("newsletter_subscribed", "true");
     } catch (error) {
+      console.error("Newsletter subscription error:", error);
       toast({
         title: "Erreur",
         description: "Une erreur est survenue. Veuillez réessayer.",
