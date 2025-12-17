@@ -67,7 +67,37 @@ const TainTournon = () => {
 
       {/* Module de Réservation GUIDAP */}
       <section id="reservation-tain" className="py-16 bg-muted/30">
-        
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+            Réservez <span className="text-primary">maintenant</span>
+          </h2>
+          
+          {/* Bandeau rassurant */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-8">
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Clock className="text-primary" size={20} />
+              <span className="text-sm font-medium">Confirmation immédiate</span>
+            </div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Calendar className="text-primary" size={20} />
+              <span className="text-sm font-medium">Annulation flexible</span>
+            </div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Footprints className="text-primary" size={20} />
+              <span className="text-sm font-medium">Chaussettes incluses</span>
+            </div>
+          </div>
+
+          {/* Iframe Guidap */}
+          <div className="w-full max-w-4xl mx-auto bg-card rounded-2xl shadow-xl overflow-hidden">
+            <iframe 
+              src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2FXSKzEFlt4kW7cTR5pYmDI0hnqxewPUAiua8V%2Fundefined%2FDEPARTURE"
+              className="w-full"
+              style={{ height: '600px', border: 'none' }}
+              title="Réservation Valence Trampoline"
+            />
+          </div>
+        </div>
       </section>
 
       {/* Édito SEO Localisation */}
