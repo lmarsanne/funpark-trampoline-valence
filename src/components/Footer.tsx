@@ -1,6 +1,11 @@
 import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-export const Footer = () => {
+interface FooterProps {
+  onNewsletterClick?: () => void;
+}
+
+export const Footer = ({ onNewsletterClick }: FooterProps) => {
   return (
     <footer className="bg-foreground text-white py-12">
       <div className="container mx-auto px-4">
@@ -44,7 +49,7 @@ export const Footer = () => {
           {/* Réseaux sociaux */}
           <div>
             <h3 className="text-xl font-bold mb-4">Suivez-nous</h3>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mb-4">
               <a 
                 href="https://www.facebook.com/valencebowling" 
                 target="_blank" 
@@ -64,6 +69,16 @@ export const Footer = () => {
                 <Instagram className="w-6 h-6" />
               </a>
             </div>
+            {onNewsletterClick && (
+              <Button
+                onClick={onNewsletterClick}
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary hover:text-white"
+              >
+                <Mail className="w-4 h-4 mr-2" />
+                S'inscrire à la newsletter
+              </Button>
+            )}
           </div>
 
           {/* Map */}

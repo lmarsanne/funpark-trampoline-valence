@@ -12,9 +12,11 @@ import { ContactSection } from "@/components/ContactSection";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
-import { Button } from "@/components/ui/button";
+import { NewsletterModal, useNewsletterModal } from "@/components/NewsletterModal";
 import { Shield, Clock, Calendar } from "lucide-react";
+
 const Index = () => {
+  const { isOpen, setIsOpen, handleOpenChange } = useNewsletterModal();
   // Désactiver la restauration automatique du scroll et forcer le haut de page
   useEffect(() => {
     if ('scrollRestoration' in history) {
@@ -94,7 +96,8 @@ const Index = () => {
       <FAQSection />
       <ContactSection />
       <CTASection />
-      <Footer />
+      <Footer onNewsletterClick={() => setIsOpen(true)} />
+      <NewsletterModal open={isOpen} onOpenChange={handleOpenChange} />
     </div>
   </>;
 };
