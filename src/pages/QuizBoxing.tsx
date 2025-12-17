@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { QuizBoxingFAQ } from "@/components/QuizBoxingFAQ";
@@ -14,7 +16,32 @@ import emotionSurprise from "@/assets/quiz-emotion-surprise.png";
 import quizThemes from "@/assets/quiz-themes.png";
 import quizRounds from "@/assets/quiz-rounds.png";
 import quizJokers from "@/assets/quiz-jokers.png";
+
 const QuizBoxing = () => {
+  // Désactiver la restauration automatique du scroll et forcer le haut de page
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    const forceTop = () => {
+      window.scrollTo(0, 0);
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    };
+
+    forceTop();
+
+    const intervalId = setInterval(forceTop, 20);
+    const timeoutId = setTimeout(() => {
+      clearInterval(intervalId);
+    }, 2000);
+
+    return () => {
+      clearInterval(intervalId);
+      clearTimeout(timeoutId);
+    };
+  }, []);
   const reservationUrl = "https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2F80FQWEsnGZ7BJSAqKXohcDCYlgRb2IyjM1Hu%2Fundefined%2FDEPARTURE";
   const scrollToReservation = () => {
     const element = document.getElementById('reservation-quiz-boxing');
@@ -32,7 +59,11 @@ const QuizBoxing = () => {
       });
     }
   };
-  return <div className="min-h-screen">
+  return <>
+    <Helmet>
+      <script defer src="https://valence-trampoline.com/~flock.js" data-proxy-url="https://valence-trampoline.com/~api/analytics"></script>
+    </Helmet>
+    <div className="min-h-screen">
       <Navigation />
 
       {/* Hero Section */}
@@ -404,6 +435,7 @@ const QuizBoxing = () => {
       <QuizBoxingFAQ />
 
       <Footer />
-    </div>;
+    </div>
+  </>;
 };
 export default QuizBoxing;

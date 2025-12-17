@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -113,6 +114,31 @@ const scrollToReservation = () => {
 };
 
 const AnniversaireEnfant = () => {
+  // Désactiver la restauration automatique du scroll et forcer le haut de page
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    const forceTop = () => {
+      window.scrollTo(0, 0);
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    };
+
+    forceTop();
+
+    const intervalId = setInterval(forceTop, 20);
+    const timeoutId = setTimeout(() => {
+      clearInterval(intervalId);
+    }, 2000);
+
+    return () => {
+      clearInterval(intervalId);
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -121,6 +147,7 @@ const AnniversaireEnfant = () => {
           name="description"
           content="L'anniversaire enfant tout inclus à Valence ! Gâteau, boissons, chaussettes & activités. Formules dès 15€. Trampoline, Bowling, Karaoké. On s'occupe de tout !"
         />
+        <script defer src="https://valence-trampoline.com/~flock.js" data-proxy-url="https://valence-trampoline.com/~api/analytics"></script>
       </Helmet>
 
       <Navigation />
