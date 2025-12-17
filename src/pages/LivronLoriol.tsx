@@ -202,14 +202,11 @@ const LivronLoriol = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
             📅 Réservez votre session JUMP
           </h2>
-          <div className="-mx-4 md:mx-auto md:max-w-4xl bg-white md:rounded-2xl shadow-xl md:p-4 min-h-[500px]">
+          <div className="-mx-4 md:mx-auto md:max-w-4xl bg-white md:rounded-2xl shadow-xl md:p-4" style={{ height: '800px' }}>
             <iframe
-              src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Factivities%2Fx3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV"
-              width="100%"
-              height="600"
-              frameBorder="0"
+              src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-autoscroll=false&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2FXSKzEFlt4kW7cTR5pYmDI0hnqxewPUAiua8V%2Fundefined%2FDEPARTURE"
+              className="w-full h-full border-0 md:rounded-xl"
               title="Réservation Fun Park Valence"
-              className="md:rounded-xl"
             />
           </div>
         </div>
