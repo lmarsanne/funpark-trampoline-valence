@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
+import { trackFormSubmit } from "@/lib/analytics";
 const contactSchema = z.object({
   fullName: z.string().trim().min(1, "Le nom complet est requis").max(100),
   email: z.string().trim().email("Email invalide").max(255),
@@ -37,6 +38,9 @@ export const ContactSection = () => {
         body: formData
       });
       if (error) throw error;
+      
+      trackFormSubmit('contact_form');
+      
       toast({
         title: "Merci !",
         description: "Notre équipe vous recontactera très bientôt."

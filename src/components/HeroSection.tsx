@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { trackReservationClick } from "@/lib/analytics";
+
 export const HeroSection = () => {
   const scrollToReservation = () => {
+    trackReservationClick('hero_section');
     const element = document.getElementById('reservation');
     if (element) {
       element.scrollIntoView({
