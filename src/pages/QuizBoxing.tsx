@@ -16,27 +16,22 @@ import emotionSurprise from "@/assets/quiz-emotion-surprise.png";
 import quizThemes from "@/assets/quiz-themes.png";
 import quizRounds from "@/assets/quiz-rounds.png";
 import quizJokers from "@/assets/quiz-jokers.png";
-
 const QuizBoxing = () => {
   // Désactiver la restauration automatique du scroll et forcer le haut de page
   useEffect(() => {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
-
     const forceTop = () => {
       window.scrollTo(0, 0);
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     };
-
     forceTop();
-
     const intervalId = setInterval(forceTop, 20);
     const timeoutId = setTimeout(() => {
       clearInterval(intervalId);
     }, 2000);
-
     return () => {
       clearInterval(intervalId);
       clearTimeout(timeoutId);
@@ -70,8 +65,8 @@ const QuizBoxing = () => {
       <section className="relative pt-24 pb-16 overflow-hidden">
         {/* Background Image with overlay */}
         <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: `url(${heroQuizBoxing})`
-      }}>
+          backgroundImage: `url(${heroQuizBoxing})`
+        }}>
           <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background"></div>
         </div>
 
@@ -102,9 +97,7 @@ const QuizBoxing = () => {
                 Réserver ma partie Quiz Boxing
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6" onClick={scrollToInfo}>
-                Privatiser pour un événement
-              </Button>
+              
             </div>
           </div>
         </div>
@@ -119,11 +112,11 @@ const QuizBoxing = () => {
             </h2>
             
             <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{
-            paddingBottom: '56.25%'
-          }}>
+              paddingBottom: '56.25%'
+            }}>
               <iframe className="absolute top-0 left-0 w-full h-full" src="https://player.vimeo.com/video/895781107?h=0&title=0&byline=0&portrait=0" title="Quiz Boxing - Concept en vidéo" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen style={{
-              border: 'none'
-            }} />
+                border: 'none'
+              }} />
             </div>
             
             <p className="text-center text-muted-foreground mt-6">
@@ -142,13 +135,8 @@ const QuizBoxing = () => {
             </h2>
 
             {/* Bandeau rassurant */}
-            <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 mb-8">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <Shield className="text-primary" size={24} />
-                <p className="text-center text-foreground font-semibold">
-                  Réservation sécurisée via notre partenaire GuiDap. Paiement en ligne et confirmation immédiate.
-                </p>
-              </div>
+            <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 mb-8 py-[5px]">
+              
 
               {/* Points clés */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
@@ -169,11 +157,11 @@ const QuizBoxing = () => {
 
             {/* Iframe */}
             <div className="-mx-4 md:mx-0 bg-card md:rounded-2xl shadow-xl overflow-hidden" style={{
-            height: '800px'
-          }}>
+              height: '800px'
+            }}>
               <iframe src={reservationUrl} className="w-full h-full" title="Réservation Quiz Boxing" style={{
-              border: 'none'
-            }} />
+                border: 'none'
+              }} />
             </div>
           </div>
         </div>
