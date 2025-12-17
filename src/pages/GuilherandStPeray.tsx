@@ -4,160 +4,116 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Helmet } from "react-helmet-async";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { MapPin, Clock, Car, Users, Cake, Gift, Medal, Target, Rocket, Trophy } from "lucide-react";
 import heroTrampoline from "@/assets/hero-trampoline.jpg";
 import birthdayParty from "@/assets/birthday-party.jpg";
-
 const GuilherandStPeray = () => {
   // Désactiver la restauration automatique du scroll et forcer le haut de page
   useEffect(() => {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
-
     const forceTop = () => {
       window.scrollTo(0, 0);
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     };
-
     forceTop();
-
     const intervalId = setInterval(forceTop, 20);
     const timeoutId = setTimeout(() => {
       clearInterval(intervalId);
     }, 2000);
-
     return () => {
       clearInterval(intervalId);
       clearTimeout(timeoutId);
     };
   }, []);
-
   const scrollToReservation = () => {
     const element = document.getElementById('reservation');
-    element?.scrollIntoView({ behavior: 'smooth' });
+    element?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  const zones = [
-    {
-      icon: Rocket,
-      title: "Zone de Saut Libre (Main Court)",
-      description: "Enchaînez les rebonds, travaillez votre cardio et rebondissez sur les murs dans cet espace interconnecté."
-    },
-    {
-      icon: Target,
-      title: "Airbag Réception",
-      description: "Envie de tenter un salto ? Lancez-vous sans peur et atterrissez en toute sécurité dans notre coussin géant."
-    },
-    {
-      icon: Medal,
-      title: "Parcours Ninja",
-      description: "Testez votre force et votre agilité. Un défi chronométré pour voir qui de vos amis est le vrai guerrier."
-    },
-    {
-      icon: Trophy,
-      title: "Basket Dunk",
-      description: "Prenez votre élan sur le trampoline et marquez des paniers spectaculaires, quelle que soit votre taille."
-    }
-  ];
-
-  const faqItems = [
-    {
-      category: "ACCÈS ARDÈCHE",
-      questions: [
-        {
-          q: "Est-ce loin de Guilherand-Granges ?",
-          a: "C'est la porte à côté ! Comptez 10 à 12 minutes de voiture. Passez par le pont des Lônes pour éviter les bouchons de Valence."
-        },
-        {
-          q: "Le parking est-il payant ?",
-          a: "Non, le stationnement est 100% gratuit et privé, juste devant la porte."
-        },
-        {
-          q: "Peut-on venir en bus Citéa ?",
-          a: "Oui, le réseau de bus dessert la zone de Saint-Marcel. Vérifiez les horaires Citéa."
-        }
-      ]
-    },
-    {
-      category: "SPORT & SÉCURITÉ",
-      questions: [
-        {
-          q: "Quelle est la tenue obligatoire ?",
-          a: "Vêtements souples (short, legging) sans fermetures éclair ni boutons métalliques. Chaussettes antidérapantes impératives (fournies dans le prix d'entrée)."
-        },
-        {
-          q: "Quel est l'âge minimum pour sauter ?",
-          a: "3 ans révolus pour les sessions \"Baby\" du matin. 6 ans pour l'accès complet au parc."
-        },
-        {
-          q: "Est-ce risqué ?",
-          a: "Comme tout sport dynamique, le risque existe. Mais nos zones sont sécurisées et surveillées par notre staff. L'échauffement est clé !"
-        },
-        {
-          q: "Les accompagnateurs paient-ils ?",
-          a: "C'est gratuit pour ceux qui regardent (parents, grands-parents)."
-        },
-        {
-          q: "Avez-vous des casiers ?",
-          a: "Oui, pour ranger vos chaussures et affaires personnelles en sécurité."
-        }
-      ]
-    },
-    {
-      category: "ANNIVERSAIRES",
-      questions: [
-        {
-          q: "Comment réserver un anniversaire ?",
-          a: "Tout se fait en ligne via le module ci-dessus. Choisissez la date, le nombre d'enfants et la formule."
-        },
-        {
-          q: "Fournissez-vous le gâteau ?",
-          a: "Absolument. Gâteau, bonbons, sirops... Tout est inclus dans le package."
-        },
-        {
-          q: "Combien d'invités minimum ?",
-          a: "La fête est validée à partir de 5 enfants participants."
-        }
-      ]
-    },
-    {
-      category: "GROUPES",
-      questions: [
-        {
-          q: "Recevez-vous les associations sportives ?",
-          a: "Oui, de nombreux clubs de l'Ardèche viennent chez nous pour des sorties de fin d'année ou de cohésion."
-        },
-        {
-          q: "Quelle capacité max ?",
-          a: "Nous pouvons gérer jusqu'à 80 personnes en rotation sur les activités."
-        }
-      ]
-    },
-    {
-      category: "PRATIQUE",
-      questions: [
-        {
-          q: "Y a-t-il de quoi manger ?",
-          a: "Notre Snack-Bar propose du salé (paninis...) et du sucré (gaufres...) pour reprendre des forces. Pique-nique non autorisé."
-        },
-        {
-          q: "Peut-on payer en chèques vacances ?",
-          a: "Non, nous acceptons uniquement la Carte Bancaire et les espèces."
-        }
-      ]
-    }
-  ];
-
-  return (
-    <>
+  const zones = [{
+    icon: Rocket,
+    title: "Zone de Saut Libre (Main Court)",
+    description: "Enchaînez les rebonds, travaillez votre cardio et rebondissez sur les murs dans cet espace interconnecté."
+  }, {
+    icon: Target,
+    title: "Airbag Réception",
+    description: "Envie de tenter un salto ? Lancez-vous sans peur et atterrissez en toute sécurité dans notre coussin géant."
+  }, {
+    icon: Medal,
+    title: "Parcours Ninja",
+    description: "Testez votre force et votre agilité. Un défi chronométré pour voir qui de vos amis est le vrai guerrier."
+  }, {
+    icon: Trophy,
+    title: "Basket Dunk",
+    description: "Prenez votre élan sur le trampoline et marquez des paniers spectaculaires, quelle que soit votre taille."
+  }];
+  const faqItems = [{
+    category: "ACCÈS ARDÈCHE",
+    questions: [{
+      q: "Est-ce loin de Guilherand-Granges ?",
+      a: "C'est la porte à côté ! Comptez 10 à 12 minutes de voiture. Passez par le pont des Lônes pour éviter les bouchons de Valence."
+    }, {
+      q: "Le parking est-il payant ?",
+      a: "Non, le stationnement est 100% gratuit et privé, juste devant la porte."
+    }, {
+      q: "Peut-on venir en bus Citéa ?",
+      a: "Oui, le réseau de bus dessert la zone de Saint-Marcel. Vérifiez les horaires Citéa."
+    }]
+  }, {
+    category: "SPORT & SÉCURITÉ",
+    questions: [{
+      q: "Quelle est la tenue obligatoire ?",
+      a: "Vêtements souples (short, legging) sans fermetures éclair ni boutons métalliques. Chaussettes antidérapantes impératives (fournies dans le prix d'entrée)."
+    }, {
+      q: "Quel est l'âge minimum pour sauter ?",
+      a: "3 ans révolus pour les sessions \"Baby\" du matin. 6 ans pour l'accès complet au parc."
+    }, {
+      q: "Est-ce risqué ?",
+      a: "Comme tout sport dynamique, le risque existe. Mais nos zones sont sécurisées et surveillées par notre staff. L'échauffement est clé !"
+    }, {
+      q: "Les accompagnateurs paient-ils ?",
+      a: "C'est gratuit pour ceux qui regardent (parents, grands-parents)."
+    }, {
+      q: "Avez-vous des casiers ?",
+      a: "Oui, pour ranger vos chaussures et affaires personnelles en sécurité."
+    }]
+  }, {
+    category: "ANNIVERSAIRES",
+    questions: [{
+      q: "Comment réserver un anniversaire ?",
+      a: "Tout se fait en ligne via le module ci-dessus. Choisissez la date, le nombre d'enfants et la formule."
+    }, {
+      q: "Fournissez-vous le gâteau ?",
+      a: "Absolument. Gâteau, bonbons, sirops... Tout est inclus dans le package."
+    }, {
+      q: "Combien d'invités minimum ?",
+      a: "La fête est validée à partir de 5 enfants participants."
+    }]
+  }, {
+    category: "GROUPES",
+    questions: [{
+      q: "Recevez-vous les associations sportives ?",
+      a: "Oui, de nombreux clubs de l'Ardèche viennent chez nous pour des sorties de fin d'année ou de cohésion."
+    }, {
+      q: "Quelle capacité max ?",
+      a: "Nous pouvons gérer jusqu'à 80 personnes en rotation sur les activités."
+    }]
+  }, {
+    category: "PRATIQUE",
+    questions: [{
+      q: "Y a-t-il de quoi manger ?",
+      a: "Notre Snack-Bar propose du salé (paninis...) et du sucré (gaufres...) pour reprendre des forces. Pique-nique non autorisé."
+    }, {
+      q: "Peut-on payer en chèques vacances ?",
+      a: "Non, nous acceptons uniquement la Carte Bancaire et les espèces."
+    }]
+  }];
+  return <>
       <Helmet>
         <script defer src="https://valence-trampoline.com/~flock.js" data-proxy-url="https://valence-trampoline.com/~api/analytics"></script>
         <title>Trampoline Park proche Guilherand-Granges & St-Péray - Fun Park</title>
@@ -169,10 +125,9 @@ const GuilherandStPeray = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroTrampoline})` }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: `url(${heroTrampoline})`
+      }}>
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
         </div>
         
@@ -184,11 +139,7 @@ const GuilherandStPeray = () => {
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto">
             Traversez le Rhône et venez jumper ! 400m² de sport et de fun vous attendent à Saint-Marcel-lès-Valence.
           </p>
-          <Button 
-            size="lg" 
-            onClick={scrollToReservation}
-            className="text-lg px-8 py-6"
-          >
+          <Button size="lg" onClick={scrollToReservation} className="text-lg px-8 py-6">
             Voir les créneaux dispos
           </Button>
         </div>
@@ -196,21 +147,7 @@ const GuilherandStPeray = () => {
 
       {/* Module de Réservation */}
       <section id="reservation" className="py-16 bg-muted">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-            📅 Réservez votre session JUMP ou ANNIVERSAIRE
-          </h2>
-          <div className="-mx-4 md:mx-auto md:max-w-4xl bg-white md:rounded-2xl shadow-xl md:p-4 min-h-[500px]">
-            <iframe
-              src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Factivities%2Fx3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV"
-              width="100%"
-              height="600"
-              frameBorder="0"
-              title="Réservation Fun Park Valence"
-              className="md:rounded-xl"
-            />
-          </div>
-        </div>
+        
       </section>
 
       {/* Édito SEO Localisation */}
@@ -250,15 +187,13 @@ const GuilherandStPeray = () => {
             Nos Univers de Saut
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {zones.map((zone, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+            {zones.map((zone, index) => <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6 text-center">
                   <zone.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
                   <h3 className="text-xl font-bold mb-3">{zone.title}</h3>
                   <p className="text-muted-foreground">{zone.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -290,11 +225,7 @@ const GuilherandStPeray = () => {
               </Button>
             </div>
             <div className="relative">
-              <img 
-                src={birthdayParty} 
-                alt="Anniversaire enfant au trampoline park près de Guilherand-Granges" 
-                className="rounded-2xl shadow-2xl"
-              />
+              <img src={birthdayParty} alt="Anniversaire enfant au trampoline park près de Guilherand-Granges" className="rounded-2xl shadow-2xl" />
             </div>
           </div>
         </div>
@@ -335,36 +266,26 @@ const GuilherandStPeray = () => {
             Questions Fréquentes - Ardèche
           </h2>
           <div className="max-w-3xl mx-auto">
-            {faqItems.map((category, catIndex) => (
-              <div key={catIndex} className="mb-8">
+            {faqItems.map((category, catIndex) => <div key={catIndex} className="mb-8">
                 <h3 className="text-lg font-bold text-primary mb-4 uppercase tracking-wide">
                   {category.category}
                 </h3>
                 <Accordion type="single" collapsible className="space-y-2">
-                  {category.questions.map((item, qIndex) => (
-                    <AccordionItem 
-                      key={qIndex} 
-                      value={`${catIndex}-${qIndex}`}
-                      className="bg-white rounded-lg px-4"
-                    >
+                  {category.questions.map((item, qIndex) => <AccordionItem key={qIndex} value={`${catIndex}-${qIndex}`} className="bg-white rounded-lg px-4">
                       <AccordionTrigger className="text-left font-medium">
                         {item.q}
                       </AccordionTrigger>
                       <AccordionContent className="text-muted-foreground">
                         {item.a}
                       </AccordionContent>
-                    </AccordionItem>
-                  ))}
+                    </AccordionItem>)}
                 </Accordion>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
 
       <Footer />
-    </>
-  );
+    </>;
 };
-
 export default GuilherandStPeray;
