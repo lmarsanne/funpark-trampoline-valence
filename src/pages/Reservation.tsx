@@ -7,19 +7,38 @@ const Reservation = () => {
   const bookingRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const root = bookingRef.current;
-    if (!root) return;
+    // Load Guidap script dynamically
+    const scriptId = "guidap-booking-script";
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://cart.guidap.net/v1/";
+      script.async = true;
+      script.defer = true;
+      script.dataset.token = "q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4";
+      script.dataset.lang = "fr";
+      script.dataset.currency = "EUR";
+      document.body.appendChild(script);
+    }
 
-    // Prevent multiple mounts
-    if (root.querySelector("guidap-booking-widget")) return;
+    // Mount widget when script is ready
+    const mountWidget = () => {
+      const root = bookingRef.current;
+      if (!root) return;
+      if (root.querySelector("guidap-booking-widget")) return;
 
-    const el = document.createElement("guidap-booking-widget");
-    el.setAttribute("activity-uuid", "XSKzEFlt4kW7cTR5pYmDI0hnqxewPUAiua8V");
-    root.appendChild(el);
+      const el = document.createElement("guidap-booking-widget");
+      el.setAttribute("activity-uuid", "XSKzEFlt4kW7cTR5pYmDI0hnqxewPUAiua8V");
+      root.appendChild(el);
+    };
+
+    // Try immediately and after a delay for script to load
+    mountWidget();
+    const timeout = setTimeout(mountWidget, 500);
 
     return () => {
-      // Cleanup on unmount
-      const widget = root.querySelector("guidap-booking-widget");
+      clearTimeout(timeout);
+      const widget = bookingRef.current?.querySelector("guidap-booking-widget");
       if (widget) widget.remove();
     };
   }, []);
