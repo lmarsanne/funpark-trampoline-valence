@@ -225,19 +225,6 @@ const AnniversaireEnfant = () => {
             </div>
           </div>
 
-          {/* CTA Button mobile */}
-          <div className="container mx-auto max-w-5xl px-4">
-            <Button
-              onClick={goToReservation}
-              variant="cta"
-              size="xl"
-              className="w-full md:hidden mb-4"
-            >
-              <Cake className="w-5 h-5 mr-2" />
-              Je réserve maintenant
-              <ArrowDown className="w-4 h-4 ml-2 animate-bounce" />
-            </Button>
-          </div>
 
           {/* Intro text */}
           <div className="container mx-auto max-w-5xl px-4 text-center space-y-3 md:space-y-6">
@@ -360,18 +347,14 @@ const AnniversaireEnfant = () => {
       </main>
       <Footer />
 
-      {/* Floating CTA Button - Mobile only */}
-      <div className="fixed bottom-4 left-4 right-4 md:hidden z-50">
-        <Button
-          onClick={goToReservation}
-          variant="cta"
-          size="lg"
-          className="w-full py-4 shadow-2xl rounded-full"
-        >
-          <Cake className="w-5 h-5 mr-2" />
-          Réserver l'anniversaire
-        </Button>
-      </div>
+      {/* Sticky CTA Button */}
+      <a
+        href="/guidap-reservation-anniv.html"
+        className="fixed bottom-4 left-4 right-4 z-50 flex items-center justify-center py-4 text-lg font-bold text-black rounded-full shadow-2xl hover:opacity-90 transition-opacity"
+        style={{ backgroundColor: '#FFBD0B' }}
+      >
+        Réserver maintenant
+      </a>
     </>
   );
 };
