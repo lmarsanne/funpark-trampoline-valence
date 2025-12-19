@@ -33,7 +33,7 @@ const Reservation = () => {
 
       <main className="min-h-screen bg-white pt-20">
         <div className="flex justify-center py-12">
-          <guidap-activity-reserve-button activity-uuid="XSKzEFlt4kW7cTR5pYmDI0hnqxewPUAiua8V"></guidap-activity-reserve-button>
+          <guidap-booking-widget activity-uuid="XSKzEFlt4kW7cTR5pYmDI0hnqxewPUAiua8V"></guidap-booking-widget>
         </div>
       </main>
 
