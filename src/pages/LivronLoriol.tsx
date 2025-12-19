@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Helmet } from "react-helmet-async";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { MapPin, Clock, Car, Users, Cake, Gift, Rocket, Target, Zap, Trophy } from "lucide-react";
 import heroTrampoline from "@/assets/hero-trampoline.jpg";
 import birthdayParty from "@/assets/birthday-party.jpg";
+
 const LivronLoriol = () => {
   // Désactiver la restauration automatique du scroll et forcer le haut de page
   useEffect(() => {
@@ -29,12 +29,7 @@ const LivronLoriol = () => {
       clearTimeout(timeoutId);
     };
   }, []);
-  const scrollToReservation = () => {
-    const element = document.getElementById('reservation');
-    element?.scrollIntoView({
-      behavior: 'smooth'
-    });
-  };
+
   const zones = [{
     icon: Rocket,
     title: "Main Court (Zone Libre)",
@@ -52,6 +47,7 @@ const LivronLoriol = () => {
     title: "Basket Dunk",
     description: "Sentez-vous comme un géant. Le trampoline vous propulse pour claquer des dunks dans le panier."
   }];
+
   const faqItems = [{
     category: "ACCÈS SUD",
     questions: [{
@@ -86,7 +82,7 @@ const LivronLoriol = () => {
     category: "ANNIVERSAIRES",
     questions: [{
       q: "Faut-il réserver l'anniversaire ?",
-      a: "Oui, obligatoirement en ligne via le module ci-dessus."
+      a: "Oui, obligatoirement en ligne via notre site."
     }, {
       q: "Le gâteau est-il compris ?",
       a: "Oui : Gâteau, bonbons et boissons sont fournis."
@@ -113,6 +109,7 @@ const LivronLoriol = () => {
       a: "Espèces et Carte Bancaire uniquement. (Pas de chèques vacances)."
     }]
   }];
+
   return <>
       <Helmet>
         <script defer src="https://valence-trampoline.com/~flock.js" data-proxy-url="https://valence-trampoline.com/~api/analytics"></script>
@@ -135,24 +132,9 @@ const LivronLoriol = () => {
             Votre Trampoline Park à 20 min de<br />
             <span className="text-primary">Livron</span> et <span className="text-primary">Loriol</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
             Le sport fun à taille humaine. Profitez de nos zones de saut connectées, Airbag et Dunk. Idéal pour se défouler sans la foule.
           </p>
-          <Button size="lg" onClick={scrollToReservation} className="text-lg px-8 py-6">
-            Voir les disponibilités
-          </Button>
-        </div>
-      </section>
-
-      {/* Module de Réservation */}
-      <section id="reservation" className="py-16 bg-muted">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-secondary">
-            Réservez maintenant 
-          </h2>
-          <div className="-mx-4 md:mx-auto md:max-w-4xl bg-white md:rounded-2xl shadow-xl md:p-4 min-h-[500px]">
-            <iframe src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Factivities%2Fx3KsSvBw18y2TXAQqfkYDCchZt40LiRaGubV" width="100%" height="600" frameBorder="0" title="Réservation Fun Park Valence" className="md:rounded-xl" />
-          </div>
         </div>
       </section>
 
@@ -217,7 +199,7 @@ const LivronLoriol = () => {
               <p className="text-lg text-muted-foreground mb-6">
                 Pour les familles de <strong>Livron</strong> et <strong>Loriol</strong>, c'est le bon plan. Grâce à notre jauge limitée, les enfants profitent vraiment des installations pendant leur fête. Formule Tout Inclus : Saut + Espace Goûter + Gâteau + Boissons. On gère tout !
               </p>
-              <div className="flex flex-wrap gap-3 mb-8">
+              <div className="flex flex-wrap gap-3">
                 <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full font-medium">
                   <Gift className="w-4 h-4" />
                   Tout Inclus
@@ -230,9 +212,6 @@ const LivronLoriol = () => {
                   Chaussettes offertes
                 </span>
               </div>
-              <Button size="lg" onClick={scrollToReservation}>
-                Réserver un anniversaire
-              </Button>
             </div>
             <div className="order-1 lg:order-2">
               <img src={birthdayParty} alt="Anniversaire enfant au trampoline park" className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]" />
@@ -296,6 +275,16 @@ const LivronLoriol = () => {
       </section>
 
       <Footer />
+
+      {/* CTA Sticky */}
+      <a 
+        href="/guidap-reservation.html"
+        className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-center py-4 px-6 font-bold text-lg rounded-t-2xl shadow-lg transition-all hover:opacity-90"
+        style={{ backgroundColor: '#FFBD0B', color: '#000000' }}
+      >
+        Réserver maintenant
+      </a>
     </>;
 };
+
 export default LivronLoriol;

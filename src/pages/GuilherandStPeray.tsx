@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Helmet } from "react-helmet-async";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { MapPin, Clock, Car, Users, Cake, Gift, Target, Rocket, Trophy, CheckCircle, CalendarCheck, ShieldCheck } from "lucide-react";
+import { MapPin, Clock, Car, Users, Cake, Gift, Target, Rocket, Trophy } from "lucide-react";
 import heroTrampoline from "@/assets/hero-trampoline.jpg";
 import birthdayParty from "@/assets/birthday-party.jpg";
+
 const GuilherandStPeray = () => {
   // Désactiver la restauration automatique du scroll et forcer le haut de page
   useEffect(() => {
@@ -29,12 +29,7 @@ const GuilherandStPeray = () => {
       clearTimeout(timeoutId);
     };
   }, []);
-  const scrollToReservation = () => {
-    const element = document.getElementById('reservation');
-    element?.scrollIntoView({
-      behavior: 'smooth'
-    });
-  };
+
   const zones = [{
     icon: Rocket,
     title: "Zone de Saut Libre (Main Court)",
@@ -48,6 +43,7 @@ const GuilherandStPeray = () => {
     title: "Basket Dunk",
     description: "Prenez votre élan sur le trampoline et marquez des paniers spectaculaires, quelle que soit votre taille."
   }];
+
   const faqItems = [{
     category: "ACCÈS ARDÈCHE",
     questions: [{
@@ -82,7 +78,7 @@ const GuilherandStPeray = () => {
     category: "ANNIVERSAIRES",
     questions: [{
       q: "Comment réserver un anniversaire ?",
-      a: "Tout se fait en ligne via le module ci-dessus. Choisissez la date, le nombre d'enfants et la formule."
+      a: "Tout se fait en ligne via notre site. Choisissez la date, le nombre d'enfants et la formule."
     }, {
       q: "Fournissez-vous le gâteau ?",
       a: "Absolument. Gâteau, bonbons, sirops... Tout est inclus dans le package."
@@ -109,6 +105,7 @@ const GuilherandStPeray = () => {
       a: "Non, nous acceptons uniquement la Carte Bancaire et les espèces."
     }]
   }];
+
   return <>
       <Helmet>
         <script defer src="https://valence-trampoline.com/~flock.js" data-proxy-url="https://valence-trampoline.com/~api/analytics"></script>
@@ -132,46 +129,9 @@ const GuilherandStPeray = () => {
             Le Trampoline Park n°1 à 10 min de<br />
             <span className="text-primary">Guilherand-Granges</span> et <span className="text-primary">Saint-Péray</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
             Traversez le Rhône et venez jumper ! 400m² de sport et de fun vous attendent à Saint-Marcel-lès-Valence.
           </p>
-          <Button size="lg" onClick={scrollToReservation} className="text-lg px-8 py-6">
-            Voir les créneaux dispos
-          </Button>
-        </div>
-      </section>
-
-      {/* Module de Réservation Guidap */}
-      <section id="reservation" className="py-16 bg-muted">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-            Réservez maintenant
-          </h2>
-          
-          {/* Bandeau rassurant */}
-          <div className="flex flex-wrap justify-center gap-6 mb-8">
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <CheckCircle className="w-5 h-5 text-primary" />
-              <span>Confirmation immédiate</span>
-            </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <CalendarCheck className="w-5 h-5 text-primary" />
-              <span>Annulation flexible</span>
-            </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <ShieldCheck className="w-5 h-5 text-primary" />
-              <span>Chaussettes incluses</span>
-            </div>
-          </div>
-          
-          {/* Guidap Iframe */}
-          <div className="max-w-4xl mx-auto bg-background rounded-2xl shadow-lg overflow-hidden" style={{ height: '800px' }}>
-            <iframe 
-              src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-autoscroll=false&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2FXSKzEFlt4kW7cTR5pYmDI0hnqxewPUAiua8V%2Fundefined%2FDEPARTURE" 
-              className="w-full h-full border-0"
-              title="Réservation Fun Park Valence"
-            />
-          </div>
         </div>
       </section>
 
@@ -234,7 +194,7 @@ const GuilherandStPeray = () => {
               <p className="text-lg text-muted-foreground mb-8">
                 Offrez à votre enfant une fête originale et sportive. Nos formules <strong>'Clef en main'</strong> ravissent les parents de l'Ardèche : on s'occupe de l'animation, du goûter, des boissons et même du gâteau. Ils repartent fatigués et avec le sourire !
               </p>
-              <div className="flex flex-wrap gap-3 mb-8">
+              <div className="flex flex-wrap gap-3">
                 <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full font-medium">
                   <Gift className="w-4 h-4" /> Tout Compris
                 </span>
@@ -245,9 +205,6 @@ const GuilherandStPeray = () => {
                   <Cake className="w-4 h-4" /> Chaussettes Incluses
                 </span>
               </div>
-              <Button size="lg" onClick={scrollToReservation}>
-                Réserver un Anniversaire
-              </Button>
             </div>
             <div className="relative">
               <img src={birthdayParty} alt="Anniversaire enfant au trampoline park près de Guilherand-Granges" className="rounded-2xl shadow-2xl" />
@@ -311,6 +268,16 @@ const GuilherandStPeray = () => {
       </section>
 
       <Footer />
+
+      {/* CTA Sticky */}
+      <a 
+        href="/guidap-reservation.html"
+        className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-center py-4 px-6 font-bold text-lg rounded-t-2xl shadow-lg transition-all hover:opacity-90"
+        style={{ backgroundColor: '#FFBD0B', color: '#000000' }}
+      >
+        Réserver maintenant
+      </a>
     </>;
 };
+
 export default GuilherandStPeray;

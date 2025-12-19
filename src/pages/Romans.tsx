@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { MapPin, ParkingCircle, Users, Footprints, Clock, Baby, Zap, Cake, Gift, GraduationCap, Bus, CreditCard, Utensils, Shirt, ShieldCheck, Calendar, Target, Wind, Trophy, PartyPopper } from "lucide-react";
+import { MapPin, ParkingCircle, Users, Footprints, Zap, Cake, Gift, GraduationCap, Bus, CreditCard, ShieldCheck, Target, Wind, Trophy, PartyPopper } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
 const Romans = () => {
   // Désactiver la restauration automatique du scroll et forcer le haut de page
   useEffect(() => {
@@ -26,20 +26,11 @@ const Romans = () => {
       clearTimeout(timeoutId);
     };
   }, []);
-  const scrollToReservation = () => {
-    const element = document.getElementById('reservation-romans');
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  };
-  return <div className="min-h-screen">
+
+  return <div className="min-h-screen pb-20">
       <Helmet>
         <script defer src="https://valence-trampoline.com/~flock.js" data-proxy-url="https://valence-trampoline.com/~api/analytics"></script>
         <title>Trampoline Park Romans-sur-Isère & Bourg-de-Péage | Valence Trampoline</title>
-        
-        
       </Helmet>
 
       <Navigation />
@@ -54,53 +45,9 @@ const Romans = () => {
                 Romans et Bourg-de-Péage
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-4xl mx-auto">
+            <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto">
               Sport, Anniversaires, Sorties Scolaires... Profitez de 400m² de zones connectées à moins de 15 min de chez vous.
             </p>
-            <Button size="lg" className="bg-gradient-to-r from-secondary to-accent text-foreground border-0 hover:scale-105 transition-all duration-300 font-bold tracking-wide rounded-full shadow-lg hover:shadow-xl text-lg px-8 py-6" onClick={scrollToReservation}>
-              <Calendar className="mr-2" size={22} />
-              Voir les disponibilités
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Module de Réservation GUIDAP */}
-      <section id="reservation-romans" className="py-12 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
-              Réservez <span className="text-primary">maintenant</span>
-            </h2>
-
-            {/* Bandeau rassurant */}
-            <div className="bg-primary/10 border border-primary/20 rounded-xl p-3 mb-4">
-              {/* Points clés */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <Clock className="text-primary" size={20} />
-                  <span>Réservation en moins de 2 minutes</span>
-                </div>
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <Calendar className="text-primary" size={20} />
-                  <span>Annulation possible selon conditions</span>
-                </div>
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <ShieldCheck className="text-primary" size={20} />
-                  <span>Chaussettes incluses</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Iframe */}
-            <div className="-mx-4 md:mx-0 bg-card md:rounded-2xl shadow-xl overflow-hidden" style={{ height: '800px' }}>
-              <iframe 
-                src="https://cart.guidap.net/v1/iframe.html?g-token=q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4&g-lang=fr&g-currency=EUR&g-hide-close=&g-fn%5B0%5D=openActivityDetails&g-params%5B0%5D=%5B%22WiR3hBJHN4Ae86dCEal5ywXpjT7fvq91brSz%22%5D&g-path=%2Fcart%2Fadd-to-cart%2FXSKzEFlt4kW7cTR5pYmDI0hnqxewPUAiua8V%2Fundefined%2FDEPARTURE" 
-                className="w-full h-full" 
-                title="Réservation Valence Trampoline" 
-                style={{ border: 'none' }} 
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -229,7 +176,7 @@ const Romans = () => {
                   La formule <strong>"Zéro Stress"</strong> pour les parents de Romans.
                 </p>
                 
-                <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-6">
+                <div className="flex flex-wrap justify-center md:justify-start gap-3">
                   <span className="bg-secondary/20 text-secondary-foreground px-4 py-2 rounded-full font-semibold text-sm flex items-center gap-2">
                     <Gift size={16} /> Tout Inclus
                   </span>
@@ -240,10 +187,6 @@ const Romans = () => {
                     <Footprints size={16} /> Chaussettes offertes
                   </span>
                 </div>
-
-                <Button size="lg" className="bg-gradient-to-r from-secondary to-accent text-foreground border-0 hover:scale-105 transition-all duration-300 font-bold rounded-full" onClick={scrollToReservation}>
-                  Réserver un anniversaire
-                </Button>
               </div>
             </div>
           </div>
@@ -266,7 +209,7 @@ const Romans = () => {
                   Parking autocar disponible juste devant l'entrée.
                 </p>
                 
-                <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="grid grid-cols-2 gap-4">
                   <div className="flex items-center gap-3">
                     <Users className="text-primary flex-shrink-0" size={24} />
                     <span className="text-sm font-medium">Jusqu'à 80 sauteurs</span>
@@ -284,10 +227,6 @@ const Romans = () => {
                     <span className="text-sm font-medium">Chorus Pro accepté</span>
                   </div>
                 </div>
-
-                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-bold rounded-full" onClick={scrollToReservation}>
-                  Demander un devis groupe
-                </Button>
               </div>
               
               <div className="flex-shrink-0">
@@ -300,7 +239,7 @@ const Romans = () => {
         </div>
       </section>
 
-      {/* FAQ Locale & Pratique - 15 Questions */}
+      {/* FAQ Locale & Pratique */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
@@ -346,56 +285,38 @@ const Romans = () => {
                     Oui, le réseau Citéa dessert la zone. Arrêt à proximité du complexe.
                   </AccordionContent>
                 </AccordionItem>
-
-                <AccordionItem value="q4" className="bg-card rounded-xl px-6 border-none shadow-md mt-3">
-                  <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                    Y a-t-il un parking pour les autocars (Scolaires) ?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    Oui, nous avons des emplacements dédiés pour les bus des écoles et centres aérés.
-                  </AccordionContent>
-                </AccordionItem>
               </div>
 
-              {/* TRAMPOLINE & SPORT */}
+              {/* SPORT & SÉCURITÉ */}
               <div className="mb-6">
                 <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-2">
-                  <Zap size={20} /> Trampoline & Sport
+                  <Zap size={20} /> Sport & Sécurité
                 </h3>
 
-                <AccordionItem value="q5" className="bg-card rounded-xl px-6 border-none shadow-md">
+                <AccordionItem value="q4" className="bg-card rounded-xl px-6 border-none shadow-md">
                   <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                    Faut-il une tenue spécifique ?
+                    Quelle tenue dois-je porter ?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
-                    Tenue de sport recommandée (Jogging, Short). Jeans à rivets interdits. Chaussettes antidérapantes obligatoires (incluses dans nos tarifs !).
+                    Tenue de sport (jogging, legging). Jeans interdits. Chaussettes antidérapantes obligatoires (incluses dans le prix).
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="q5" className="bg-card rounded-xl px-6 border-none shadow-md mt-3">
+                  <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                    Quel âge minimum pour sauter ?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    3 ans pour les sessions "Baby Jump" du matin. 6 ans pour l'accès complet.
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="q6" className="bg-card rounded-xl px-6 border-none shadow-md mt-3">
                   <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                    À partir de quel âge ?
+                    Est-ce surveillé ?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
-                    Dès 3 ans (Créneaux Baby Jump le matin). Dès 6 ans pour l'Open Jump classique.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="q7" className="bg-card rounded-xl px-6 border-none shadow-md mt-3">
-                  <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                    Les parents doivent-ils payer l'entrée ?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    Non, l'entrée est GRATUITE pour les accompagnateurs qui ne sautent pas.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="q8" className="bg-card rounded-xl px-6 border-none shadow-md mt-3">
-                  <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                    Y a-t-il des vestiaires et douches ?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    Nous disposons de casiers sécurisés et de vestiaires pour vous changer.
+                    Oui, notre staff est présent en permanence sur les zones de saut.
                   </AccordionContent>
                 </AccordionItem>
               </div>
@@ -406,80 +327,46 @@ const Romans = () => {
                   <Cake size={20} /> Anniversaires
                 </h3>
 
-                <AccordionItem value="q9" className="bg-card rounded-xl px-6 border-none shadow-md">
+                <AccordionItem value="q7" className="bg-card rounded-xl px-6 border-none shadow-md">
                   <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                    Peut-on fêter un anniversaire ?
+                    Que comprend la formule anniversaire ?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
-                    C'est notre spécialité ! Formules tout compris (Saut + Goûter + Boissons). Réservez via le module ci-dessus.
+                    Session de saut (1h), espace goûter privatisé, gâteau, bonbons, boissons et chaussettes pour tous les enfants.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="q8" className="bg-card rounded-xl px-6 border-none shadow-md mt-3">
+                  <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                    Combien d'enfants minimum ?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    5 enfants minimum pour une formule anniversaire.
+                  </AccordionContent>
+                </AccordionItem>
+              </div>
+
+              {/* PRATIQUE */}
+              <div className="mb-6">
+                <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-2">
+                  <Users size={20} /> Pratique
+                </h3>
+
+                <AccordionItem value="q9" className="bg-card rounded-xl px-6 border-none shadow-md">
+                  <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                    Y a-t-il de quoi manger sur place ?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Oui, snack-bar avec boissons, gaufres, paninis... Pique-nique non autorisé.
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="q10" className="bg-card rounded-xl px-6 border-none shadow-md mt-3">
                   <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                    Le gâteau est-il fourni dans la formule anniversaire ?
+                    Quels moyens de paiement acceptez-vous ?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
-                    Oui, nous fournissons le gâteau, les bonbons et les boissons.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="q11" className="bg-card rounded-xl px-6 border-none shadow-md mt-3">
-                  <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                    Combien d'enfants minimum pour un anniversaire ?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    La formule s'active à partir de 5 enfants.
-                  </AccordionContent>
-                </AccordionItem>
-              </div>
-
-              {/* GROUPES & ÉCOLES */}
-              <div className="mb-6">
-                <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-2">
-                  <GraduationCap size={20} /> Groupes & Écoles
-                </h3>
-
-                <AccordionItem value="q12" className="bg-card rounded-xl px-6 border-none shadow-md">
-                  <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                    Accueillez-vous les centres aérés et écoles ?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    Oui, nous recevons de nombreux groupes du Pays Romanais. Tarifs préférentiels et facturation administrative (Chorus Pro) possibles.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="q13" className="bg-card rounded-xl px-6 border-none shadow-md mt-3">
-                  <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                    Quelle est la capacité d'accueil pour un groupe ?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    Nous pouvons accueillir jusqu'à 80 sauteurs en simultané sur nos 400m² de zones.
-                  </AccordionContent>
-                </AccordionItem>
-              </div>
-
-              {/* DIVERS */}
-              <div className="mb-6">
-                <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-2">
-                  <Utensils size={20} /> Divers
-                </h3>
-
-                <AccordionItem value="q14" className="bg-card rounded-xl px-6 border-none shadow-md">
-                  <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                    Peut-on manger sur place ?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    Oui, espace Snacking & Bar (Paninis, Gaufres, Boissons fraîches). Pique-nique interdit (sauf accord spécifique scolaires).
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="q15" className="bg-card rounded-xl px-6 border-none shadow-md mt-3">
-                  <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                    Acceptez-vous les chèques vacances ?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    Non, uniquement Carte Bancaire et Espèces. Paiement en ligne recommandé.
+                    Carte Bancaire et Espèces. Chèques vacances non acceptés.
                   </AccordionContent>
                 </AccordionItem>
               </div>
@@ -489,6 +376,16 @@ const Romans = () => {
       </section>
 
       <Footer />
+
+      {/* CTA Sticky */}
+      <a 
+        href="/guidap-reservation.html"
+        className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-center py-4 px-6 font-bold text-lg rounded-t-2xl shadow-lg transition-all hover:opacity-90"
+        style={{ backgroundColor: '#FFBD0B', color: '#000000' }}
+      >
+        Réserver maintenant
+      </a>
     </div>;
 };
+
 export default Romans;
