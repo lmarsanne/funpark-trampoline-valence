@@ -6,6 +6,7 @@ declare namespace JSX {
     'guidap-activity-details-button': any;
     'guidap-use-giftcard-button': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
     'guidap-cart-button': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+    'guidap-booking-widget': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & { 'activity-uuid'?: string }, HTMLElement>;
     [elemName: string]: any;
   }
 }
