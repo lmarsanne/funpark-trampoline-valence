@@ -1,15 +1,7 @@
-import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Phone, Mail } from "lucide-react";
 import { trackPhoneClick, trackEmailClick } from "@/lib/analytics";
+
 export const CTASection = () => {
-  const scrollToReservation = () => {
-    const element = document.getElementById('reservation');
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  };
   return <section className="py-12 bg-gradient-to-br from-primary via-accent to-secondary relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-20">
@@ -20,10 +12,19 @@ export const CTASection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
           
-          
-          
-
-          
+          {/* CTA Button */}
+          <div className="pt-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Prêt à sauter ?
+            </h2>
+            <a 
+              href="https://valence-trampoline.com/guidap-reservation.html" 
+              className="inline-flex items-center justify-center gap-2 px-10 py-5 text-xl font-bold rounded-xl bg-gradient-to-r from-[hsl(var(--funpark-yellow))] via-[hsl(var(--funpark-pink))] to-[hsl(var(--funpark-orange))] text-white hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-[0_0_40px_hsl(var(--funpark-pink)_/_0.6)]"
+            >
+              🎉 Réserver maintenant
+              <ArrowRight className="w-6 h-6" />
+            </a>
+          </div>
 
           {/* Contact Info */}
           <div className="pt-12 grid md:grid-cols-3 gap-6 text-white">

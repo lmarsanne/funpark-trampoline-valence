@@ -52,8 +52,8 @@ export const HeroSection = () => {
             </p>
 
             <div className="flex justify-center items-center pb-4">
-              <a href="https://valence-trampoline.com/guidap-reservation.html" className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-                Réserver maintenant 
+              <a href="https://valence-trampoline.com/guidap-reservation.html" className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-bold rounded-xl bg-gradient-to-r from-[hsl(var(--funpark-yellow))] via-[hsl(var(--funpark-pink))] to-[hsl(var(--funpark-orange))] text-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_hsl(var(--funpark-pink)_/_0.5)]">
+                🎉 Réserver maintenant 
                 <ArrowRight className="w-5 h-5" />
               </a>
             </div>
