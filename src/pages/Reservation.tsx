@@ -72,10 +72,16 @@ const Reservation = () => {
         .guidap-scope {
           max-width: 1100px;
           margin: 0 auto;
+          position: relative;
+          z-index: 1;
         }
+        
+        /* Reset complet pour le widget Guidap */
         .guidap-scope, .guidap-scope * {
-          box-sizing: border-box;
+          box-sizing: border-box !important;
         }
+        
+        /* Isolation des styles */
         .guidap-scope button,
         .guidap-scope [type="button"],
         .guidap-scope [type="submit"] {
@@ -86,9 +92,37 @@ const Reservation = () => {
           padding: initial;
           font: inherit;
         }
+        
         .guidap-scope a {
           color: inherit;
           text-decoration: inherit;
+        }
+        
+        /* Fix z-index pour les dropdowns et popups */
+        .guidap-scope [class*="dropdown"],
+        .guidap-scope [class*="popup"],
+        .guidap-scope [class*="tooltip"],
+        .guidap-scope [class*="modal"],
+        .guidap-scope [class*="overlay"] {
+          z-index: 9999 !important;
+        }
+        
+        /* Fix pour les éléments positionnés */
+        .guidap-scope [style*="position: absolute"],
+        .guidap-scope [style*="position:absolute"] {
+          z-index: auto;
+        }
+        
+        /* Assurer que le contenu principal a un fond */
+        #guidap-root {
+          background: #f4f6f8;
+          min-height: 500px;
+        }
+        
+        /* Fix pour éviter les chevauchements */
+        #guidap-root > * {
+          position: relative;
+          background: inherit;
         }
       `}</style>
     </>
