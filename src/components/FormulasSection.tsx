@@ -78,7 +78,7 @@ export const FormulasSection = () => {
                     </li>)}
                 </ul>
 
-                <button onClick={goToReservation} className="inline-flex items-center justify-center rounded-xl text-sm font-bold bg-gradient-to-r from-[hsl(var(--funpark-yellow))] via-[hsl(var(--funpark-pink))] to-[hsl(var(--funpark-orange))] text-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_hsl(var(--funpark-pink)_/_0.5)] h-12 px-6 py-2 w-full">
+                <button onClick={goToReservation} className="inline-flex items-center justify-center rounded-xl text-sm font-bold bg-[hsl(var(--funpark-cta-solid))] text-[hsl(var(--funpark-cta-solid-foreground))] hover:bg-[hsl(var(--funpark-cta-solid-hover))] hover:scale-105 transition-all duration-300 shadow-[var(--shadow-cta-solid)] h-12 px-6 py-2 w-full">
                   🎉 Je réserve
                 </button>
               </Card>;

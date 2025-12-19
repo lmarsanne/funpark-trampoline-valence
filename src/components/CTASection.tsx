@@ -19,7 +19,7 @@ export const CTASection = () => {
             </h2>
             <a 
               href="https://valence-trampoline.com/guidap-reservation.html" 
-              className="inline-flex items-center justify-center gap-2 px-10 py-5 text-xl font-bold rounded-xl bg-gradient-to-r from-[hsl(var(--funpark-yellow))] via-[hsl(var(--funpark-pink))] to-[hsl(var(--funpark-orange))] text-white hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-[0_0_40px_hsl(var(--funpark-pink)_/_0.6)]"
+              className="inline-flex items-center justify-center gap-2 px-10 py-5 text-xl font-bold rounded-xl bg-[hsl(var(--funpark-cta-solid))] text-[hsl(var(--funpark-cta-solid-foreground))] hover:bg-[hsl(var(--funpark-cta-solid-hover))] hover:scale-105 transition-all duration-300 shadow-[var(--shadow-cta-solid)]"
             >
               🎉 Réserver maintenant
               <ArrowRight className="w-6 h-6" />
