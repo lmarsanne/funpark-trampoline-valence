@@ -66,8 +66,9 @@ const Reservation = () => {
           <h1 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900">
             Réserver
           </h1>
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center gap-4 mb-8">
             <guidap-reserve-button></guidap-reserve-button>
+            <guidap-activity-details-button activity-uuid="XSKzEFlt4kW7cTR5pYmDI0hnqxewPUAiua8V"></guidap-activity-details-button>
           </div>
           <div ref={bookingRef} id="booking-root"></div>
         </div>
