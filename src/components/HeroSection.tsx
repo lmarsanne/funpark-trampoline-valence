@@ -1,17 +1,20 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { useState, useRef } from "react";
+import { ArrowRight, Volume2, VolumeX } from "lucide-react";
 import { trackReservationClick } from "@/lib/analytics";
+
 export const HeroSection = () => {
-  const scrollToReservation = () => {
-    trackReservationClick('hero_section');
-    const element = document.getElementById('reservation');
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleSound = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(!isMuted);
     }
   };
-  return <section className="pt-16">
+
+  return (
+    <section className="pt-16" id="hero">
       {/* Title Section */}
       <div className="bg-gradient-to-r from-primary via-primary to-accent py-6 md:py-10">
         <div className="container mx-auto px-4 text-center">
@@ -36,8 +39,25 @@ export const HeroSection = () => {
       <div className="w-full bg-gradient-to-r from-primary via-primary to-accent">
         <div className="w-full md:container md:mx-auto px-0 md:px-4 py-2 md:py-4">
           <div className="w-full md:max-w-6xl md:mx-auto">
-            <div className="aspect-[9/16] md:aspect-video overflow-hidden rounded-none md:rounded-2xl">
-              <video src="https://qxnnyyksfohothijwlas.supabase.co/storage/v1/object/public/video/Video%20Project%201%20(1).mp4" className="w-full h-full object-cover" autoPlay loop muted playsInline title="Vidéo Trampoline Park" />
+            <div className="relative aspect-[9/16] md:aspect-video overflow-hidden rounded-none md:rounded-2xl">
+              <video 
+                ref={videoRef}
+                src="https://qxnnyyksfohothijwlas.supabase.co/storage/v1/object/public/video/Video%20Project%201%20(1).mp4" 
+                className="w-full h-full object-cover" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                title="Vidéo Trampoline Park" 
+              />
+              {/* Sound Toggle Button */}
+              <button 
+                onClick={toggleSound}
+                className="absolute bottom-4 right-4 p-3 rounded-full bg-black/50 backdrop-blur-sm text-white hover:bg-black/70 transition-all duration-300 hover:scale-110"
+                aria-label={isMuted ? "Activer le son" : "Couper le son"}
+              >
+                {isMuted ? <VolumeX className="w-6 h-6" /> : <Volume2 className="w-6 h-6" />}
+              </button>
             </div>
           </div>
         </div>
@@ -60,5 +80,6 @@ export const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
