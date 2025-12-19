@@ -88,9 +88,20 @@ export const AboutSection = () => {
         {/* Features Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => {
-          const Icon = feature.icon;
-          return;
-        })}
+            const Icon = feature.icon;
+            return (
+              <div
+                key={index}
+                className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50 hover:border-primary/30 transition-all duration-300 group"
+              >
+                <div className="w-12 h-12 bg-gradient-funpark rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
+                <p className="text-sm text-muted-foreground">{feature.description}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>;
