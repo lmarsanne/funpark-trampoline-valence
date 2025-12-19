@@ -1,8 +1,24 @@
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { useEffect } from "react";
 
 const Reservation = () => {
+  useEffect(() => {
+    const scriptId = "guidap-script";
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://cart.guidap.net/v1/";
+      script.async = true;
+      script.defer = true;
+      script.dataset.token = "q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4";
+      script.dataset.lang = "fr";
+      script.dataset.currency = "EUR";
+      document.body.appendChild(script);
+    }
+  }, []);
+
   return (
     <>
       <Helmet>
