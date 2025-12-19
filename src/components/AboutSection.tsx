@@ -88,15 +88,9 @@ export const AboutSection = () => {
         {/* Features Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div key={index} className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                <Icon className="w-10 h-10 text-primary mb-4" />
-                <h3 className="text-lg font-bold text-foreground mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground text-sm">{feature.description}</p>
-              </div>
-            );
-          })}
+          const Icon = feature.icon;
+          return;
+        })}
         </div>
       </div>
     </section>;
