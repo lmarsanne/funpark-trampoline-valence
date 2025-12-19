@@ -5,6 +5,7 @@ import { useEffect } from "react";
 
 const Reservation = () => {
   useEffect(() => {
+    // Load Guidap script
     const scriptId = "guidap-script";
     if (!document.getElementById(scriptId)) {
       const script = document.createElement("script");
@@ -17,6 +18,24 @@ const Reservation = () => {
       script.dataset.currency = "EUR";
       document.body.appendChild(script);
     }
+
+    // Mount the widget
+    const mount = () => {
+      const root = document.getElementById("guidap-root");
+      if (!root) return;
+      if (root.querySelector("guidap-booking-widget")) return;
+
+      const el = document.createElement("guidap-booking-widget");
+      el.setAttribute("activity-uuid", "XSKzEFlt4kW7cTR5pYmDI0hnqxewPUAiua8V");
+      root.appendChild(el);
+    };
+
+    mount();
+    window.addEventListener("load", mount);
+
+    return () => {
+      window.removeEventListener("load", mount);
+    };
   }, []);
 
   return (
@@ -31,13 +50,47 @@ const Reservation = () => {
 
       <Navigation />
 
-      <main className="min-h-screen bg-white pt-20">
-        <div className="flex justify-center py-12">
-          <guidap-booking-widget activity-uuid="XSKzEFlt4kW7cTR5pYmDI0hnqxewPUAiua8V"></guidap-booking-widget>
-        </div>
+      <main className="guidap-page pt-20">
+        <h1 className="guidap-title">Réservation</h1>
+        <div id="guidap-root" className="guidap-scope"></div>
       </main>
 
       <Footer />
+
+      <style>{`
+        .guidap-page {
+          min-height: 100vh;
+          background: #f4f6f8;
+          padding: 48px 24px;
+        }
+        .guidap-title {
+          max-width: 1100px;
+          margin: 0 auto 24px auto;
+          font-size: 28px;
+          font-weight: 700;
+        }
+        .guidap-scope {
+          max-width: 1100px;
+          margin: 0 auto;
+        }
+        .guidap-scope, .guidap-scope * {
+          box-sizing: border-box;
+        }
+        .guidap-scope button,
+        .guidap-scope [type="button"],
+        .guidap-scope [type="submit"] {
+          -webkit-appearance: button;
+          appearance: button;
+          border: initial;
+          background: initial;
+          padding: initial;
+          font: inherit;
+        }
+        .guidap-scope a {
+          color: inherit;
+          text-decoration: inherit;
+        }
+      `}</style>
     </>
   );
 };
