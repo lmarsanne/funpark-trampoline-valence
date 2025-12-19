@@ -52,11 +52,8 @@ export const HeroSection = () => {
             </p>
 
             <div className="flex justify-center items-center pb-4">
-              <a
-                href="https://valence-trampoline.com/guidap-reservation.html"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-              >
-                Réserver
+              <a href="https://valence-trampoline.com/guidap-reservation.html" className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+                Réserver maintenant 
                 <ArrowRight className="w-5 h-5" />
               </a>
             </div>
