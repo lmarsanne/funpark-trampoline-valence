@@ -15,6 +15,7 @@ import LivronLoriol from "./pages/LivronLoriol";
 import EvgEvjf from "./pages/EvgEvjf";
 import Entreprises from "./pages/Entreprises";
 import NotFound from "./pages/NotFound";
+import Reservation from "./pages/Reservation";
 import QueFaireQuandIlPleut from "./pages/QueFaireQuandIlPleut";
 import GuidapOverlay from "@/components/GuidapOverlay";
 import { ScrollToTop } from "@/components/ScrollToTop";
@@ -42,6 +43,7 @@ const App = () => (
             <Route path="/evg-evjf-valence" element={<EvgEvjf />} />
             <Route path="/entreprises" element={<Entreprises />} />
             <Route path="/que-faire-quand-il-pleut-valence" element={<QueFaireQuandIlPleut />} />
+            <Route path="/reservation" element={<Reservation />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
