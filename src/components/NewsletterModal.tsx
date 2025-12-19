@@ -2,13 +2,9 @@ import { useState, useEffect } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Mail } from "lucide-react";
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
 } from "@/components/ui/dialog";
 import {
   Form,
@@ -63,12 +59,11 @@ export const NewsletterModal = ({ open, onOpenChange }: NewsletterModalProps) =>
 
       if (brevoError) {
         console.error("Brevo error:", brevoError);
-        // Continue anyway - at least we saved to DB
       }
 
       toast({
-        title: "Inscription réussie !",
-        description: "Bienvenue dans le Club Fun Park !",
+        title: "🎉 Bienvenue au Club Fun Park !",
+        description: "Surveillez votre boîte mail…",
       });
       form.reset();
       onOpenChange(false);
@@ -87,50 +82,58 @@ export const NewsletterModal = ({ open, onOpenChange }: NewsletterModalProps) =>
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader className="text-center">
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-            <Mail className="h-6 w-6 text-primary" />
-          </div>
-          <DialogTitle className="text-2xl font-bold text-center">
-            Rejoignez le Club Fun Park !
-          </DialogTitle>
-          <DialogDescription className="text-center text-base">
-            Recevez nos offres exclusives et des invitations VIP pour les soirées.
-          </DialogDescription>
-        </DialogHeader>
+      <DialogContent className="sm:max-w-md p-0 overflow-hidden border-0 rounded-3xl shadow-2xl animate-in fade-in-0 zoom-in-95 duration-300">
+        {/* Header with gradient background */}
+        <div className="bg-gradient-to-br from-[#FFBD0B] via-[#FF6B35] to-[#E91E63] p-6 pb-8 text-center relative overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute top-2 left-4 text-3xl opacity-80 animate-bounce">🎳</div>
+          <div className="absolute top-4 right-6 text-2xl opacity-80 animate-bounce" style={{ animationDelay: "0.2s" }}>🤸</div>
+          <div className="absolute bottom-2 left-8 text-2xl opacity-80 animate-bounce" style={{ animationDelay: "0.4s" }}>🎤</div>
+          <div className="absolute bottom-4 right-4 text-3xl opacity-80 animate-bounce" style={{ animationDelay: "0.6s" }}>🎯</div>
+          
+          <h2 className="text-2xl sm:text-3xl font-bold text-white drop-shadow-lg mb-3 relative z-10">
+            🎉 Rejoignez le Club Fun Park !
+          </h2>
+          <p className="text-white/95 text-base sm:text-lg font-medium relative z-10">
+            Recevez en avant-première nos offres et invitations VIP 🎳🤸🎤
+          </p>
+        </div>
 
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 mt-4">
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input
-                      type="email"
-                      placeholder="Votre adresse email"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button
-              type="submit"
-              className="w-full bg-primary hover:bg-primary/90"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Inscription..." : "M'inscrire"}
-            </Button>
-          </form>
-        </Form>
+        {/* Form section */}
+        <div className="p-6 pt-8 bg-white">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        type="email"
+                        placeholder="Votre adresse email"
+                        className="h-14 text-lg rounded-xl border-2 border-gray-200 focus:border-[#FFBD0B] focus:ring-[#FFBD0B] px-4 transition-all duration-200"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text-sm" />
+                  </FormItem>
+                )}
+              />
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full h-14 text-lg font-bold rounded-xl bg-gradient-to-r from-[#FFBD0B] to-[#FF6B35] hover:from-[#FFD000] hover:to-[#FF8B55] text-black shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200"
+              >
+                {isSubmitting ? "Inscription..." : "👉 Je rejoins le Club"}
+              </Button>
+            </form>
+          </Form>
 
-        <p className="text-center text-xs text-muted-foreground mt-2">
-          Pas de spam, désinscription en 1 clic.
-        </p>
+          <p className="text-center text-sm text-gray-500 mt-4">
+            Pas de spam. Désinscription en 1 clic.
+          </p>
+        </div>
       </DialogContent>
     </Dialog>
   );
@@ -147,7 +150,7 @@ export const useNewsletterModal = () => {
     if (!hasSubscribed && !hasDismissed) {
       const timer = setTimeout(() => {
         setIsOpen(true);
-      }, 5000);
+      }, 7000); // 7 secondes
       
       return () => clearTimeout(timer);
     }
