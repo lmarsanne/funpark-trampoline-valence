@@ -69,19 +69,5 @@
       data-lang="fr"
       data-currency="EUR">
     </script>
-    <script>
-      (function () {
-        const mount = () => {
-          const root = document.getElementById("booking-root");
-          if (!root) return;
-          if (root.querySelector("guidap-booking-widget")) return;
-          const el = document.createElement("guidap-booking-widget");
-          el.setAttribute("activity-uuid", "XSKzEFlt4kW7cTR5pYmDI0hnqxewPUAiua8V");
-          root.appendChild(el);
-        };
-        mount();
-        window.addEventListener("load", mount);
-      })();
-    </script>
   </body>
 </html>
