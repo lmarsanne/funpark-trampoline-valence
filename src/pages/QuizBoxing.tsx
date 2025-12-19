@@ -126,46 +126,6 @@ const QuizBoxing = () => {
         </div>
       </section>
 
-      {/* Réservation Section */}
-      <section id="reservation-quiz-boxing" className="py-12 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
-              Réservez votre <span className="text-primary">partie</span>
-            </h2>
-
-            {/* Bandeau rassurant */}
-            <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 mb-8 py-[5px]">
-              
-
-              {/* Points clés */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <Clock className="text-primary" size={20} />
-                  <span>Réservation en moins de 2 minutes</span>
-                </div>
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <Calendar className="text-primary" size={20} />
-                  <span>Annulation possible selon conditions</span>
-                </div>
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <Shield className="text-primary" size={20} />
-                  <span>Paiement sécurisé</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Iframe */}
-            <div className="-mx-4 md:mx-0 bg-card md:rounded-2xl shadow-xl overflow-hidden" style={{
-              height: '800px'
-            }}>
-              <iframe src={reservationUrl} className="w-full h-full" title="Réservation Quiz Boxing" style={{
-                border: 'none'
-              }} />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Section Affrontez vos émotions */}
       <section className="py-12 bg-background">
@@ -423,6 +383,15 @@ const QuizBoxing = () => {
       <QuizBoxingFAQ />
 
       <Footer />
+
+      {/* Sticky CTA */}
+      <a
+        href="/guidap-reservation-boxing.html"
+        className="fixed bottom-4 left-4 right-4 z-50 py-4 text-center font-bold text-lg shadow-lg hover:opacity-90 transition-opacity rounded-full md:left-1/2 md:-translate-x-1/2 md:max-w-md"
+        style={{ backgroundColor: '#FFBD0B', color: '#000000' }}
+      >
+        Réserver maintenant
+      </a>
     </div>
   </>;
 };
