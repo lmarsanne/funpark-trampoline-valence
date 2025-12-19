@@ -19,13 +19,8 @@ const formulas = [{
   featured: true
 }];
 export const FormulasSection = () => {
-  const scrollToReservation = () => {
-    const element = document.getElementById('reservation');
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
+  const goToReservation = () => {
+    window.location.href = 'https://valence-trampoline.com/guidap-reservation.html';
   };
   return <section id="formules" className="py-12 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -83,8 +78,8 @@ export const FormulasSection = () => {
                     </li>)}
                 </ul>
 
-                <button onClick={scrollToReservation} className="inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full transition-colors">
-                  Je réserve
+                <button onClick={goToReservation} className="inline-flex items-center justify-center rounded-xl text-sm font-bold bg-gradient-to-r from-[hsl(var(--funpark-yellow))] via-[hsl(var(--funpark-pink))] to-[hsl(var(--funpark-orange))] text-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_hsl(var(--funpark-pink)_/_0.5)] h-12 px-6 py-2 w-full">
+                  🎉 Je réserve
                 </button>
               </Card>;
         })}

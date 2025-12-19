@@ -1,4 +1,4 @@
-import { Gift, Award } from "lucide-react";
+import { Gift, Award, ArrowRight } from "lucide-react";
 
 export const AllInclusiveSection = () => {
   return (
@@ -43,6 +43,17 @@ export const AllInclusiveSection = () => {
               <span className="text-sm text-muted-foreground">(valeur 2€)</span>
             </p>
           </div>
+        </div>
+
+        {/* CTA Button */}
+        <div className="text-center mt-10 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+          <a 
+            href="https://valence-trampoline.com/guidap-reservation.html" 
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-bold rounded-xl bg-gradient-to-r from-[hsl(var(--funpark-yellow))] via-[hsl(var(--funpark-pink))] to-[hsl(var(--funpark-orange))] text-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_hsl(var(--funpark-pink)_/_0.5)]"
+          >
+            🎉 Réserver ma session
+            <ArrowRight className="w-5 h-5" />
+          </a>
         </div>
       </div>
     </section>
