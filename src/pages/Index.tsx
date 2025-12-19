@@ -48,7 +48,7 @@ const Index = () => {
       <HeroSection />
       
       {/* Réservation Section */}
-      <section id="reservation" className="py-16 bg-background">
+      <section id="reservation" className="bg-background py-0">
         
       </section>
       
