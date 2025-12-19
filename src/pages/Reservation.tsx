@@ -1,8 +1,29 @@
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { useEffect, useRef } from "react";
 
 const Reservation = () => {
+  const bookingRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const root = bookingRef.current;
+    if (!root) return;
+
+    // Prevent multiple mounts
+    if (root.querySelector("guidap-booking-widget")) return;
+
+    const el = document.createElement("guidap-booking-widget");
+    el.setAttribute("activity-uuid", "XSKzEFlt4kW7cTR5pYmDI0hnqxewPUAiua8V");
+    root.appendChild(el);
+
+    return () => {
+      // Cleanup on unmount
+      const widget = root.querySelector("guidap-booking-widget");
+      if (widget) widget.remove();
+    };
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -26,7 +47,7 @@ const Reservation = () => {
           <h1 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900">
             Réserver
           </h1>
-          <div id="booking-root"></div>
+          <div ref={bookingRef} id="booking-root"></div>
         </div>
       </main>
 
