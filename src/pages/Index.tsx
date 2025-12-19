@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
@@ -19,26 +18,34 @@ const Index = () => {
     setIsOpen,
     handleOpenChange
   } = useNewsletterModal();
-  // Désactiver la restauration automatique du scroll et forcer le haut de page
-  useEffect(() => {
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-    const forceTop = () => {
-      window.scrollTo(0, 0);
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    };
-    forceTop();
-    const intervalId = setInterval(forceTop, 20);
-    const timeoutId = setTimeout(() => {
-      clearInterval(intervalId);
-    }, 2000);
-    return () => {
-      clearInterval(intervalId);
-      clearTimeout(timeoutId);
-    };
-  }, []);
+  return <>
+    <Helmet>
+      <script defer src="https://valence-trampoline.com/~flock.js" data-proxy-url="https://valence-trampoline.com/~api/analytics"></script>
+    </Helmet>
+    <div className="min-h-screen">
+      <Navigation />
+      <HeroSection />
+      
+      {/* Réservation Section */}
+      <section id="reservation" className="bg-background py-0">
+        
+      </section>
+      
+      <AboutSection />
+      <FormulasSection />
+      <AllInclusiveSection />
+      <InfoSection />
+      <BirthdaySection />
+      <GallerySection />
+      <FAQSection />
+      <ContactSection />
+      <CTASection />
+      <Footer onNewsletterClick={() => setIsOpen(true)} />
+      <NewsletterModal open={isOpen} onOpenChange={handleOpenChange} />
+    </div>
+  </>;
+};
+export default Index;
   return <>
     <Helmet>
       <script defer src="https://valence-trampoline.com/~flock.js" data-proxy-url="https://valence-trampoline.com/~api/analytics"></script>
