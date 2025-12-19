@@ -46,31 +46,3 @@ const Index = () => {
   </>;
 };
 export default Index;
-  return <>
-    <Helmet>
-      <script defer src="https://valence-trampoline.com/~flock.js" data-proxy-url="https://valence-trampoline.com/~api/analytics"></script>
-    </Helmet>
-    <div className="min-h-screen">
-      <Navigation />
-      <HeroSection />
-      
-      {/* Réservation Section */}
-      <section id="reservation" className="bg-background py-0">
-        
-      </section>
-      
-      <AboutSection />
-      <FormulasSection />
-      <AllInclusiveSection />
-      <InfoSection />
-      <BirthdaySection />
-      <GallerySection />
-      <FAQSection />
-      <ContactSection />
-      <CTASection />
-      <Footer onNewsletterClick={() => setIsOpen(true)} />
-      <NewsletterModal open={isOpen} onOpenChange={handleOpenChange} />
-    </div>
-  </>;
-};
-export default Index;
