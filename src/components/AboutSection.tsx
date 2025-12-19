@@ -41,7 +41,7 @@ export const AboutSection = () => {
     stopOnInteraction: true,
     stopOnMouseEnter: true
   });
-  return <section className="py-12 bg-gradient-to-b from-background to-muted/30">
+  return <section className="py-6 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-[10px]">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           {/* Image Gallery */}
@@ -88,9 +88,15 @@ export const AboutSection = () => {
         {/* Features Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => {
-          const Icon = feature.icon;
-          return;
-        })}
+            const Icon = feature.icon;
+            return (
+              <div key={index} className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <Icon className="w-10 h-10 text-primary mb-4" />
+                <h3 className="text-lg font-bold text-foreground mb-2">{feature.title}</h3>
+                <p className="text-muted-foreground text-sm">{feature.description}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>;

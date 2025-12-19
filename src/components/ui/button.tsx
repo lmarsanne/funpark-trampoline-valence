@@ -16,7 +16,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         hero: "bg-gradient-to-r from-[hsl(var(--funpark-orange))] to-[hsl(var(--funpark-yellow))] text-white font-bold shadow-[var(--shadow-glow-orange)] hover:shadow-[0_0_60px_hsl(var(--funpark-orange)_/_0.5)] hover:scale-105 transition-all duration-300",
-        cta: "bg-gradient-to-r from-[hsl(var(--funpark-yellow))] via-[hsl(var(--funpark-pink))] to-[hsl(var(--funpark-orange))] text-white font-bold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_hsl(var(--funpark-pink)_/_0.5)] animate-pulse-glow",
+        cta: "bg-gradient-to-r from-[hsl(var(--funpark-blue))] via-[hsl(var(--funpark-orange))] to-[hsl(var(--funpark-turquoise))] text-white font-bold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_hsl(var(--funpark-orange)_/_0.5)] animate-pulse-glow",
       },
       size: {
         default: "h-10 px-4 py-2",
