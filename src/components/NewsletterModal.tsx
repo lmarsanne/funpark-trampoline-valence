@@ -24,12 +24,37 @@ const newsletterSchema = z.object({
 
 type NewsletterFormValues = z.infer<typeof newsletterSchema>;
 
+interface PopupConfig {
+  enabled: boolean;
+  title: string;
+  subtitle: string;
+  placeholder: string;
+  button_text: string;
+  reassurance_text: string;
+  success_title: string;
+  success_description: string;
+  delay_seconds: number;
+}
+
+const defaultConfig: PopupConfig = {
+  enabled: true,
+  title: "🎉 Rejoignez le Club Fun Park !",
+  subtitle: "Recevez en avant-première nos offres et invitations VIP 🎳🤸🎤",
+  placeholder: "Votre adresse email",
+  button_text: "👉 Je rejoins le Club",
+  reassurance_text: "Pas de spam. Désinscription en 1 clic.",
+  success_title: "🎉 Bienvenue au Club Fun Park !",
+  success_description: "Surveillez votre boîte mail…",
+  delay_seconds: 7,
+};
+
 interface NewsletterModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  config?: PopupConfig;
 }
 
-export const NewsletterModal = ({ open, onOpenChange }: NewsletterModalProps) => {
+export const NewsletterModal = ({ open, onOpenChange, config = defaultConfig }: NewsletterModalProps) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -62,8 +87,8 @@ export const NewsletterModal = ({ open, onOpenChange }: NewsletterModalProps) =>
       }
 
       toast({
-        title: "🎉 Bienvenue au Club Fun Park !",
-        description: "Surveillez votre boîte mail…",
+        title: config.success_title,
+        description: config.success_description,
       });
       form.reset();
       onOpenChange(false);
@@ -92,10 +117,10 @@ export const NewsletterModal = ({ open, onOpenChange }: NewsletterModalProps) =>
           <div className="absolute bottom-4 right-4 text-3xl opacity-80 animate-bounce" style={{ animationDelay: "0.6s" }}>🎯</div>
           
           <h2 className="text-2xl sm:text-3xl font-bold text-white drop-shadow-lg mb-3 relative z-10">
-            🎉 Rejoignez le Club Fun Park !
+            {config.title}
           </h2>
           <p className="text-white/95 text-base sm:text-lg font-medium relative z-10">
-            Recevez en avant-première nos offres et invitations VIP 🎳🤸🎤
+            {config.subtitle}
           </p>
         </div>
 
@@ -111,7 +136,7 @@ export const NewsletterModal = ({ open, onOpenChange }: NewsletterModalProps) =>
                     <FormControl>
                       <Input
                         type="email"
-                        placeholder="Votre adresse email"
+                        placeholder={config.placeholder}
                         className="h-14 text-lg rounded-xl border-2 border-gray-200 focus:border-[#FFBD0B] focus:ring-[#FFBD0B] px-4 transition-all duration-200"
                         {...field}
                       />
@@ -125,13 +150,13 @@ export const NewsletterModal = ({ open, onOpenChange }: NewsletterModalProps) =>
                 disabled={isSubmitting}
                 className="w-full h-14 text-lg font-bold rounded-xl bg-gradient-to-r from-[#FFBD0B] to-[#FF6B35] hover:from-[#FFD000] hover:to-[#FF8B55] text-black shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200"
               >
-                {isSubmitting ? "Inscription..." : "👉 Je rejoins le Club"}
+                {isSubmitting ? "Inscription..." : config.button_text}
               </Button>
             </form>
           </Form>
 
           <p className="text-center text-sm text-gray-500 mt-4">
-            Pas de spam. Désinscription en 1 clic.
+            {config.reassurance_text}
           </p>
         </div>
       </DialogContent>
@@ -139,22 +164,54 @@ export const NewsletterModal = ({ open, onOpenChange }: NewsletterModalProps) =>
   );
 };
 
-// Hook pour gérer l'ouverture automatique
+// Hook pour gérer l'ouverture automatique avec configuration depuis la DB
 export const useNewsletterModal = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [config, setConfig] = useState<PopupConfig>(defaultConfig);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const fetchConfig = async () => {
+      try {
+        const { data, error } = await supabase
+          .from("newsletter_popup_config")
+          .select("*")
+          .limit(1)
+          .single();
+
+        if (error) {
+          console.error("Error fetching popup config:", error);
+          return;
+        }
+
+        if (data) {
+          setConfig(data as PopupConfig);
+        }
+      } catch (error) {
+        console.error("Error fetching popup config:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchConfig();
+  }, []);
+
+  useEffect(() => {
+    if (isLoading) return;
+    if (!config.enabled) return;
+
     const hasSubscribed = localStorage.getItem("newsletter_subscribed");
     const hasDismissed = sessionStorage.getItem("newsletter_dismissed");
     
     if (!hasSubscribed && !hasDismissed) {
       const timer = setTimeout(() => {
         setIsOpen(true);
-      }, 7000); // 7 secondes
+      }, config.delay_seconds * 1000);
       
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [isLoading, config.enabled, config.delay_seconds]);
 
   const handleOpenChange = (open: boolean) => {
     setIsOpen(open);
@@ -167,5 +224,7 @@ export const useNewsletterModal = () => {
     isOpen,
     setIsOpen,
     handleOpenChange,
+    config,
+    isLoading,
   };
 };
