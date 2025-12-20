@@ -71,12 +71,6 @@ export const HeroSection = () => {
               <strong className="font-bold">400 m²</strong> d'activités pour petits et grands dans un espace sécurisé, fun et <strong className="font-bold">100 % sensations.</strong>
             </p>
 
-            <div className="flex justify-center items-center pb-4">
-              <a href="https://valence-trampoline.com/guidap-reservation.html" className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-bold rounded-xl bg-[hsl(var(--funpark-cta-solid))] text-[hsl(var(--funpark-cta-solid-foreground))] hover:bg-[hsl(var(--funpark-cta-solid-hover))] hover:scale-105 transition-all duration-300 shadow-[var(--shadow-cta-solid)]">
-                🎉 Réserver maintenant 
-                <ArrowRight className="w-5 h-5" />
-              </a>
-            </div>
           </div>
         </div>
       </div>
