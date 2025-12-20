@@ -12,18 +12,11 @@ export const CTASection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
           
-          {/* CTA Button */}
+          {/* Title only */}
           <div className="pt-4">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Prêt à sauter ?
             </h2>
-            <a 
-              href="https://valence-trampoline.com/guidap-reservation.html" 
-              className="inline-flex items-center justify-center gap-2 px-10 py-5 text-xl font-bold rounded-xl bg-[hsl(var(--funpark-cta-solid))] text-[hsl(var(--funpark-cta-solid-foreground))] hover:bg-[hsl(var(--funpark-cta-solid-hover))] hover:scale-105 transition-all duration-300 shadow-[var(--shadow-cta-solid)]"
-            >
-              🎉 Réserver maintenant
-              <ArrowRight className="w-6 h-6" />
-            </a>
           </div>
 
           {/* Contact Info */}
