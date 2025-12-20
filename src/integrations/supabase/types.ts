@@ -14,6 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
+      newsletter_popup_config: {
+        Row: {
+          button_text: string
+          delay_seconds: number
+          enabled: boolean
+          id: string
+          placeholder: string
+          reassurance_text: string
+          subtitle: string
+          success_description: string
+          success_title: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          button_text?: string
+          delay_seconds?: number
+          enabled?: boolean
+          id?: string
+          placeholder?: string
+          reassurance_text?: string
+          subtitle?: string
+          success_description?: string
+          success_title?: string
+          title?: string
+          updated_at?: string
+        }
+        Update: {
+          button_text?: string
+          delay_seconds?: number
+          enabled?: boolean
+          id?: string
+          placeholder?: string
+          reassurance_text?: string
+          subtitle?: string
+          success_description?: string
+          success_title?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       newsletter_subscribers: {
         Row: {
           created_at: string

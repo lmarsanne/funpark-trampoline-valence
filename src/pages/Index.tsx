@@ -16,7 +16,8 @@ const Index = () => {
   const {
     isOpen,
     setIsOpen,
-    handleOpenChange
+    handleOpenChange,
+    config
   } = useNewsletterModal();
   return <>
     <Helmet>
@@ -41,7 +42,7 @@ const Index = () => {
       <ContactSection />
       <CTASection />
       <Footer onNewsletterClick={() => setIsOpen(true)} />
-      <NewsletterModal open={isOpen} onOpenChange={handleOpenChange} />
+      <NewsletterModal open={isOpen} onOpenChange={handleOpenChange} config={config} />
       
       {/* Sticky CTA Button */}
       <a
