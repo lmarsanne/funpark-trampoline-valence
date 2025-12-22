@@ -309,6 +309,9 @@
                       if (!ev) return;
 
                       const key = ev + "::" + location.href;
+
+                      console.log(key);
+
                       if (pushed.has(key)) return;
                       pushed.add(key);
       console.log("Push datalayer");
