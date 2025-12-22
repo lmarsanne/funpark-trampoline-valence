@@ -337,9 +337,9 @@
                   document.addEventListener("click", function (event) {
                     const target = event.target;
                     // Vérifie si l'élément cliqué est un bouton
-                    if (target.tagName === "BUTTON") {
+                    if (target.tagName === "BUTTON" || target.tagName === "SPAN") {
                       pushIfNeeded();
-                      console.log("Declenche event to Datalayer");
+                      console.log("Declenche event to Datalayer " + location.href);
                     }
                   });
 
