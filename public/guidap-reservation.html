@@ -292,7 +292,6 @@
         }
 
         function mapEventFromGPath(gPath) {
-          console.info("Appel de map event");
           // Adapte les "includes" après observation réelle des g-path
           if (gPath.includes("/cart/add-to-cart")) return "guidap_add_to_cart";
           if (gPath.includes("/checkout")) return "guidap_begin_checkout";
@@ -302,6 +301,7 @@
         }
 
         function pushIfNeeded() {
+           console.info("Appel de pushIfNeeded");
           const gPath = decodeGPath();
           if (!gPath) return;
 
