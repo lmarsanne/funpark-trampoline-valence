@@ -325,7 +325,7 @@
         const _replaceState = history.replaceState;
         history.replaceState = function () { _replaceState.apply(this, arguments); pushIfNeeded(); };
         window.addEventListener("popstate", pushIfNeeded);
-
+        window.addEventListener("click", pushIfNeeded);
         // First load
         pushIfNeeded();
       })();
