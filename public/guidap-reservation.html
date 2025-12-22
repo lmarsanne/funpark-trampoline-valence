@@ -332,7 +332,8 @@
 
         // Vérifie si l'élément cliqué est un bouton
         if (target.tagName === "BUTTON") {
-          console.info("click");
+          pushIfNeeded();
+          console.info("Declenche event to Datalayer");
         }
       });
 
