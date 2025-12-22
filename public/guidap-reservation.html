@@ -278,70 +278,74 @@
 
     <!-- Guidap g-path tracking for ecommerce events -->
     <script>
-                  (function () {
-                    window.dataLayer = window.dataLayer || [];
+                        (function () {
+                          window.dataLayer = window.dataLayer || [];
 
-                    // Avoid duplicate pushes for same URL+event
-                    const pushed = new Set();
+                          // Avoid duplicate pushes for same URL+event
+                          const pushed = new Set();
 
-                    function decodeGPath() {
-                      const u = new URL(location.href);
-                      const g = u.searchParams.get("g-path");
-                      if (!g) return "";
-                      try { return decodeURIComponent(g); } catch(e) { return g; }
+                          function decodeGPath() {
+                            const u = new URL(location.href);
+                            const g = u.searchParams.get("g-path");
+                            if (!g) return "";
+                            try { return decodeURIComponent(g); } catch(e) { return g; }
+                          }
+
+                          function mapEventFromGPath(gPath) {
+                            // Adapte les "includes" après observation réelle des g-path
+                            if (gPath.includes("/cart/add-to-cart")) return "guidap_add_to_cart";
+                            if (gPath.includes("/checkout")) return "guidap_begin_checkout";
+                            if (gPath.includes("/payment")) return "guidap_add_payment_info";
+                            if (gPath.includes("/confirmation") || gPath.includes("/success")) return "guidap_purchase";
+                            return null;
+                          }
+
+                          function pushIfNeeded() {
+                            console.log("Push function");
+                            const gPath = decodeGPath();
+                            if (!gPath){
+                              console.log("vide");
+      return;
+
+                            }
+
+                            const ev = mapEventFromGPath(gPath);
+                            if (!ev) return;
+
+                            const key = ev + "::" + location.href;
+
+                            console.log(key);
+
+                            if (pushed.has(key)) return;
+                            pushed.add(key);
+            console.log("Push datalayer");
+                            window.dataLayer.push({
+                              event: ev,
+                              guidap_g_path: gPath,
+                              guidap_url: location.href
+                            });
+                          }
+
+                          // Hook SPA changes
+                          const _pushState = history.pushState;
+                          history.pushState = function () { _pushState.apply(this, arguments); pushIfNeeded(); };
+                          const _replaceState = history.replaceState;
+                          history.replaceState = function () { _replaceState.apply(this, arguments); pushIfNeeded(); };
+                          window.addEventListener("popstate", pushIfNeeded);
+
+
+                  document.addEventListener("click", function (event) {
+                    const target = event.target;
+                    // Vérifie si l'élément cliqué est un bouton
+                    if (target.tagName === "BUTTON") {
+                      pushIfNeeded();
+                      console.log("Declenche event to Datalayer");
                     }
+                  });
 
-                    function mapEventFromGPath(gPath) {
-                      // Adapte les "includes" après observation réelle des g-path
-                      if (gPath.includes("/cart/add-to-cart")) return "guidap_add_to_cart";
-                      if (gPath.includes("/checkout")) return "guidap_begin_checkout";
-                      if (gPath.includes("/payment")) return "guidap_add_payment_info";
-                      if (gPath.includes("/confirmation") || gPath.includes("/success")) return "guidap_purchase";
-                      return null;
-                    }
-
-                    function pushIfNeeded() {
-                      console.log("Push function");
-                      const gPath = decodeGPath();
-                      if (!gPath) return;
-
-                      const ev = mapEventFromGPath(gPath);
-                      if (!ev) return;
-
-                      const key = ev + "::" + location.href;
-
-                      console.log(key);
-
-                      if (pushed.has(key)) return;
-                      pushed.add(key);
-      console.log("Push datalayer");
-                      window.dataLayer.push({
-                        event: ev,
-                        guidap_g_path: gPath,
-                        guidap_url: location.href
-                      });
-                    }
-
-                    // Hook SPA changes
-                    const _pushState = history.pushState;
-                    history.pushState = function () { _pushState.apply(this, arguments); pushIfNeeded(); };
-                    const _replaceState = history.replaceState;
-                    history.replaceState = function () { _replaceState.apply(this, arguments); pushIfNeeded(); };
-                    window.addEventListener("popstate", pushIfNeeded);
-
-
-            document.addEventListener("click", function (event) {
-              const target = event.target;
-              // Vérifie si l'élément cliqué est un bouton
-              if (target.tagName === "BUTTON") {
-                pushIfNeeded();
-                console.log("Declenche event to Datalayer");
-              }
-            });
-
-                    // First load
-                    pushIfNeeded();
-                  })();
+                          // First load
+                          pushIfNeeded();
+                        })();
     </script>
   </body>
 </html>
