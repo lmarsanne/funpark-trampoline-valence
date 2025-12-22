@@ -338,7 +338,8 @@
                     const target = event.target;
                     // Vérifie si l'élément cliqué est un bouton
                     if (target.tagName === "BUTTON" || target.tagName === "SPAN") {
-                      pushIfNeeded();
+                      var page = location.href.match("guidap-reservation.html");
+                  console.log(page);
                       console.log("Declenche event to Datalayer " + location.href);
                     }
                   });
