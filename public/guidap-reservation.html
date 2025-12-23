@@ -342,16 +342,28 @@
                         const target = event.target;
 
                         const isValidButton = target.tagName === "BUTTON" && target.classList.contains("g-button");
+                        // Vérifie si le clic vient d'un SPAN dans un button.g-button
+                        const spanInsideGButton = target.tagName === "SPAN" && target.closest("button.g-button");
 
+      var autoriseEvent = false;
+      if(target.tagName === "BUTTON"){
+         console.log("click sur button :: " + target.classList.contains("g-button"));
+        if(target.classList.contains("g-button")){
+          autoriseEvent = true;
 
+        }
+      }else if (target.tagName === "SPAN")
+        console.log("click sur span :: " + target.closest("button.g-button"));
+      if(target.closest("button.g-button")){
+           autoriseEvent = true;
+        }
+      }
+      console.log("Autorise event" + autoriseEvent);
 
-                        // Si ni bouton valide ni span valide → on sort
-                        if (!isValidButton) return;
+                        if(autoriseEvent == false){
+                          return;
 
-          // Vérifie si le clic vient d'un SPAN dans un button.g-button
-      const spanInsideGButton = target.tagName === "SPAN" && target.closest("button.g-button");
-
-      if (!spanInsideGButton) return;
+                        }
 
                          var eventDataLayer = "";
 
