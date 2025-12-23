@@ -367,8 +367,11 @@
 
                          var eventDataLayer = "";
 
-                        if(document.querySelector(".step-cart-title").textContent.trim() == "Votre panier"){
+                        if(document.querySelectorAll(".step-cart-title").length > 0){
+                            if(document.querySelector(".step-cart-title").textContent.trim() == "Votre panier"){
 
+
+                            }
                         }else if(document.querySelectorAll(".finalize-order-page-countdown").length > 0){
                         	eventDataLayer = "paiement_clic";
                         }else if(document.querySelectorAll(".step-customer-title").length > 0){
