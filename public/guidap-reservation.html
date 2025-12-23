@@ -341,6 +341,10 @@
                     console.log("on click");
                     const target = event.target;
 
+                    if (target.tagName === "SPAN" && (target.className.trim() != "")) {
+                      return;
+                    }
+
                      var eventDataLayer = "";
 
                     if(document.querySelectorAll(".finalize-order-page-countdown").length > 0){
