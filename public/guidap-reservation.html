@@ -343,10 +343,15 @@
 
                     const isValidButton = target.tagName === "BUTTON" && target.classList.contains("b-button");
 
-                    const isValidSpan = target.tagName === "SPAN" && target.classList.length === 0;
 
-                    // Si ni bouton valide ni span valide → on sort
-                    if (!isValidButton && !isValidSpan) return;
+                    // Si pas bouton valide on sort
+                    if (!isValidButton) return;
+
+                    // Vérifie si le clic vient d'un SPAN dans un button.g-button
+                    const spanInsideGButton =
+                    target.tagName === "SPAN" && target.closest("button.g-button");
+
+                    if (!spanInsideGButton) return;
 
                      var eventDataLayer = "";
 
