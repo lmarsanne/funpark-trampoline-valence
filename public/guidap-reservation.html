@@ -340,13 +340,13 @@
                     if (target.tagName === "BUTTON" || target.tagName === "SPAN") {
                      var eventDataLayer = "";
 
-                    if(document.querySelector(".finalize-order-page-countdown").length > 0){
+                    if(document.querySelectorAll(".finalize-order-page-countdown").length > 0){
                     	eventDataLayer = "paiement_clic";
-                    }else if(document.querySelector(".step-customer-title").length > 0){
+                    }else if(document.querySelectorAll(".step-customer-title").length > 0){
                     	eventDataLayer = "valide_info_client";
-                    }else if(document.querySelector(".step-cart-title").length > 0){
+                    }else if(document.querySelectorAll(".step-cart-title").length > 0){
                     	eventDataLayer = "valide_panier";
-                    }else if(document.querySelector(".reservation-recap-desktop-total").length > 0){
+                    }else if(document.querySelectorAll(".reservation-recap-desktop-total").length > 0){
                     	eventDataLayer = "reserver_choix_activite";
                     }
 
