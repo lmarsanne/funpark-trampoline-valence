@@ -376,8 +376,6 @@
                         	eventDataLayer = "valide_info_client";
                         }else if(document.querySelectorAll(".finalize-order-page-countdown").length > 0){
                         	eventDataLayer = "paiement_clic";
-                        }else if(document.querySelectorAll(".gdp-fix-datepicker").length > 0){
-                        	eventDataLayer = "ajout_panier";
                         }else if(document.querySelectorAll(".step-cart-title").length > 0){
                         	eventDataLayer = "valide_panier";
                         }else if(document.querySelectorAll(".reservation-recap-desktop-total").length > 0){
@@ -399,7 +397,7 @@
                       // Page de confirmation de commande
                       var eventDataLayer = "";
 
-                        if(document.querySelectorAll(".finalize-order-page").length > 0){
+                        if(document.querySelectorAll(".reservation-complete-recap-title").length > 0){
                         	eventDataLayer = "confirmation_commande";
                         }
                       if(eventDataLayer != ""){
