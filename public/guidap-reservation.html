@@ -334,7 +334,7 @@
                           window.addEventListener("popstate", pushIfNeeded);
 
 
-                  document.addEventListener("click", function (event) {
+                  document.querySelector(".g-button").addEventListener("click", function (event) {
                     const target = event.target;
                     // Vérifie si l'élément cliqué est un bouton
                     if (target.tagName === "BUTTON" || target.tagName === "SPAN") {
