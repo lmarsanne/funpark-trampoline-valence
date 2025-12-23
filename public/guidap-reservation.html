@@ -402,10 +402,11 @@
                         if(document.querySelectorAll(".finalize-order-page").length > 0){
                         	eventDataLayer = "confirmation_commande";
                         }
+      console.log("event data layer en page de conf :: " + eventDataLayer);
                       if(eventDataLayer != ""){
                           window.dataLayer.push({
                       		event: eventDataLayer,
-                      		guidap_g_path: page[0],
+                      		guidap_g_path: location.href,
                     		guidap_url: location.href
                           });
                         }
