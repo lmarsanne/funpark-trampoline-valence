@@ -341,17 +341,12 @@
                     console.log("on click");
                     const target = event.target;
 
-                    const isValidButton = target.tagName === "BUTTON" && target.classList.contains("b-button");
+                    const isValidButton = target.tagName === "BUTTON" && target.classList.contains("g-button");
 
+                    const isValidSpan = target.tagName === "SPAN" && target.classList.length === 0;
 
-                    // Si pas bouton valide on sort
-                    if (!isValidButton) return;
-
-                    // Vérifie si le clic vient d'un SPAN dans un button.g-button
-                    const spanInsideGButton =
-                    target.tagName === "SPAN" && target.closest("button.g-button");
-
-                    if (!spanInsideGButton) return;
+                    // Si ni bouton valide ni span valide → on sort
+                    if (!isValidButton && !isValidSpan) return;
 
                      var eventDataLayer = "";
 
