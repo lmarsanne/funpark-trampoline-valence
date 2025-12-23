@@ -341,9 +341,12 @@
                     console.log("on click");
                     const target = event.target;
 
-                    if (target.tagName === "SPAN" && (target.className.trim() != "")) {
-                      return;
-                    }
+                    const isValidButton = target.tagName === "BUTTON" && target.classList.contains("b-button");
+
+                    const isValidSpan = target.tagName === "SPAN" && target.classList.length === 0;
+
+                    // Si ni bouton valide ni span valide → on sort
+                    if (!isValidButton && !isValidSpan) return;
 
                      var eventDataLayer = "";
 
