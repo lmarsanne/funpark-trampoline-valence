@@ -338,15 +338,28 @@
                     const target = event.target;
                     // Vérifie si l'élément cliqué est un bouton
                     if (target.tagName === "BUTTON" || target.tagName === "SPAN") {
-                      var page = location.href.match("guidap-reservation.html");
-                      if(page.length > 0){
-                          console.log("Declenche event to Datalayer " + location.href);
-                          window.dataLayer.push({
-                              event: "reservation_click",
-                              guidap_g_path: page[0],
-                              guidap_url: location.href
-                            });
-                        }
+                     var eventDataLayer = "";
+
+                    if(document.querySelector(".finalize-order-page-countdown").length > 0){
+                    	eventDataLayer = "paiement_clic";
+                    }else if(document.querySelector(".step-customer-title").length > 0){
+                    	eventDataLayer = "valide_info_client";
+                    }else if(document.querySelector(".step-cart-title").length > 0){
+                    	eventDataLayer = "valide_panier";
+                    }else if(document.querySelector(".reservation-recap-desktop-total").length > 0){
+                    	eventDataLayer = "reserver_choix_activite";
+                    }
+
+                    console.log("event data layer :: " + eventDataLayer);
+
+                    if(eventDataLayer != ""){
+                      window.dataLayer.push({
+                  		event: eventDataLayer,
+                  		guidap_g_path: page[0],
+                		guidap_url: location.href
+                      });
+                    }
+
                     }
                   });
 
