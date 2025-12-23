@@ -334,7 +334,10 @@
                           window.addEventListener("popstate", pushIfNeeded);
 
 
-                  document.querySelector(".g-button").addEventListener("click", function (event) {
+                document.addEventListener("click", function (event) {
+                    const target = event.target;
+                    // Vérifie si l'élément cliqué est un bouton
+                    if (target.tagName === "BUTTON" || target.tagName === "SPAN") {
                     console.log("on click");
                     const target = event.target;
 
@@ -359,6 +362,7 @@
                 		guidap_url: location.href
                       });
                     }
+      }
                   });
 
                   // Page de confirmation de commande
