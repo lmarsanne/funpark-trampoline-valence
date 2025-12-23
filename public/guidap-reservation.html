@@ -366,6 +366,7 @@
                         }
 
                          var eventDataLayer = "";
+                        var totalCommande = "";
 
                         if(document.querySelectorAll(".step-cart-title").length > 0){
                             if(document.querySelector(".step-cart-title").textContent.trim() == "Votre panier"){
@@ -376,6 +377,7 @@
                         	eventDataLayer = "valide_info_client";
                         }else if(document.querySelectorAll(".finalize-order-page-countdown").length > 0){
                         	eventDataLayer = "paiement_clic";
+                            totalCommande = document.querySelector(".cart-recap-bottom-price").textContent.trim();
                         }else if(document.querySelectorAll(".gdp-fix-datepicker").length > 0){
                         	eventDataLayer = "ajout_panier";
                         }else if(document.querySelectorAll(".step-cart-title").length > 0){
@@ -387,17 +389,16 @@
                         console.log("event data layer :: " + eventDataLayer);
 
                         if(eventDataLayer != ""){
+
+
                           window.dataLayer.push({
                       		event: eventDataLayer,
                       		guidap_g_path: location.href,
-                    		guidap_url: location.href
+                    		guidap_url: location.href,
+                            "totalCommande" : totalCommande
                           });
 
-                          if(eventDataLayer == "paiement_clic"){
-                            dataLayer.push({'totalCommande': document.querySelector(".cart-recap-bottom-price").textContent.trim()});
 
-
-                          }
                         }
           }
                       });
