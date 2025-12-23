@@ -392,6 +392,12 @@
                       		guidap_g_path: location.href,
                     		guidap_url: location.href
                           });
+
+                          if(eventDataLayer == "paiement_clic"){
+                            dataLayer.push({'totalCommande': document.querySelector(".cart-recap-bottom-price").textContent.trim()});
+
+
+                          }
                         }
           }
                       });
