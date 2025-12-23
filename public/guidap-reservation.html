@@ -318,7 +318,7 @@
 
                             if (pushed.has(key)) return;
                             pushed.add(key);
-            console.log("Push datalayer");
+
                             window.dataLayer.push({
                               event: ev,
                               guidap_g_path: gPath,
@@ -335,9 +335,9 @@
 
 
                   document.querySelector(".g-button").addEventListener("click", function (event) {
+                    console.log("on click");
                     const target = event.target;
-                    // Vérifie si l'élément cliqué est un bouton
-                    if (target.tagName === "BUTTON" || target.tagName === "SPAN") {
+
                      var eventDataLayer = "";
 
                     if(document.querySelectorAll(".finalize-order-page-countdown").length > 0){
@@ -359,9 +359,21 @@
                 		guidap_url: location.href
                       });
                     }
-
-                    }
                   });
+
+                  // Page de confirmation de commande
+                  var eventDataLayer = "";
+
+                    if(document.querySelectorAll(".finalize-order-page").length > 0){
+                    	eventDataLayer = "confirmation_commande";
+                    }
+                  if(eventDataLayer != ""){
+                      window.dataLayer.push({
+                  		event: eventDataLayer,
+                  		guidap_g_path: page[0],
+                		guidap_url: location.href
+                      });
+                    }
 
                           // First load
                           pushIfNeeded();
