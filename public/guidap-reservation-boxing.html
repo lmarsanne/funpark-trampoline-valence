@@ -3,203 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Initialize dataLayer for ecommerce tracking -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-    </script>
-    
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W74595Z7');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '541217753361156');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=541217753361156&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-    <meta name="facebook-domain-verification" content="3wabdwvqotk6goswaa40oncgkx7l2p" />
-    <meta name="facebook-domain-verification" content="942q6ho94eqvbni2k175y4jzaa0rd9" />
-
     <title>Réservation Quiz Boxing | Fun Park Valence</title>
     <meta
       name="description"
       content="Réservez votre partie Quiz Boxing au Fun Park Valence. Jeu TV grandeur nature — réservation en ligne."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-W74595Z7');
+    </script>
+
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+
+      fbq('init', '541217753361156');
+      fbq('track', 'PageView');
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=541217753361156&ev=PageView&noscript=1"
+    /></noscript>
+
+    <meta name="facebook-domain-verification" content="3wabdwvqotk6goswaa40oncgkx7l2p" />
+    <meta name="facebook-domain-verification" content="942q6ho94eqvbni2k175y4jzaa0rd9" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html, body {
-        height: 100%;
-        font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-        background: #f4f6f8;
-      }
-
-      /* Navigation */
-      .nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 50;
-        background: #ffffff;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      }
-
-      .nav-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 16px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 64px;
-      }
-
-      .nav-logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-        background: linear-gradient(90deg, hsl(24, 100%, 50%) 0%, hsl(340, 80%, 55%) 50%, hsl(260, 70%, 55%) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-decoration: none;
-      }
-
-      .nav-links {
-        display: none;
-        align-items: center;
-        gap: 24px;
-      }
-
-      .nav-links a {
-        color: rgba(0,0,0,0.7);
-        text-decoration: none;
-        font-size: 1rem;
-        font-weight: 500;
-        transition: color 0.2s;
-      }
-
-      .nav-links a:hover {
-        color: #ff6b35;
-      }
-
-      .nav-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 8px;
-      }
-
-      .nav-toggle span {
-        display: block;
-        width: 24px;
-        height: 2px;
-        background: #1a1a2e;
-        transition: all 0.3s;
-      }
-
-      .nav-mobile {
-        display: none;
-        position: fixed;
-        top: 64px;
-        left: 0;
-        right: 0;
-        background: #ffffff;
-        padding: 16px;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-      }
-
-      .nav-mobile.open {
-        display: block;
-      }
-
-      .nav-mobile a {
-        display: block;
-        padding: 12px 16px;
-        color: rgba(0,0,0,0.7);
-        text-decoration: none;
-        font-size: 1rem;
-        font-weight: 500;
-        border-radius: 8px;
-        transition: all 0.2s;
-      }
-
-      .nav-mobile a:hover {
-        background: rgba(0,0,0,0.05);
-        color: #ff6b35;
-      }
-
-      @media (min-width: 768px) {
-        .nav-links {
-          display: flex;
-        }
-        .nav-toggle {
-          display: none;
-        }
-      }
-
-      /* Main content */
-      .main {
-        padding-top: 80px;
-        min-height: 100vh;
-      }
-
-      .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 24px;
-      }
-
-      .page-title {
-        text-align: center;
-        font-size: 1.75rem;
-        font-weight: 700;
-        color: #1a1a2e;
-        margin-bottom: 8px;
-      }
-
-      .page-subtitle {
-        text-align: center;
-        color: #666;
-        margin-bottom: 24px;
-      }
-
-      @media (min-width: 768px) {
-        .page-title {
-          font-size: 2.25rem;
-        }
-      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Poppins', sans-serif; background: #f4f6f8; color: #1a1a2e; }
+      .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: #fff; border-bottom: 1px solid rgba(0,0,0,0.1); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+      .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+      .nav-logo { font-size: 1.5rem; font-weight: 700; background: linear-gradient(90deg, #ff6b35 0%, #e33e5a 50%, #833ab4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+      .nav-links { display: none; gap: 24px; }
+      .nav-links a { color: rgba(0,0,0,0.7); text-decoration: none; font-weight: 500; transition: 0.2s; }
+      .nav-links a:hover { color: #ff6b35; }
+      .nav-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+      .nav-toggle span { display: block; width: 24px; height: 2px; background: #1a1a2e; transition: 0.3s; }
+      .nav-mobile { display: none; position: fixed; top: 64px; left: 0; right: 0; background: #fff; padding: 16px; border-bottom: 1px solid rgba(0,0,0,0.1); }
+      .nav-mobile.open { display: block; }
+      .nav-mobile a { display: block; padding: 12px; color: rgba(0,0,0,0.7); text-decoration: none; font-weight: 500; }
+      @media (min-width: 768px) { .nav-links { display: flex; } .nav-toggle { display: none; } }
+      .main { padding-top: 100px; min-height: 100vh; }
+      .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+      .page-title { text-align: center; font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+      .page-subtitle { text-align: center; color: #666; margin-bottom: 40px; }
     </style>
 
-    <!-- Guidap booking widget -->
     <script
       src="https://cart.guidap.net/v1/"
       async
@@ -210,36 +77,31 @@
       data-memory-router="true"
     ></script>
   </head>
-
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W74595Z7"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-W74595Z7"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe
+    ></noscript>
 
-    <!-- Navigation -->
     <nav class="nav">
       <div class="nav-container">
         <a href="/" class="nav-logo">Valence Fun Park</a>
-        
         <div class="nav-links">
           <a href="/">Trampoline</a>
           <a href="/anniversaire-enfant">Anniversaire Enfant</a>
           <a href="/entreprises">Entreprises</a>
           <a href="/karaoke">Karaoké</a>
           <a href="/quiz-boxing">Quiz Boxing</a>
-          <a href="https://www.valence-bowling.com" target="_blank" rel="noopener noreferrer">Bowling</a>
+          <a href="https://www.valence-bowling.com" target="_blank">Bowling</a>
         </div>
-
-        <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <button class="nav-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
       </div>
     </nav>
 
-    <!-- Mobile menu -->
     <div class="nav-mobile" id="mobileMenu">
       <a href="/">Trampoline</a>
       <a href="/anniversaire-enfant">Anniversaire Enfant</a>
@@ -249,7 +111,6 @@
       <a href="https://www.valence-bowling.com" target="_blank" rel="noopener noreferrer">Bowling</a>
     </div>
 
-    <!-- Main content -->
     <main class="main">
       <div class="container">
         <h1 class="page-title">Réservez votre partie Quiz Boxing</h1>
@@ -260,62 +121,48 @@
 
     <script>
       function toggleMenu() {
-        document.getElementById('mobileMenu').classList.toggle('open');
-      }
-    </script>
-
-    <!-- Guidap g-path tracking for ecommerce events -->
-    <script>
-    (function () {
-      window.dataLayer = window.dataLayer || [];
-
-      // Avoid duplicate pushes for same URL+event
-      const pushed = new Set();
-
-      function decodeGPath() {
-        const u = new URL(location.href);
-        const g = u.searchParams.get("g-path");
-        if (!g) return "";
-        try { return decodeURIComponent(g); } catch(e) { return g; }
+          document.getElementById('mobileMenu').classList.toggle('open');
       }
 
-      function mapEventFromGPath(gPath) {
-        // Adapte les "includes" après observation réelle des g-path
-        if (gPath.includes("/cart/add-to-cart")) return "guidap_add_to_cart";
-        if (gPath.includes("/checkout")) return "guidap_begin_checkout";
-        if (gPath.includes("/payment")) return "guidap_add_payment_info";
-        if (gPath.includes("/confirmation") || gPath.includes("/success")) return "guidap_purchase";
-        return null;
-      }
+      // --- TRACKING COMPATIBLE AVEC TON GTM ACTUEL ---
+      (function () {
 
-      function pushIfNeeded() {
-        const gPath = decodeGPath();
-        if (!gPath) return;
+          document.addEventListener("click", function (event) {
+              const target = event.target;
+              const isBtn = target.closest("button.g-button");
 
-        const ev = mapEventFromGPath(gPath);
-        if (!ev) return;
+              if (!isBtn) return;
 
-        const key = ev + "::" + location.href;
-        if (pushed.has(key)) return;
-        pushed.add(key);
+              // 1. PAIEMENT CLIC
+              if (document.querySelector(".finalize-order-page-countdown")) {
+                  const priceEl = document.querySelector(".cart-recap-bottom-price");
+                  const rawPrice = priceEl ? priceEl.textContent.trim() : "0";
 
-        window.dataLayer.push({
-          event: ev,
-          guidap_g_path: gPath,
-          guidap_url: location.href
-        });
-      }
+                  console.log("Tracking: Envoi signal 'paiement_clic' à GTM");
 
-      // Hook SPA changes
-      const _pushState = history.pushState;
-      history.pushState = function () { _pushState.apply(this, arguments); pushIfNeeded(); };
-      const _replaceState = history.replaceState;
-      history.replaceState = function () { _replaceState.apply(this, arguments); pushIfNeeded(); };
-      window.addEventListener("popstate", pushIfNeeded);
+                  // Envoi à GTM (Ton GTM Tag 16 et 10 vont gérer FB Lead et GA4)
+                  window.dataLayer.push({
+                      'event': 'paiement_clic',
+                      'totalCommande': rawPrice,
+                      'guidap_url': location.href
+                  });
+              }
 
-      // First load
-      pushIfNeeded();
-    })();
+              // 2. AJOUT AU PANIER
+              else if (document.querySelector(".gdp-fix-datepicker")) {
+                  console.log("Tracking: Ajout panier");
+
+                  // Direct Facebook (Car ton GTM ne gère pas l'ajout panier)
+                  fbq('track', 'AddToCart');
+
+                  // Signal GTM (Pour usage futur)
+                  window.dataLayer.push({
+                      'event': 'ajout_panier',
+                      'guidap_url': location.href
+                  });
+              }
+          });
+      })();
     </script>
   </body>
 </html>
