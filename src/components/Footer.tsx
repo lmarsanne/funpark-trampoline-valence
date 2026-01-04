@@ -7,9 +7,9 @@ interface FooterProps {
 
 export const Footer = ({ onNewsletterClick }: FooterProps) => {
   return (
-    <footer className="bg-foreground text-white py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+    <footer className="py-12" style={{ backgroundColor: '#0A0F43' }}>
+      <div className="container mx-auto px-4 text-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Informations */}
           <div>
             <h3 className="text-xl font-bold mb-4">Valence Fun Park</h3>
@@ -78,11 +78,24 @@ export const Footer = ({ onNewsletterClick }: FooterProps) => {
                 <Mail className="w-4 h-4 mr-2" />
                 S'inscrire à la newsletter
               </Button>
-            )}
+          )}
+          </div>
+
+          {/* Horaires */}
+          <div>
+            <h3 className="text-xl font-bold mb-4">Horaires d'ouverture</h3>
+            <div className="space-y-1 text-white/80">
+              <p><span className="font-medium text-white">Lundi & Mardi :</span> Fermé</p>
+              <p><span className="font-medium text-white">Mercredi :</span> 14:00 – 00:00</p>
+              <p><span className="font-medium text-white">Jeudi :</span> 18:00 – 00:00</p>
+              <p><span className="font-medium text-white">Vendredi :</span> 18:00 – 02:00</p>
+              <p><span className="font-medium text-white">Samedi :</span> 14:00 – 02:00</p>
+              <p><span className="font-medium text-white">Dimanche :</span> 14:00 – 20:00</p>
+            </div>
           </div>
 
           {/* Map */}
-          <div className="md:col-span-2 lg:col-span-1">
+          <div>
             <h3 className="text-xl font-bold mb-4">Plan d'accès</h3>
             <div className="rounded-lg overflow-hidden h-48">
               <iframe
