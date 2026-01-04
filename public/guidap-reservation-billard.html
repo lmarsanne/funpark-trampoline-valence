@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Initialize dataLayer for ecommerce tracking -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-W74595Z7');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '541217753361156');
+      fbq('track', 'PageView');
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=541217753361156&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <meta name="facebook-domain-verification" content="3wabdwvqotk6goswaa40oncgkx7l2p" />
+    <meta name="facebook-domain-verification" content="942q6ho94eqvbni2k175y4jzaa0rd9" />
+
+    <title>Réservation Billard | Fun Park Valence</title>
+    <meta
+      name="description"
+      content="Réservez votre table de billard au Fun Park Valence. Réservation en ligne facile et rapide."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html, body {
+        height: 100%;
+        font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        background: #f4f6f8;
+      }
+
+      /* Navigation */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background: #ffffff;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+
+      .nav-logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        background: linear-gradient(90deg, hsl(24, 100%, 50%) 0%, hsl(340, 80%, 55%) 50%, hsl(260, 70%, 55%) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: none;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .nav-links a {
+        color: rgba(0,0,0,0.7);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover {
+        color: #ff6b35;
+      }
+
+      .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+      }
+
+      .nav-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #1a1a2e;
+        transition: all 0.3s;
+      }
+
+      .nav-mobile {
+        display: none;
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        padding: 16px;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+      }
+
+      .nav-mobile.open {
+        display: block;
+      }
+
+      .nav-mobile a {
+        display: block;
+        padding: 12px 16px;
+        color: rgba(0,0,0,0.7);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        border-radius: 8px;
+        transition: all 0.2s;
+      }
+
+      .nav-mobile a:hover {
+        background: rgba(0,0,0,0.05);
+        color: #ff6b35;
+      }
+
+      @media (min-width: 768px) {
+        .nav-links {
+          display: flex;
+        }
+        .nav-toggle {
+          display: none;
+        }
+      }
+
+      /* Main content */
+      .main {
+        padding-top: 80px;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      .page-title {
+        text-align: center;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 8px;
+      }
+
+      .page-subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 24px;
+      }
+
+      @media (min-width: 768px) {
+        .page-title {
+          font-size: 2.25rem;
+        }
+      }
+    </style>
+
+    <!-- Guidap booking widget -->
+    <script
+      src="https://cart.guidap.net/v1/"
+      async
+      defer
+      data-token="q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4"
+      data-lang="fr"
+      data-currency="EUR"
+      data-memory-router="true"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-W74595Z7"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="/" class="nav-logo">Valence Fun Park</a>
+
+        <div class="nav-links">
+          <a href="/">Trampoline</a>
+          <a href="/anniversaire-enfant">Anniversaire Enfant</a>
+          <a href="/entreprises">Entreprises</a>
+          <a href="/karaoke">Karaoké</a>
+          <a href="/quiz-boxing">Quiz Boxing</a>
+          <a href="/bowling">Bowling</a>
+        </div>
+
+        <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="nav-mobile" id="mobileMenu">
+      <a href="/">Trampoline</a>
+      <a href="/anniversaire-enfant">Anniversaire Enfant</a>
+      <a href="/entreprises">Entreprises</a>
+      <a href="/karaoke">Karaoké</a>
+      <a href="/quiz-boxing">Quiz Boxing</a>
+      <a href="/bowling">Bowling</a>
+    </div>
+
+    <!-- Main content -->
+    <main class="main">
+      <div class="container">
+        <h1 class="page-title">Réservation Billard</h1>
+        <guidap-booking-widget activity-uuid="uvBsEPIwKa1eprOQonH4Fm8ihzXjAM2yTDfW"></guidap-booking-widget>
+      </div>
+    </main>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById('mobileMenu').classList.toggle('open');
+      }
+    </script>
+
+    <!-- Guidap g-path tracking for ecommerce events -->
+    <script>
+                            (function () {
+                              window.dataLayer = window.dataLayer || [];
+
+                              // Avoid duplicate pushes for same URL+event
+                              const pushed = new Set();
+
+                              function decodeGPath() {
+                                const u = new URL(location.href);
+                                const g = u.searchParams.get("g-path");
+                                if (!g) return "";
+                                try { return decodeURIComponent(g); } catch(e) { return g; }
+                              }
+
+                              function mapEventFromGPath(gPath) {
+                                // Adapte les "includes" après observation réelle des g-path
+                                if (gPath.includes("/cart/add-to-cart")) return "guidap_add_to_cart";
+                                if (gPath.includes("/checkout")) return "guidap_begin_checkout";
+                                if (gPath.includes("/payment")) return "guidap_add_payment_info";
+                                if (gPath.includes("/confirmation") || gPath.includes("/success")) return "guidap_purchase";
+                                return null;
+                              }
+
+                              function pushIfNeeded() {
+                                console.log("Push function");
+                                const gPath = decodeGPath();
+                                if (!gPath){
+                                  console.log("vide");
+          return;
+
+                                }
+
+                                const ev = mapEventFromGPath(gPath);
+                                if (!ev) return;
+
+                                const key = ev + "::" + location.href;
+
+                                console.log(key);
+
+                                if (pushed.has(key)) return;
+                                pushed.add(key);
+
+                                window.dataLayer.push({
+                                  event: ev,
+                                  guidap_g_path: gPath,
+                                  guidap_url: location.href
+                                });
+                              }
+
+                              // Hook SPA changes
+                              const _pushState = history.pushState;
+                              history.pushState = function () { _pushState.apply(this, arguments); pushIfNeeded(); };
+                              const _replaceState = history.replaceState;
+                              history.replaceState = function () { _replaceState.apply(this, arguments); pushIfNeeded(); };
+                              window.addEventListener("popstate", pushIfNeeded);
+
+
+                    document.addEventListener("click", function (event) {
+                        const target = event.target;
+                        // Vérifie si l'élément cliqué est un bouton
+                        if (target.tagName === "BUTTON" || target.tagName === "SPAN") {
+                        console.log("on click");
+                        const target = event.target;
+
+                        const isValidButton = target.tagName === "BUTTON" && target.classList.contains("g-button");
+                        // Vérifie si le clic vient d'un SPAN dans un button.g-button
+                        const spanInsideGButton = target.tagName === "SPAN" && target.closest("button.g-button");
+
+      var autoriseEvent = false;
+      if(target.tagName === "BUTTON"){
+         console.log("click sur button :: " + target.classList.contains("g-button"));
+        if(target.classList.contains("g-button")){
+          autoriseEvent = true;
+
+        }
+      }else if (target.tagName === "SPAN"){
+        console.log("click sur span :: " + target.closest("button.g-button"));
+      if(target.closest("button.g-button")){
+           autoriseEvent = true;
+        }
+      }
+      console.log("Autorise event" + autoriseEvent);
+
+                        if(autoriseEvent == false){
+                          return;
+
+                        }
+
+                         var eventDataLayer = "";
+                        var totalCommande = "";
+
+                        if(document.querySelectorAll(".step-cart-title").length > 0){
+                            if(document.querySelector(".step-cart-title").textContent.trim() == "Votre panier"){
+
+
+                            }
+                        }else if(document.querySelectorAll(".step-customer-title").length > 0){
+                        	eventDataLayer = "valide_info_client";
+                        }else if(document.querySelectorAll(".finalize-order-page-countdown").length > 0){
+                        	eventDataLayer = "paiement_clic";
+                            totalCommande = document.querySelector(".cart-recap-bottom-price").textContent.trim();
+                        }else if(document.querySelectorAll(".gdp-fix-datepicker").length > 0){
+                        	eventDataLayer = "ajout_panier";
+                        }else if(document.querySelectorAll(".step-cart-title").length > 0){
+                        	eventDataLayer = "valide_panier";
+                        }else if(document.querySelectorAll(".reservation-recap-desktop-total").length > 0){
+                        	eventDataLayer = "reserver_choix_activite";
+                        }
+
+                        console.log("event data layer :: " + eventDataLayer);
+
+                        if(eventDataLayer != ""){
+
+
+                          window.dataLayer.push({
+                      		event: eventDataLayer,
+                      		guidap_g_path: location.href,
+                    		guidap_url: location.href,
+                            "totalCommande" : totalCommande
+                          });
+
+
+                        }
+          }
+                      });
+
+                      // Page de confirmation de commande
+                      var eventDataLayer = "";
+
+                        if(document.querySelectorAll(".finalize-order-page").length > 0){
+                        	eventDataLayer = "confirmation_commande";
+                        }
+      console.log("event data layer en page de conf :: " + eventDataLayer);
+                      if(eventDataLayer != ""){
+                          window.dataLayer.push({
+                      		event: eventDataLayer,
+                      		guidap_g_path: location.href,
+                    		guidap_url: location.href
+                          });
+                        }
+
+                              // First load
+                              pushIfNeeded();
+                            })();
+    </script>
+  </body>
+</html>
