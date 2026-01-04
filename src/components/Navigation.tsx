@@ -4,7 +4,7 @@ import { useState, createElement } from "react";
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const links = [{
+  const links: { to: string; label: string; external?: boolean }[] = [{
     to: "/",
     label: "Trampoline"
   }, {
@@ -20,9 +20,8 @@ export const Navigation = () => {
     to: "/quiz-boxing",
     label: "Quiz Boxing"
   }, {
-    to: "https://www.valence-bowling.com",
-    label: "Bowling",
-    external: true
+    to: "/bowling",
+    label: "Bowling"
   }];
   const isActive = (path: string) => location.pathname === path;
   return <nav className="fixed top-0 left-0 right-0 z-50 bg-background backdrop-blur-md border-b border-border shadow-sm">
