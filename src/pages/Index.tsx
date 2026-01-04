@@ -35,7 +35,7 @@ const Index = () => {
       <AboutSection />
       <FormulasSection />
       <AllInclusiveSection />
-      <HorairesSection />
+      
       <BirthdaySection />
       <GallerySection />
       <FAQSection />
@@ -45,11 +45,9 @@ const Index = () => {
       <NewsletterModal open={isOpen} onOpenChange={handleOpenChange} config={config} />
       
       {/* Sticky CTA Button */}
-      <a
-        href="/guidap-reservation.html"
-        className="fixed bottom-4 left-4 right-4 z-50 flex items-center justify-center py-4 text-lg font-bold text-black rounded-full shadow-2xl hover:opacity-90 transition-opacity"
-        style={{ backgroundColor: '#FFBD0B' }}
-      >
+      <a href="/guidap-reservation.html" className="fixed bottom-4 left-4 right-4 z-50 flex items-center justify-center py-4 text-lg font-bold text-black rounded-full shadow-2xl hover:opacity-90 transition-opacity" style={{
+        backgroundColor: '#FFBD0B'
+      }}>
         🎉 Réserver maintenant
       </a>
     </div>
