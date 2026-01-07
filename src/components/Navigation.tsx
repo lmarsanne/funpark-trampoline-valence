@@ -12,11 +12,8 @@ export const Navigation = () => {
     to: "/",
     label: "Trampoline"
   }, {
-    to: "/anniversaire-enfant",
-    label: "Anniversaire Enfant"
-  }, {
-    to: "/entreprises",
-    label: "Entreprises"
+    to: "/bowling",
+    label: "Bowling"
   }, {
     to: "/karaoke",
     label: "Karaoké"
@@ -24,8 +21,14 @@ export const Navigation = () => {
     to: "/quiz-boxing",
     label: "Quiz Boxing"
   }, {
-    to: "/bowling",
-    label: "Bowling"
+    to: "/billard",
+    label: "Billard"
+  }, {
+    to: "/anniversaire-enfant",
+    label: "Anniversaire Enfant"
+  }, {
+    to: "/entreprises",
+    label: "Entreprises"
   }];
   const isActive = (path: string) => location.pathname === path;
   return <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border shadow-sm">

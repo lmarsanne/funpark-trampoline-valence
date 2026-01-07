@@ -15,6 +15,7 @@ import LivronLoriol from "./pages/LivronLoriol";
 import EvgEvjf from "./pages/EvgEvjf";
 import Entreprises from "./pages/Entreprises";
 import Bowling from "./pages/Bowling";
+import Billard from "./pages/Billard";
 import NotFound from "./pages/NotFound";
 
 import QueFaireQuandIlPleut from "./pages/QueFaireQuandIlPleut";
@@ -45,9 +46,9 @@ const App = () => (
             <Route path="/entreprises" element={<Entreprises />} />
             <Route path="/que-faire-quand-il-pleut-valence" element={<QueFaireQuandIlPleut />} />
             <Route path="/bowling" element={<Bowling />} />
+            <Route path="/billard" element={<Billard />} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
