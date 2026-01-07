@@ -89,10 +89,7 @@
       .nav-logo {
         font-size: 1.5rem;
         font-weight: 700;
-        background: linear-gradient(90deg, hsl(24, 100%, 50%) 0%, hsl(340, 80%, 55%) 50%, hsl(260, 70%, 55%) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: #0A1F44;
         text-decoration: none;
       }
 
@@ -103,7 +100,7 @@
       }
 
       .nav-links a {
-        color: rgba(0,0,0,0.7);
+        color: #0A1F44;
         text-decoration: none;
         font-size: 1rem;
         font-weight: 500;
@@ -111,7 +108,11 @@
       }
 
       .nav-links a:hover {
-        color: #ff6b35;
+        color: #F57C51;
+      }
+
+      .nav-links a.active {
+        color: #F57C51;
       }
 
       .nav-toggle {
@@ -128,7 +129,7 @@
         display: block;
         width: 24px;
         height: 2px;
-        background: #1a1a2e;
+        background: #0A1F44;
         transition: all 0.3s;
       }
 
@@ -150,7 +151,7 @@
       .nav-mobile a {
         display: block;
         padding: 12px 16px;
-        color: rgba(0,0,0,0.7);
+        color: #0A1F44;
         text-decoration: none;
         font-size: 1rem;
         font-weight: 500;
@@ -159,8 +160,13 @@
       }
 
       .nav-mobile a:hover {
-        background: rgba(0,0,0,0.05);
-        color: #ff6b35;
+        background: rgba(245, 124, 81, 0.1);
+        color: #F57C51;
+      }
+
+      .nav-mobile a.active {
+        background: rgba(245, 124, 81, 0.1);
+        color: #F57C51;
       }
 
       @media (min-width: 768px) {
