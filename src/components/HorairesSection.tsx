@@ -14,10 +14,10 @@ export const HorairesSection = () => {
     heures: "14h - 00h"
   }, {
     jour: "Vendredi",
-    heures: "14h - 00h"
+    heures: "14h - 02h"
   }, {
     jour: "Samedi",
-    heures: "14h - 00h"
+    heures: "14h - 02h"
   }, {
     jour: "Dimanche",
     heures: "14h - 20h"
