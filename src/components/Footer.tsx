@@ -85,10 +85,11 @@ export const Footer = ({ onNewsletterClick }: FooterProps) => {
           <div>
             <h3 className="text-xl font-bold mb-4">Horaires d'ouverture</h3>
             <div className="space-y-1 text-white/80">
-              <p><span className="font-medium text-white">Lundi & Mardi :</span> Fermé</p>
+              <p><span className="font-medium text-white">Lundi :</span> 14:00 – 00:00</p>
+              <p><span className="font-medium text-white">Mardi :</span> 14:00 – 00:00</p>
               <p><span className="font-medium text-white">Mercredi :</span> 14:00 – 00:00</p>
-              <p><span className="font-medium text-white">Jeudi :</span> 18:00 – 00:00</p>
-              <p><span className="font-medium text-white">Vendredi :</span> 18:00 – 02:00</p>
+              <p><span className="font-medium text-white">Jeudi :</span> 14:00 – 00:00</p>
+              <p><span className="font-medium text-white">Vendredi :</span> 14:00 – 02:00</p>
               <p><span className="font-medium text-white">Samedi :</span> 14:00 – 02:00</p>
               <p><span className="font-medium text-white">Dimanche :</span> 14:00 – 20:00</p>
             </div>
