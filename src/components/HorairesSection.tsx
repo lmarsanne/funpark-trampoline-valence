@@ -2,19 +2,19 @@ import { Calendar } from "lucide-react";
 export const HorairesSection = () => {
   const horaires = [{
     jour: "Lundi",
-    heures: "14h - 00h"
+    heures: "Fermé"
   }, {
     jour: "Mardi",
-    heures: "14h - 00h"
+    heures: "Fermé"
   }, {
     jour: "Mercredi",
     heures: "14h - 00h"
   }, {
     jour: "Jeudi",
-    heures: "14h - 00h"
+    heures: "18h - 00h"
   }, {
     jour: "Vendredi",
-    heures: "14h - 02h"
+    heures: "18h - 02h"
   }, {
     jour: "Samedi",
     heures: "14h - 02h"
