@@ -56,6 +56,7 @@ const handler = async (req: Request): Promise<Response> => {
       },
       body: JSON.stringify({
         email: sanitizedEmail,
+        listIds: [4],
         updateEnabled: true, // Update if contact already exists
       }),
     });
