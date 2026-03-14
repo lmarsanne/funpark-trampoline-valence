@@ -278,10 +278,10 @@ ${formData.message || "Aucun message"}
               Offrez à vos équipes un moment original chez Valence Fun Park, à Saint-Marcel-lès-Valence. Bowling, Quiz Boxing, Karaoké, Trampoline, Billard et bar : tout est réuni pour organiser un afterwork ou un événement d'entreprise simple à mettre en place et vraiment mémorable.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/guidap-reservation-entreprise.html">
+              <a href="/guidap-reservation-entreprise.html" className="w-full sm:w-auto">
                 <Button 
                   size="lg" 
-                  className="text-lg px-10 py-6 rounded-full font-bold shadow-[0_0_30px_rgba(249,115,22,0.5)] hover:shadow-[0_0_40px_rgba(249,115,22,0.7)] transition-all"
+                  className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-6 rounded-full font-bold shadow-[0_0_30px_rgba(249,115,22,0.5)] hover:shadow-[0_0_40px_rgba(249,115,22,0.7)] transition-all"
                   style={{ backgroundColor: '#FFBD0B', color: '#000000' }}
                 >
                   <Zap className="mr-2 h-5 w-5" />
@@ -292,7 +292,7 @@ ${formData.message || "Aucun message"}
                 onClick={scrollToContact}
                 size="lg" 
                 variant="outline"
-                className="text-lg px-10 py-6 rounded-full font-bold border-white/30 text-white hover:bg-white/10"
+                className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-6 rounded-full font-bold border-white/30 text-black hover:bg-white/10"
               >
                 Demander des informations
               </Button>
