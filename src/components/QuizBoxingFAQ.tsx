@@ -30,12 +30,7 @@ export const QuizBoxingFAQ = () => {
     {
       question: "Y a-t-il un âge minimum pour jouer ?",
       answer:
-        "Le Quiz Boxing est accessible à partir de 12 ans avec le tarif enfant. Pour les joueurs plus jeunes, nous recommandons d'avoir un adulte accompagnateur.",
-    },
-    {
-      question: "Le tarif étudiant nécessite-t-il un justificatif ?",
-      answer:
-        "Oui, pour bénéficier du tarif étudiant, vous devrez présenter une carte étudiante ou un certificat de scolarité en cours de validité à votre arrivée.",
+        "Le Quiz Boxing est accessible à partir de 12 ans.",
     },
     {
       question: "Peut-on privatiser la salle pour un événement ?",
