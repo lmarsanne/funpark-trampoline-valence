@@ -234,78 +234,99 @@ const QuizBoxing = () => {
       {/* Avantages Section */}
       
 
-      {/* Tarifs Section */}
-      <section className="py-12 bg-gradient-to-br from-primary/5 to-accent/5">
+      {/* Tarifs Section - NOUVELLE VERSION SIMPLIFIÉE */}
+      <section className="py-16 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
               Nos tarifs <span className="text-primary">Quiz Boxing</span>
             </h2>
 
             <p className="text-center text-lg text-muted-foreground mb-12">
-              Tarifs valables pour des groupes de 4 à 12 joueurs • 60 minutes de jeu.
+              Prix forfaitaire par session de 60 minutes. Réservation obligatoire.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-              {/* Tarif Adulte */}
-              <div className="bg-card rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all hover:scale-105 border-2 border-primary/20">
-                <h3 className="text-3xl font-bold mb-2 text-foreground">Adulte</h3>
-                <p className="text-muted-foreground mb-6">À partir de 18 ans</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              {/* Formule 6 joueurs */}
+              <div className="bg-card rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all hover:scale-105 border-2 border-primary relative overflow-hidden">
+                <div className="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-4 py-1 rounded-bl-xl">
+                  POUR PETITS GROUPES
+                </div>
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold mb-2 text-foreground">Groupe jusqu'à</h3>
+                  <span className="text-5xl font-extrabold text-primary">6 joueurs</span>
+                </div>
                 
-                <div className="mb-6">
+                <div className="text-center mb-6">
                   <div className="flex justify-center items-baseline">
-                    <span className="text-5xl font-bold text-primary">20€</span>
+                    <span className="text-6xl font-bold text-foreground">60€</span>
+                    <span className="text-xl text-muted-foreground ml-2">/ session</span>
                   </div>
                 </div>
 
-                <p className="text-sm text-muted-foreground">
-                  Par personne et par partie. Le format idéal pour un afterwork ou une soirée entre amis.
-                </p>
+                <div className="bg-muted rounded-xl p-4 mb-6">
+                  <p className="text-center text-sm text-muted-foreground">
+                    <strong>Forfait tout inclus</strong> • Durée 60 min • Salle privative
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <a href="/guidap-reservation-boxing.html">
+                    <Button size="lg" className="w-full text-lg py-6">
+                      Réserver cette formule
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </a>
+                </div>
               </div>
 
-              {/* Tarif Étudiant */}
-              <div className="bg-card rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all hover:scale-105 border-2 border-accent/20">
-                <h3 className="text-3xl font-bold mb-2 text-foreground">Étudiant*</h3>
-                <p className="text-muted-foreground mb-6">Avec carte étudiante</p>
+              {/* Formule 12 joueurs */}
+              <div className="bg-card rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all hover:scale-105 border-2 border-accent relative overflow-hidden">
+                <div className="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-4 py-1 rounded-bl-xl">
+                  PLUS DE FUN
+                </div>
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold mb-2 text-foreground">Groupe jusqu'à</h3>
+                  <span className="text-5xl font-extrabold text-accent">12 joueurs</span>
+                </div>
                 
-                <div className="mb-6">
+                <div className="text-center mb-6">
                   <div className="flex justify-center items-baseline">
-                    <span className="text-5xl font-bold text-accent">18€</span>
+                    <span className="text-6xl font-bold text-foreground">120€</span>
+                    <span className="text-xl text-muted-foreground ml-2">/ session</span>
                   </div>
                 </div>
 
-                <p className="text-sm text-muted-foreground">
-                  Tarif spécial pour les étudiants. Carte en cours de validité obligatoire.
-                </p>
-              </div>
-
-              {/* Tarif Enfant */}
-              <div className="bg-card rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all hover:scale-105 border-2 border-secondary/20">
-                <h3 className="text-3xl font-bold mb-2 text-foreground">Enfant</h3>
-                <p className="text-muted-foreground mb-6">Jusqu'à 12 ans</p>
-                
-                <div className="mb-6">
-                  <div className="flex justify-center items-baseline">
-                    <span className="text-5xl font-bold text-secondary">15€</span>
-                  </div>
+                <div className="bg-muted rounded-xl p-4 mb-6">
+                  <p className="text-center text-sm text-muted-foreground">
+                    <strong>Forfait tout inclus</strong> • Durée 60 min • Salle privative
+                  </p>
                 </div>
 
-                <p className="text-sm text-muted-foreground">
-                  Parfait pour un anniversaire ou une sortie famille inoubliable.
-                </p>
+                <div className="text-center">
+                  <a href="/guidap-reservation-boxing.html">
+                    <Button size="lg" variant="secondary" className="w-full text-lg py-6">
+                      Réserver cette formule
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </a>
+                </div>
               </div>
             </div>
 
-            <p className="text-sm text-muted-foreground text-center mb-8 italic">
-              *Sur présentation d'une carte étudiante en cours de validité. Le tarif enfant s'applique aux enfants de 12 ans maximum.
-            </p>
-
-            {/* CTA */}
-            <div className="text-center">
-              <Button size="lg" className="group text-lg px-8 py-6" onClick={scrollToReservation}>
-                Choisir ma formule et réserver
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
+            {/* Info complémentaire */}
+            <div className="bg-card rounded-xl p-6 border border-border">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground mb-1">Prix forfaitaire par session</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Le prix indiqué est le prix total pour toute la session, quel que soit le nombre de participants (dans la limite de la formule choisie). Exemple : si vous êtes 5, vous payez 60€ au total. Si vous êtes 10, vous payez 120€ au total.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
