@@ -16,6 +16,7 @@ import EvgEvjf from "./pages/EvgEvjf";
 import Entreprises from "./pages/Entreprises";
 import Bowling from "./pages/Bowling";
 import Billard from "./pages/Billard";
+import QuizGameValence from "./pages/QuizGameValence";
 import NotFound from "./pages/NotFound";
 
 import QueFaireQuandIlPleut from "./pages/QueFaireQuandIlPleut";
