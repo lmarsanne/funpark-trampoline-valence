@@ -16,6 +16,7 @@ import EvgEvjf from "./pages/EvgEvjf";
 import Entreprises from "./pages/Entreprises";
 import Bowling from "./pages/Bowling";
 import Billard from "./pages/Billard";
+import QuizGameValence from "./pages/QuizGameValence";
 import NotFound from "./pages/NotFound";
 
 import QueFaireQuandIlPleut from "./pages/QueFaireQuandIlPleut";
@@ -47,6 +48,7 @@ const App = () => (
             <Route path="/que-faire-quand-il-pleut-valence" element={<QueFaireQuandIlPleut />} />
             <Route path="/bowling" element={<Bowling />} />
             <Route path="/billard" element={<Billard />} />
+            <Route path="/quiz-game-valence" element={<QuizGameValence />} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
