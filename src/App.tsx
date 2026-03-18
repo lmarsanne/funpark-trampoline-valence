@@ -51,6 +51,7 @@ const App = () => (
             <Route path="/billard" element={<Billard />} />
             <Route path="/quiz-game-valence" element={<QuizGameValence />} />
             
+            <Route path="/x-admin-popup-config" element={<AdminPopup />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
