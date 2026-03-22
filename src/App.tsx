@@ -17,8 +17,11 @@ import Entreprises from "./pages/Entreprises";
 import Bowling from "./pages/Bowling";
 import Billard from "./pages/Billard";
 import QuizGameValence from "./pages/QuizGameValence";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
 import AdminPopup from "./pages/AdminPopup";
 import AdminHoraires from "./pages/AdminHoraires";
+import AdminLayout from "./components/AdminLayout";
 import NotFound from "./pages/NotFound";
 
 import QueFaireQuandIlPleut from "./pages/QueFaireQuandIlPleut";
@@ -51,10 +54,16 @@ const App = () => (
             <Route path="/bowling" element={<Bowling />} />
             <Route path="/billard" element={<Billard />} />
             <Route path="/quiz-game-valence" element={<QuizGameValence />} />
-            
-            <Route path="/x-admin-popup-config" element={<AdminPopup />} />
-            <Route path="/x-admin-horaires" element={<AdminHoraires />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+
+            {/* Admin routes */}
+            <Route path="/x-admin/login" element={<AdminLogin />} />
+            <Route path="/x-admin" element={<AdminLayout />}>
+              <Route index element={<AdminDashboard />} />
+              <Route path="horaires" element={<AdminHoraires />} />
+              <Route path="popup" element={<AdminPopup />} />
+            </Route>
+
+            {/* Legacy admin redirects removed */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

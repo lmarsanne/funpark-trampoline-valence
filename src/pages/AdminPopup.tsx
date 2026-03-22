@@ -90,58 +90,52 @@ const AdminPopup = () => {
   ];
 
   return (
-    <>
-      <Helmet>
-        <meta name="robots" content="noindex, nofollow" />
-        <title>Admin Popup</title>
-      </Helmet>
-      <div className="min-h-screen bg-gray-50 py-12 px-4">
-        <div className="max-w-xl mx-auto bg-white rounded-2xl shadow-lg p-8 space-y-6">
-          <h1 className="text-2xl font-bold text-gray-900">⚙️ Configuration Pop-up Newsletter</h1>
+    <div className="space-y-6">
+      <div className="bg-white rounded-2xl shadow-lg p-8 space-y-6">
+        <h1 className="text-2xl font-bold text-gray-900">⚙️ Configuration Pop-up Newsletter</h1>
 
-          <div className="flex items-center justify-between p-4 bg-gray-100 rounded-xl">
-            <Label htmlFor="enabled" className="text-base font-medium">Pop-up activée</Label>
-            <Switch
-              id="enabled"
-              checked={config.enabled}
-              onCheckedChange={(v) => update("enabled", v)}
-            />
-          </div>
-
-          {fields.map(({ key, label }) => (
-            <div key={key} className="space-y-1.5">
-              <Label htmlFor={key} className="text-sm font-medium text-gray-700">{label}</Label>
-              <Input
-                id={key}
-                value={config[key] as string}
-                onChange={(e) => update(key, e.target.value)}
-                className="h-11"
-              />
-            </div>
-          ))}
-
-          <div className="space-y-1.5">
-            <Label htmlFor="delay" className="text-sm font-medium text-gray-700">Délai d'apparition (secondes)</Label>
-            <Input
-              id="delay"
-              type="number"
-              min={0}
-              value={config.delay_seconds}
-              onChange={(e) => update("delay_seconds", parseInt(e.target.value) || 0)}
-              className="h-11 w-32"
-            />
-          </div>
-
-          <Button
-            onClick={handleSave}
-            disabled={saving}
-            className="w-full h-12 text-base font-bold bg-gradient-to-r from-[#FFBD0B] to-[#FF6B35] hover:from-[#FFD000] hover:to-[#FF8B55] text-black rounded-xl"
-          >
-            {saving ? "Sauvegarde…" : "💾 Sauvegarder"}
-          </Button>
+        <div className="flex items-center justify-between p-4 bg-gray-100 rounded-xl">
+          <Label htmlFor="enabled" className="text-base font-medium">Pop-up activée</Label>
+          <Switch
+            id="enabled"
+            checked={config.enabled}
+            onCheckedChange={(v) => update("enabled", v)}
+          />
         </div>
+
+        {fields.map(({ key, label }) => (
+          <div key={key} className="space-y-1.5">
+            <Label htmlFor={key} className="text-sm font-medium text-gray-700">{label}</Label>
+            <Input
+              id={key}
+              value={config[key] as string}
+              onChange={(e) => update(key, e.target.value)}
+              className="h-11"
+            />
+          </div>
+        ))}
+
+        <div className="space-y-1.5">
+          <Label htmlFor="delay" className="text-sm font-medium text-gray-700">Délai d'apparition (secondes)</Label>
+          <Input
+            id="delay"
+            type="number"
+            min={0}
+            value={config.delay_seconds}
+            onChange={(e) => update("delay_seconds", parseInt(e.target.value) || 0)}
+            className="h-11 w-32"
+          />
+        </div>
+
+        <Button
+          onClick={handleSave}
+          disabled={saving}
+          className="w-full h-12 text-base font-bold bg-gradient-to-r from-[#FFBD0B] to-[#FF6B35] hover:from-[#FFD000] hover:to-[#FF8B55] text-black rounded-xl"
+        >
+          {saving ? "Sauvegarde…" : "💾 Sauvegarder"}
+        </Button>
       </div>
-    </>
+    </div>
   );
 };
 
