@@ -74,6 +74,57 @@ export type Database = {
         }
         Relationships: []
       }
+      opening_hours: {
+        Row: {
+          day_name: string
+          day_order: number
+          id: string
+          is_closed: boolean
+          time_ranges: string
+          updated_at: string
+        }
+        Insert: {
+          day_name: string
+          day_order: number
+          id?: string
+          is_closed?: boolean
+          time_ranges?: string
+          updated_at?: string
+        }
+        Update: {
+          day_name?: string
+          day_order?: number
+          id?: string
+          is_closed?: boolean
+          time_ranges?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      opening_hours_notes: {
+        Row: {
+          enabled: boolean
+          id: string
+          note_text: string
+          note_type: string
+          updated_at: string
+        }
+        Insert: {
+          enabled?: boolean
+          id?: string
+          note_text?: string
+          note_type: string
+          updated_at?: string
+        }
+        Update: {
+          enabled?: boolean
+          id?: string
+          note_text?: string
+          note_type?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
