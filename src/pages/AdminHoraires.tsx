@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Helmet } from "react-helmet-async";
+
 
 interface HoraireRow {
   id: string;
@@ -98,89 +98,81 @@ const AdminHoraires = () => {
     return <div className="flex items-center justify-center min-h-screen text-lg">Chargement…</div>;
 
   return (
-    <>
-      <Helmet>
-        <meta name="robots" content="noindex, nofollow" />
-        <title>Admin Horaires</title>
-      </Helmet>
-      <div className="min-h-screen bg-gray-50 py-12 px-4">
-        <div className="max-w-xl mx-auto space-y-6">
-          <div className="bg-white rounded-2xl shadow-lg p-8 space-y-6">
-            <h1 className="text-2xl font-bold text-gray-900">🕐 Administration des horaires</h1>
-            <p className="text-sm text-gray-500">
-              Ces valeurs sont affichées dans le footer du site. Modifiez-les ici et cliquez sur Sauvegarder.
-            </p>
+    <div className="space-y-6">
+      <div className="bg-white rounded-2xl shadow-lg p-8 space-y-6">
+        <h1 className="text-2xl font-bold text-gray-900">🕐 Administration des horaires</h1>
+        <p className="text-sm text-gray-500">
+          Ces valeurs sont affichées dans le footer du site. Modifiez-les ici et cliquez sur Sauvegarder.
+        </p>
 
-            <div className="space-y-4">
-              {hours.map((h) => (
-                <div
-                  key={h.id}
-                  className="flex flex-col sm:flex-row sm:items-center gap-3 p-4 bg-gray-50 rounded-xl border border-gray-200"
-                >
-                  <div className="flex items-center gap-3 min-w-[140px]">
-                    <Switch
-                      checked={!h.is_closed}
-                      onCheckedChange={(open) => updateHour(h.id, "is_closed", !open)}
-                    />
-                    <Label className="text-base font-semibold text-gray-800 whitespace-nowrap">
-                      {h.day_name}
-                    </Label>
-                  </div>
-
-                  {h.is_closed ? (
-                    <span className="text-sm font-medium text-red-500 italic">Fermé</span>
-                  ) : (
-                    <Input
-                      value={h.time_ranges}
-                      onChange={(e) => updateHour(h.id, "time_ranges", e.target.value)}
-                      placeholder="ex : 14:00 – 00:00"
-                      className="h-10 flex-1"
-                    />
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-lg p-8 space-y-6">
-            <h2 className="text-xl font-bold text-gray-900">📝 Notes spéciales</h2>
-            <p className="text-sm text-gray-500">
-              Activez et rédigez des notes qui s'afficheront sous les horaires dans le footer.
-            </p>
-
-            {notes.map((n) => (
-              <div key={n.id} className="space-y-2 p-4 bg-gray-50 rounded-xl border border-gray-200">
-                <div className="flex items-center justify-between">
-                  <Label className="text-base font-semibold text-gray-800">
-                    {NOTE_LABELS[n.note_type] || n.note_type}
-                  </Label>
-                  <Switch
-                    checked={n.enabled}
-                    onCheckedChange={(v) => updateNote(n.id, "enabled", v)}
-                  />
-                </div>
-                {n.enabled && (
-                  <Textarea
-                    value={n.note_text}
-                    onChange={(e) => updateNote(n.id, "note_text", e.target.value)}
-                    placeholder="Ex : Fermé le 25 décembre"
-                    className="min-h-[60px]"
-                  />
-                )}
+        <div className="space-y-4">
+          {hours.map((h) => (
+            <div
+              key={h.id}
+              className="flex flex-col sm:flex-row sm:items-center gap-3 p-4 bg-gray-50 rounded-xl border border-gray-200"
+            >
+              <div className="flex items-center gap-3 min-w-[140px]">
+                <Switch
+                  checked={!h.is_closed}
+                  onCheckedChange={(open) => updateHour(h.id, "is_closed", !open)}
+                />
+                <Label className="text-base font-semibold text-gray-800 whitespace-nowrap">
+                  {h.day_name}
+                </Label>
               </div>
-            ))}
-          </div>
 
-          <Button
-            onClick={handleSave}
-            disabled={saving}
-            className="w-full h-12 text-base font-bold bg-gradient-to-r from-[#FFBD0B] to-[#FF6B35] hover:from-[#FFD000] hover:to-[#FF8B55] text-black rounded-xl"
-          >
-            {saving ? "Sauvegarde…" : "💾 Sauvegarder les horaires"}
-          </Button>
+              {h.is_closed ? (
+                <span className="text-sm font-medium text-red-500 italic">Fermé</span>
+              ) : (
+                <Input
+                  value={h.time_ranges}
+                  onChange={(e) => updateHour(h.id, "time_ranges", e.target.value)}
+                  placeholder="ex : 14:00 – 00:00"
+                  className="h-10 flex-1"
+                />
+              )}
+            </div>
+          ))}
         </div>
       </div>
-    </>
+
+      <div className="bg-white rounded-2xl shadow-lg p-8 space-y-6">
+        <h2 className="text-xl font-bold text-gray-900">📝 Notes spéciales</h2>
+        <p className="text-sm text-gray-500">
+          Activez et rédigez des notes qui s'afficheront sous les horaires dans le footer.
+        </p>
+
+        {notes.map((n) => (
+          <div key={n.id} className="space-y-2 p-4 bg-gray-50 rounded-xl border border-gray-200">
+            <div className="flex items-center justify-between">
+              <Label className="text-base font-semibold text-gray-800">
+                {NOTE_LABELS[n.note_type] || n.note_type}
+              </Label>
+              <Switch
+                checked={n.enabled}
+                onCheckedChange={(v) => updateNote(n.id, "enabled", v)}
+              />
+            </div>
+            {n.enabled && (
+              <Textarea
+                value={n.note_text}
+                onChange={(e) => updateNote(n.id, "note_text", e.target.value)}
+                placeholder="Ex : Fermé le 25 décembre"
+                className="min-h-[60px]"
+              />
+            )}
+          </div>
+        ))}
+      </div>
+
+      <Button
+        onClick={handleSave}
+        disabled={saving}
+        className="w-full h-12 text-base font-bold bg-gradient-to-r from-[#FFBD0B] to-[#FF6B35] hover:from-[#FFD000] hover:to-[#FF8B55] text-black rounded-xl"
+      >
+        {saving ? "Sauvegarde…" : "💾 Sauvegarder les horaires"}
+      </Button>
+    </div>
   );
 };
 
