@@ -53,6 +53,7 @@ const App = () => (
             <Route path="/quiz-game-valence" element={<QuizGameValence />} />
             
             <Route path="/x-admin-popup-config" element={<AdminPopup />} />
+            <Route path="/x-admin-horaires" element={<AdminHoraires />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
