@@ -18,6 +18,7 @@ import Bowling from "./pages/Bowling";
 import Billard from "./pages/Billard";
 import QuizGameValence from "./pages/QuizGameValence";
 import AdminPopup from "./pages/AdminPopup";
+import AdminHoraires from "./pages/AdminHoraires";
 import NotFound from "./pages/NotFound";
 
 import QueFaireQuandIlPleut from "./pages/QueFaireQuandIlPleut";
