@@ -18,6 +18,7 @@ import Bowling from "./pages/Bowling";
 import Billard from "./pages/Billard";
 import QuizGameValence from "./pages/QuizGameValence";
 import AdminPopup from "./pages/AdminPopup";
+import AdminHoraires from "./pages/AdminHoraires";
 import NotFound from "./pages/NotFound";
 
 import QueFaireQuandIlPleut from "./pages/QueFaireQuandIlPleut";
@@ -52,6 +53,7 @@ const App = () => (
             <Route path="/quiz-game-valence" element={<QuizGameValence />} />
             
             <Route path="/x-admin-popup-config" element={<AdminPopup />} />
+            <Route path="/x-admin-horaires" element={<AdminHoraires />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

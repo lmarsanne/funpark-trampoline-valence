@@ -1,11 +1,14 @@
 import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useOpeningHours } from "@/hooks/useOpeningHours";
 
 interface FooterProps {
   onNewsletterClick?: () => void;
 }
 
 export const Footer = ({ onNewsletterClick }: FooterProps) => {
+  const { hours, notes } = useOpeningHours();
+
   return (
     <footer className="py-12" style={{ backgroundColor: '#0A0F43' }}>
       <div className="container mx-auto px-4 text-white">
@@ -85,13 +88,20 @@ export const Footer = ({ onNewsletterClick }: FooterProps) => {
           <div>
             <h3 className="text-xl font-bold mb-4">Horaires d'ouverture</h3>
             <div className="space-y-1 text-white/80">
-              <p><span className="font-medium text-white">Lundi & Mardi :</span> Fermé</p>
-              <p><span className="font-medium text-white">Mercredi :</span> 14:00 – 00:00</p>
-              <p><span className="font-medium text-white">Jeudi :</span> 18:00 – 00:00</p>
-              <p><span className="font-medium text-white">Vendredi :</span> 18:00 – 02:00</p>
-              <p><span className="font-medium text-white">Samedi :</span> 14:00 – 02:00</p>
-              <p><span className="font-medium text-white">Dimanche :</span> 14:00 – 20:00</p>
+              {hours.map((h) => (
+                <p key={h.day_order}>
+                  <span className="font-medium text-white">{h.day_name} :</span>{" "}
+                  {h.is_closed ? "Fermé" : h.time_ranges}
+                </p>
+              ))}
             </div>
+            {notes.length > 0 && (
+              <div className="mt-3 space-y-1 text-sm text-yellow-300/90">
+                {notes.map((n, i) => (
+                  <p key={i}>{n.note_text}</p>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Map */}
