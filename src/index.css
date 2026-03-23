@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* === Scroll stability fixes (Chrome jitter) === */
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+/* GPU-accelerate fixed/sticky elements */
+.fixed,
+.sticky,
+nav[class*="fixed"],
+[class*="fixed"][class*="bottom"],
+[class*="fixed"][class*="top"] {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
