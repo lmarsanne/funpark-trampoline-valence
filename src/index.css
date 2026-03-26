@@ -214,13 +214,11 @@ body, #root {
   letter-spacing: -0.02em;
 }
 
-/* Neutraliser tous les overlays plein écran (modales, fonds noirs, etc.) */
-div[class*="fixed"][class*="inset-0"][class*="bg-black"],
-div[class*="fixed"][class*="inset-0"][class*="bg-slate"],
-div[class*="fixed"][class*="inset-0"][class*="bg-neutral"],
-div[class*="fixed"][class*="inset-0"][class*="/60"],
-div[class*="fixed"][class*="inset-0"][class*="/70"],
-div[class*="fixed"][class*="inset-0"][class*="overlay"] {
+/* Neutraliser les overlays plein écran SAUF les modales Radix */
+div[class*="fixed"][class*="inset-0"][class*="bg-black"]:not([data-state]),
+div[class*="fixed"][class*="inset-0"][class*="bg-slate"]:not([data-state]),
+div[class*="fixed"][class*="inset-0"][class*="bg-neutral"]:not([data-state]),
+div[class*="fixed"][class*="inset-0"][class*="overlay"]:not([data-state]) {
   background: transparent !important;
   backdrop-filter: none !important;
   filter: none !important;
