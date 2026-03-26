@@ -20,8 +20,10 @@ export type Database = {
           delay_seconds: number
           enabled: boolean
           id: string
+          mode: string
           placeholder: string
           reassurance_text: string
+          redirect_url: string
           subtitle: string
           success_description: string
           success_title: string
@@ -33,8 +35,10 @@ export type Database = {
           delay_seconds?: number
           enabled?: boolean
           id?: string
+          mode?: string
           placeholder?: string
           reassurance_text?: string
+          redirect_url?: string
           subtitle?: string
           success_description?: string
           success_title?: string
@@ -46,8 +50,10 @@ export type Database = {
           delay_seconds?: number
           enabled?: boolean
           id?: string
+          mode?: string
           placeholder?: string
           reassurance_text?: string
+          redirect_url?: string
           subtitle?: string
           success_description?: string
           success_title?: string
