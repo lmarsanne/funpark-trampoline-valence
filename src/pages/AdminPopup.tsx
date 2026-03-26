@@ -10,6 +10,8 @@ import { useToast } from "@/hooks/use-toast";
 interface PopupConfig {
   id: string;
   enabled: boolean;
+  mode: string;
+  redirect_url: string;
   title: string;
   subtitle: string;
   placeholder: string;
@@ -52,6 +54,8 @@ const AdminPopup = () => {
       .from("newsletter_popup_config")
       .update({
         enabled: config.enabled,
+        mode: config.mode,
+        redirect_url: config.redirect_url,
         title: config.title,
         subtitle: config.subtitle,
         placeholder: config.placeholder,
@@ -102,6 +106,48 @@ const AdminPopup = () => {
             onCheckedChange={(v) => update("enabled", v)}
           />
         </div>
+
+        <div className="space-y-2 p-4 bg-gray-100 rounded-xl">
+          <Label className="text-base font-medium">Mode de la pop-up</Label>
+          <div className="flex gap-4 mt-2">
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="radio"
+                name="mode"
+                value="newsletter"
+                checked={config.mode === "newsletter"}
+                onChange={() => update("mode", "newsletter")}
+                className="accent-[#FFBD0B]"
+              />
+              <span className="text-sm">📧 Newsletter (email)</span>
+            </label>
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="radio"
+                name="mode"
+                value="redirect"
+                checked={config.mode === "redirect"}
+                onChange={() => update("mode", "redirect")}
+                className="accent-[#FFBD0B]"
+              />
+              <span className="text-sm">🔗 Lien vers une page</span>
+            </label>
+          </div>
+        </div>
+
+        {config.mode === "redirect" && (
+          <div className="space-y-1.5">
+            <Label htmlFor="redirect_url" className="text-sm font-medium text-gray-700">URL de redirection</Label>
+            <Input
+              id="redirect_url"
+              type="url"
+              placeholder="https://www.valence-bowling.com/jeux-paques"
+              value={config.redirect_url}
+              onChange={(e) => update("redirect_url", e.target.value)}
+              className="h-11"
+            />
+          </div>
+        )}
 
         {fields.map(({ key, label }) => (
           <div key={key} className="space-y-1.5">
