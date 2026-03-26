@@ -8,12 +8,10 @@ html {
   scrollbar-gutter: stable;
 }
 
-/* GPU-accelerate fixed/sticky elements */
-.fixed,
-.sticky,
+/* GPU-accelerate fixed/sticky elements — exclude dialog/modal portals */
 nav[class*="fixed"],
-[class*="fixed"][class*="bottom"],
-[class*="fixed"][class*="top"] {
+header[class*="fixed"],
+[class*="sticky"]:not([role="dialog"] *) {
   transform: translateZ(0);
   will-change: transform;
   backface-visibility: hidden;
