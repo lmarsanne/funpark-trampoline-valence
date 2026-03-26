@@ -26,6 +26,8 @@ type NewsletterFormValues = z.infer<typeof newsletterSchema>;
 
 interface PopupConfig {
   enabled: boolean;
+  mode: string;
+  redirect_url: string;
   title: string;
   subtitle: string;
   placeholder: string;
@@ -38,6 +40,8 @@ interface PopupConfig {
 
 const defaultConfig: PopupConfig = {
   enabled: true,
+  mode: "newsletter",
+  redirect_url: "",
   title: "🎉 Rejoignez le Club Fun Park !",
   subtitle: "Recevez en avant-première nos offres et invitations VIP 🎳🤸🎤",
   placeholder: "Votre adresse email",
@@ -126,38 +130,57 @@ export const NewsletterModal = ({ open, onOpenChange, config = defaultConfig }: 
 
         {/* Form section */}
         <div className="p-6 pt-8 bg-white">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <Input
-                        type="email"
-                        placeholder={config.placeholder}
-                        className="h-14 text-lg rounded-xl border-2 border-gray-200 focus:border-[#FFBD0B] focus:ring-[#FFBD0B] px-4 transition-all duration-200"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage className="text-sm" />
-                  </FormItem>
-                )}
-              />
+          {config.mode === "redirect" ? (
+            <div className="space-y-4">
               <Button
-                type="submit"
-                disabled={isSubmitting}
+                onClick={() => {
+                  window.open(config.redirect_url, "_blank", "noopener,noreferrer");
+                  onOpenChange(false);
+                  sessionStorage.setItem("newsletter_dismissed", "true");
+                }}
                 className="w-full h-14 text-lg font-bold rounded-xl bg-gradient-to-r from-[#FFBD0B] to-[#FF6B35] hover:from-[#FFD000] hover:to-[#FF8B55] text-black shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200"
               >
-                {isSubmitting ? "Inscription..." : config.button_text}
+                {config.button_text}
               </Button>
-            </form>
-          </Form>
-
-          <p className="text-center text-sm text-gray-500 mt-4">
-            {config.reassurance_text}
-          </p>
+              <p className="text-center text-sm text-gray-500">
+                {config.reassurance_text}
+              </p>
+            </div>
+          ) : (
+            <>
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Input
+                            type="email"
+                            placeholder={config.placeholder}
+                            className="h-14 text-lg rounded-xl border-2 border-gray-200 focus:border-[#FFBD0B] focus:ring-[#FFBD0B] px-4 transition-all duration-200"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage className="text-sm" />
+                      </FormItem>
+                    )}
+                  />
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full h-14 text-lg font-bold rounded-xl bg-gradient-to-r from-[#FFBD0B] to-[#FF6B35] hover:from-[#FFD000] hover:to-[#FF8B55] text-black shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200"
+                  >
+                    {isSubmitting ? "Inscription..." : config.button_text}
+                  </Button>
+                </form>
+              </Form>
+              <p className="text-center text-sm text-gray-500 mt-4">
+                {config.reassurance_text}
+              </p>
+            </>
+          )}
         </div>
       </DialogContent>
     </Dialog>
