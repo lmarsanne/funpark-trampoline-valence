@@ -272,10 +272,10 @@ const GuilherandStPeray = () => {
       {/* CTA Sticky */}
       <a 
         href="/guidap-reservation.html"
-        className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-center py-4 px-6 font-bold text-lg rounded-t-2xl shadow-lg transition-all hover:opacity-90"
-        style={{ backgroundColor: '#FFBD0B', color: '#000000' }}
+        className="fixed bottom-4 left-4 right-4 z-50 flex items-center justify-center py-4 text-lg font-bold text-black rounded-full shadow-2xl hover:opacity-90 transition-opacity"
+        style={{ backgroundColor: '#FFBD0B' }}
       >
-        Réserver maintenant
+        🎉 Réserver maintenant
       </a>
     </>;
 };

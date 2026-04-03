@@ -376,10 +376,10 @@ const QuizBoxing = () => {
       {/* Sticky CTA */}
       <a
         href="/guidap-reservation-boxing.html"
-        className="fixed bottom-4 left-4 right-4 z-50 py-4 text-center font-bold text-lg shadow-lg hover:opacity-90 transition-opacity rounded-full md:left-1/2 md:-translate-x-1/2 md:max-w-md"
-        style={{ backgroundColor: '#FFBD0B', color: '#000000' }}
+        className="fixed bottom-4 left-4 right-4 z-50 flex items-center justify-center py-4 text-lg font-bold text-black rounded-full shadow-2xl hover:opacity-90 transition-opacity"
+        style={{ backgroundColor: '#FFBD0B' }}
       >
-        Réserver maintenant
+        🎉 Réserver maintenant
       </a>
     </div>
   </>;
