@@ -129,149 +129,119 @@
 
     <!-- Guidap g-path tracking for ecommerce events -->
     <script>
-                            (function () {
-                              window.dataLayer = window.dataLayer || [];
+      (function () {
+        window.dataLayer = window.dataLayer || [];
+        var pushed = new Set();
+        var storedOrderValue = 0;
 
-                              // Avoid duplicate pushes for same URL+event
-                              const pushed = new Set();
-
-                              function decodeGPath() {
-                                const u = new URL(location.href);
-                                const g = u.searchParams.get("g-path");
-                                if (!g) return "";
-                                try { return decodeURIComponent(g); } catch(e) { return g; }
-                              }
-
-                              function mapEventFromGPath(gPath) {
-                                // Adapte les "includes" après observation réelle des g-path
-                                if (gPath.includes("/cart/add-to-cart")) return "guidap_add_to_cart";
-                                if (gPath.includes("/checkout")) return "guidap_begin_checkout";
-                                if (gPath.includes("/payment")) return "guidap_add_payment_info";
-                                if (gPath.includes("/confirmation") || gPath.includes("/success")) return "guidap_purchase";
-                                return null;
-                              }
-
-                              function pushIfNeeded() {
-                                console.log("Push function");
-                                const gPath = decodeGPath();
-                                if (!gPath){
-                                  console.log("vide");
-          return;
-
-                                }
-
-                                const ev = mapEventFromGPath(gPath);
-                                if (!ev) return;
-
-                                const key = ev + "::" + location.href;
-
-                                console.log(key);
-
-                                if (pushed.has(key)) return;
-                                pushed.add(key);
-
-                                window.dataLayer.push({
-                                  event: ev,
-                                  guidap_g_path: gPath,
-                                  guidap_url: location.href
-                                });
-                              }
-
-                              // Hook SPA changes
-                              const _pushState = history.pushState;
-                              history.pushState = function () { _pushState.apply(this, arguments); pushIfNeeded(); };
-                              const _replaceState = history.replaceState;
-                              history.replaceState = function () { _replaceState.apply(this, arguments); pushIfNeeded(); };
-                              window.addEventListener("popstate", pushIfNeeded);
-
-
-                    document.addEventListener("click", function (event) {
-                        const target = event.target;
-                        // Vérifie si l'élément cliqué est un bouton
-                        if (target.tagName === "BUTTON" || target.tagName === "SPAN") {
-                        console.log("on click");
-                        const target = event.target;
-
-                        const isValidButton = target.tagName === "BUTTON" && target.classList.contains("g-button");
-                        // Vérifie si le clic vient d'un SPAN dans un button.g-button
-                        const spanInsideGButton = target.tagName === "SPAN" && target.closest("button.g-button");
-
-      var autoriseEvent = false;
-      if(target.tagName === "BUTTON"){
-         console.log("click sur button :: " + target.classList.contains("g-button"));
-        if(target.classList.contains("g-button")){
-          autoriseEvent = true;
-
+        function parsePrice(raw) {
+          if (!raw) return 0;
+          var cleaned = raw.replace(/[^0-9,.]/g, '').replace(',', '.');
+          var val = parseFloat(cleaned);
+          return isNaN(val) ? 0 : val;
         }
-      }else if (target.tagName === "SPAN"){
-        console.log("click sur span :: " + target.closest("button.g-button"));
-      if(target.closest("button.g-button")){
-           autoriseEvent = true;
+
+        function decodeGPath() {
+          var u = new URL(location.href);
+          var g = u.searchParams.get("g-path");
+          if (!g) return "";
+          try { return decodeURIComponent(g); } catch(e) { return g; }
         }
-      }
-      console.log("Autorise event" + autoriseEvent);
 
-                        if(autoriseEvent == false){
-                          return;
+        function mapEventFromGPath(gPath) {
+          if (gPath.includes("/cart/add-to-cart")) return "guidap_add_to_cart";
+          if (gPath.includes("/checkout")) return "guidap_begin_checkout";
+          if (gPath.includes("/payment")) return "guidap_add_payment_info";
+          if (gPath.includes("/confirmation") || gPath.includes("/success")) return "guidap_purchase";
+          return null;
+        }
 
-                        }
+        function pushIfNeeded() {
+          var gPath = decodeGPath();
+          if (!gPath) return;
+          var ev = mapEventFromGPath(gPath);
+          if (!ev) return;
+          var key = ev + "::" + location.href;
+          if (pushed.has(key)) return;
+          pushed.add(key);
 
-                         var eventDataLayer = "";
-                        var totalCommande = "";
+          var payload = {
+            event: ev,
+            guidap_g_path: gPath,
+            guidap_url: location.href
+          };
 
-                        if(document.querySelectorAll(".step-cart-title").length > 0){
-                            if(document.querySelector(".step-cart-title").textContent.trim() == "Votre panier"){
-
-
-                            }
-                        }else if(document.querySelectorAll(".step-customer-title").length > 0){
-                        	eventDataLayer = "valide_info_client";
-                        }else if(document.querySelectorAll(".finalize-order-page-countdown").length > 0){
-                        	eventDataLayer = "paiement_clic";
-                            totalCommande = document.querySelector(".cart-recap-bottom-price").textContent.trim();
-                        }else if(document.querySelectorAll(".gdp-fix-datepicker").length > 0){
-                        	eventDataLayer = "ajout_panier";
-                        }else if(document.querySelectorAll(".step-cart-title").length > 0){
-                        	eventDataLayer = "valide_panier";
-                        }else if(document.querySelectorAll(".reservation-recap-desktop-total").length > 0){
-                        	eventDataLayer = "reserver_choix_activite";
-                        }
-
-                        console.log("event data layer :: " + eventDataLayer);
-
-                        if(eventDataLayer != ""){
-
-
-                          window.dataLayer.push({
-                      		event: eventDataLayer,
-                      		guidap_g_path: location.href,
-                    		guidap_url: location.href,
-                            "totalCommande" : totalCommande
-                          });
-
-
-                        }
+          // On purchase confirmation: push GA4 ecommerce data for ROAS
+          if (ev === "guidap_purchase") {
+            var txnId = "txn_" + Date.now() + "_" + Math.random().toString(36).substr(2, 6);
+            payload.ecommerce = {
+              transaction_id: txnId,
+              value: storedOrderValue,
+              currency: "EUR",
+              items: [{ item_name: "Reservation Guidap", quantity: 1, price: storedOrderValue }]
+            };
+            console.log("Purchase tracked: " + storedOrderValue + " EUR, txn: " + txnId);
           }
-                      });
 
-                      // Page de confirmation de commande
-                      var eventDataLayer = "";
+          window.dataLayer.push(payload);
+        }
 
-                        if(document.querySelectorAll(".finalize-order-page").length > 0){
-                        	eventDataLayer = "confirmation_commande";
-                        }
-      console.log("event data layer en page de conf :: " + eventDataLayer);
-                      if(eventDataLayer != ""){
-                          window.dataLayer.push({
-                      		event: eventDataLayer,
-                      		guidap_g_path: location.href,
-                    		guidap_url: location.href
-                          });
-                        }
+        // Hook SPA navigation
+        var _ps = history.pushState;
+        history.pushState = function () { _ps.apply(this, arguments); pushIfNeeded(); };
+        var _rs = history.replaceState;
+        history.replaceState = function () { _rs.apply(this, arguments); pushIfNeeded(); };
+        window.addEventListener("popstate", pushIfNeeded);
 
-                              // First load
-                              pushIfNeeded();
-                            })();
+        // Click-based Guidap step tracking
+        document.addEventListener("click", function (event) {
+          var target = event.target;
+          if (target.tagName !== "BUTTON" && target.tagName !== "SPAN") return;
+          var isGButton = false;
+          if (target.tagName === "BUTTON" && target.classList.contains("g-button")) isGButton = true;
+          else if (target.tagName === "SPAN" && target.closest("button.g-button")) isGButton = true;
+          if (!isGButton) return;
+
+          var eventDataLayer = "";
+          var totalCommande = "";
+
+          if (document.querySelectorAll(".step-cart-title").length > 0) {
+            // panier affiché
+          } else if (document.querySelectorAll(".step-customer-title").length > 0) {
+            eventDataLayer = "valide_info_client";
+          } else if (document.querySelectorAll(".finalize-order-page-countdown").length > 0) {
+            eventDataLayer = "paiement_clic";
+            var priceEl = document.querySelector(".cart-recap-bottom-price");
+            totalCommande = priceEl ? priceEl.textContent.trim() : "0";
+            storedOrderValue = parsePrice(totalCommande);
+            console.log("Prix capture: " + storedOrderValue + " EUR (raw: " + totalCommande + ")");
+          } else if (document.querySelectorAll(".gdp-fix-datepicker").length > 0) {
+            eventDataLayer = "ajout_panier";
+          } else if (document.querySelectorAll(".reservation-recap-desktop-total").length > 0) {
+            eventDataLayer = "reserver_choix_activite";
+          }
+
+          if (eventDataLayer !== "") {
+            window.dataLayer.push({
+              event: eventDataLayer,
+              guidap_g_path: location.href,
+              guidap_url: location.href,
+              totalCommande: totalCommande
+            });
+          }
+        });
+
+        // Confirmation page on load
+        if (document.querySelectorAll(".finalize-order-page").length > 0) {
+          window.dataLayer.push({
+            event: "confirmation_commande",
+            guidap_g_path: location.href,
+            guidap_url: location.href
+          });
+        }
+
+        pushIfNeeded();
+      })();
     </script>
   </body>
 </html>
