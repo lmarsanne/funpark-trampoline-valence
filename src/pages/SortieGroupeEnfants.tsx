@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -6,9 +7,84 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { useForceScrollTop } from "@/hooks/useForceScrollTop";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { trackPhoneClick, trackEmailClick } from "@/lib/analytics";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
+
+const devisGroupeSchema = z.object({
+  structure: z.string().trim().min(1, "Le nom de la structure est requis").max(100),
+  contact: z.string().trim().min(1, "Le nom du contact est requis").max(100),
+  email: z.string().trim().email("Email invalide").max(255),
+  phone: z.string().trim().min(1, "Le téléphone est requis").max(20),
+  participants: z.string().trim().optional(),
+  ages: z.string().trim().optional(),
+  date: z.string().trim().optional(),
+  message: z.string().trim().max(2000).optional(),
+});
 
 const SortieGroupeEnfants = () => {
   useForceScrollTop();
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    structure: "",
+    contact: "",
+    email: "",
+    phone: "",
+    participants: "",
+    ages: "",
+    date: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      devisGroupeSchema.parse(formData);
+      setIsSubmitting(true);
+
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: {
+          fullName: `${formData.structure} - ${formData.contact}`,
+          email: formData.email,
+          phone: formData.phone,
+          participants: formData.participants,
+          message: `
+[DEMANDE DEVIS GROUPE / CENTRE AÉRÉ]
+Structure : ${formData.structure}
+Contact : ${formData.contact}
+Nombre d'enfants : ${formData.participants || "Non précisé"}
+Tranches d'âge : ${formData.ages || "Non précisé"}
+Date souhaitée : ${formData.date || "Non précisée"}
+
+Message :
+${formData.message || "Aucun message"}
+          `.trim(),
+        },
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Demande envoyée !",
+        description: "Notre équipe vous recontactera sous 24h avec un devis personnalisé.",
+      });
+
+      setFormData({ structure: "", contact: "", email: "", phone: "", participants: "", ages: "", date: "", message: "" });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast({ title: "Erreur", description: error.errors[0].message, variant: "destructive" });
+      } else {
+        toast({ title: "Erreur", description: "Une erreur est survenue. Veuillez réessayer.", variant: "destructive" });
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
