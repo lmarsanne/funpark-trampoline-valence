@@ -1,17 +1,12 @@
-import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Briefcase, Heart, PartyPopper, HelpCircle } from "lucide-react";
+import { useForceScrollTop } from "@/hooks/useForceScrollTop";
 
 const QuizGameValence = () => {
-  useEffect(() => {
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-    window.scrollTo(0, 0);
-  }, []);
+  useForceScrollTop();
 
   return (
     <>

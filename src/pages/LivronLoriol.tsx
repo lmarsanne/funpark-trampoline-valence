@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,28 +6,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { MapPin, Clock, Car, Users, Cake, Gift, Rocket, Target, Zap, Trophy } from "lucide-react";
 import heroTrampoline from "@/assets/hero-trampoline.jpg";
 import birthdayParty from "@/assets/birthday-party.jpg";
+import { useForceScrollTop } from "@/hooks/useForceScrollTop";
 
 const LivronLoriol = () => {
-  // Désactiver la restauration automatique du scroll et forcer le haut de page
-  useEffect(() => {
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-    const forceTop = () => {
-      window.scrollTo(0, 0);
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    };
-    forceTop();
-    const intervalId = setInterval(forceTop, 20);
-    const timeoutId = setTimeout(() => {
-      clearInterval(intervalId);
-    }, 2000);
-    return () => {
-      clearInterval(intervalId);
-      clearTimeout(timeoutId);
-    };
-  }, []);
+  useForceScrollTop();
 
   const zones = [{
     icon: Rocket,
