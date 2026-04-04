@@ -25,6 +25,7 @@ import AdminLayout from "./components/AdminLayout";
 import NotFound from "./pages/NotFound";
 
 import QueFaireQuandIlPleut from "./pages/QueFaireQuandIlPleut";
+import SortieGroupeEnfants from "./pages/SortieGroupeEnfants";
 import GuidapOverlay from "@/components/GuidapOverlay";
 import { ScrollToTop } from "@/components/ScrollToTop";
 
@@ -54,6 +55,7 @@ const App = () => (
             <Route path="/bowling" element={<Bowling />} />
             <Route path="/billard" element={<Billard />} />
             <Route path="/quiz-game-valence" element={<QuizGameValence />} />
+            <Route path="/sortie-groupe-enfants" element={<SortieGroupeEnfants />} />
 
             {/* Admin routes */}
             <Route path="/x-admin/login" element={<AdminLogin />} />
