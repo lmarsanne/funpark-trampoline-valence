@@ -55,6 +55,7 @@ const App = () => (
             <Route path="/bowling" element={<Bowling />} />
             <Route path="/billard" element={<Billard />} />
             <Route path="/quiz-game-valence" element={<QuizGameValence />} />
+            <Route path="/sortie-groupe-enfants" element={<SortieGroupeEnfants />} />
 
             {/* Admin routes */}
             <Route path="/x-admin/login" element={<AdminLogin />} />
