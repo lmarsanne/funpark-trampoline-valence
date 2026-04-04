@@ -17,28 +17,6 @@
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-W74595Z7');
     </script>
-
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-
-      fbq('init', '541217753361156');
-      fbq('track', 'PageView');
-    </script>
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display:none"
-        src="https://www.facebook.com/tr?id=541217753361156&ev=PageView&noscript=1"
-    /></noscript>
-
     <meta name="facebook-domain-verification" content="3wabdwvqotk6goswaa40oncgkx7l2p" />
     <meta name="facebook-domain-verification" content="942q6ho94eqvbni2k175y4jzaa0rd9" />
 
@@ -69,16 +47,6 @@
       .page-title { text-align: center; font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
       .page-subtitle { text-align: center; color: #666; margin-bottom: 40px; }
     </style>
-
-    <script
-      src="https://cart.guidap.net/v1/"
-      async
-      defer
-      data-token="q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4"
-      data-lang="fr"
-      data-currency="EUR"
-      data-memory-router="true"
-    ></script>
   </head>
   <body>
     <noscript
@@ -127,12 +95,22 @@
       }
     </script>
 
+    <!-- Guidap booking widget — loaded AFTER the DOM so the custom element is already present -->
+    <script
+      src="https://cart.guidap.net/v1/"
+      data-token="q0CVtwPX7jr9ciyYgWFGTlvuBLHsQzm3ohU4"
+      data-lang="fr"
+      data-currency="EUR"
+      data-memory-router="true"
+    ></script>
     <!-- Guidap g-path tracking for ecommerce events -->
     <script>
       (function () {
         window.dataLayer = window.dataLayer || [];
         var pushed = new Set();
         var storedOrderValue = 0;
+        var storedItemName = (document.querySelector(".page-title") || document.querySelector("h1") || {}).textContent || "Reservation";
+        storedItemName = storedItemName.trim();
 
         function parsePrice(raw) {
           if (!raw) return 0;
@@ -178,7 +156,7 @@
               transaction_id: txnId,
               value: storedOrderValue,
               currency: "EUR",
-              items: [{ item_name: "Reservation Guidap", quantity: 1, price: storedOrderValue }]
+              items: [{ item_name: storedItemName, quantity: 1, price: storedOrderValue }]
             };
             console.log("Purchase tracked: " + storedOrderValue + " EUR, txn: " + txnId);
           }
@@ -226,7 +204,8 @@
               event: eventDataLayer,
               guidap_g_path: location.href,
               guidap_url: location.href,
-              totalCommande: totalCommande
+              totalCommande: totalCommande,
+              itemName: storedItemName
             });
           }
         });
