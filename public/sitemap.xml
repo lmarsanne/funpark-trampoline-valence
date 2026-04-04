@@ -7,94 +7,77 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.valence-trampoline.com/concept-trampoline</loc>
-    <lastmod>2025-02-18</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://www.valence-trampoline.com/anniversaire-enfant</loc>
     <lastmod>2025-02-18</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.valence-trampoline.com/tarifs-horaires</loc>
-    <lastmod>2025-02-18</lastmod>
+    <loc>https://www.valence-trampoline.com/bowling</loc>
+    <lastmod>2025-04-04</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.valence-trampoline.com/contact</loc>
-    <lastmod>2025-02-18</lastmod>
+    <loc>https://www.valence-trampoline.com/karaoke</loc>
+    <lastmod>2025-04-04</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.valence-trampoline.com/quiz-boxing</loc>
+    <lastmod>2025-04-04</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.valence-trampoline.com/billard</loc>
+    <lastmod>2025-04-04</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.valence-trampoline.com/mentions-legales</loc>
-    <lastmod>2025-02-18</lastmod>
-    <priority>0.3</priority>
+    <loc>https://www.valence-trampoline.com/entreprises</loc>
+    <lastmod>2025-04-04</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.valence-trampoline.com/evg-evjf-valence</loc>
+    <lastmod>2025-04-04</lastmod>
+    <priority>0.8</priority>
   </url>
 
-  <!-- Pages SEO Géographiques (Ciblage Trampoline) -->
+  <!-- Pages SEO Géographiques -->
   <url>
-    <loc>https://www.valence-trampoline.com/trampoline-romans-bourg</loc>
-    <lastmod>2025-02-18</lastmod>
+    <loc>https://www.valence-trampoline.com/trampoline-romans-bourg-de-peage</loc>
+    <lastmod>2025-04-04</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.valence-trampoline.com/trampoline-tain-tournon</loc>
-    <lastmod>2025-02-18</lastmod>
+    <lastmod>2025-04-04</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.valence-trampoline.com/trampoline-guilherand-st-peray</loc>
-    <lastmod>2025-02-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.valence-trampoline.com/trampoline-chabeuil-malissard</loc>
-    <lastmod>2025-02-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.valence-trampoline.com/trampoline-portes-etoile</loc>
-    <lastmod>2025-02-18</lastmod>
+    <lastmod>2025-04-04</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.valence-trampoline.com/trampoline-livron-loriol</loc>
-    <lastmod>2025-02-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.valence-trampoline.com/trampoline-crest-vallee</loc>
-    <lastmod>2025-02-18</lastmod>
+    <lastmod>2025-04-04</lastmod>
     <priority>0.8</priority>
   </url>
 
-  <!-- Pages SEO Thématiques (Ciblage Intention) -->
-  <url>
-    <loc>https://www.valence-trampoline.com/evg-evjf-trampoline</loc>
-    <lastmod>2025-02-18</lastmod>
-    <priority>0.8</priority>
-  </url>
+  <!-- Pages SEO Thématiques -->
   <url>
     <loc>https://www.valence-trampoline.com/que-faire-quand-il-pleut-valence</loc>
-    <lastmod>2025-02-18</lastmod>
+    <lastmod>2025-04-04</lastmod>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.valence-trampoline.com/scolaires-centres-aeres</loc>
-    <lastmod>2025-02-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.valence-trampoline.com/etudiants-bde-valence</loc>
-    <lastmod>2025-02-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Pages SEO Quiz Boxing -->
   <url>
     <loc>https://www.valence-trampoline.com/quiz-game-valence</loc>
-    <lastmod>2025-03-15</lastmod>
+    <lastmod>2025-04-04</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.valence-trampoline.com/sortie-groupe-enfants</loc>
+    <lastmod>2026-04-04</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -6,9 +7,84 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { useForceScrollTop } from "@/hooks/useForceScrollTop";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { trackPhoneClick, trackEmailClick } from "@/lib/analytics";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
+
+const devisGroupeSchema = z.object({
+  structure: z.string().trim().min(1, "Le nom de la structure est requis").max(100),
+  contact: z.string().trim().min(1, "Le nom du contact est requis").max(100),
+  email: z.string().trim().email("Email invalide").max(255),
+  phone: z.string().trim().min(1, "Le téléphone est requis").max(20),
+  participants: z.string().trim().optional(),
+  ages: z.string().trim().optional(),
+  date: z.string().trim().optional(),
+  message: z.string().trim().max(2000).optional(),
+});
 
 const SortieGroupeEnfants = () => {
   useForceScrollTop();
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    structure: "",
+    contact: "",
+    email: "",
+    phone: "",
+    participants: "",
+    ages: "",
+    date: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      devisGroupeSchema.parse(formData);
+      setIsSubmitting(true);
+
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: {
+          fullName: `${formData.structure} - ${formData.contact}`,
+          email: formData.email,
+          phone: formData.phone,
+          participants: formData.participants,
+          message: `
+[DEMANDE DEVIS GROUPE / CENTRE AÉRÉ]
+Structure : ${formData.structure}
+Contact : ${formData.contact}
+Nombre d'enfants : ${formData.participants || "Non précisé"}
+Tranches d'âge : ${formData.ages || "Non précisé"}
+Date souhaitée : ${formData.date || "Non précisée"}
+
+Message :
+${formData.message || "Aucun message"}
+          `.trim(),
+        },
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Demande envoyée !",
+        description: "Notre équipe vous recontactera sous 24h avec un devis personnalisé.",
+      });
+
+      setFormData({ structure: "", contact: "", email: "", phone: "", participants: "", ages: "", date: "", message: "" });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast({ title: "Erreur", description: error.errors[0].message, variant: "destructive" });
+      } else {
+        toast({ title: "Erreur", description: "Une erreur est survenue. Veuillez réessayer.", variant: "destructive" });
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -201,12 +277,13 @@ const SortieGroupeEnfants = () => {
           </div>
         </section>
 
-        {/* CONTACT */}
+        {/* CONTACT FORM */}
         <section id="contact-groupe" className="py-16 bg-gradient-to-br from-primary via-accent to-secondary text-primary-foreground">
-          <div className="container mx-auto px-4 max-w-3xl text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">
               Demandez votre devis groupe
             </h2>
+            <p className="text-center text-sm opacity-80 mb-10">Réponse sous 24h — Devis gratuit et sans engagement</p>
 
             <div className="grid sm:grid-cols-3 gap-6 mb-10">
               <div className="flex flex-col items-center gap-2">
@@ -214,18 +291,14 @@ const SortieGroupeEnfants = () => {
                   <Phone className="w-6 h-6" />
                 </div>
                 <p className="font-semibold">Téléphone</p>
-                <a href="tel:0769482714" onClick={trackPhoneClick} className="text-sm opacity-80 hover:opacity-100 transition-opacity">
-                  07.69.48.27.14
-                </a>
+                <a href="tel:0769482714" onClick={trackPhoneClick} className="text-sm opacity-80 hover:opacity-100 transition-opacity">07.69.48.27.14</a>
               </div>
               <div className="flex flex-col items-center gap-2">
                 <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
                   <Mail className="w-6 h-6" />
                 </div>
                 <p className="font-semibold">Email</p>
-                <a href="mailto:valencebowling@gmail.com" onClick={trackEmailClick} className="text-sm opacity-80 hover:opacity-100 transition-opacity">
-                  valencebowling@gmail.com
-                </a>
+                <a href="mailto:valencebowling@gmail.com" onClick={trackEmailClick} className="text-sm opacity-80 hover:opacity-100 transition-opacity">valencebowling@gmail.com</a>
               </div>
               <div className="flex flex-col items-center gap-2">
                 <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
@@ -236,14 +309,45 @@ const SortieGroupeEnfants = () => {
               </div>
             </div>
 
-            <a
-              href="mailto:valencebowling@gmail.com?subject=Demande%20de%20devis%20groupe&body=Bonjour%2C%0A%0AJe%20souhaite%20organiser%20une%20sortie%20de%20groupe%20au%20Fun%20Park%20Valence.%0A%0ANombre%20d%27enfants%20%3A%20%0AÂges%20%3A%20%0ADate%20souhait%C3%A9e%20%3A%20%0AType%20de%20structure%20%3A%20%0A%0AMerci%20!"
-              className="inline-block px-10 py-4 rounded-full text-lg font-bold shadow-xl hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: '#FFBD0B', color: '#000' }}
-            >
-              ✉️ Envoyer une demande de devis
-            </a>
-            <p className="mt-4 text-sm opacity-70">Réponse sous 24h — Devis gratuit et sans engagement</p>
+            <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20 space-y-6">
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="structure" className="text-white">Nom de la structure *</Label>
+                  <Input id="structure" placeholder="Centre aéré, école, club..." value={formData.structure} onChange={e => setFormData(p => ({ ...p, structure: e.target.value }))} className="bg-white/20 border-white/30 text-white placeholder:text-white/50" required />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="contact" className="text-white">Nom du contact *</Label>
+                  <Input id="contact" placeholder="Prénom Nom" value={formData.contact} onChange={e => setFormData(p => ({ ...p, contact: e.target.value }))} className="bg-white/20 border-white/30 text-white placeholder:text-white/50" required />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="text-white">Email *</Label>
+                  <Input id="email" type="email" placeholder="email@structure.fr" value={formData.email} onChange={e => setFormData(p => ({ ...p, email: e.target.value }))} className="bg-white/20 border-white/30 text-white placeholder:text-white/50" required />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="phone" className="text-white">Téléphone *</Label>
+                  <Input id="phone" type="tel" placeholder="06 XX XX XX XX" value={formData.phone} onChange={e => setFormData(p => ({ ...p, phone: e.target.value }))} className="bg-white/20 border-white/30 text-white placeholder:text-white/50" required />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="participants" className="text-white">Nombre d'enfants</Label>
+                  <Input id="participants" placeholder="Ex : 25" value={formData.participants} onChange={e => setFormData(p => ({ ...p, participants: e.target.value }))} className="bg-white/20 border-white/30 text-white placeholder:text-white/50" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="ages" className="text-white">Tranches d'âge</Label>
+                  <Input id="ages" placeholder="Ex : 6-10 ans" value={formData.ages} onChange={e => setFormData(p => ({ ...p, ages: e.target.value }))} className="bg-white/20 border-white/30 text-white placeholder:text-white/50" />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="date" className="text-white">Date souhaitée</Label>
+                <Input id="date" placeholder="Ex : semaine du 14 juillet, mercredi après-midi..." value={formData.date} onChange={e => setFormData(p => ({ ...p, date: e.target.value }))} className="bg-white/20 border-white/30 text-white placeholder:text-white/50" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="message" className="text-white">Message / précisions</Label>
+                <Textarea id="message" placeholder="Dites-nous en plus sur votre projet de sortie..." rows={4} value={formData.message} onChange={e => setFormData(p => ({ ...p, message: e.target.value }))} className="bg-white/20 border-white/30 text-white placeholder:text-white/50" />
+              </div>
+              <Button type="submit" disabled={isSubmitting} className="w-full py-6 text-lg font-bold rounded-full shadow-xl" style={{ backgroundColor: '#FFBD0B', color: '#000' }}>
+                {isSubmitting ? "Envoi en cours..." : "✉️ Envoyer ma demande de devis"}
+              </Button>
+            </form>
           </div>
         </section>
 
