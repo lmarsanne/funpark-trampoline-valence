@@ -1,31 +1,12 @@
-import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { MapPin, ParkingCircle, Users, Footprints, Zap, Cake, Gift, GraduationCap, Bus, CreditCard, Target, Wind, Trophy, PartyPopper } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useForceScrollTop } from "@/hooks/useForceScrollTop";
 
 const TainTournon = () => {
-  // Désactiver la restauration automatique du scroll et forcer le haut de page
-  useEffect(() => {
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-    const forceTop = () => {
-      window.scrollTo(0, 0);
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    };
-    forceTop();
-    const intervalId = setInterval(forceTop, 20);
-    const timeoutId = setTimeout(() => {
-      clearInterval(intervalId);
-    }, 2000);
-    return () => {
-      clearInterval(intervalId);
-      clearTimeout(timeoutId);
-    };
-  }, []);
+  useForceScrollTop();
 
   return <div className="min-h-screen pb-20">
       <Helmet>
